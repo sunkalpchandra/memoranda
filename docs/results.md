@@ -108,3 +108,10 @@ they showed at the time of writing and how to read them.
   similarity (0.086; all p < 1e-4) — the tuning is not purely facial identity.
 - RSA restricted to face pictures is weak: VGGFace2 vs MTL concept cells 0.046 (p = 0.02),
   DINOv2 vs MTL 0.036 (p = 0.048), others n.s.
+
+## A5 (cont.) — cross-patient tuning consistency (script 36)
+- Pairs of MTL concept cells from different patients, tuning curves correlated over co-shown
+  pictures (preferred ones excluded): same preferred picture ρ = 0.038 (n = 43, n.s.);
+  different picture but same category 0.045 (n = 1672); different category 0.008 (n = 2985;
+  same-cat vs diff-cat p < 1e-10). Category structure transfers across patients; picture-
+  specific tuning does not.
