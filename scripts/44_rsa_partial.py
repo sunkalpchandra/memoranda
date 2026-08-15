@@ -43,7 +43,8 @@ REGIONS = ["MTL", "MTL_concept", "MFC", "amygdala", "hippocampus"]
 
 def region_matrix(subject, region, sel):
     if region == "MFC":
-        return rsa.session_response_matrix(subject, 1, "MFC")
+        M, uids, _ = rsa.session_response_matrix(subject, 1, "MFC")
+        return M, uids
     M, uids, units = rsa.session_response_matrix(subject, 1, "MTL")
     if M is None:
         return None, None
