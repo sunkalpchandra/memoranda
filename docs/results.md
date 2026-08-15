@@ -189,3 +189,8 @@ they showed at the time of writing and how to read them.
 - Across MTL concept cells: DoS vs ρ −0.18 (CLIP, p = 0.03) / −0.22 (ResNet-50, p = 0.01);
   face-preferring cells ρ = 0.22 vs 0.07 for others (p = 0.001); mean rate vs ρ +0.29
   (SNR caveat). Sparse half (DoS ≥ 0.71) still ρ = 0.14 vs broad half 0.20 (n.s.).
+
+## A0 (cont.) — encoding-1-only selection (script 25)
+- Using only the first encoding presentation (paper's rule): MTL 102/449 = 22.7 % (paper
+  20.9 %), MFC 26/453 = 5.7 % (6.7 %); amygdala 29 %, hippocampus 14 %. The all-encoding
+  variant used in the other Sternberg analyses is more permissive (29 % / 10 %).
