@@ -14,7 +14,13 @@ import pandas as pd
 from PIL import Image
 from tqdm import tqdm
 
-from memoranda.features import feature_path, list_layers, load_features, save_features, unique_image_table
+from memoranda.features import (
+    feature_path,
+    list_layers,
+    load_features,
+    save_features,
+    unique_image_table,
+)
 from memoranda.log import get_logger
 from memoranda.models.extract import FeatureExtractor
 from memoranda.models.registry import DEFAULT_MODELS, get_spec

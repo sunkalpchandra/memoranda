@@ -21,7 +21,6 @@ import pandas as pd
 
 from memoranda import neural
 from memoranda.analysis import encoding as E
-from memoranda.analysis import rsa
 from memoranda.dandi import list_assets
 from memoranda.features import list_layers, load_features
 from memoranda.log import get_logger
