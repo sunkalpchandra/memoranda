@@ -52,44 +52,42 @@ docs/               notes, methods, decisions
 
 ## Findings so far
 
-Full numbers in [docs/results.md](docs/results.md); methods in [docs/methods.md](docs/methods.md).
+Full numbers in [docs/results.md](docs/results.md) (revised after an adversarial review,
+[docs/review_2026-08-15.md](docs/review_2026-08-15.md)); methods in [docs/methods.md](docs/methods.md).
 
 **Replication.** All 1809 units, behaviour (88.7 % correct) and concept-cell fractions
 (MTL 31.8 %, MFC 6.0 %) reproduce Kyzar et al.; MTL concept cells stay active during
-WM maintenance when their image is held (p = 7e-9), MFC cells do not.
+WM maintenance when their image is held (p = 7e-9), MFC cells do not. The paper-style post-hoc
+test is permissive (MFC prevalence equals the false-positive rate); a selection-corrected strict
+criterion gives MTL 15.9 % / MFC 2.1 %, and the single-cell results below hold for both.
 
-**The stimuli.** Only 342 unique pictures underlie the 41 files. CLIP zero-shot: 37 % faces /
-people, 14 % animals, 11 % landmarks, 10 % vehicles, the rest objects, scenes, nature, food.
-The only picture property that predicts whether an image became one of a patient's five
-Sternberg memoranda is a detected face (62 % vs 49 %, AUC 0.57, q = 0.02); category, CLIP
-attributes, low-level statistics and DNN-space typicality / isolation do not. Our replicated
-neural selectivity does (AUC ≈ 0.7), and an image that "won" in other patients is not more
-likely to win in this one (LOSO AUC 0.54). Being a concept-cell image is largely a
-*patient × image* property.
+**The stimuli.** Only 342 unique pictures underlie the 41 files (37 % faces / people — nearly
+all famous, 14 % animals, 11 % landmarks, 10 % vehicles, the rest objects, scenes, nature, food).
+No picture-level property predicts a patient's five Sternberg memoranda (52 contrasts, family-wide
+q ≥ 0.29); a detected face is the only nominal hit (62 % vs 49 %) and is expected from the concept
+cells' face bias. Other patients' preferences carry no information (LOSO AUC 0.44–0.49): being a
+concept-cell image is a *patient × image* property.
 
-**What concept cells like.** Bias toward pictures with a detected face (66 % vs 53 % shown,
-p = 0.003; amygdala-driven) and famous people, against text/logos; per shown image, animals
-(0.19 cells/patient) > faces (0.14) > vehicles > places > food > objects (0.01). Right amygdala
-concept cells prefer animals 4× more often than left (21 % vs 5 %, p = 0.04) — Mormann et al.
-2011 rediscovered — and right-amygdala concept cells generalise along DNN similarity far more
-than left ones (ρ 0.30 vs 0.04). Across patients, cells preferring the *same* picture agree on the rest no
-better than cells preferring different pictures of the same category: what transfers between
-people is category structure, not picture-specific tuning.
+**What concept cells like.** Strict amygdala concept cells prefer pictures with a face
+(patient-level p = 0.03); per shown image, animals (0.19 cells/patient) > faces (0.14) > vehicles >
+places > food > objects (0.01). Right amygdala concept cells prefer animals 4× more often than left
+(21 % vs 5 %) — Mormann et al. 2011 rediscovered — and generalise along DNN similarity far more than
+left ones (patient-level p = 0.008; hemisphere partly confounded with patient).
 
-**Neural ↔ DNN geometry (RSA).** MTL population RDMs correlate with every model's late
-layers (ρ ≈ 0.06 per session, 0.13 pooled across patients; ceiling-normalised ≈ 0.25),
-rising monotonically with depth; MFC ≈ 0.015; amygdala ≫ hippocampus. Late layers explain
-MTL geometry beyond category and low-level structure and subsume the category RDM. The
+**Neural ↔ DNN geometry (RSA).** MTL population RDMs correlate with every model's late layers
+(ρ ≈ 0.06 per session, 0.13 pooled across patients; ≈ 0.24 of the ceiling), rising from early to
+mid/late layers (monotonic for ResNet-50 and CLIP, plateauing for AlexNet/VGG/DINOv2); MFC is weak
+and without a depth gradient (MTL > MFC decisive as a fixed effect, marginal across patients);
+amygdala ≫ hippocampus. Late layers and the category RDM are largely redundant, with a small unique
+late-layer component; ViT-family late layers keep a within-category correspondence. The
 correspondence emerges ~200 ms after onset and peaks at 350 ms.
 
 **Single neurons generalise along DNN similarity.** A concept cell's response to the other
-54–62 images correlates with their late-layer similarity to its preferred image
-(mean ρ ≈ 0.17, 77 % of cells positive; null ≈ 0), increasing with layer depth, emerging at
-~225 ms and peaking at 325 ms. Face-preferring cells generalise across other faces along
-object-model similarity more than along VGGFace2 identity similarity. Architecture, training objective and
-scale barely matter — a CLIP-trained ResNet-50 and the ImageNet ResNet-50 are
-indistinguishable layer by layer, and CLIP-L/14 / DINOv2-B are no better than their small versions; CLIP's ViT alone keeps a within-category correspondence
-with the MTL.
+54–62 images correlates with their late-layer similarity to its preferred image (cell-pooled
+ρ ≈ 0.17, patient-mean 0.10, p = 0.016 over patients), rising with depth, emerging at ~225 ms,
+surviving within category (0.11) and beyond text-space similarity. Architecture, training objective
+and scale barely matter — a CLIP-trained ResNet-50 and the ImageNet ResNet-50 are indistinguishable
+layer by layer, and CLIP-L/14 / DINOv2-B are no better than their small versions.
 
 | ![RSA layer curves](results/figures/A3_rsa_layer_curves.png) |
 |:--:|
