@@ -48,6 +48,8 @@ FIGS = {
     "xpat": ("A5_cross_patient_tuning.png", 800),
     "catdec": ("A5_category_decoding.png", 800),
     "gallery": ("A2_memoranda_gallery.png", 900),
+    "examples": ("A4_example_cells.png", 1300),
+    "sparsity": ("A4_sparsity_vs_generalisation.png", 1300),
 }
 
 
@@ -314,6 +316,9 @@ def build(embed: bool) -> str:
 {enc_txt}
 </div>
 {F('simtune', 'Similarity tuning per model layer for MTL concept cells (red), MTL non-concept cells (orange), MFC concept cells (blue); dotted: random-anchor null.')}
+<div class="prose"><p>Who carries this generalisation? The strongest cases are broadly tuned "celebrity face" cells whose response ramps smoothly with CLIP similarity across other famous faces; the classic sparse concept cells (a horse cell, an astronaut cell) sit at ρ ≈ 0. Across cells, sparser tuning goes with weaker generalisation (DoS vs ρ −0.2, p ≤ 0.03) and face-preferring cells generalise most (ρ 0.22 vs 0.07, p = 0.001) — but even the sparse half of the population averages ρ ≈ 0.14 &gt; 0.</p></div>
+{F('examples', 'Exemplar MTL concept cells: preferred picture, response vs CLIP similarity over the other pictures, and the most / least similar pictures with their rates. Last two rows: ρ ≈ 0.')}
+{F('sparsity', 'Similarity tuning vs depth of selectivity and response strength; face-preferring cells in red.', wide=False)}
 <div class="grid2">
 {F('depth', 'Layer-depth preference by area, pooling layers of all eight models into five relative-depth bins.', wide=False)}
 {F('enc_best', 'Encoding models: best-predicting model per MTL concept cell, relative depth of its best layer, and per-cell CV r against the split-half ceiling.', wide=False)}

@@ -181,3 +181,11 @@ they showed at the time of writing and how to read them.
 - RSA (CLIP ln_post) MTL − MFC with subject random intercept: +0.044, p = 0.064 (37 sessions);
   the random-effects contrast is marginal even though the fixed-effects permutation is
   decisive (z ≈ 6) — patient-to-patient variability in RDM quality is large.
+
+## A4 (cont.) — who generalises? (scripts 60, 61)
+- Exemplars: the highest-ρ cells are broadly tuned celebrity-face cells (e.g. Kim/Kanye →
+  Angelina Jolie, Julia Roberts, Brad Pitt at 10–18 Hz); classic sparse concept cells (horses,
+  astronaut) have ρ ≈ 0.
+- Across MTL concept cells: DoS vs ρ −0.18 (CLIP, p = 0.03) / −0.22 (ResNet-50, p = 0.01);
+  face-preferring cells ρ = 0.22 vs 0.07 for others (p = 0.001); mean rate vs ρ +0.29
+  (SNR caveat). Sparse half (DoS ≥ 0.71) still ρ = 0.14 vs broad half 0.20 (n.s.).
