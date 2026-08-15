@@ -24,6 +24,16 @@ from memoranda.paths import MANIFESTS, TABLES
 
 log = get_logger("encnull")
 PREDICTORS_CORE = [("alexnet", "fc6", "gap"), ("vgg16", "fc7", "gap"), ("resnet50", "avgpool", "gap"), ("clip_vitb32", "ln_post", "cls"), ("dinov2_small", "block8", "cls"), ("baseline", "category", "-")]
+PREDICTORS_WIDE = [
+    ("alexnet", "conv2", "gap"), ("alexnet", "conv4", "gap"), ("alexnet", "fc7", "gap"), ("alexnet", "logits", "gap"),
+    ("vgg16", "conv3_3", "gap"), ("vgg16", "conv5_3", "gap"), ("vgg16", "fc6", "gap"),
+    ("resnet18", "layer2", "gap"), ("resnet18", "layer4", "gap"), ("resnet18", "logits", "gap"),
+    ("convnext_tiny", "stage2", "gap"), ("convnext_tiny", "stage4", "gap"), ("convnext_tiny", "logits", "gap"),
+    ("vit_b_16", "block2", "cls"), ("vit_b_16", "block8", "cls"), ("vit_b_16", "ln", "cls"),
+    ("dinov2_small", "block2", "cls"), ("dinov2_small", "block5", "cls"), ("dinov2_small", "norm", "cls"),
+    ("clip_vitb32", "embed", "gap"), ("clip_rn50", "layer2", "gap"), ("clip_rn50", "layer4", "gap"), ("clip_rn50", "attnpool", "gap"),
+    ("facenet_vggface2", "embed", "gap"),
+]
 PREDICTORS_DEPTH = [("alexnet", "conv1", "gap"), ("alexnet", "conv3", "gap"), ("alexnet", "conv5", "gap"), ("resnet50", "layer1", "gap"), ("resnet50", "layer2", "gap"), ("resnet50", "layer3", "gap"), ("resnet50", "layer4", "gap"), ("clip_vitb32", "block2", "cls"), ("clip_vitb32", "block5", "cls"), ("clip_vitb32", "block8", "cls"), ("clip_vitb32", "block11", "cls"), ("baseline", "lowlevel", "-")]
 
 
@@ -39,10 +49,10 @@ def feats_for(model, layer, view, uids, labels_df):
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--n-shuffle", type=int, default=100)
-    ap.add_argument("--set", choices=["core", "depth"], default="core")
+    ap.add_argument("--set", choices=["core", "depth", "wide"], default="core")
     args = ap.parse_args()
-    predictors = PREDICTORS_CORE if args.set == "core" else PREDICTORS_DEPTH
-    suffix = "" if args.set == "core" else "_depth"
+    predictors = {"core": PREDICTORS_CORE, "depth": PREDICTORS_DEPTH, "wide": PREDICTORS_WIDE}[args.set]
+    suffix = {"core": "", "depth": "_depth", "wide": "_wide"}[args.set]
     sel = pd.read_csv(MANIFESTS / "unit_selectivity.csv")
     cc = sel[(sel.task == "screening") & sel.concept_cell]
     labels_df = pd.read_csv(MANIFESTS / "image_labels.csv").set_index("image_uid")
