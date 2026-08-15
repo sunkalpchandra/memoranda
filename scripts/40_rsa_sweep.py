@@ -104,7 +104,7 @@ def main() -> None:
         log.info(f"sub-{s:02d} done ({time.time()-t0:.1f}s)")
 
     per = pd.DataFrame(rows)
-    per["rho_norm"] = per.rho / np.sqrt(per.reliability.clip(lower=1e-3))
+    per["rho_norm"] = per.rho / np.sqrt(per.reliability.clip(lower=0.01))  # per-session ratio is unstable; prefer the summary's ratio of means
     per.to_csv(TABLES / "A3_rsa_per_session.csv", index=False)
     pd.DataFrame(rel_rows).to_csv(TABLES / "A3_rsa_reliability.csv", index=False)
 
@@ -118,7 +118,7 @@ def main() -> None:
                 "rho_sem": float(g.rho.std() / np.sqrt(len(z))) if len(z) > 1 else np.nan,
                 "t": t,
                 "p": p,
-                "rho_norm_mean": float(g.rho_norm.mean()),
+                "rho_norm_mean": float(np.tanh(z.mean()) / np.sqrt(max(g.reliability.mean(), 1e-3))) if len(z) else np.nan,  # ratio of means (stable)
                 "frac_sessions_positive": float((g.rho > 0).mean()),
             }
         )

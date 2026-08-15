@@ -2,7 +2,7 @@
 """Stage 58 — group-level permutation test for the RSA result.
 
 Instead of a t-test on Fisher-z across sessions, shuffle picture identity of the model RDM
-independently within each session, recompute the mean ρ over sessions, and repeat 2000×.
+independently within each session, recompute the mean ρ over sessions, and repeat 1000×.
 Reports the permutation p for MTL, MTL concept cells, MFC, amygdala, hippocampus against a
 curated set of layers and the category / low-level baselines, plus the MTL − MFC difference.
 Output: results/tables/A3_group_permutation.csv

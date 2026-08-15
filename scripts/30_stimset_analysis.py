@@ -172,6 +172,8 @@ def main() -> None:
         a2_contrasts(scr, [c for c in ("face_found", "n_faces", "largest_face_area") if c in scr.columns], "faces"),
     ]
     con = pd.concat(blocks, ignore_index=True)
+    con["q_familywide"] = S.fdr_bh(con.p_mannwhitney.to_numpy())[1]
+    con["t_within_subject"] = (con.auc_within_subject_mean - 0.5) / con.auc_within_subject_sem
     con.to_csv(TABLES / "A2_feature_contrasts.csv", index=False)
     print(con.sort_values("q")[["block", "feature", "auc", "auc_within_subject_mean", "q"]].head(25).round(3).to_string(index=False))
 
