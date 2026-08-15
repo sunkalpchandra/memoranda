@@ -50,6 +50,7 @@ FIGS = {
     "gallery": ("A2_memoranda_gallery.png", 900),
     "examples": ("A4_example_cells.png", 1300),
     "sparsity": ("A4_sparsity_vs_generalisation.png", 1300),
+    "objective": ("A7_objective_contrast.png", 1200),
 }
 
 
@@ -276,7 +277,7 @@ def build(embed: bool) -> str:
     parts.append(f"""
 <section id="a5"><div class="head"><span class="tag">A5</span><h2>What concept cells like</h2></div>
 <div class="prose">
-<p>Against the composition each cell actually saw, MTL concept cells lean toward famous faces (58% prefer a person picture vs 47% shown; CLIP "famous" AUC 0.565, q = 0.047) and away from pictures containing text or logos (q = 0.007). Per shown picture, animals recruit the most cells (0.19 per patient), then faces (0.14), vehicles, places, food and finally objects (0.01). Right-amygdala concept cells prefer animals four times as often as left-amygdala cells (21% vs 5%, Fisher p = 0.04) — the right-amygdala animal preference of Mormann et al. 2011, rediscovered in an independent dataset.</p>
+<p>Against the composition each cell actually saw, MTL concept cells lean toward famous faces (58% prefer a person picture vs 47% shown; CLIP "famous" AUC 0.565, q = 0.047) and away from pictures containing text or logos (q = 0.007). Per shown picture, animals recruit the most cells (0.19 per patient), then faces (0.14), vehicles, places, food and finally objects (0.01). Right-amygdala concept cells prefer animals four times as often as left-amygdala cells (21% vs 5%, Fisher p = 0.04) — the right-amygdala animal preference of Mormann et al. 2011, rediscovered in an independent dataset — and, as shown below, right-amygdala cells are also the ones that generalise along DNN similarity (ρ 0.30 vs 0.04 on the left; hemispheres are partly confounded with patients).</p>
 <p>Overall MTL population drive (mean z over all MTL units) is category-structured (Kruskal–Wallis p = 0.0006: people highest, food and objects lowest); pictures that sit centrally in DNN space drive the MTL more (ρ ≈ −0.28 with distance-to-centroid), but that effect is almost entirely carried by category.</p>
 </div>
 {F('pref', 'Left: preferred-image category of MTL concept cells vs what they were shown. Right: CLIP attributes of preferred pictures vs all shown pictures.')}
@@ -343,9 +344,10 @@ def build(embed: bool) -> str:
     parts.append(f"""
 <section id="a7"><div class="head"><span class="tag">A7</span><h2>Do architecture or training objective matter?</h2></div>
 <div class="prose">
-<p>Not much. Ranking models by their best layer under RSA (paired over sessions) or similarity tuning (paired over cells), the eight networks are statistically close: CLIP and ResNet-50 lead by a hair, only CLIP &gt; AlexNet reaches p = 0.03 in RSA, and the self-supervised DINOv2 sits mid-pack. Any modern network's late layers capture roughly the same part of MTL selectivity.</p>
+<p>Not much. Ranking models by their best layer under RSA (paired over sessions) or similarity tuning (paired over cells), the eight networks are statistically close: CLIP and ResNet-50 lead by a hair, only CLIP &gt; AlexNet reaches p = 0.03 in RSA, and the self-supervised DINOv2 sits mid-pack. The cleanest test holds architecture fixed: OpenAI's CLIP ResNet-50 against the ImageNet-trained ResNet-50, layer by layer, differs by at most 0.007 on either criterion (all p ≥ 0.16). Any modern network's late layers capture roughly the same part of MTL selectivity, and the training objective is not what matters.</p>
 </div>
 {F('models', 'Model ranking at best layer under each criterion (colour: training objective).')}
+{F('objective', 'Layer-matched ResNet-50 (ImageNet) vs CLIP-RN50 (language): no difference at any depth.', wide=False)}
 {table(rank, ['criterion','model','objective','best_layer','n','mean','sem'], ['criterion','model','objective','best layer','n','mean','sem'], caption='Best-layer scores per model and criterion.')}
 </section>""")
 
