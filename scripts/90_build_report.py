@@ -209,7 +209,7 @@ def build(embed: bool) -> str:
         eb = pd.read_csv(TABLES / "A4_encoding_best_layer.csv")
         e = eb[eb.group == "MTL concept"]
         enc_tbl = table(e, ["model", "best_layer", "n_units", "r_mean", "r_sem", "frac_r_pos", "r_over_ceiling"], ["model", "best layer", "cells", "mean CV r", "sem", "frac r>0", "r / ceiling"], caption="MTL concept cells: encoding performance at each model's best layer (6-fold CV ridge, in-fold PCA-20). Baseline rows: category one-hot, low-level statistics.")
-        enc_txt = f"""<p>Ridge regression from layer features to each cell's 54–63-image tuning curve reaches a mean cross-validated <i>r</i> of <b>{n['enc_r']:.2f}</b> for MTL concept cells at the best layer ({n['enc_best']}; {n['enc_frac']:.0f}% of cells above zero; ≈{n['enc_ceiling']:.2f} of the split-half ceiling), versus {n['enc_cat']:.2f} for a category one-hot baseline. As in RSA, prediction improves with layer depth.</p>"""
+        enc_txt = f"""<p>Ridge regression from layer features to each cell's 54–63-image tuning curve reaches a mean cross-validated <i>r</i> of <b>{n['enc_r']:.2f}</b> for MTL concept cells at the best layer ({n['enc_best']}; {n['enc_frac']:.0f}% of cells above zero; ≈{n['enc_ceiling']:.2f} of the split-half ceiling), versus {n['enc_cat']:.2f} for a category one-hot baseline. Note that CV <i>r</i> for cells with no signal is <em>negatively</em> biased (non-selective cells sit at −0.05 to −0.15 for every predictor), so the concept-cell values should be read against that floor rather than zero. With ~60 pictures per cell and near one-hot tuning curves, encoding models are a blunter instrument here than the similarity-tuning test above; the fully connected layers of AlexNet/VGG and CLIP's last layers do best.</p>"""
 
     parts = [f"<title>Memoranda</title><style>{CSS}</style>", '<div class="wrap">']
     parts.append(f"""
@@ -248,7 +248,7 @@ def build(embed: bool) -> str:
 <div class="callout">Being a concept-cell picture is a <b>patient × picture</b> property, not a picture property.</div>
 </div>
 {F('montage', 'The 342 unique pictures (dataset-wide image_uid in each cell).')}
-{F('enrich', 'Left: category enrichment among memoranda vs the rest of each patient\\'s screening set (none survives FDR). Right: the 20 strongest feature contrasts, all near AUC 0.5.')}
+{F('enrich', 'Left: category enrichment among memoranda vs the rest of each patient’s screening set (none survives FDR). Right: the 20 strongest feature contrasts, all near AUC 0.5.')}
 {table(enr.sort_values('odds_ratio', ascending=False), ['category','n_sternberg','n_rest','odds_ratio','p','q'], ['category','memoranda','rest','odds ratio','p','q'], caption='Category enrichment among Sternberg memoranda (Fisher exact, BH-FDR).')}
 </section>""")
 
@@ -319,6 +319,7 @@ def build(embed: bool) -> str:
 <li>Concept-cell selection reuses the same responses that enter the similarity-tuning and encoding analyses (the preferred picture is excluded, and the random-anchor null is ≈ 0, but selection bias could still inflate the non-preferred slope slightly).</li>
 <li>Sternberg concept cells were selected on all encoding presentations (paper: encoding 1 only), giving 29% rather than 21% MTL concept cells in that task.</li>
 <li>CLIP zero-shot labels are accurate for animals/vehicles/food but blur "face" vs "scene with people"; a hand-checked label pass would tighten A5.</li>
+<li>Cross-validated encoding r is negatively biased under the null (in-fold demeaning with ~60 samples); a label-shuffle null per cell would be the cleaner reference.</li>
 <li>Next: variance partitioning between models, a face-trained network, per-cell noise-corrected encoding at each layer, and time-resolved encoding models.</li>
 </ul>
 </div>
