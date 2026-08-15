@@ -1,0 +1,343 @@
+image_uid,famous,identity,fictional_character,n_people,notes
+img_0000,1,Jennifer Aniston,0,1,
+img_0001,1,Halle Berry,0,1,
+img_0002,1,Julia Roberts,0,1,
+img_0003,1,Leonardo DiCaprio,0,1,
+img_0004,1,Johnny Depp,0,1,
+img_0005,1,Clint Eastwood,1,1,as the Man with No Name (western still)
+img_0006,1,Brad Pitt,0,1,
+img_0007,1,Jack Nicholson,0,1,smoking cigar
+img_0008,1,Robert De Niro,0,1,film still
+img_0009,1,Vladimir Putin,0,1,
+img_0010,1,Barack Obama,0,1,
+img_0011,1,George W. Bush,0,1,
+img_0012,0,,0,1,man walking six German shepherds
+img_0013,1,John F. Kennedy,0,1,
+img_0014,1,Abraham Lincoln,0,1,historical photo
+img_0015,1,Elvis Presley,0,1,
+img_0016,1,Justin Bieber,0,1,
+img_0017,1,Kanye West; Kim Kardashian,0,2,
+img_0018,1,Steve Jobs,0,1,holding iPad
+img_0019,1,Albert Einstein,0,1,at blackboard
+img_0020,1,Bill Gates,0,1,
+img_0021,1,Michael Jordan,0,1,Bulls jersey
+img_0022,1,Tiger Woods,0,1,
+img_0023,1,Oprah Winfrey,0,1,
+img_0024,0,,0,0,
+img_0025,0,,0,1,unknown man outdoors (lab member?)
+img_0026,0,,0,0,
+img_0027,1,Charlie Sheen,0,1,
+img_0028,0,,0,1,baby
+img_0029,1,Robin Williams,0,1,
+img_0030,0,,0,0,
+img_0031,0,,0,1,toddler painting
+img_0032,0,,0,0,
+img_0033,0,,0,1,unknown man indoors (lab/clinic member?)
+img_0034,0,,0,0,oven-mitt hand only
+img_0035,0,,0,0,
+img_0036,0,,0,1,"motocross rider, helmet"
+img_0037,0,,0,2,mother and daughter cooking
+img_0038,1,Jimmy Kimmel,0,1,
+img_0039,1,Donald Trump,0,1,
+img_0040,0,,0,0,
+img_0041,0,,0,0,
+img_0042,1,Ryan Gosling; Rachel McAdams,1,2,The Notebook rowboat still
+img_0043,0,,0,0,
+img_0044,0,,0,0,
+img_0045,0,,0,0,
+img_0046,0,,0,0,hand holding sieve only
+img_0047,1,Jack Nicholson,1,1,The Shining 'Here's Johnny'
+img_0048,1,Buzz Aldrin,1,1,Apollo 11 photo; face not visible; famous via iconic photo
+img_0049,0,,0,0,
+img_0050,0,,0,1,"hiker on bridge, back view"
+img_0051,0,,0,0,
+img_0052,0,,0,0,
+img_0053,1,Anthony Hopkins,1,1,as Hannibal Lecter
+img_0054,1,Angelina Jolie,0,1,
+img_0055,1,Dustin Hoffman,0,1,
+img_0056,1,Harrison Ford,1,2,Han Solo with Chewbacca (costumed); Chewbacca counted as person
+img_0057,1,Beyonce,0,1,
+img_0058,1,Jennifer Lawrence,0,1,
+img_0059,1,Ronald Reagan,0,1,
+img_0060,1,Michael Phelps,0,1,with gold medal
+img_0061,1,LeBron James,0,1,Heat jersey
+img_0062,1,Mike Tyson,0,1,
+img_0064,1,Jonah Hill,1,1,Wolf of Wall Street still
+img_0065,0,,0,1,unknown woman at desk (lab member?)
+img_0066,0,,0,1,"cleaning with gloves; torso and hands only, no face"
+img_0067,0,,0,0,
+img_0068,0,,0,1,"B&W child actor still, cap; unidentified (possibly classic TV)"
+img_0069,1,Ellen DeGeneres,0,1,
+img_0070,1,Hillary Clinton,0,1,
+img_0071,0,,0,0,
+img_0072,0,,0,0,
+img_0073,0,,0,0,
+img_0074,0,,0,0,
+img_0075,0,,1,0,"Merida (Brave), animated"
+img_0076,0,,0,5,mariachi band
+img_0077,0,,0,0,
+img_0078,1,Rudy Giuliani,0,1,
+img_0079,1,Arnold Schwarzenegger,0,1,
+img_0080,0,,0,1,woman profile with earring
+img_0081,0,,0,0,
+img_0082,1,Barbra Streisand; Seth Rogen,1,2,The Guilt Trip still
+img_0083,1,Adele,0,1,holding Oscar
+img_0084,1,Tom Cruise,1,1,"Mission: Impossible still, in rain"
+img_0085,1,Anne Hathaway; Jim Sturgess,1,2,One Day still; probable
+img_0086,0,,0,0,
+img_0087,0,,0,0,
+img_0088,1,Pink Floyd,0,4,B&W band photo; probable (Gilmour/Waters/Mason/Wright)
+img_0089,0,,0,0,
+img_0090,1,Pink Floyd,0,4,B&W band photo
+img_0091,0,,0,1,unknown man in office (lab member?)
+img_0092,0,,0,0,
+img_0093,0,,0,0,
+img_0094,0,,0,0,
+img_0095,0,,0,0,
+img_0096,0,,0,0,
+img_0097,0,,0,0,
+img_0098,0,,0,0,
+img_0099,0,,0,0,
+img_0100,0,,0,0,
+img_0101,0,,0,0,
+img_0102,0,,0,0,
+img_0103,0,,0,0,
+img_0104,0,,0,0,
+img_0105,0,,0,0,
+img_0106,0,,0,0,
+img_0107,0,,0,0,
+img_0108,1,Charlie Chaplin,1,1,as the Tramp
+img_0109,1,Jay Leno,0,1,
+img_0110,1,Jason Momoa,1,1,as Khal Drogo
+img_0111,0,,0,0,
+img_0112,0,,0,0,
+img_0113,0,,0,0,
+img_0114,1,Gene Simmons,0,1,KISS makeup
+img_0115,1,Maya Angelou,0,1,
+img_0116,1,Anne Hathaway,0,1,
+img_0117,0,,0,0,Taj Mahal; distant background crowd not counted
+img_0118,1,Meryl Streep,0,1,with Golden Globe
+img_0119,1,Tom Cruise,0,1,
+img_0120,1,Daniel Radcliffe,1,1,as Harry Potter
+img_0121,1,Steven Spielberg,0,1,
+img_0122,1,Michael Jackson,0,1,Bad era
+img_0123,0,,0,0,
+img_0124,0,,0,0,
+img_0125,0,,0,0,
+img_0126,1,Tom Hanks,0,1,
+img_0127,0,,0,8,"crowd watching shuttle on 747, backs to camera; approx"
+img_0128,0,,0,0,
+img_0129,0,,0,0,
+img_0130,0,,0,0,
+img_0131,0,,0,0,
+img_0132,0,,0,0,
+img_0133,0,,0,0,
+img_0134,1,Matt Damon,0,1,
+img_0135,1,Kevin Costner,0,1,
+img_0136,1,Muhammad Ali,0,1,
+img_0137,1,Ozzy Osbourne,0,1,
+img_0138,0,,0,0,
+img_0139,0,,0,0,
+img_0140,0,,0,0,
+img_0141,0,,0,0,
+img_0142,0,,0,0,
+img_0143,0,,0,0,
+img_0144,0,,0,0,
+img_0145,0,,0,0,
+img_0146,1,Buzz Aldrin,0,1,NASA portrait
+img_0147,1,Macaulay Culkin,1,1,Home Alone still
+img_0148,1,Jeb Bush,0,1,
+img_0149,1,Terrence Howard,0,1,
+img_0150,1,Viggo Mortensen,0,1,
+img_0151,1,Ed Harris,0,1,film still; fairly confident
+img_0152,1,Kit Harington,0,1,
+img_0153,1,Peter Dinklage,0,1,
+img_0154,1,Lenny Kravitz,0,1,
+img_0155,1,Liam Cunningham,0,1,
+img_0156,0,,0,0,
+img_0157,1,Lisa Bonet,1,1,Cosby Show still (Denise)
+img_0158,1,Mick Jagger,0,1,
+img_0159,0,,0,0,
+img_0160,1,Ian McKellen,1,1,"as Magneto, helmet hides most of face; identity inferred from costume"
+img_0161,0,,0,1,"eye makeup close-up, partial face"
+img_0162,0,,1,0,"Spider-Man (video game render), masked"
+img_0163,1,Anne Hathaway,0,1,
+img_0164,1,Damon Wayans; Clayne Crawford,1,2,Lethal Weapon TV still
+img_0165,1,Meryl Streep,0,1,with Golden Globe
+img_0166,1,Tom Cruise,0,1,
+img_0167,0,,0,0,
+img_0168,1,Chris Evans,1,1,as Captain America
+img_0169,0,,0,0,
+img_0170,0,,0,0,
+img_0171,1,Johnny Depp,1,1,as Jack Sparrow
+img_0172,0,,0,0,
+img_0173,0,,0,1,"lips close-up, partial face"
+img_0174,0,,0,0,
+img_0175,1,James McAvoy,1,1,as Professor X
+img_0176,0,,0,0,
+img_0177,0,,1,0,Yoda (puppet)
+img_0178,1,Hugh Jackman,1,1,as Logan/Wolverine
+img_0179,1,Robert Downey Jr.,1,1,"Iron Man, face visible"
+img_0180,0,,0,0,
+img_0181,0,,0,0,
+img_0182,0,,0,0,
+img_0183,0,,0,0,
+img_0184,0,,0,0,
+img_0185,0,,0,0,
+img_0186,0,,0,0,
+img_0187,0,,0,0,
+img_0188,0,,0,0,
+img_0189,0,,0,1,laughing child
+img_0190,0,,0,1,child
+img_0191,0,,0,1,girl B&W
+img_0192,0,,0,1,surprised boy
+img_0193,0,,0,2,grandfather with boy
+img_0194,0,,0,1,man grimacing
+img_0195,0,,0,1,pensive woman
+img_0196,0,,0,2,older couple
+img_0197,0,,0,1,girl B&W
+img_0198,0,,0,0,
+img_0199,0,,0,0,
+img_0200,0,,0,0,
+img_0201,0,,0,0,
+img_0202,0,,0,0,
+img_0203,0,,0,0,
+img_0204,0,,0,0,
+img_0205,0,,0,0,
+img_0206,0,,0,0,
+img_0207,0,,0,0,
+img_0208,0,,0,0,
+img_0209,0,,0,0,
+img_0210,0,,0,0,
+img_0211,0,,0,0,
+img_0212,0,,0,0,
+img_0213,0,,0,0,
+img_0214,0,,0,0,
+img_0215,0,,0,0,
+img_0216,0,,0,0,
+img_0217,0,,0,0,
+img_0218,0,,0,0,
+img_0219,0,,0,0,
+img_0220,0,,0,0,
+img_0221,0,,0,0,
+img_0222,0,,0,0,
+img_0223,0,,0,0,
+img_0224,0,,0,0,
+img_0225,0,,0,0,
+img_0226,0,,0,0,
+img_0227,0,,0,0,
+img_0228,0,,0,0,arm/hand only
+img_0229,0,,0,0,
+img_0230,0,,0,0,
+img_0231,0,,0,0,
+img_0232,0,,0,0,
+img_0233,0,,0,0,
+img_0234,1,John Boehner,0,1,
+img_0235,0,,0,0,
+img_0236,0,,0,0,
+img_0237,0,,0,0,
+img_0238,0,,0,0,
+img_0239,0,,0,0,
+img_0240,0,,0,0,
+img_0241,0,,0,0,
+img_0242,0,,0,0,pyramids; distant camel riders not counted
+img_0243,0,,0,0,
+img_0244,0,,0,0,
+img_0245,0,,0,0,
+img_0246,0,,0,0,
+img_0247,0,,0,0,Chichen Itza; distant crowd not counted
+img_0248,0,,0,0,Mount Rushmore sculpture
+img_0249,0,,0,0,
+img_0250,0,,0,0,
+img_0251,0,,0,0,
+img_0252,1,Mona Lisa,0,1,painting (Leonardo); famous artwork rather than photo
+img_0253,0,,0,6,"Iwo Jima flag raising; iconic photo, individuals not recognisable"
+img_0254,1,Beyonce,0,1,B&W
+img_0255,1,Kevin Durant,0,1,Thunder jersey
+img_0256,0,,0,0,
+img_0257,1,Dwyane Wade,0,1,Heat jersey
+img_0258,0,,0,0,
+img_0259,0,,0,0,
+img_0260,0,,0,1,woman unloading horse
+img_0261,0,,0,0,
+img_0262,0,,0,1,show-jumping rider
+img_0263,1,Sean Bean,1,1,as Ned Stark on the Iron Throne
+img_0264,1,Bill O'Reilly,0,1,
+img_0265,0,,0,0,
+img_0266,1,Emilia Clarke,1,15,as Daenerys with crowd behind; count approx
+img_0267,0,,0,0,
+img_0268,0,,0,0,
+img_0269,0,,0,0,
+img_0270,0,,0,0,
+img_0271,0,,0,0,
+img_0272,0,,0,0,
+img_0273,0,,0,0,
+img_0274,0,,0,0,
+img_0275,0,,0,0,
+img_0276,0,,0,0,
+img_0277,0,,0,0,
+img_0278,0,,0,0,
+img_0279,0,,0,0,
+img_0280,1,Elon Musk,0,1,
+img_0281,0,,1,0,Yoda (puppet)
+img_0282,1,Patricia Heaton,1,2,"Everybody Loves Raymond still, with child"
+img_0283,0,,0,1,"woman thumbs-up at airport, unknown"
+img_0284,1,Sweeten twin (Everybody Loves Raymond),1,1,child actor; which twin uncertain; probable
+img_0285,0,,0,0,
+img_0286,0,,0,0,
+img_0287,0,,0,0,
+img_0288,0,,0,0,
+img_0289,1,Richard Rawlings; Aaron Kaufman,0,2,Fast N' Loud / Gas Monkey Garage; probable
+img_0290,1,Ray Romano,0,1,
+img_0291,1,Peter Boyle; Doris Roberts,1,2,Everybody Loves Raymond (Frank & Marie)
+img_0292,0,,0,0,
+img_0293,0,,0,3,"garage crew, unknown (possibly Gas Monkey Garage)"
+img_0294,0,,0,0,
+img_0295,0,,0,0,
+img_0296,0,,0,0,
+img_0297,0,,0,0,
+img_0298,0,,0,1,"eye close-up, partial face"
+img_0299,1,John Krasinski,1,3,13 Hours still; centre figure
+img_0300,0,,0,12,"hockey game; players + crowd, approx"
+img_0301,0,,0,1,Ken Block Gymkhana car; person unrecognisable
+img_0302,0,,0,0,wrist with Apple Watch only
+img_0303,0,,0,0,
+img_0304,0,,0,0,
+img_0305,1,Ruby Rose,0,1,
+img_0306,1,Jim Parsons,0,1,
+img_0307,1,John Boyega; Daisy Ridley,1,2,Star Wars TFA (Finn & Rey)
+img_0308,0,,0,0,
+img_0309,0,,1,0,Optimus Prime (Transformers CGI)
+img_0310,0,,0,2,firefighters
+img_0311,0,,0,0,Call of Duty soldier render
+img_0312,1,Megan Fox,1,1,Transformers still
+img_0313,0,,1,0,Filburt (Rocko's Modern Life) cartoon
+img_0314,0,,0,0,
+img_0315,0,,0,0,
+img_0316,0,,1,0,Dory (animated)
+img_0317,0,,1,0,Vault Boy (Fallout)
+img_0318,0,,1,0,Rocko (cartoon)
+img_0319,0,,1,0,"Aloy (Horizon Zero Dawn, CGI)"
+img_0320,0,,0,0,
+img_0321,0,,0,0,
+img_0322,0,,0,1,unknown man with glasses (lab/clinic member?)
+img_0323,0,,0,0,"Skyrim game scene, armoured figure from behind"
+img_0324,0,,0,0,
+img_0325,0,,0,0,
+img_0326,1,Ariel Winter,0,1,
+img_0327,0,,0,0,
+img_0328,0,,0,0,
+img_0329,0,,0,0,
+img_0330,1,Lionel Messi,0,1,Barcelona kit
+img_0331,1,Neymar,0,1,Barcelona kit
+img_0332,0,,0,0,
+img_0333,0,,0,1,"US Olympic weightlifter, identity uncertain"
+img_0334,1,Norman Reedus,1,1,as Daryl Dixon
+img_0335,0,,0,0,
+img_0336,0,,0,0,
+img_0337,0,,0,0,Neptune statue
+img_0338,0,,0,0,
+img_0339,0,,0,0,beach; distant beachgoers not counted
+img_0340,0,,0,0,
+img_0341,0,,0,0,Bellas Artes; distant crowd not counted
+img_0342,1,Tom Brady,0,1,Patriots helmet
