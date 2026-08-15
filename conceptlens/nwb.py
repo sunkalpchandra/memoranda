@@ -97,16 +97,40 @@ def read_all_images(f: h5py.File, skip_null: bool = True) -> dict[str, np.ndarra
     return out
 
 
+def presentation_index_mode(f: h5py.File) -> str:
+    """How ``StimulusPresentation/data`` refers to templates.
+
+    * Sternberg files: positional index into ``order_of_images`` (0..5).
+    * Screening files: ``image number - 1`` (e.g. value 68 -> ``image_69``),
+      even though only 54–63 templates exist (numbers 10, 20, ... are unused).
+    """
+    names = stimulus_names(f)
+    idx = f["stimulus/presentation/StimulusPresentation/data"][:].astype(int)
+    if idx.max() < len(names):
+        return "positional"
+    nums = {int(n.split("_")[-1]) for n in names}
+    if all((v + 1) in nums for v in np.unique(idx)):
+        return "number_minus_1"
+    raise ValueError("cannot interpret StimulusPresentation indices")
+
+
 def read_presentation(f: h5py.File) -> pd.DataFrame:
     names = stimulus_names(f)
     grp = f["stimulus/presentation/StimulusPresentation"]
     idx = grp["data"][:].astype(int)
     ts = grp["timestamps"][:]
+    mode = presentation_index_mode(f)
+    if mode == "positional":
+        stim_names = [names[i] for i in idx]
+    else:
+        stim_names = [f"image_{i + 1}" for i in idx]
+    pos = {n: k for k, n in enumerate(names)}
     return pd.DataFrame(
         {
             "presentation": np.arange(len(idx)),
-            "stim_index": idx,
-            "stim_name": [names[i] for i in idx],
+            "raw_index": idx,
+            "stim_index": [pos[n] for n in stim_names],
+            "stim_name": stim_names,
             "onset": ts,
         }
     )
