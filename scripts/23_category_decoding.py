@@ -87,7 +87,7 @@ def main() -> None:
     fig, ax = plt.subplots(figsize=(7, 4.2))
     order = ["MTL", "MTL_concept", "amygdala", "hippocampus", "MFC"]
     d = summ.set_index("region").reindex(order)
-    ax.bar(range(len(d)), d.acc_minus_chance * 100, yerr=d.sem * 100, color=["#C44E52", "#8C2D3A", "#DD8452", "#55A868", "#4C72B0"], capsize=3)
+    ax.bar(range(len(d)), d["acc_minus_chance"].to_numpy() * 100, yerr=d["sem"].to_numpy() * 100, color=["#C44E52", "#8C2D3A", "#DD8452", "#55A868", "#4C72B0"], capsize=3)
     for i, r in enumerate(order):
         g = df[df.region == r]
         ax.scatter(np.full(len(g), i) + np.random.default_rng(0).uniform(-0.15, 0.15, len(g)), g.acc_minus_chance * 100, s=10, color="k", alpha=0.5)
