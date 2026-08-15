@@ -240,3 +240,39 @@ they showed at the time of writing and how to read them.
 - RSA (MTL vs CLIP ln_post): 100–600 ms 0.059, 200–1000 0.060, 300–800 0.057, 200–500 0.069,
   500–1000 0.028. Similarity tuning (CLIP): 0.185 / 0.170 / 0.170 / 0.186 / 0.108. Conclusions
   hold for any window that includes the 200–500 ms transient; late-only windows halve them.
+
+## Phase 7 additions (scripts 66–69; agents, independently verified)
+
+### Hand-labelled famous people (script 66; configs/famous_labels.csv)
+- All 342 pictures hand-labelled (famous / identity / fictional_character / n_people): 150 contain
+  a person, 113 show a famous person (97 of the 119 face_person pictures), 41 named fictional or
+  costumed characters, 113 identities named (CLIP `attr_famous` vs the hand label: AUC 0.79).
+- **The stimulus set is nearly all famous people** (89 % of shown person pictures), so
+  "famous vs non-famous person" is at ceiling: MTL concept cells 85/90 (94 %) famous vs 92 %
+  expected (Fisher p = 0.18, permutation p = 0.41); amygdala/hippocampus/MFC likewise n.s.
+- Against all pictures, "famous" is enriched (MTL 63 % vs 48 %, perm p < 0.001) — but so is
+  "person" (67 % vs 53 %): the famous effect is the person/face effect, not fame beyond it.
+- Memoranda: famous 56 % vs 44 % (OR 1.64, p = 0.02, within-subject AUC 0.57) ≡ person vs rest
+  (OR 1.66); among person pictures 89 % vs 87 % (n.s.); fictional/costumed characters 13 % vs
+  6 % (OR 2.3, p = 0.02; 13 memoranda — exploratory).
+
+### Hierarchical model of RSA (script 67)
+- ρ ~ depth × region with subject random intercept + slope (1887 session×layer obs, 20 subjects):
+  MTL − MFC intercept +0.015 (z 4.7), depth × MTL +0.022 (z 4.1, p 4e-5), depth slope in MTL
+  +0.031 (z 6.0), in MFC +0.008 (n.s.). Amygdala vs hippocampus depth-slope contrast +0.021
+  (z 3.5, p 6e-4); slope within amygdala +0.029 (z 6.9), hippocampus +0.008 (p 0.08).
+- Per-model MTL depth slopes all positive (ResNet-50 +0.047, CLIP +0.046 … ViT +0.024), DINOv2-S
+  the only n.s. one (+0.008). Last layer: MTL − MFC +0.037 (z 5.8); transformer − CNN +0.0002
+  (n.s.). Region matters, family does not. (Layers within a session treated as independent → z optimistic.)
+
+### Time-resolved encoding (script 68)
+- 100-ms windows, pre-stimulus baseline subtracted (raw CV r is −0.12…−0.20 before onset):
+  MTL concept cells rise from 250 ms and peak at 300 ms — category one-hot 0.21 ± 0.03, CLIP
+  ln_post 0.19 ± 0.03, ResNet-50 0.15, AlexNet conv1 0.12 (350 ms); at 300 ms CLIP > ResNet-50
+  (p = 0.03) > conv1 (p = 3e-4); decay to ~0.05 by 600–700 ms. MFC (n = 29): weak and later
+  (CLIP 0.11 at 450 ms, p = 0.03). Same latency as RSA (350 ms) and similarity tuning (325 ms).
+
+### Model scale (script 69)
+- CLIP ViT-B/32 → ViT-L/14 and DINOv2-S → B, depth-matched, on RSA and similarity tuning:
+  no scale effect at the last layer (|Δρ| ≤ 0.01, p ≥ 0.06); mid-depth nominal differences go
+  in opposite directions and none survives FDR (min q = 0.08). Bigger is not more brain-like here.
