@@ -58,11 +58,12 @@ WM maintenance when their image is held (p = 7e-9), MFC cells do not.
 
 **The stimuli.** Only 342 unique pictures underlie the 41 files. CLIP zero-shot: 37 % faces /
 people, 14 % animals, 11 % landmarks, 10 % vehicles, the rest objects, scenes, nature, food.
-Nothing about an image (category, CLIP attributes, low-level statistics, DNN-space
-typicality / isolation) predicts whether it became one of a patient's five Sternberg
-memoranda — but our replicated neural selectivity does (AUC ≈ 0.7), and an image that
-"won" in other patients is not more likely to win in this one (LOSO AUC 0.54). Being a
-concept-cell image is a *patient × image* property.
+The only picture property that predicts whether an image became one of a patient's five
+Sternberg memoranda is a detected face (62 % vs 49 %, AUC 0.57, q = 0.02); category, CLIP
+attributes, low-level statistics and DNN-space typicality / isolation do not. Our replicated
+neural selectivity does (AUC ≈ 0.7), and an image that "won" in other patients is not more
+likely to win in this one (LOSO AUC 0.54). Being a concept-cell image is largely a
+*patient × image* property.
 
 **What concept cells like.** Bias toward pictures with a detected face (66 % vs 53 % shown,
 p = 0.003; amygdala-driven) and famous people, against text/logos; per shown image, animals

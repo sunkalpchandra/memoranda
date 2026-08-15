@@ -130,3 +130,9 @@ they showed at the time of writing and how to read them.
   as pooled features (AlexNet conv1 rp 0.018 vs gap 0.014; ResNet-50 layer4 0.047 vs 0.054);
   Euclidean vs correlation model RDMs likewise. Early layers do not match the MTL better when
   spatial layout is kept.
+
+## A2 amendment — faces (script 30 with MTCNN columns)
+- Memoranda contain a detected face more often than the rest of the screening set (62 % vs
+  49 %; AUC 0.565 pooled / 0.569 within-subject; q = 0.02) and larger faces (AUC 0.57,
+  q = 0.02). This is the one picture-level property that separates memoranda; it matches the
+  amygdala concept cells' face preference (A5).
