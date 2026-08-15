@@ -17,18 +17,24 @@ import pandas as pd
 from memoranda.paths import FIGURES, TABLES
 
 ORDER = {
-    "alexnet": ["conv1", "conv3", "conv5", "fc6"],
+    "alexnet": ["conv1", "conv2", "conv3", "conv4", "conv5", "fc6", "fc7", "logits"],
+    "vgg16": ["conv3_3", "conv5_3", "fc6", "fc7"],
+    "resnet18": ["layer2", "layer4", "logits"],
     "resnet50": ["layer1", "layer2", "layer3", "layer4", "avgpool"],
-    "clip_vitb32": ["block2", "block5", "block8", "block11", "ln_post"],
+    "convnext_tiny": ["stage2", "stage4", "logits"],
+    "vit_b_16": ["block2", "block8", "ln"],
+    "dinov2_small": ["block2", "block5", "block8", "norm"],
+    "clip_vitb32": ["block2", "block5", "block8", "block11", "ln_post", "embed"],
+    "clip_rn50": ["layer2", "layer4", "attnpool"],
 }
-COL = {"alexnet": "#4C72B0", "resnet50": "#55A868", "clip_vitb32": "#C44E52"}
+COL = {"alexnet": "#4C72B0", "vgg16": "#8da0cb", "resnet18": "#a1d99b", "resnet50": "#55A868", "convnext_tiny": "#7f7f7f", "vit_b_16": "#8172B2", "dinov2_small": "#DD8452", "clip_vitb32": "#C44E52", "clip_rn50": "#e7969c"}
 
 
 def main() -> None:
     parts = [pd.read_csv(TABLES / "A4_encoding_null_summary.csv")]
-    depth = TABLES / "A4_encoding_null_summary_depth.csv"
-    if depth.exists():
-        parts.append(pd.read_csv(depth))
+    for extra in ("A4_encoding_null_summary_depth.csv", "A4_encoding_null_summary_wide.csv"):
+        if (TABLES / extra).exists():
+            parts.append(pd.read_csv(TABLES / extra))
     df = pd.concat(parts, ignore_index=True).drop_duplicates(["region", "model", "layer"])
     df.to_csv(TABLES / "A4_debiased_all.csv", index=False)
     print(df[df.region == "MTL"].sort_values(["model", "layer"]).round(3).to_string(index=False))
@@ -55,6 +61,28 @@ def main() -> None:
     axes[0].legend(fontsize=7)
     fig.tight_layout()
     fig.savefig(FIGURES / "A4_debiased_depth.png", dpi=150)
+
+    # primary metric after the review: fraction of cells individually significant vs their own shuffle null
+    fig, axes = plt.subplots(1, 2, figsize=(12, 4.3), sharey=True)
+    for ax, region in zip(axes, ("MTL", "MFC")):
+        d = df[df.region == region]
+        for m, lay in ORDER.items():
+            g = d[d.model == m].set_index("layer").reindex(lay).dropna(subset=["frac_sig"])
+            if len(g) < 2:
+                continue
+            ax.plot(range(len(g)), g.frac_sig * 100, "o-", color=COL[m], label=m, ms=4)
+        for base, ls in (("category", "--"), ("lowlevel", ":")):
+            b = d[(d.model == "baseline") & (d.layer == base)]
+            if len(b):
+                ax.axhline(b.frac_sig.iloc[0] * 100, color="grey", ls=ls, lw=1, label=f"{base} baseline")
+        ax.axhline(5, color="k", lw=0.6, ls="-.")
+        ax.set_title(f"{region} concept cells: % cells with p < 0.05 vs own shuffle null")
+        ax.set_xlabel("layer (early → late, per model)")
+        ax.grid(alpha=0.25)
+    axes[0].set_ylabel("% of cells individually significant")
+    axes[0].legend(fontsize=6.5, ncol=2)
+    fig.tight_layout()
+    fig.savefig(FIGURES / "A4_fracsig_depth.png", dpi=150)
 
 
 if __name__ == "__main__":
