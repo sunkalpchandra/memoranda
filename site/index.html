@@ -27,6 +27,7 @@
     <ul>
       <li><a href="#hero">Depth</a></li>
       <li><a href="#findings">Six findings</a></li>
+      <li><a href="#further">Further experiments</a></li>
       <li><a href="#pictures">The pictures</a></li>
       <li><a href="#methods">How it was done</a></li>
       <li><a href="#caveats">Caveats</a></li>
@@ -52,7 +53,7 @@
       <li><a class="primary" href="https://github.com/sunkalpchandra/memoranda">Code on GitHub</a></li>
       <li><a href="https://dandiarchive.org/dandiset/000469">Dataset · DANDI 000469</a></li>
       <li><a href="https://github.com/sunkalpchandra/memoranda/blob/main/docs/results.md">Results log</a></li>
-      <li><a href="https://github.com/sunkalpchandra/memoranda/blob/main/results/report.html">Full report</a></li>
+      <li><a href="report.html">Full report</a></li>
     </ul>
     <div class="stats" role="list" aria-label="Key numbers">
       <div class="stat" role="listitem">
@@ -224,6 +225,93 @@
                 <img src="figures/A6_behavior.png" width="1950" height="600" alt="Three panels of within-subject z-scored reaction time on correct OUT trials against maximum cosine similarity between probe and encoded set, binned. CLIP: RT rises from about −0.05 to +0.12 with similarity (mean slope 0.055, p = 0.044). ResNet-50 (slope 0.003, p = 0.92) and DINOv2 (slope 0.009, p = 0.78) show no trend.">
               </a>
               <figcaption>A6 · lure similarity vs reaction time</figcaption>
+            </figure>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+
+  <section class="block" id="further" aria-labelledby="further-h">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Further experiments</span>
+          <h2 id="further-h">Pressure-testing the argument</h2>
+        </div>
+        <p class="muted small">Four follow-ups run after the main analyses, each independently re-executed and checked. Scripts 66–69 in the repo; numbers in <a href="https://github.com/sunkalpchandra/memoranda/blob/main/docs/results.md">docs/results.md</a>.</p>
+      </div>
+
+      <div class="findings">
+
+        <article class="finding" id="x1">
+          <div class="text">
+            <div class="n" aria-hidden="true">+</div>
+            <h3>"Famous" is just "person": the picture set is nearly all celebrities.</h3>
+            <p>All 342 pictures were hand-labelled for famous person, identity, fictional character and number of people: 150 contain a person and 113 of those show someone famous (CLIP's zero-shot "famous" attribute agrees with the hand label at AUC 0.79). Because 89 % of the person pictures a cell saw are famous, "famous vs non-famous person" is at ceiling — MTL concept cells 94 % vs 92 % expected, n.s. — and the apparent famous enrichment (63 % vs 48 %) is the person/face effect itself. Memoranda: famous 56 % vs 44 % of the rest, identical to person vs rest.</p>
+          </div>
+          <div class="thumbs">
+            <figure>
+              <a class="figlink" href="figures/A5_famous.png" data-caption="A5 — hand-labelled famous people: concept-cell preference and memoranda enrichment">
+                <img src="figures/A5_famous.png" width="1800" height="1000" alt="Four panels: fraction famous among preferred vs shown pictures by area, memoranda vs rest, and permutation nulls; the famous-vs-non-famous-person contrast sits on top of its null.">
+              </a>
+              <figcaption>A5 · hand-labelled fame vs concept-cell preference</figcaption>
+            </figure>
+          </div>
+        </article>
+
+        <article class="finding" id="x2">
+          <div class="text">
+            <div class="n" aria-hidden="true">+</div>
+            <h3>The depth effect survives a hierarchical model; it is an amygdala effect.</h3>
+            <p>Mixed-effects regression of ρ on relative layer depth × region with random intercepts and slopes per patient (1887 session × layer observations): depth × MTL interaction +0.022 (z = 4.1), depth slope inside the MTL +0.031 (z = 6.0) vs +0.008 in the MFC (n.s.). Splitting the MTL: the amygdala slope is +0.029 (z = 6.9), the hippocampal slope +0.008 (p = 0.08), contrast z = 3.5. Every model's slope is positive (ResNet-50 and CLIP steepest); at the last layer, region matters (MTL − MFC +0.037, z = 5.8) and model family (CNN vs transformer) does not (+0.0002).</p>
+          </div>
+          <div class="thumbs">
+            <figure>
+              <a class="figlink" href="figures/A8_hierarchical_rsa.png" data-caption="A8 — mixed-effects fits of ρ vs relative layer depth by region">
+                <img src="figures/A8_hierarchical_rsa.png" width="1800" height="600" alt="Three panels of Spearman rho versus relative layer depth with fitted lines per region: MTL rises steeply, MFC stays flat; amygdala rises, hippocampus nearly flat; CNN and transformer families overlap.">
+              </a>
+              <figcaption>A8 · hierarchical model of RSA by depth and region</figcaption>
+            </figure>
+          </div>
+        </article>
+
+        <article class="finding" id="x3">
+          <div class="text">
+            <div class="n" aria-hidden="true">+</div>
+            <h3>Time-resolved encoding models peak at 300 ms — the same latency as everything else.</h3>
+            <p>Sliding 100-ms ridge encoding models from layer features to each concept cell's tuning, with the cell's own pre-stimulus windows as the bias baseline: MTL cells rise from 250 ms and peak at 300 ms (CLIP 0.19 ± 0.03, ResNet-50 0.15, AlexNet conv1 0.12, category one-hot 0.21), CLIP &gt; ResNet-50 &gt; conv1 at the peak, decaying to ~0.05 by 600–700 ms. MFC concept cells are weak and later (0.11 at 450 ms). Population RSA (350 ms), similarity tuning (325 ms) and encoding (300 ms) all point at the same ~300-ms transient.</p>
+          </div>
+          <div class="thumbs">
+            <figure>
+              <a class="figlink" href="figures/A4_time_resolved_encoding.png" data-caption="A4 — time-resolved encoding models, baseline-subtracted">
+                <img src="figures/A4_time_resolved_encoding.png" width="1800" height="650" alt="Two panels, MTL and MFC concept cells: baseline-subtracted cross-validated r over time for CLIP, ResNet-50, AlexNet conv1 and category predictors; MTL curves peak sharply at 300 ms, MFC curves are small and later.">
+              </a>
+              <figcaption>A4 · time-resolved encoding</figcaption>
+            </figure>
+          </div>
+        </article>
+
+        <article class="finding" id="x4">
+          <div class="text">
+            <div class="n" aria-hidden="true">+</div>
+            <h3>Bigger models are not more brain-like here.</h3>
+            <p>CLIP ViT-B/32 → ViT-L/14 (3.5× parameters, finer patches) and DINOv2-S → DINOv2-B (4×), compared depth-for-depth on the same two criteria: at the last layer the differences are |Δρ| ≤ 0.01 (all p ≥ 0.06); mid-depth nominal differences go in opposite directions for the two families and none survives FDR (min q = 0.08). Together with the CLIP-RN50 ≡ ImageNet-RN50 result and the flat model ranking, neither architecture, objective nor scale moves the correspondence — what the MTL shares with these networks is what all of them have in their late layers.</p>
+          </div>
+          <div class="thumbs">
+            <figure>
+              <a class="figlink" href="figures/A7_model_scale.png" data-caption="A7 — model scale: CLIP B/32 vs L/14, DINOv2 S vs B">
+                <img src="figures/A7_model_scale.png" width="1800" height="1000" alt="Four panels comparing small and large CLIP and DINOv2 models at matched relative depths on RSA and similarity tuning; the curves overlap and Wilcoxon p-values are mostly above 0.05.">
+              </a>
+              <figcaption>A7 · scale contrast, depth-matched</figcaption>
+            </figure>
+            <figure>
+              <a class="figlink" href="figures/A4_debiased_depth.png" data-caption="A4 — shuffle-debiased encoding r vs layer depth">
+                <img src="figures/A4_debiased_depth.png" width="1800" height="650" alt="Debiased encoding r rising with layer depth for AlexNet, ResNet-50 and CLIP in MTL concept cells; category and low-level baselines as horizontal lines.">
+              </a>
+              <figcaption>A4 · shuffle-debiased encoding by depth</figcaption>
             </figure>
           </div>
         </article>
