@@ -25,8 +25,8 @@ from memoranda import imstats
 from memoranda.analysis import geometry as G
 from memoranda.analysis import stats as S
 from memoranda.analysis.tables import image_table, subject_image_table
-from memoranda.features import load_features
-from memoranda.paths import FEATURES, FIGURES, TABLES
+from memoranda.features import load_space
+from memoranda.paths import FIGURES, TABLES
 
 ATTRS = ["famous", "face_visible", "single_object", "indoor", "natural", "text_present", "colorful", "emotional", "child", "smiling"]
 GEOM_SPACES = {
@@ -38,14 +38,7 @@ GEOM_SPACES = {
 
 
 def _load_space(name: str, uids: np.ndarray) -> np.ndarray:
-    model, layer, view = GEOM_SPACES[name]
-    if model == "clip_vitb32" and layer == "embed":
-        z = np.load(FEATURES / "clip_vitb32_embed.npz", allow_pickle=True)
-        X, stored = z["embed"], z["image_uid"]
-    else:
-        X, stored = load_features(model, layer, view)
-    pos = {u: i for i, u in enumerate(stored)}
-    return X[[pos[u] for u in uids]]
+    return load_space(*GEOM_SPACES[name], uids=uids)[0]
 
 
 def a1_composition(it: pd.DataFrame, st: pd.DataFrame) -> None:
