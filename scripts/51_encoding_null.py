@@ -18,9 +18,9 @@ import pandas as pd
 
 from memoranda import neural
 from memoranda.analysis import encoding as E
-from memoranda.features import load_features
+from memoranda.features import load_space
 from memoranda.log import get_logger
-from memoranda.paths import FEATURES, MANIFESTS, TABLES
+from memoranda.paths import MANIFESTS, TABLES
 
 log = get_logger("encnull")
 PREDICTORS = [("alexnet", "fc6", "gap"), ("vgg16", "fc7", "gap"), ("resnet50", "avgpool", "gap"), ("clip_vitb32", "ln_post", "cls"), ("dinov2_small", "block8", "cls"), ("baseline", "category", "-")]
@@ -29,13 +29,7 @@ PREDICTORS = [("alexnet", "fc6", "gap"), ("vgg16", "fc7", "gap"), ("resnet50", "
 def feats_for(model, layer, view, uids, labels_df):
     if model == "baseline":
         return pd.get_dummies(labels_df.loc[uids, "category"]).to_numpy(float)
-    if model == "clip_vitb32" and layer == "embed":
-        z = np.load(FEATURES / "clip_vitb32_embed.npz", allow_pickle=True)
-        X, stored = z["embed"], z["image_uid"]
-    else:
-        X, stored = load_features(model, layer, view)
-    pos = {u: i for i, u in enumerate(stored)}
-    return X[[pos[u] for u in uids]].astype(np.float64)
+    return load_space(model, layer, view, uids=uids)[0]
 
 
 def main() -> None:
