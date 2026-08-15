@@ -35,6 +35,13 @@ def main() -> None:
     rows.append({"test": "similarity tuning ~ rel_depth (MTL concept; RI subject + cell)", "term": "rel_depth", "estimate": m1.params["rel_depth"], "se": m1.bse["rel_depth"], "z": m1.tvalues["rel_depth"], "p": m1.pvalues["rel_depth"], "n_obs": int(m1.nobs), "n_groups": d.subject.nunique()})
     rows.append({"test": "similarity tuning ~ rel_depth (MTL concept; RI subject + cell)", "term": "Intercept", "estimate": m1.params["Intercept"], "se": m1.bse["Intercept"], "z": m1.tvalues["Intercept"], "p": m1.pvalues["Intercept"], "n_obs": int(m1.nobs), "n_groups": d.subject.nunique()})
 
+    # crossed-ish random effects: subject groups, with variance components for cell and model (review L5)
+    try:
+        m1b = smf.mixedlm("rho ~ rel_depth", d, groups=d["subject"], re_formula="1", vc_formula={"cell": "0 + C(cell)", "model": "0 + C(model)"}).fit(reml=True)
+        rows.append({"test": "similarity tuning ~ rel_depth (RI subject + cell + model)", "term": "rel_depth", "estimate": m1b.params["rel_depth"], "se": m1b.bse["rel_depth"], "z": m1b.tvalues["rel_depth"], "p": m1b.pvalues["rel_depth"], "n_obs": int(m1b.nobs), "n_groups": d.subject.nunique()})
+    except Exception as e:  # noqa: BLE001
+        rows.append({"test": "similarity tuning ~ rel_depth (RI subject + cell + model)", "term": f"failed: {type(e).__name__}", "estimate": np.nan, "se": np.nan, "z": np.nan, "p": np.nan, "n_obs": len(d), "n_groups": d.subject.nunique()})
+
     late = st[(st.rel_depth >= 0.75)].dropna(subset=["rho"])
     late = late[late.group.isin(["MTL concept", "MFC concept", "MTL non-concept"])]
     late["group"] = pd.Categorical(late.group, ["MTL non-concept", "MTL concept", "MFC concept"])
