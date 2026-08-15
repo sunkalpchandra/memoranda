@@ -157,3 +157,10 @@ they showed at the time of writing and how to read them.
   Hippocampus: late layers z ≈ 2.4–2.7 (p ≈ 0.01), category 1.4 (n.s.). MFC: z ≈ 3.
   (This fixed-effects null asks whether picture identity carries structure at all; the
   across-session t-tests in A3 above ask whether the effect is consistent between patients.)
+
+## A3 (cont.) — Sternberg memoranda geometry (script 24)
+- MTL RDMs over the 5 memoranda (19 subjects, 190 within-subject-ranked pairs): encoding
+  and maintenance (load-1, 0–2.5 s) RDMs are unrelated to any DNN layer or to category
+  (all permutation p > 0.15); the maintenance RDM correlates with the encoding RDM (ρ = 0.19,
+  p = 0.02). With five sparse "winner" pictures the pairwise structure is flat — the visual
+  similarity structure lives among the *non*-preferred pictures, not among the winners.
