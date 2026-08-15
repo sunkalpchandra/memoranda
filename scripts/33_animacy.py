@@ -92,6 +92,11 @@ def main() -> None:
     print(tab)
     ct = pd.crosstab(m.area, m.animal)
     print("amygdala vs hippocampus animal-pref Fisher p =", sps.fisher_exact(ct.values)[1])
+    amy = m[m.area == "amygdala"]
+    ct_h = pd.crosstab(amy.hemisphere, amy.animal).reindex(index=["R", "L"], columns=[True, False], fill_value=0)
+    p_rl = sps.fisher_exact(ct_h.values)[1]
+    print("right vs left amygdala animal-pref Fisher p =", p_rl, ct_h.values.tolist())
+    tab["fisher_p_R_vs_L_amygdala"] = p_rl
     tab.to_csv(TABLES / "A5_animal_cells_area_hemisphere.csv")
 
     fig, axes = plt.subplots(1, 2, figsize=(12, 4.2))
