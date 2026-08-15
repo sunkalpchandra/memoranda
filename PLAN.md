@@ -73,9 +73,13 @@ Status legend: `[ ]` todo · `[~]` in progress · `[x]` done
 - [x] A0 maintenance persistent-activity replication (script 21)
 - [x] within/between-category RSA (53), commonality analysis (52), time-resolved RSA (46)
 - [x] similarity tuning per cell (47), by area/depth (50), time-resolved (54)
-- [~] encoding label-shuffle null (51) — running
-- [ ] face-trained network (e.g. VGGFace-style) as an extra model
+- [x] encoding label-shuffle null (51)
+- [x] face-trained network (VGGFace2 InceptionResnetV1) + MTCNN faces (15, 55)
 - [ ] time-resolved encoding models
-- [ ] hand-checked category labels for the 342 pictures
-- [ ] Sternberg probe-period analyses (probe cells vs DNN novelty/similarity)
-- [ ] CI runs the manifest-dependent tests on committed CSVs (done in workflow; verify on GitHub)
+- [x] hand-checked category labels for the 342 pictures (16)
+- [x] Sternberg probe-period (22) and memoranda geometry (24)
+- [x] CI green (ruff + pytest on committed CSVs)
+- [x] group-level permutation (58), category decoding (23), cross-patient tuning (36), LOSO preference (37), rp robustness (56), reliability (57)
+- [ ] time-resolved encoding models
+- [ ] hierarchical (mixed-effects) versions of the group tests
+- [ ] noise-corrected encoding at each layer with the shuffle null (extend 51 to all layers)
