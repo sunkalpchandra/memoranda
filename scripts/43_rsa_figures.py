@@ -59,7 +59,7 @@ def best_layer_bars(summ: pd.DataFrame, per: pd.DataFrame) -> pd.DataFrame:
             if not len(d):
                 continue
             best = d.loc[d.rho_mean.idxmax()]
-            rows.append({"region": region, "model": m, "best_layer": best.layer, "view": best.view, "rho_mean": best.rho_mean, "rho_sem": best.rho_sem, "p": best.p, "rho_norm_mean": best.rho_norm_mean, "n_sessions": best.n_sessions})
+            rows.append({"region": region, "model": m, "best_layer": best.layer, "view": best["view"], "rho_mean": best.rho_mean, "rho_sem": best.rho_sem, "p": best.p, "rho_norm_mean": best.rho_norm_mean, "n_sessions": best.n_sessions})
         for base in ("category", "lowlevel"):
             d = summ[(summ.region == region) & (summ.model == "baseline") & (summ.layer == base)]
             if len(d):
