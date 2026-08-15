@@ -33,7 +33,30 @@ def load_presentations(subject: int, session: int) -> pd.DataFrame:
     p = p[(p.subject == subject) & (p.session == session)].reset_index(drop=True)
     img = pd.read_csv(MANIFESTS / "images.csv")
     img = img[(img.subject == subject) & (img.session == session)][["stim_name", "image_uid", "is_null"]]
-    return p.merge(img, on="stim_name", how="left")
+    p = p.merge(img, on="stim_name", how="left")
+    p["role"] = "screening"
+    if session == 2:
+        p["role"] = sternberg_roles(subject, p["onset"].to_numpy())
+    return p
+
+
+def sternberg_roles(subject: int, onsets: np.ndarray, tol: float = 1e-3) -> np.ndarray:
+    """Label each Sternberg presentation onset as enc1/enc2/enc3/probe/null."""
+    t = pd.read_csv(MANIFESTS / "trials_sternberg.csv")
+    t = t[t.subject == subject]
+    roles = np.array(["null"] * len(onsets), dtype=object)
+    for col, name in [
+        ("timestamps_Encoding1", "enc1"),
+        ("timestamps_Encoding2", "enc2"),
+        ("timestamps_Encoding3", "enc3"),
+        ("timestamps_Probe", "probe"),
+    ]:
+        ts = t[col].to_numpy()
+        ts = ts[ts > 0]
+        for k, o in enumerate(onsets):
+            if np.any(np.abs(ts - o) < tol):
+                roles[k] = name
+    return roles
 
 
 def load_units_table(subject: int | None = None, session: int | None = None) -> pd.DataFrame:
@@ -173,7 +196,13 @@ class UnitSelectivity:
     baseline_rate: float
 
 
-def analyse_session(subject: int, session: int, n_perm: int = 1000, min_spikes: int = 50) -> tuple[pd.DataFrame, pd.DataFrame]:
+def analyse_session(
+    subject: int,
+    session: int,
+    n_perm: int = 1000,
+    min_spikes: int = 50,
+    roles: tuple[str, ...] | None = None,
+) -> tuple[pd.DataFrame, pd.DataFrame]:
     """Run the concept-cell pipeline on one session.
 
     Returns (units_df, tuning_df) where tuning_df has one row per (unit, image)
@@ -182,6 +211,8 @@ def analyse_session(subject: int, session: int, n_perm: int = 1000, min_spikes: 
     spikes = load_spikes(subject, session)
     pres = load_presentations(subject, session)
     pres = pres[~pres.is_null.fillna(False)].reset_index(drop=True)
+    if roles is not None:
+        pres = pres[pres.role.isin(roles)].reset_index(drop=True)
     onsets = pres["onset"].to_numpy()
     labels = pres["image_uid"].to_numpy()
 
