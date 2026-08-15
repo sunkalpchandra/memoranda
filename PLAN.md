@@ -40,7 +40,7 @@ Status legend: `[ ]` todo · `[~]` in progress · `[x]` done
 - [x] CLIP zero-shot attributes: famous person?, indoor/outdoor, natural/man-made, #faces
 - [x] low-level image statistics: luminance, RMS contrast, colorfulness, entropy,
       spatial-frequency slope, edge density, saliency proxy
-- [ ] ImageNet top-5 labels per image (for eyeballing)
+- [x] ImageNet top-5 labels per image (script 14)
 - [x] `scripts/10_extract_features.py` (all models, all images, resumable)
 
 ## Phase 4 — Analyses
@@ -49,22 +49,33 @@ Status legend: `[ ]` todo · `[~]` in progress · `[x]` done
       distance-to-centroid, nearest-neighbour distance, CLIP semantic distinctiveness
 - [x] A3 RSA: neural RDM (per session, per area) vs DNN layer RDMs; layer-depth curve;
       noise ceiling via split-half; MTL vs MFC contrast
-- [~] A4 encoding models: ridge from DNN features → per-unit responses, CV R²; which
+- [x] A4 encoding models: ridge from DNN features → per-unit responses, CV R²; which
       layer/model best predicts amygdala vs hippocampus concept cells
-- [ ] A5 decoding: predict "is concept-cell-preferred image" from DNN features (LOSO CV)
+- [x] A5 concept-cell preferences, per-image neural score, animacy × area, image drive (scripts 31–34)
 - [x] A6 behaviour: semantic/perceptual similarity among the 5 memoranda vs RT/accuracy on
       IN/OUT probes; per-trial probe–memoranda max-similarity as regressor
-- [ ] A7 model comparison table: which model family aligns best with human MTL selectivity
+- [x] A7 model comparison table: which model family aligns best with human MTL selectivity
 - [x] statistics: permutation tests, FDR, bootstrap CIs; all seeds fixed
 
 ## Phase 5 — Reporting
-- [ ] figures under `results/figures/` (one script per figure)
+- [x] figures under `results/figures/` (one script per figure)
 - [x] `docs/methods.md`, `docs/results.md`, `docs/decisions.md`
-- [ ] HTML report / artifact dashboard
-- [ ] final README results section
+- [x] HTML report / artifact dashboard (script 90)
+- [x] README results section (living)
 
 ## Working rules
 - small commits, one logical change each; push often
 - every script resumable and idempotent; caches keyed by (model, layer, image_uid)
 - nothing >5 MB committed; raw images and features stay in `data/` (gitignored)
 - reproducibility: `configs/*.yaml` + fixed seeds; `make all` runs the whole pipeline
+
+## Phase 6 — extensions (added 2026-08-15)
+- [x] A0 maintenance persistent-activity replication (script 21)
+- [x] within/between-category RSA (53), commonality analysis (52), time-resolved RSA (46)
+- [x] similarity tuning per cell (47), by area/depth (50), time-resolved (54)
+- [~] encoding label-shuffle null (51) — running
+- [ ] face-trained network (e.g. VGGFace-style) as an extra model
+- [ ] time-resolved encoding models
+- [ ] hand-checked category labels for the 342 pictures
+- [ ] Sternberg probe-period analyses (probe cells vs DNN novelty/similarity)
+- [ ] CI runs the manifest-dependent tests on committed CSVs (done in workflow; verify on GitHub)
