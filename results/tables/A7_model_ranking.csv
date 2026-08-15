@@ -1,0 +1,17 @@
+model,objective,best_layer,view,n,mean,sem,criterion,rank_within_criterion
+alexnet,supervised,conv4,gap,18,0.05058588727883142,0.02108886801993033,"RSA (MTL, per session)",7.0
+vgg16,supervised,logits,gap,18,0.05319791473454497,0.017024516089596153,"RSA (MTL, per session)",5.0
+resnet18,supervised,logits,gap,18,0.05389764878762629,0.01876346896404041,"RSA (MTL, per session)",4.0
+resnet50,supervised,avgpool,gap,18,0.057453912103524435,0.020509011386648852,"RSA (MTL, per session)",2.0
+convnext_tiny,supervised,logits,gap,18,0.04926957290436615,0.01623643172600964,"RSA (MTL, per session)",8.0
+vit_b_16,supervised,ln,gap,18,0.05692750262433777,0.02093704753503312,"RSA (MTL, per session)",3.0
+dinov2_small,self-supervised,norm,gap,18,0.05141417768942128,0.018345070539438256,"RSA (MTL, per session)",6.0
+clip_vitb32,language,ln_post,cls,18,0.060156574297556324,0.0229017542697345,"RSA (MTL, per session)",1.0
+alexnet,supervised,conv5,gap,134,0.1525503427267234,0.020845552548011455,similarity tuning (MTL concept cells),6.0
+vgg16,supervised,conv5_3,gap,134,0.156804779567918,0.02131878769036813,similarity tuning (MTL concept cells),5.0
+resnet18,supervised,layer3,gap,134,0.16182437962525456,0.02127872644860636,similarity tuning (MTL concept cells),3.0
+resnet50,supervised,avgpool,gap,134,0.17295460060701728,0.020304698674936457,similarity tuning (MTL concept cells),1.0
+convnext_tiny,supervised,logits,gap,134,0.15113002675862125,0.0186917084441224,similarity tuning (MTL concept cells),7.0
+vit_b_16,supervised,block8,cls,134,0.14220084034180927,0.019634918929547305,similarity tuning (MTL concept cells),8.0
+dinov2_small,self-supervised,block8,cls,134,0.15724156141328213,0.02057535880798143,similarity tuning (MTL concept cells),4.0
+clip_vitb32,language,ln_post,cls,134,0.17035593675491648,0.02033826203658276,similarity tuning (MTL concept cells),2.0

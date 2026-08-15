@@ -1,0 +1,17 @@
+criterion,model,objective,last_layer_mean,n
+RSA,alexnet,supervised,0.04936143201088634,18
+RSA,vgg16,supervised,0.05319791473454497,18
+RSA,resnet18,supervised,0.05389764878762629,18
+RSA,resnet50,supervised,0.04740172077711381,18
+RSA,convnext_tiny,supervised,0.04926957290436615,18
+RSA,vit_b_16,supervised,0.04428617635446934,18
+RSA,dinov2_small,self-supervised,0.0326876046474005,18
+RSA,clip_vitb32,language,0.05022009011502779,18
+simtuning,alexnet,supervised,0.1471178324670468,134
+simtuning,vgg16,supervised,0.14214457015745519,134
+simtuning,resnet18,supervised,0.14669977224886369,134
+simtuning,resnet50,supervised,0.15397430740950918,134
+simtuning,convnext_tiny,supervised,0.15113002675862125,134
+simtuning,vit_b_16,supervised,0.11994365516089288,134
+simtuning,dinov2_small,self-supervised,0.11990507312494374,134
+simtuning,clip_vitb32,language,0.15722227994095883,134

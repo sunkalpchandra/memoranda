@@ -113,11 +113,11 @@ def main() -> None:
     colors = {"supervised": "#4C72B0", "self-supervised": "#55A868", "language": "#C44E52"}
     for ax, t in zip(axes, out):
         t = t.sort_values("mean")
-        ax.barh(t.model, t["mean"], xerr=t.sem, color=[colors[o] for o in t.objective], capsize=2)
+        ax.barh(t.model.tolist(), t["mean"].to_numpy(), xerr=t["sem"].to_numpy(), color=[colors[o] for o in t.objective], capsize=2)
         ax.set_title(t.criterion.iloc[0], fontsize=10)
         ax.set_xlabel("mean at best layer")
         for y, (_, r) in enumerate(t.iterrows()):
-            ax.text(r["mean"] + r.sem + 0.002, y, r.best_layer, va="center", fontsize=7)
+            ax.text(r["mean"] + r["sem"] + 0.002, y, r.best_layer, va="center", fontsize=7)
     handles = [plt.Rectangle((0, 0), 1, 1, color=c) for c in colors.values()]
     axes[0].legend(handles, colors.keys(), fontsize=8, loc="lower right")
     fig.tight_layout()
