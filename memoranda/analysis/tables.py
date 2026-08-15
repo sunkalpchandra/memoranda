@@ -65,4 +65,9 @@ def subject_image_table() -> pd.DataFrame:
     t["in_sternberg"] = t.sternberg_slot.notna()
     t = t.merge(neural_image_summary("screening"), on=["subject", "image_uid"], how="left")
     t = t.merge(image_table().drop(columns=["first_path"]), on="image_uid", how="left")
+    # leave-one-subject-out reuse: how often did *other* subjects turn this image into a memorandum?
+    n_scr_other = t.n_subjects_screening - t.in_screening.astype(int)
+    n_stb_other = t.n_subjects_sternberg - t.in_sternberg.astype(int)
+    t["sternberg_rate_loso"] = n_stb_other / n_scr_other.replace(0, np.nan)
+    t["n_sternberg_other"] = n_stb_other
     return t

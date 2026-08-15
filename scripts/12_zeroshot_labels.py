@@ -21,7 +21,7 @@ def main() -> None:
     images = [Image.open(p).convert("RGB") for p in table["abs_path"]]
     zs = ClipZeroShot()
     emb = zs.image_embed(images)
-    np.savez_compressed(FEATURES / "clip_vitb32_embed.npz", image_uid=table["image_uid"].to_numpy(), embed=emb)
+    np.savez_compressed(FEATURES / "clip_vitb32_embed.npz", image_uid=table["image_uid"].to_numpy().astype(str), embed=emb)
     labels = label_images(zs, emb, load_taxonomy())
     df = pd.DataFrame({"image_uid": table["image_uid"], **labels})
     df.to_csv(MANIFESTS / "image_labels.csv", index=False)

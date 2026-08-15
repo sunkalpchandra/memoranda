@@ -40,7 +40,7 @@ GEOM_SPACES = {
 def _load_space(name: str, uids: np.ndarray) -> np.ndarray:
     model, layer, view = GEOM_SPACES[name]
     if model == "clip_vitb32" and layer == "embed":
-        z = np.load(FEATURES / "clip_vitb32_embed.npz")
+        z = np.load(FEATURES / "clip_vitb32_embed.npz", allow_pickle=True)
         X, stored = z["embed"], z["image_uid"]
     else:
         X, stored = load_features(model, layer, view)
@@ -175,7 +175,7 @@ def main() -> None:
         a2_contrasts(scr, [f"attr_{a}" for a in ATTRS] + ["category_p"], "clip_attributes"),
         a2_contrasts(scr, imstats.STAT_NAMES[:-1], "low_level"),
         a2_contrasts(scr, [c for c in st.columns if any(c.startswith(f"{sp}_") for sp in GEOM_SPACES) and c != "clip_ws_nn1_dist"], "dnn_geometry"),
-        a2_contrasts(scr, ["n_subjects_screening", "sternberg_rate"], "reuse"),
+        a2_contrasts(scr, ["n_subjects_screening", "sternberg_rate_loso", "n_sternberg_other"], "reuse"),
     ]
     con = pd.concat(blocks, ignore_index=True)
     con.to_csv(TABLES / "A2_feature_contrasts.csv", index=False)
