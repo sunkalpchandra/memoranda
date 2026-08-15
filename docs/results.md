@@ -115,3 +115,12 @@ they showed at the time of writing and how to read them.
   different picture but same category 0.045 (n = 1672); different category 0.008 (n = 2985;
   same-cat vs diff-cat p < 1e-10). Category structure transfers across patients; picture-
   specific tuning does not.
+
+## Update after label corrections (script 16; RSA family re-run)
+- Category RDM with corrected labels is a better model of the MTL: per-session ρ 0.055
+  (was 0.046), pooled 0.117 (was 0.096). Best DNN layers unchanged (per-session 0.060,
+  pooled 0.129). Partial ρ | category + low-level: CLIP ln_post 0.037 (p = 0.032),
+  ResNet-50 avgpool 0.028 (p = 0.051); category | CLIP p = 0.08 (n.s.).
+- Within-category pairs: CLIP 0.052 (p = 0.015), ResNet-50 −0.006 — unchanged conclusion.
+- A1/A2/A5 conclusions unchanged (no memoranda enrichment; MTL concept cells prefer people
+  56 % vs 46 % shown; right-amygdala animal preference p = 0.04).

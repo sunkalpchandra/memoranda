@@ -123,6 +123,13 @@ def load_numbers() -> dict:
     n["sim_best"] = f"{bs.model} {bs.layer}"
     n["sim_rho"] = bs.rho_mean
     n["sim_frac"] = bs.frac_pos * 100
+    pr = pd.read_csv(TABLES / "A3_partial_rsa.csv")
+    pr = pr[pr.region == "MTL"]
+    for key, (m, l) in {"clip": ("clip_vitb32", "ln_post"), "rn": ("resnet50", "avgpool")}.items():
+        row = pr[(pr.model == m) & (pr.layer == l)].iloc[0]
+        n[f"part_{key}_rho"] = row.rho_partial_cat_low_mean
+        n[f"part_{key}_p"] = row.rho_partial_cat_low_p
+        n[f"catpart_{key}_p"] = row.rho_cat_partial_model_p
     tr = pd.read_csv(TABLES / "A3_time_resolved.csv")
     tm = tr[(tr.region == "MTL") & (tr.ref == "clip ln_post")]
     n["t_peak"] = int(tm.loc[tm["mean"].idxmax(), "t"] * 1000)
@@ -267,8 +274,8 @@ def build(embed: bool) -> str:
     parts.append(f"""
 <section id="a3"><div class="head"><span class="tag">A3</span><h2>Population geometry: RSA against eight networks</h2></div>
 <div class="prose">
-<p>For each screening session we built the MTL and MFC population RDM (correlation distance over z-scored unit responses, 54–63 pictures) and compared it with layer-wise RDMs from AlexNet, VGG-16, ResNet-18/50, ConvNeXt-T, ViT-B/16, DINOv2-S and CLIP ViT-B/32. In every architecture the MTL correlation climbs monotonically with depth and peaks at the last layers (best: {n['rsa_best']}, ρ = {n['rsa_best_rho']:.3f}, p = {n['rsa_best_p']:.3f} across 18 sessions; category RDM alone {n['rsa_cat']:.3f}; low-level 0.014). The MFC stays flat near {n['rsa_mfc']:.3f}. Split-half reliability of an MTL RDM is only ≈0.06, so ceiling-normalised ρ is ≈0.2–0.25. Amygdala (0.05–0.06) ≫ hippocampus (0.015); hippocampal geometry is not categorical (ρ = 0.003 with the category RDM) but is weakly captured by late layers.</p>
-<p>Because the picture pool is shared, per-session RDMs can be rank-normalised and pooled over co-shown pairs into a consensus 342×342 MTL RDM. Against it the best layer reaches ρ = {n['pooled_best_rho']:.3f} (permutation p = 0.005, ≈10 null SDs), category {n['pooled_cat']:.3f}. Partialling out category and low-level RDMs leaves late layers significant (ResNet-50 avgpool 0.037, p = 0.026; CLIP 0.043, p = 0.027) while category itself is no longer significant once a late layer is controlled — late layers subsume the categorical structure and add to it. In time, the correspondence rises from ~200 ms and peaks at <b>{n['t_peak']} ms</b> after picture onset, with late layers &gt; category &gt; early layers &gt; low-level throughout.</p>
+<p>For each screening session we built the MTL and MFC population RDM (correlation distance over z-scored unit responses, 54–63 pictures) and compared it with layer-wise RDMs from AlexNet, VGG-16, ResNet-18/50, ConvNeXt-T, ViT-B/16, DINOv2-S and CLIP ViT-B/32. In every architecture the MTL correlation climbs monotonically with depth and peaks at the last layers (best: {n['rsa_best']}, ρ = {n['rsa_best_rho']:.3f}, p = {n['rsa_best_p']:.3f} across 18 sessions; category RDM alone {n['rsa_cat']:.3f} with hand-corrected labels; low-level 0.014). The MFC stays flat near {n['rsa_mfc']:.3f}. Split-half reliability of an MTL RDM is only ≈0.06, so ceiling-normalised ρ is ≈0.2–0.25. Amygdala (0.05–0.06) ≫ hippocampus (0.015); hippocampal geometry is not categorical (ρ = 0.003 with the category RDM) but is weakly captured by late layers.</p>
+<p>Because the picture pool is shared, per-session RDMs can be rank-normalised and pooled over co-shown pairs into a consensus 342×342 MTL RDM. Against it the best layer reaches ρ = {n['pooled_best_rho']:.3f} (permutation p = 0.005, ≈10 null SDs), category {n['pooled_cat']:.3f}. Partialling out the category and low-level RDMs leaves CLIP's last layer significant (partial ρ = {n['part_clip_rho']:.3f}, p = {n['part_clip_p']:.3f}; ResNet-50 avgpool {n['part_rn_rho']:.3f}, p = {n['part_rn_p']:.3f}), while category is no longer significant once CLIP is controlled (p = {n['catpart_clip_p']:.2f}) — late layers largely subsume the categorical structure and add a little to it. Restricted to <em>within</em>-category pairs, CLIP still tracks the MTL (ρ = 0.052, p = 0.015) whereas ResNet-50 does not (−0.006). In time, the correspondence rises from ~200 ms and peaks at <b>{n['t_peak']} ms</b> after picture onset, with late layers &gt; category &gt; early layers &gt; low-level throughout.</p>
 </div>
 {F('layers', 'RSA layer-depth curves: mean ± sem Spearman ρ over sessions for MTL, MFC and MTL concept cells; dashed/dotted lines are the MTL correlation with the category and low-level RDMs.')}
 <div class="grid2">
