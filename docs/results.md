@@ -47,3 +47,13 @@ they showed at the time of writing and how to read them.
 - OUT-trial RT vs CLIP lure–set similarity: mean within-subject slope +0.055 (p = 0.04,
   uncorrected; Wilcoxon 0.055). Other spaces and outcomes null. Little similarity variance
   with only 5 memoranda/subject → low power.
+
+## A3 (cont.) — pooled and time-resolved RSA (scripts 45, 46)
+- Pooled consensus RDM (rank-normalised session RDMs averaged over co-shown pairs;
+  6886 pairs with coverage ≥ 2): MTL vs CLIP block11 ρ = 0.129, ResNet-50 avgpool 0.116,
+  category 0.096, low-level 0.014 (perm p = 0.005 for all model layers; null sd ≈ 0.012).
+  Amygdala 0.128 vs hippocampus 0.040; concept cells only 0.141. MFC ≤ 0.033.
+- Time-resolved (200-ms windows): MTL–model ρ rises from ~200 ms, peaks at 350 ms
+  (CLIP 0.071 ± 0.024, ResNet-50 0.066 ± 0.019, category 0.056, AlexNet conv1 0.030,
+  low-level 0.023) and decays by ~500 ms with a weaker shoulder at 600–750 ms.
+  MFC: small sustained correspondence 400–800 ms (ρ ≈ 0.015).
