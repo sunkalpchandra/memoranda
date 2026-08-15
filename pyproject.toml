@@ -1,0 +1,52 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "conceptlens"
+version = "0.1.0"
+description = "Characterizing human concept-cell stimuli (DANDI 000469) with deep vision models"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [{name = "Sunkalp Chandra"}]
+dependencies = [
+  "numpy",
+  "pandas",
+  "scipy",
+  "scikit-learn",
+  "matplotlib",
+  "seaborn",
+  "h5py",
+  "remfile",
+  "pynwb",
+  "torch",
+  "torchvision",
+  "timm",
+  "open_clip_torch",
+  "transformers",
+  "Pillow",
+  "pyyaml",
+  "tqdm",
+  "rich",
+  "umap-learn",
+  "statsmodels",
+]
+
+[project.optional-dependencies]
+dev = ["pytest", "ruff"]
+
+[tool.setuptools.packages.find]
+include = ["conceptlens*"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "W", "B"]
+ignore = ["E501"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
