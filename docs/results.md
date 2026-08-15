@@ -148,3 +148,12 @@ they showed at the time of writing and how to read them.
   MTL +4.5 % over chance (p = 0.015, n = 17 sessions), MTL concept cells +7.4 % (p = 0.08,
   n = 11), amygdala +4.1 % (n.s.), hippocampus −0.7 %, MFC −1.6 % (below chance, p = 0.02).
   Category is decodable from the MTL but weakly — populations are small and sparse.
+
+## A3 (cont.) — group-level permutation (script 58)
+- Shuffling picture identity of the model RDM within every session (1000×) and recomputing
+  the mean ρ: MTL vs CLIP ln_post z = 11.3, ResNet-50 avgpool 10.6, ViT ln 10.7, DINOv2 9.4,
+  AlexNet conv4 9.3, conv1 2.7 (all p ≤ 0.003); category 10.3; low-level 2.1 (p = 0.02).
+  MTL − MFC difference z ≈ 6 for late layers (p = 0.001), 1.1 for conv1 (n.s.).
+  Hippocampus: late layers z ≈ 2.4–2.7 (p ≈ 0.01), category 1.4 (n.s.). MFC: z ≈ 3.
+  (This fixed-effects null asks whether picture identity carries structure at all; the
+  across-session t-tests in A3 above ask whether the effect is consistent between patients.)
