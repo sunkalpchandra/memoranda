@@ -194,3 +194,10 @@ they showed at the time of writing and how to read them.
 - Using only the first encoding presentation (paper's rule): MTL 102/449 = 22.7 % (paper
   20.9 %), MFC 26/453 = 5.7 % (6.7 %); amygdala 29 %, hippocampus 14 %. The all-encoding
   variant used in the other Sternberg analyses is more permissive (29 % / 10 %).
+
+## Laterality (script 62)
+- Similarity tuning (CLIP ln_post): right amygdala ρ = 0.297 ± 0.032 (n = 63) vs left
+  0.039 ± 0.021 (n = 38), Mann–Whitney p < 1e-4; hippocampus L 0.088 vs R 0.066 (n.s.).
+- RSA by hemisphere: right MTL ρ = 0.059 (p = 0.02 vs 0) vs left 0.019 (p = 0.05) for CLIP;
+  category 0.060 vs 0.006; paired over 10 sessions with both: p = 0.16 (n.s.).
+- Caveat: hemispheres are partly confounded with patients (implant side).

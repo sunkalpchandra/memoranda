@@ -69,7 +69,8 @@ likely to win in this one (LOSO AUC 0.54). Being a concept-cell image is largely
 p = 0.003; amygdala-driven) and famous people, against text/logos; per shown image, animals
 (0.19 cells/patient) > faces (0.14) > vehicles > places > food > objects (0.01). Right amygdala
 concept cells prefer animals 4× more often than left (21 % vs 5 %, p = 0.04) — Mormann et al.
-2011 rediscovered. Across patients, cells preferring the *same* picture agree on the rest no
+2011 rediscovered — and right-amygdala concept cells generalise along DNN similarity far more
+than left ones (ρ 0.30 vs 0.04). Across patients, cells preferring the *same* picture agree on the rest no
 better than cells preferring different pictures of the same category: what transfers between
 people is category structure, not picture-specific tuning.
 
