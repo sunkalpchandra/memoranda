@@ -57,3 +57,27 @@ they showed at the time of writing and how to read them.
   (CLIP 0.071 ± 0.024, ResNet-50 0.066 ± 0.019, category 0.056, AlexNet conv1 0.030,
   low-level 0.023) and decays by ~500 ms with a weaker shoulder at 600–750 ms.
   MFC: small sustained correspondence 400–800 ms (ρ ≈ 0.015).
+
+## A3 (cont.) — within- vs between-category (script 53)
+- Between-category pairs only: late layers ρ ≈ 0.041 (p ≈ 0.02). Within-category pairs (all
+  categories pooled): CLIP ln_post 0.059 (p = 0.011) but ResNet-50 avgpool 0.010 (n.s.) —
+  language-aligned features carry MTL-like *within*-category structure that ImageNet features
+  lack. Within faces only: CLIP 0.042, ResNet-50 0.038 (both p ≈ 0.1–0.14, n = 19).
+
+## A4 — encoding models (scripts 41, 48)
+- MTL concept cells (n = 132): best mean CV r = 0.102 (VGG-16 fc7), AlexNet fc6 0.099,
+  CLIP ln_post 0.087; category one-hot −0.008. **CV r is negatively biased under the null**
+  (non-selective cells: −0.05 to −0.16 for every predictor) — read concept-cell values against
+  that floor. Similarity tuning (script 47) is the more sensitive single-cell probe:
+  ρ ≈ 0.17 (ResNet-50 layer4 / CLIP ln_post), 77 % of cells positive, random-anchor null ≈ 0;
+  amygdala late > early (p = 0.0006); dACC concept cells strongly late-tuned (0.18 vs 0.04).
+
+## A7 — model comparison (script 49)
+- Best-layer scores are statistically close across the eight networks under RSA (only
+  CLIP > AlexNet, p = 0.03), similarity tuning (ResNet-50 ≈ CLIP lead) and encoding
+  (VGG/AlexNet fc layers lead). No systematic premium for language alignment or
+  self-supervision.
+
+## Report
+- `results/report.html` (relative links) / `scripts/90_build_report.py --embed` for the
+  self-contained page.
