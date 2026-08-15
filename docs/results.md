@@ -347,3 +347,5 @@ Items refer to docs/review_2026-08-15.md.
 - Amygdala strict cells per shown picture: animate 0.110 vs inanimate 0.029 (ratio 3.8; Wilcoxon
   over 11 patients p = 0.023 — significant, unlike the permissive set); hippocampus 0.030 vs 0.037.
 - Right vs left amygdala animal preference: 6/32 vs 0/18 (Fisher p = 0.075).
+- RSA on strict concept-cell populations (9 sessions with ≥ 2 strict MTL cells): CLIP ln_post
+  0.069 ± 0.021 (p = 0.011), ResNet-50 avgpool 0.062 (p = 0.028), category 0.074 (p = 0.002).
