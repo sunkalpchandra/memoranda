@@ -18,7 +18,6 @@ import numpy as np
 import pandas as pd
 from scipy import stats as sps
 
-from memoranda import neural
 from memoranda.analysis import rsa
 from memoranda.dandi import list_assets
 from memoranda.paths import FIGURES, MANIFESTS, TABLES

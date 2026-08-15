@@ -21,7 +21,6 @@ import numpy as np
 import pandas as pd
 from scipy import stats as sps
 
-from memoranda import neural
 from memoranda.analysis import rsa
 from memoranda.analysis import stats as S
 from memoranda.dandi import list_assets
