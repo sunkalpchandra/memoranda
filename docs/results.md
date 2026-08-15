@@ -98,3 +98,13 @@ they showed at the time of writing and how to read them.
 ## A4 (cont.) — time-resolved similarity tuning (script 54)
 - ρ(rate, late-layer similarity to preferred) rises from ~225 ms, peaks at 325 ms (0.17),
   slightly ahead of the raw preferred − non-preferred rate peak (350–400 ms); conv1 peaks ≈ 0.07.
+
+## Faces (scripts 15, 55)
+- MTCNN finds a face in 41 % of pictures (117 single-face). MTL concept cells' preferred
+  pictures contain a face more often than shown (66 % vs 53 %, AUC 0.57, p = 0.003), driven
+  by the amygdala (AUC 0.58–0.59, p ≤ 0.003); hippocampus and MFC null.
+- Face-preferring MTL concept cells (n = 89) generalise over the *other* face pictures along
+  ResNet-50 (ρ = 0.148) and CLIP (0.145) similarity more than along VGGFace2 identity
+  similarity (0.086; all p < 1e-4) — the tuning is not purely facial identity.
+- RSA restricted to face pictures is weak: VGGFace2 vs MTL concept cells 0.046 (p = 0.02),
+  DINOv2 vs MTL 0.036 (p = 0.048), others n.s.
