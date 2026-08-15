@@ -48,6 +48,45 @@ results/            figures + tables (committed)
 docs/               notes, methods, decisions
 ```
 
+## Findings so far
+
+Full numbers in [docs/results.md](docs/results.md); methods in [docs/methods.md](docs/methods.md).
+
+**Replication.** All 1809 units, behaviour (88.7 % correct) and concept-cell fractions
+(MTL 31.8 %, MFC 6.0 %) reproduce Kyzar et al.; MTL concept cells stay active during
+WM maintenance when their image is held (p = 7e-9), MFC cells do not.
+
+**The stimuli.** Only 342 unique pictures underlie the 41 files. CLIP zero-shot: 37 % faces /
+people, 14 % animals, 11 % landmarks, 10 % vehicles, the rest objects, scenes, nature, food.
+Nothing about an image (category, CLIP attributes, low-level statistics, DNN-space
+typicality / isolation) predicts whether it became one of a patient's five Sternberg
+memoranda — but our replicated neural selectivity does (AUC ≈ 0.7), and an image that
+"won" in other patients is not more likely to win in this one (LOSO AUC 0.54). Being a
+concept-cell image is a *patient × image* property.
+
+**What concept cells like.** Mild bias toward famous faces (58 % vs 47 % shown), against
+text/logos; per shown image, animals (0.19 cells/patient) > faces (0.14) > vehicles > places
+> food > objects (0.01). Right amygdala concept cells prefer animals 4× more often than left
+(21 % vs 5 %, p = 0.04) — Mormann et al. 2011 rediscovered.
+
+**Neural ↔ DNN geometry (RSA).** MTL population RDMs correlate with every model's late
+layers (ρ ≈ 0.06 per session, 0.13 pooled across patients; ceiling-normalised ≈ 0.25),
+rising monotonically with depth; MFC ≈ 0.015; amygdala ≫ hippocampus. Late layers explain
+MTL geometry beyond category and low-level structure and subsume the category RDM. The
+correspondence emerges ~200 ms after onset and peaks at 350 ms.
+
+**Single neurons generalise along DNN similarity.** A concept cell's response to the other
+54–62 images correlates with their late-layer similarity to its preferred image
+(mean ρ ≈ 0.17, 77 % of cells positive; null ≈ 0), increasing with layer depth.
+
+| ![RSA layer curves](results/figures/A3_rsa_layer_curves.png) |
+|:--:|
+| *MTL–model similarity climbs with layer depth in every architecture; MFC stays flat.* |
+
+| ![time-resolved](results/figures/A3_time_resolved.png) | ![similarity tuning](results/figures/A4_similarity_tuning.png) |
+|:--:|:--:|
+| *Sliding-window RSA* | *Per-neuron generalisation along DNN similarity* |
+
 ## Data
 
 DANDI 000469 — https://dandiarchive.org/dandiset/000469 (9.8 GB, 41 NWB files).
