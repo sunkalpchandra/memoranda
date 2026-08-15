@@ -87,6 +87,8 @@ def spectral_slope(arr) -> float:
     radial = np.bincount(r.ravel(), P.ravel()) / np.maximum(np.bincount(r.ravel()), 1)
     f = np.arange(len(radial))
     m = (f >= 2) & (f <= n // 4) & (radial > 0)
+    if m.sum() < 3:
+        return float("nan")
     slope, _ = np.polyfit(np.log(f[m]), np.log(radial[m]), 1)
     return float(slope)
 
@@ -132,4 +134,18 @@ def compute_all(arr: np.ndarray) -> dict[str, float]:
     }
 
 
-STAT_NAMES = list(compute_all(np.zeros((8, 8, 3), dtype=np.uint8) + 1).keys())
+STAT_NAMES = [
+    "luminance",
+    "rms_contrast",
+    "michelson_contrast",
+    "colorfulness",
+    "saturation",
+    "hue_entropy",
+    "gray_entropy",
+    "edge_density",
+    "spectral_slope",
+    "high_freq_energy",
+    "edge_com_x",
+    "edge_com_y",
+    "aspect",
+]
