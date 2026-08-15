@@ -1,0 +1,31 @@
+# python
+__pycache__/
+*.py[cod]
+.venv/
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# data (raw + large derived stay local; small manifests are committed)
+data/raw/
+data/nwb/
+data/images/
+data/features/
+data/cache/
+*.nwb
+*.h5
+*.npy
+*.npz
+*.pt
+*.pth
+*.safetensors
+
+# model weights
+weights/
+~/.cache/
+
+# OS
+.DS_Store
