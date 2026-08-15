@@ -243,4 +243,39 @@ register(
     )
 )
 
+# ---------------------------------------------------------- scale contrasts (task D)
+register(
+    ModelSpec(
+        name="clip_vitl14",
+        family="clip",
+        source="open_clip",
+        layers={
+            "block5": "visual.transformer.resblocks.5",
+            "block11": "visual.transformer.resblocks.11",
+            "block17": "visual.transformer.resblocks.17",
+            "block23": "visual.transformer.resblocks.23",
+            "ln_post": "visual.ln_post",
+        },
+        build=_clip("ViT-L-14", "openai"),
+        notes="large CLIP ViT (24 blocks, 304M params); scale contrast for clip_vitb32",
+    )
+)
+
+register(
+    ModelSpec(
+        name="dinov2_base",
+        family="dino",
+        source="timm",
+        layers={
+            "block2": "blocks.2",
+            "block5": "blocks.5",
+            "block8": "blocks.8",
+            "block11": "blocks.11",
+            "norm": "norm",
+        },
+        build=_timm("vit_base_patch14_dinov2.lvd142m"),
+        notes="DINOv2 ViT-B/14 (86M params); scale contrast for dinov2_small",
+    )
+)
+
 DEFAULT_MODELS = ["alexnet", "vgg16", "resnet18", "resnet50", "convnext_tiny", "vit_b_16", "dinov2_small", "clip_vitb32"]
