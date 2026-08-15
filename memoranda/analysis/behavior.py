@@ -18,18 +18,12 @@ import numpy as np
 import pandas as pd
 from scipy import stats as sps
 
-from ..features import load_features
-from ..paths import FEATURES, MANIFESTS
+from ..features import load_space
+from ..paths import MANIFESTS
 
 
 def _embed(model: str, layer: str, view: str) -> tuple[np.ndarray, dict[str, int]]:
-    if model == "clip_vitb32" and layer == "embed":
-        z = np.load(FEATURES / "clip_vitb32_embed.npz", allow_pickle=True)
-        X, stored = z["embed"], z["image_uid"]
-    else:
-        X, stored = load_features(model, layer, view)
-    X = X.astype(np.float64)
-    X = X / (np.linalg.norm(X, axis=1, keepdims=True) + 1e-12)
+    X, stored = load_space(model, layer, view, normalize=True)
     return X, {u: i for i, u in enumerate(stored)}
 
 
