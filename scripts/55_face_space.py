@@ -24,19 +24,13 @@ from scipy import stats as sps
 from memoranda.analysis import rsa
 from memoranda.analysis import stats as S
 from memoranda.dandi import list_assets
-from memoranda.features import load_features
+from memoranda.features import load_space
 from memoranda.paths import FIGURES, MANIFESTS, TABLES
 
 SPACES = {"vggface2 identity": ("facenet_vggface2", "embed", "gap"), "clip ln_post": ("clip_vitb32", "ln_post", "cls"), "resnet50 avgpool": ("resnet50", "avgpool", "gap"), "dinov2 norm": ("dinov2_small", "norm", "cls"), "alexnet conv1": ("alexnet", "conv1", "gap")}
 MIN_N = 8
 
 
-def load_space(model, layer, view):
-    X, stored = load_features(model, layer, view)
-    X = X.astype(np.float64)
-    X = X - X.mean(0)
-    X /= np.linalg.norm(X, axis=1, keepdims=True) + 1e-12
-    return X, {u: i for i, u in enumerate(stored)}
 
 
 def main() -> None:
@@ -74,7 +68,10 @@ def main() -> None:
     # --- similarity tuning of face-preferring concept cells
     cc = sel[(sel.task == "screening") & sel.concept_cell & (sel.region == "MTL")]
     cc = cc[cc.pref_image.map(lambda u: faces.loc[u, "face_found"] == 1 if u in faces.index else False)]
-    spaces = {k: load_space(*v) for k, v in SPACES.items()}
+    spaces = {}
+    for k, v in SPACES.items():
+        X, stored = load_space(*v, center=True, normalize=True)
+        spaces[k] = (X, {u: i for i, u in enumerate(stored)})
     trows = []
     for r in cc.itertuples():
         t = tun[(tun.subject == r.subject) & (tun.unit == r.unit) & (tun.task == "screening")]
