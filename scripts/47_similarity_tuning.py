@@ -39,9 +39,12 @@ def main() -> None:
     layers.append(("clip_vitb32", "embed", "gap"))
     groups = {
         "MTL concept": sel[(sel.region == "MTL") & sel.concept_cell],
+        "MTL concept (strict)": sel[(sel.region == "MTL") & sel.concept_cell_strict],
         "MTL non-concept": sel[(sel.region == "MTL") & ~sel.concept_cell & (sel.mean_rate > 0.5)],
         "MFC concept": sel[(sel.region == "MFC") & sel.concept_cell],
+        "MFC concept (strict)": sel[(sel.region == "MFC") & sel.concept_cell_strict],
     }
+    N_ANCHORS = 20
     rng = np.random.default_rng(0)
     rows = []
     for (m, l, v) in layers:
@@ -59,11 +62,13 @@ def main() -> None:
                 sims = X[idx] @ X[pos[r.pref_image]]
                 mask = np.arange(len(uids)) != pref_i
                 rho = sps.spearmanr(rates[mask], sims[mask]).statistic
-                # null: anchor on a random non-preferred image
-                j = rng.choice(np.where(mask)[0])
-                sims_j = X[idx] @ X[idx[j]]
-                mask_j = np.arange(len(uids)) != j
-                rho_null = sps.spearmanr(rates[mask_j], sims_j[mask_j]).statistic
+                # null: anchor on random non-preferred images (preferred AND anchor excluded), averaged
+                nulls = []
+                for j in rng.choice(np.where(mask)[0], size=min(N_ANCHORS, mask.sum()), replace=False):
+                    sims_j = X[idx] @ X[idx[j]]
+                    mask_j = mask & (np.arange(len(uids)) != j)
+                    nulls.append(sps.spearmanr(rates[mask_j], sims_j[mask_j]).statistic)
+                rho_null = float(np.nanmean(nulls))
                 rows.append({"group": gname, "subject": r.subject, "unit": r.unit, "area": r.area, "model": m, "layer": l, "view": v, "rho": rho, "rho_null": rho_null})
     per = pd.DataFrame(rows)
     per.to_csv(TABLES / "A4_similarity_tuning_per_unit.csv", index=False)
@@ -82,12 +87,12 @@ def main() -> None:
     print(summ[summ.group == "MTL concept"].sort_values("rho_mean", ascending=False).head(15).round(4).to_string(index=False))
 
     fig, axes = plt.subplots(2, 4, figsize=(16, 7), sharey=True)
-    colors = {"MTL concept": "#C44E52", "MTL non-concept": "#DD8452", "MFC concept": "#4C72B0"}
+    colors = {"MTL concept": "#C44E52", "MTL concept (strict)": "#7A1F24", "MTL non-concept": "#DD8452", "MFC concept": "#4C72B0", "MFC concept (strict)": "#1F3F73"}
     for ax, m in zip(axes.flat, DEFAULT_MODELS):
         lay = [l for l in get_spec(m).layers if ((summ.model == m) & (summ.layer == l)).any()]
         for gname in groups:
             d = summ[(summ.group == gname) & (summ.model == m)].set_index("layer").reindex(lay)
-            ax.errorbar(range(len(lay)), d.rho_mean, d.rho_sem, fmt="o-", ms=4, color=colors[gname], label=gname, capsize=2)
+            ax.errorbar(range(len(lay)), d.rho_mean, d.rho_sem, fmt="o-" if "strict" not in gname else "s--", ms=4, color=colors[gname], label=gname, capsize=2)
         d0 = summ[(summ.group == "MTL concept") & (summ.model == m)].set_index("layer").reindex(lay)
         ax.plot(range(len(lay)), d0.rho_null_mean, "k:", lw=1, label="random-anchor null (MTL concept)")
         ax.axhline(0, color="k", lw=0.6)
