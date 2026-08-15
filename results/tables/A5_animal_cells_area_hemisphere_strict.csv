@@ -1,0 +1,5 @@
+area,hemisphere,mean,sum,size,fisher_p_R_vs_L_amygdala
+amygdala,L,0.0,0,18,0.07544865864939872
+amygdala,R,0.1875,6,32,0.07544865864939872
+hippocampus,L,0.08333333333333333,1,12,0.07544865864939872
+hippocampus,R,0.2,1,5,0.07544865864939872
