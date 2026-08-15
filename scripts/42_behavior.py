@@ -48,7 +48,7 @@ def main() -> None:
         for cond, y, x, mask in tests:
             sl = B.per_subject_slopes(t, x, y, subset=mask)
             g = B.group_test(sl)
-            rows.append({"space": name, "condition": cond, "outcome": y, "predictor": x.split("_", 1)[1], **g})
+            rows.append({"space": name, "condition": cond, "outcome": y, "predictor": x.replace(f"{name}_", ""), **g})
     res = pd.DataFrame(rows)
     res.to_csv(TABLES / "A6_behavior_similarity.csv", index=False)
     print(res.round(4).to_string(index=False))
