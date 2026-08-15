@@ -173,3 +173,11 @@ they showed at the time of writing and how to read them.
   0.203, VGG-16 fc7 0.192. MFC concept cells (n = 29): CLIP 0.21 (38 %), others 0.11–0.16.
   After debiasing, CLIP is the best single-cell predictor and the category one-hot is on par
   with the CNN fc layers.
+
+## A8 — mixed-effects checks (script 59)
+- Similarity tuning ρ ~ relative depth, random intercepts for subject and cell (6968 obs,
+  16 subjects): slope 0.056 per unit depth, z = 14.1. Late layers: MTL concept − MTL
+  non-concept +0.096 (z = 5.7), MFC concept − MTL non-concept +0.092 (z = 3.1).
+- RSA (CLIP ln_post) MTL − MFC with subject random intercept: +0.044, p = 0.064 (37 sessions);
+  the random-effects contrast is marginal even though the fixed-effects permutation is
+  decisive (z ≈ 6) — patient-to-patient variability in RDM quality is large.
