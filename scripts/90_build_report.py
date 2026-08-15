@@ -52,6 +52,10 @@ FIGS = {
     "sparsity": ("A4_sparsity_vs_generalisation.png", 1300),
     "objective": ("A7_objective_contrast.png", 1200),
     "debiased": ("A4_debiased_depth.png", 1200),
+    "famous": ("A5_famous.png", 1400),
+    "hier": ("A8_hierarchical_rsa.png", 1400),
+    "trenc": ("A4_time_resolved_encoding.png", 1300),
+    "scale": ("A7_model_scale.png", 1200),
 }
 
 
@@ -353,6 +357,21 @@ def build(embed: bool) -> str:
 {table(rank, ['criterion','model','objective','best_layer','n','mean','sem'], ['criterion','model','objective','best layer','n','mean','sem'], caption='Best-layer scores per model and criterion.')}
 </section>""")
 
+    parts.append(f"""
+<section id="further"><div class="head"><span class="tag">A5/A8/A4/A7</span><h2>Further experiments</h2></div>
+<div class="prose">
+<p><b>Hand-labelled fame.</b> All 342 pictures were labelled for famous person / identity / fictional character / number of people (CLIP's "famous" attribute agrees at AUC 0.79). The set is nearly all celebrities — 89% of the person pictures a cell saw are famous — so "famous vs non-famous person" is at ceiling (MTL concept cells 94% vs 92% expected, n.s.); the famous enrichment against all pictures (63% vs 48%) is the person/face effect. Memoranda: famous 56% vs 44%, identical to person vs rest.</p>
+<p><b>Hierarchical model.</b> ρ ~ depth × region with random intercepts and slopes per patient: depth × MTL +0.022 (z = 4.1), MTL slope +0.031 (z = 6.0) vs MFC +0.008 (n.s.); amygdala slope +0.029 (z = 6.9) vs hippocampus +0.008 (p = 0.08); at the last layer region matters (MTL − MFC +0.037, z = 5.8), model family does not.</p>
+<p><b>Time-resolved encoding.</b> Sliding 100-ms ridge models with each cell's pre-stimulus windows as the bias baseline peak at 300 ms (CLIP 0.19, ResNet-50 0.15, conv1 0.12, category 0.21; CLIP &gt; ResNet-50 &gt; conv1 at the peak) — the same transient as RSA (350 ms) and similarity tuning (325 ms). MFC: weak and later.</p>
+<p><b>Scale.</b> CLIP ViT-B/32 → L/14 and DINOv2-S → B, depth-matched: |Δρ| ≤ 0.01 at the last layer, nothing survives FDR. Neither architecture, objective nor scale moves the correspondence.</p>
+</div>
+<div class="grid2">
+{F('famous', 'Hand-labelled fame: preference of concept cells and memoranda enrichment, with permutation nulls.', wide=False)}
+{F('hier', 'Mixed-effects fits of ρ vs relative depth by region.', wide=False)}
+{F('trenc', 'Time-resolved encoding, baseline-subtracted.', wide=False)}
+{F('scale', 'Small vs large CLIP / DINOv2 at matched depths.', wide=False)}
+</div>
+</section>""")
     parts.append("""
 <section id="next"><div class="head"><span class="tag">—</span><h2>Caveats and what's next</h2></div>
 <div class="prose">
@@ -362,7 +381,7 @@ def build(embed: bool) -> str:
 <li>Sternberg concept cells were selected on all encoding presentations (paper: encoding 1 only), giving 29% rather than 21% MTL concept cells in that task.</li>
 <li>CLIP zero-shot labels are accurate for animals/vehicles/food but blur "face" vs "scene with people"; a hand-checked label pass would tighten A5.</li>
 <li>Cross-validated encoding r is negatively biased under the null; the shuffle-null-debiased values are the ones to quote (script 51 covers six predictors — extending it to every layer is on the list).</li>
-<li>Next: variance partitioning between models, a face-trained network, per-cell noise-corrected encoding at each layer, and time-resolved encoding models.</li>
+<li>Done since v1: variance partitioning, face network, shuffle-null encoding across depths, time-resolved encoding, hierarchical models, scale and objective contrasts, hand labels. Open: extending the shuffle null to every layer of every model (running), a second rater for the hand labels, and a within-patient laterality design with more bilateral cases.</li>
 </ul>
 </div>
 </section>
