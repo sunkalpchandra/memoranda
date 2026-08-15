@@ -12,14 +12,23 @@ from __future__ import annotations
 
 import numpy as np
 import pandas as pd
+from scipy.stats import rankdata
 
 from memoranda import neural
 from memoranda.analysis import rsa
 from memoranda.dandi import list_assets
 from memoranda.paths import MANIFESTS, TABLES
 
+
+def _fast_rho(rank_a: np.ndarray, vec_b: np.ndarray) -> float:
+    """Spearman ρ given a pre-ranked, centred/normalised vector a and raw vector b."""
+    rb = rankdata(vec_b)
+    rb = rb - rb.mean()
+    n = np.linalg.norm(rb)
+    return float(rank_a @ rb / n) if n > 0 else np.nan
+
 LAYERS = {"alexnet conv1": ("alexnet", "conv1", "gap"), "alexnet conv4": ("alexnet", "conv4", "gap"), "resnet50 avgpool": ("resnet50", "avgpool", "gap"), "vit ln": ("vit_b_16", "ln", "gap"), "dinov2 norm": ("dinov2_small", "norm", "gap"), "clip ln_post": ("clip_vitb32", "ln_post", "cls")}
-N_PERM = 2000
+N_PERM = 1000
 
 
 def region_matrix(subject, region, sel):
@@ -52,7 +61,9 @@ def main() -> None:
         for region in ("MTL", "MFC", "MTL_concept", "amygdala", "hippocampus"):
             M, _ = region_matrix(s, region, sel)
             if M is not None:
-                neural_rdms[region] = rsa.neural_rdm(M)
+                ra = rankdata(rsa.upper(rsa.neural_rdm(M)))
+                ra = ra - ra.mean()
+                neural_rdms[region] = ra / (np.linalg.norm(ra) + 1e-12)
         sess[s] = (models, neural_rdms)
 
     rows = []
@@ -60,7 +71,7 @@ def main() -> None:
         obs = {}
         null = {}
         for region in ("MTL", "MFC", "MTL_concept", "amygdala", "hippocampus"):
-            vals = [rsa.compare_rdms(nr[region], m[name]) for s, (m, nr) in sess.items() if region in nr]
+            vals = [_fast_rho(nr[region], rsa.upper(m[name])) for s, (m, nr) in sess.items() if region in nr]
             obs[region] = float(np.nanmean(vals))
             null[region] = np.zeros(N_PERM)
         for k in range(N_PERM):
@@ -71,7 +82,7 @@ def main() -> None:
                         continue
                     D = m[name]
                     perm = rng.permutation(D.shape[0])
-                    vals.append(rsa.compare_rdms(nr[region], D[np.ix_(perm, perm)]))
+                    vals.append(_fast_rho(nr[region], rsa.upper(D[np.ix_(perm, perm)])))
                 null[region][k] = np.nanmean(vals)
         for region in obs:
             p = (np.sum(null[region] >= obs[region]) + 1) / (N_PERM + 1)
