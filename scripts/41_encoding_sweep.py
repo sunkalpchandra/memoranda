@@ -22,23 +22,17 @@ import pandas as pd
 from memoranda import neural
 from memoranda.analysis import encoding as E
 from memoranda.dandi import list_assets
-from memoranda.features import list_layers, load_features
+from memoranda.features import list_layers, load_space
 from memoranda.log import get_logger
 from memoranda.models.registry import DEFAULT_MODELS
-from memoranda.paths import FEATURES, MANIFESTS, TABLES
+from memoranda.paths import MANIFESTS, TABLES
 
 log = get_logger("encoding")
 VIEWS = ("gap", "cls")
 
 
 def feats_for(model, layer, view, uids):
-    if model == "clip_vitb32" and layer == "embed":
-        z = np.load(FEATURES / "clip_vitb32_embed.npz", allow_pickle=True)
-        X, stored = z["embed"], z["image_uid"]
-    else:
-        X, stored = load_features(model, layer, view)
-    pos = {u: i for i, u in enumerate(stored)}
-    return X[[pos[u] for u in uids]].astype(np.float64)
+    return load_space(model, layer, view, uids=uids)[0]
 
 
 def main() -> None:
