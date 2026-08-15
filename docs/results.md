@@ -124,3 +124,9 @@ they showed at the time of writing and how to read them.
 - Within-category pairs: CLIP 0.052 (p = 0.015), ResNet-50 −0.006 — unchanged conclusion.
 - A1/A2/A5 conclusions unchanged (no memoranda enrichment; MTL concept cells prefer people
   56 % vs 46 % shown; right-amygdala animal preference p = 0.04).
+
+## A3 robustness (script 56)
+- Spatially-preserving random-projection features (`rp`) give the same layer-depth gradient
+  as pooled features (AlexNet conv1 rp 0.018 vs gap 0.014; ResNet-50 layer4 0.047 vs 0.054);
+  Euclidean vs correlation model RDMs likewise. Early layers do not match the MTL better when
+  spatial layout is kept.
