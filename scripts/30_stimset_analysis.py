@@ -176,6 +176,7 @@ def main() -> None:
         a2_contrasts(scr, imstats.STAT_NAMES[:-1], "low_level"),
         a2_contrasts(scr, [c for c in st.columns if any(c.startswith(f"{sp}_") for sp in GEOM_SPACES) and c != "clip_ws_nn1_dist"], "dnn_geometry"),
         a2_contrasts(scr, ["n_subjects_screening", "sternberg_rate_loso", "n_sternberg_other"], "reuse"),
+        a2_contrasts(scr, [c for c in ("face_found", "n_faces", "largest_face_area") if c in scr.columns], "faces"),
     ]
     con = pd.concat(blocks, ignore_index=True)
     con.to_csv(TABLES / "A2_feature_contrasts.csv", index=False)

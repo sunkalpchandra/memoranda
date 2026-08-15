@@ -32,7 +32,11 @@ def image_table() -> pd.DataFrame:
         .reset_index()
     )
     per["sternberg_rate"] = per.n_subjects_sternberg / per.n_subjects_screening.replace(0, np.nan)
-    return per.merge(lab, on="image_uid", how="left").merge(stats, on="image_uid", how="left")
+    out = per.merge(lab, on="image_uid", how="left").merge(stats, on="image_uid", how="left")
+    faces_csv = MANIFESTS / "faces.csv"
+    if faces_csv.exists():
+        out = out.merge(pd.read_csv(faces_csv), on="image_uid", how="left")
+    return out
 
 
 def neural_image_summary(task: str = "screening") -> pd.DataFrame:
