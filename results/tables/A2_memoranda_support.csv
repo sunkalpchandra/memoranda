@@ -1,0 +1,106 @@
+subject,sternberg_slot,image_uid,category,fine,n_concept_pref,n_concept_pref_mtl,n_cc_sternberg,n_cc_sternberg_mtl,z_max_mtl,n_subjects_screening,n_sternberg_other
+1,0.0,img_0019,face_person,scientist,0.0,0.0,1,1,0.1939434616175124,16,0
+1,1.0,img_0055,face_person,actor,0.0,0.0,1,1,0.4754024489398799,9,1
+1,2.0,img_0047,face_person,fictional movie character,0.0,0.0,0,0,0.3597192496747861,1,0
+1,3.0,img_0039,face_person,politician,1.0,1.0,2,0,0.827229846618417,4,1
+1,4.0,img_0054,face_person,actor,0.0,0.0,0,0,0.1352009708391312,12,1
+2,0.0,img_0071,object,watch or jewelry,1.0,1.0,2,1,1.867116697052302,1,0
+2,1.0,img_0023,face_person,tv host,0.0,0.0,1,1,0.4837986905541119,13,1
+2,2.0,img_0030,landmark_place,politician,0.0,0.0,1,1,0.34563900481438,13,1
+2,3.0,img_0069,face_person,tv host,0.0,0.0,0,0,0.5383343125314521,2,0
+2,4.0,img_0085,scene_with_people,couple,0.0,0.0,0,0,0.5014425744866652,1,0
+3,0.0,img_0087,animal,big cat,0.0,0.0,1,0,0.1600149214068344,1,0
+3,1.0,img_0020,face_person,scientist,1.0,1.0,1,0,1.0547729138888375,13,3
+3,2.0,img_0018,object,phone or computer,0.0,0.0,1,1,0.338966519903235,15,1
+3,3.0,img_0039,face_person,politician,0.0,0.0,0,0,0.8161707825603035,4,1
+3,4.0,img_0059,face_person,politician,0.0,0.0,1,0,0.4631303930618108,11,1
+4,0.0,img_0110,face_person,fictional movie character,1.0,1.0,4,2,5.172212791624404,2,0
+4,1.0,img_0154,face_person,musician,1.0,1.0,4,2,2.377390661299383,1,0
+4,2.0,img_0122,face_person,fictional movie character,2.0,1.0,2,0,4.209337645283068,4,0
+4,3.0,img_0147,face_person,fictional movie character,1.0,1.0,3,1,3.901694638725257,1,0
+4,4.0,img_0146,face_person,scientist,1.0,1.0,2,2,1.6057977812879378,1,0
+5,0.0,img_0168,cartoon_art,fictional movie character,1.0,1.0,2,0,1.025694024727435,1,0
+5,1.0,img_0054,face_person,actor,0.0,0.0,0,0,0.930319235152634,12,1
+5,2.0,img_0138,animal,bird,0.0,0.0,1,0,0.3556479652998719,5,0
+5,3.0,img_0065,face_person,scientist,1.0,1.0,0,0,1.10243465864352,5,0
+5,4.0,img_0173,object,painting or artwork,0.0,0.0,1,1,0.3099540274441403,1,0
+6,0.0,img_0193,face_person,elderly person,0.0,0.0,1,0,,3,1
+6,1.0,img_0194,face_person,elderly person,0.0,0.0,0,0,,3,1
+6,2.0,img_0198,landscape_nature,bridge,0.0,0.0,0,0,,3,1
+6,3.0,img_0215,animal,dog,0.0,0.0,0,0,,3,1
+6,4.0,img_0224,vehicle,car,0.0,0.0,0,0,,3,1
+7,0.0,img_0186,object,phone or computer,0.0,0.0,1,1,0.3816981085844579,3,0
+7,1.0,img_0195,face_person,elderly person,0.0,0.0,0,0,1.2472864689396317,3,0
+7,2.0,img_0204,landscape_nature,beach or island,0.0,0.0,1,1,0.2592379235858326,3,0
+7,3.0,img_0207,animal,marine animal,1.0,1.0,1,1,2.35235963239635,3,0
+7,4.0,img_0214,animal,cat,1.0,1.0,5,5,1.248448579625894,3,0
+8,0.0,img_0187,object,phone or computer,0.0,0.0,1,1,0.6857066467467379,3,0
+8,1.0,img_0209,animal,wild mammal,7.0,0.0,3,3,0.7957551578957086,3,0
+8,2.0,img_0211,animal,bird,0.0,0.0,1,1,0.8554155387070305,3,0
+8,3.0,img_0213,animal,marine animal,0.0,0.0,2,1,0.9204077317564414,3,0
+8,4.0,img_0220,vehicle,car,0.0,0.0,1,1,0.854081037760102,3,0
+9,0.0,img_0004,face_person,musician,1.0,0.0,6,6,0.3936765831749892,13,2
+9,1.0,img_0015,face_person,musician,0.0,0.0,4,4,0.548953484481251,13,0
+9,2.0,img_0021,face_person,athlete,1.0,0.0,1,1,0.2962877004719959,13,1
+9,3.0,img_0030,landmark_place,politician,0.0,0.0,0,0,0.30795668199979,13,1
+9,4.0,img_0245,landscape_nature,mountain or canyon,0.0,0.0,1,1,0.3852906185937,6,0
+10,0.0,img_0007,face_person,politician,0.0,0.0,1,0,0.6374369983569368,13,0
+10,1.0,img_0032,landmark_place,casino or theme park,0.0,0.0,0,0,0.5214742216115154,10,0
+10,2.0,img_0043,landscape_nature,famous monument,0.0,0.0,0,0,0.8009098233086728,9,1
+10,3.0,img_0243,landmark_place,famous monument,1.0,1.0,1,0,1.191399087999744,7,0
+10,4.0,img_0060,face_person,athlete,0.0,0.0,1,0,0.5319668761713662,14,0
+11,0.0,img_0022,face_person,athlete,1.0,1.0,3,3,2.32797418679424,13,1
+11,1.0,img_0236,landmark_place,skyline or city at night,0.0,0.0,4,1,0.4771086892763427,8,0
+11,2.0,img_0048,face_person,scientist,1.0,1.0,1,1,0.7249751641970265,12,0
+11,3.0,img_0113,landmark_place,famous monument,1.0,1.0,0,0,1.27109853524219,7,0
+11,4.0,img_0056,face_person,fictional movie character,2.0,2.0,6,3,3.0361610490950173,12,2
+12,0.0,img_0003,face_person,actor,1.0,1.0,1,1,2.3442243603998048,13,1
+12,1.0,img_0234,face_person,politician,0.0,0.0,1,0,1.789559731240736,8,0
+12,2.0,img_0017,scene_with_people,couple,1.0,0.0,1,1,1.789559731240736,13,0
+12,3.0,img_0018,object,phone or computer,1.0,1.0,1,1,2.451451686631145,15,1
+12,4.0,img_0059,face_person,politician,0.0,0.0,1,0,0.4657758204599175,11,1
+13,0.0,img_0020,face_person,scientist,1.0,1.0,8,7,2.06339403288852,13,3
+13,1.0,img_0004,face_person,musician,1.0,1.0,4,4,3.017767354401875,13,2
+13,2.0,img_0260,vehicle,horse,0.0,0.0,1,1,1.2719123095658322,3,0
+13,3.0,img_0269,vehicle,truck or off-road vehicle,5.0,5.0,2,2,1.5321189437103926,2,0
+13,4.0,img_0056,face_person,fictional movie character,2.0,2.0,10,9,2.185856383929113,12,2
+14,0.0,img_0022,face_person,athlete,1.0,1.0,5,5,1.882750524183329,13,1
+14,1.0,img_0003,face_person,actor,2.0,2.0,5,5,2.5714781714902095,13,1
+14,2.0,img_0002,face_person,actor,3.0,3.0,2,2,1.0666331483535096,12,0
+14,3.0,img_0001,face_person,tv host,1.0,1.0,3,3,2.8142729136777307,11,0
+14,4.0,img_0006,face_person,actor,2.0,2.0,5,5,1.4634135769277985,16,0
+15,0.0,img_0284,face_person,child,0.0,0.0,1,1,0.4568812966113985,1,0
+15,1.0,img_0035,landmark_place,famous monument,0.0,0.0,0,0,0.3116191935943492,12,0
+15,2.0,img_0026,object,phone or computer,0.0,0.0,1,0,0.695996741566897,15,1
+15,3.0,img_0292,vehicle,car,0.0,0.0,1,1,0.4113323623522778,2,0
+15,4.0,img_0058,face_person,actor,0.0,0.0,1,0,0.7756931209870913,11,0
+16,0.0,img_0004,face_person,musician,1.0,1.0,1,1,1.284330283326531,13,2
+16,1.0,img_0020,face_person,scientist,1.0,1.0,3,3,2.849014409737698,13,3
+16,2.0,img_0021,face_person,athlete,0.0,0.0,2,2,0.683593269649874,13,1
+16,3.0,img_0026,object,phone or computer,1.0,1.0,3,3,2.849014408861076,15,1
+16,4.0,img_0043,landscape_nature,famous monument,1.0,1.0,3,3,1.8114047071005983,9,1
+17,0.0,img_0247,landmark_place,temple or church,0.0,0.0,0,0,0.1338498472095342,6,0
+17,1.0,img_0023,face_person,tv host,0.0,0.0,2,2,0.51848854322205,13,1
+17,2.0,img_0020,face_person,scientist,0.0,0.0,2,0,0.2165959533607824,13,3
+17,3.0,img_0056,face_person,fictional movie character,0.0,0.0,0,0,0.2769744713330359,12,2
+17,4.0,img_0009,face_person,politician,0.0,0.0,0,0,0.51848854322205,10,0
+18,0.0,img_0016,face_person,musician,0.0,0.0,3,3,1.302707600123512,11,0
+18,1.0,img_0055,face_person,actor,10.0,7.0,6,4,3.491773926289876,9,1
+18,2.0,img_0309,scene_with_people,fictional movie character,0.0,0.0,5,1,0.505557543778833,1,0
+18,3.0,img_0036,vehicle,bicycle or motorcycle,0.0,0.0,5,5,0.5263335697716358,4,0
+18,4.0,img_0299,scene_with_people,fictional movie character,0.0,0.0,4,2,0.5754233570548334,1,0
+19,0.0,img_0193,face_person,elderly person,,,1,1,,3,1
+19,1.0,img_0194,face_person,elderly person,,,0,0,,3,1
+19,2.0,img_0198,landscape_nature,bridge,,,0,0,,3,1
+19,3.0,img_0215,animal,dog,,,0,0,,3,1
+19,4.0,img_0224,vehicle,car,,,0,0,,3,1
+20,0.0,img_0169,landscape_nature,flowers,0.0,0.0,0,0,-0.0757670409072837,3,0
+20,1.0,img_0328,food,cooked meal,0.0,0.0,0,0,0.7874936060257044,2,0
+20,2.0,img_0325,landmark_place,casino or theme park,0.0,0.0,0,0,-0.0757670409072837,1,0
+20,3.0,img_0319,face_person,fictional movie character,0.0,0.0,0,0,-0.2788871931268103,1,0
+20,4.0,img_0126,face_person,actor,0.0,0.0,0,0,0.5843734538061778,4,1
+21,0.0,img_0038,face_person,politician,2.0,2.0,1,1,1.4605014600347737,5,0
+21,1.0,img_0340,food,cooked meal,1.0,1.0,1,1,1.1100848476946736,1,0
+21,2.0,img_0321,landmark_place,casino or theme park,1.0,1.0,3,3,1.334410993421271,2,0
+21,3.0,img_0326,face_person,actor,0.0,0.0,0,0,0.1708671014575618,2,0
+21,4.0,img_0126,face_person,actor,0.0,0.0,0,0,0.5523105871038908,4,1
