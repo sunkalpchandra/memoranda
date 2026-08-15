@@ -62,6 +62,13 @@ def main() -> None:
         g.loc[g.area == area, "p_R_vs_L"] = p
     g.to_csv(TABLES / "A4_hemisphere_similarity.csv", index=False)
     print(g.round(4).to_string(index=False))
+    # within-patient check for the amygdala: subjects with concept cells in both hemispheres
+    a = st[st.area == "amygdala"].groupby(["subject", "hemisphere"]).rho.agg(["mean", "size"]).unstack()
+    both = a.dropna()
+    if len(both) >= 3:
+        d = both[("mean", "R")] - both[("mean", "L")]
+        print(f"within-patient amygdala R−L (n={len(both)} patients): mean diff {d.mean():.3f}, Wilcoxon p={sps.wilcoxon(d).pvalue:.3f}, positive in {(d > 0).sum()}/{len(d)}")
+        both.to_csv(TABLES / "A4_hemisphere_within_patient.csv")
 
 
 if __name__ == "__main__":
