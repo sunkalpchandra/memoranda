@@ -340,3 +340,10 @@ Items refer to docs/review_2026-08-15.md.
   amygdala asymmetry is carried by category-level tuning (R 0.29 vs L 0.00); within-category
   tuning is equal across hemispheres (0.13 vs 0.15).
 - **Patient-level tests** (script 73, `A8_cluster_robust.csv`): see Review response.
+
+## A5 with the strict criterion (scripts 31/33 --strict; *_strict tables)
+- MTL strict concept cells (n = 67): 60 % prefer a face/person picture vs 46 % shown (OR 1.9,
+  p = 0.015, q = 0.13); animals 12 % vs 12 % expected.
+- Amygdala strict cells per shown picture: animate 0.110 vs inanimate 0.029 (ratio 3.8; Wilcoxon
+  over 11 patients p = 0.023 — significant, unlike the permissive set); hippocampus 0.030 vs 0.037.
+- Right vs left amygdala animal preference: 6/32 vs 0/18 (Fisher p = 0.075).
