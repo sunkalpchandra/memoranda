@@ -85,8 +85,9 @@ correspondence emerges ~200 ms after onset and peaks at 350 ms.
 (mean ρ ≈ 0.17, 77 % of cells positive; null ≈ 0), increasing with layer depth, emerging at
 ~225 ms and peaking at 325 ms. Face-preferring cells generalise across other faces along
 object-model similarity more than along VGGFace2 identity similarity. Architecture and training
-objective (supervised / self-supervised / language-aligned) barely matter; CLIP alone keeps a
-within-category correspondence with the MTL.
+objective barely matter — a CLIP-trained ResNet-50 and the ImageNet ResNet-50 are
+indistinguishable layer by layer; CLIP's ViT alone keeps a within-category correspondence
+with the MTL.
 
 | ![RSA layer curves](results/figures/A3_rsa_layer_curves.png) |
 |:--:|
