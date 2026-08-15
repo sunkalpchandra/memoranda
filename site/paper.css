@@ -67,4 +67,4 @@ body.paper { font-size: 16.5px; }
   .paper-authors, .paper-affil { text-align: left; margin-left: 0; }
   .paper-links { justify-content: flex-start; }
 }
-.paper-fig figcaption { max-width: none; }
+figure.paper-fig figcaption { max-width: none; color: var(--ink); }
