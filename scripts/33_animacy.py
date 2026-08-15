@@ -27,7 +27,15 @@ AREAS = ["amygdala", "hippocampus", "dACC", "preSMA", "vmPFC"]
 
 
 def main() -> None:
+    import argparse
+
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--strict", action="store_true", help="use the selection-corrected concept_cell_strict criterion")
+    args = ap.parse_args()
     sel = pd.read_csv(MANIFESTS / "unit_selectivity.csv")
+    if args.strict:
+        sel["concept_cell"] = sel["concept_cell_strict"]
+    SUF = "_strict" if args.strict else ""
     sel = sel[sel.task == "screening"]
     lab = pd.read_csv(MANIFESTS / "image_labels.csv").set_index("image_uid")
     img = pd.read_csv(MANIFESTS / "images.csv")
@@ -68,7 +76,7 @@ def main() -> None:
             }
         )
     an_df = pd.DataFrame(rows)
-    an_df.to_csv(TABLES / "A5_animacy_by_area.csv", index=False)
+    an_df.to_csv(TABLES / f"A5_animacy_by_area{SUF}.csv", index=False)
     print(an_df.round(3).to_string(index=False))
 
     # category × area: cells per shown image of that category
@@ -81,7 +89,7 @@ def main() -> None:
             n_img = (sh.category == cat).sum()
             rows.append({"area": area, "category": cat, "n_cells": int((c.category == cat).sum()), "n_images_shown": int(n_img), "cells_per_image": (c.category == cat).sum() / max(n_img, 1)})
     ca = pd.DataFrame(rows)
-    ca.to_csv(TABLES / "A5_category_by_area.csv", index=False)
+    ca.to_csv(TABLES / f"A5_category_by_area{SUF}.csv", index=False)
     piv = ca.pivot(index="category", columns="area", values="cells_per_image")[AREAS]
     print(piv.round(3))
 
@@ -97,7 +105,7 @@ def main() -> None:
     p_rl = sps.fisher_exact(ct_h.values)[1]
     print("right vs left amygdala animal-pref Fisher p =", p_rl, ct_h.values.tolist())
     tab["fisher_p_R_vs_L_amygdala"] = p_rl
-    tab.to_csv(TABLES / "A5_animal_cells_area_hemisphere.csv")
+    tab.to_csv(TABLES / f"A5_animal_cells_area_hemisphere{SUF}.csv")
 
     fig, axes = plt.subplots(1, 2, figsize=(12, 4.2))
     d = an_df[an_df.area.isin(AREAS)]
@@ -117,7 +125,7 @@ def main() -> None:
     axes[1].set_title("Concept cells per shown image, by category × area")
     plt.colorbar(im, ax=axes[1], fraction=0.04)
     fig.tight_layout()
-    fig.savefig(FIGURES / "A5_animacy.png", dpi=150)
+    fig.savefig(FIGURES / f"A5_animacy{SUF}.png", dpi=150)
 
 
 if __name__ == "__main__":

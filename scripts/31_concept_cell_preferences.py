@@ -27,7 +27,15 @@ ATTRS = ["famous", "face_visible", "child", "smiling", "emotional", "single_obje
 
 
 def main() -> None:
+    import argparse
+
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--strict", action="store_true", help="use the selection-corrected concept_cell_strict criterion")
+    args = ap.parse_args()
     sel = pd.read_csv(MANIFESTS / "unit_selectivity.csv")
+    if args.strict:
+        sel["concept_cell"] = sel["concept_cell_strict"]
+    SUF = "_strict" if args.strict else ""
     lab = pd.read_csv(MANIFESTS / "image_labels.csv").set_index("image_uid")
     img = pd.read_csv(MANIFESTS / "images.csv")
     img = img[img.image_uid != "img_null"]
@@ -35,7 +43,7 @@ def main() -> None:
     cc["category"] = lab.loc[cc.pref_image, "category"].to_numpy()
     for a in ATTRS:
         cc[f"attr_{a}"] = lab.loc[cc.pref_image, f"attr_{a}"].to_numpy()
-    cc.to_csv(TABLES / "A5_concept_cells.csv", index=False)
+    cc.to_csv(TABLES / f"A5_concept_cells{SUF}.csv", index=False)
 
     # base rate: every (cell, shown image) pair
     rows = []
@@ -77,7 +85,7 @@ def main() -> None:
     enr["q"] = np.nan
     for (task, area), g in enr.groupby(["task", "area"]):
         enr.loc[g.index, "q"] = S.fdr_bh(g.p.to_numpy())[1]
-    enr.to_csv(TABLES / "A5_pref_category_enrichment.csv", index=False)
+    enr.to_csv(TABLES / f"A5_pref_category_enrichment{SUF}.csv", index=False)
     print(enr[(enr.area == "MTL")].round(3).to_string(index=False))
 
     # attributes: preferred image vs shown images (Mann–Whitney AUC), MTL screening
@@ -95,7 +103,7 @@ def main() -> None:
     at["q"] = np.nan
     for (task, area), g in at.groupby(["task", "area"]):
         at.loc[g.index, "q"] = S.fdr_bh(g.p.to_numpy())[1]
-    at.to_csv(TABLES / "A5_pref_attributes.csv", index=False)
+    at.to_csv(TABLES / f"A5_pref_attributes{SUF}.csv", index=False)
     print(at[at.area == "MTL"].round(3).to_string(index=False))
 
     # figure
@@ -115,7 +123,7 @@ def main() -> None:
     axes[1].set_xlabel("AUC − 0.5 (preferred image > shown images)")
     axes[1].set_title("CLIP attributes of preferred images vs. all shown images")
     fig.tight_layout()
-    fig.savefig(FIGURES / "A5_concept_cell_preferences.png", dpi=150)
+    fig.savefig(FIGURES / f"A5_concept_cell_preferences{SUF}.png", dpi=150)
 
 
 if __name__ == "__main__":
