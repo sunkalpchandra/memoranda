@@ -322,3 +322,21 @@ Items refer to docs/review_2026-08-15.md.
   every layer). **L4** — the "neural selectivity separates memoranda" line is a sanity check.
 - Not changed: cell-level tests remain in the tables (with the patient-level companions), and the
   laterality result stays flagged as patient-confounded.
+
+## Phase 8 additions (scripts 70–73)
+- **Second rater** (120-picture blind subset): famous κ = 0.93 (95 % CI 0.85–0.98), identity
+  agreement 41/42; the hand labels are reliable.
+- **Identity invariance**: 8 identities have ≥ 2 pictures but only 2 sessions co-showed a pair and no
+  concept cell there prefers one → strictly untestable (n ≈ 0); population percentiles at chance;
+  CLIP puts same-identity pictures at rank ≈ 1 of 341 (partly near-duplicate photos).
+- **Semantic vs visual** (CLIP text tower on identity / fine-label descriptions): image-space
+  similarity explains concept-cell tuning beyond text-space similarity in every comparison
+  (image | text 0.09–0.16 per cell, p < 1e-4; 0.04–0.05 in RSA); text | image is small
+  (identity+fine 0.01–0.02 n.s. raw / 0.04–0.06 centred; fine-only 0.05–0.07, p ≤ 0.001).
+- **Within-category tuning** (per cell): CLIP all 0.170 → same-category 0.112 (68 % positive,
+  p < 1e-4 vs null 0.017) → different-category 0.060 → category-partialled 0.093 (75 % positive);
+  ResNet-50 similar; AlexNet conv1 same-category 0.013 (n.s.). Face-preferring cells over other
+  faces 0.13 (p < 1e-4); amygdala 0.14 vs hippocampus 0.02 within category. The right > left
+  amygdala asymmetry is carried by category-level tuning (R 0.29 vs L 0.00); within-category
+  tuning is equal across hemispheres (0.13 vs 0.15).
+- **Patient-level tests** (script 73, `A8_cluster_robust.csv`): see Review response.
