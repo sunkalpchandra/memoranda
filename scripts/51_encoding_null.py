@@ -23,19 +23,26 @@ from memoranda.log import get_logger
 from memoranda.paths import MANIFESTS, TABLES
 
 log = get_logger("encnull")
-PREDICTORS = [("alexnet", "fc6", "gap"), ("vgg16", "fc7", "gap"), ("resnet50", "avgpool", "gap"), ("clip_vitb32", "ln_post", "cls"), ("dinov2_small", "block8", "cls"), ("baseline", "category", "-")]
+PREDICTORS_CORE = [("alexnet", "fc6", "gap"), ("vgg16", "fc7", "gap"), ("resnet50", "avgpool", "gap"), ("clip_vitb32", "ln_post", "cls"), ("dinov2_small", "block8", "cls"), ("baseline", "category", "-")]
+PREDICTORS_DEPTH = [("alexnet", "conv1", "gap"), ("alexnet", "conv3", "gap"), ("alexnet", "conv5", "gap"), ("resnet50", "layer1", "gap"), ("resnet50", "layer2", "gap"), ("resnet50", "layer3", "gap"), ("resnet50", "layer4", "gap"), ("clip_vitb32", "block2", "cls"), ("clip_vitb32", "block5", "cls"), ("clip_vitb32", "block8", "cls"), ("clip_vitb32", "block11", "cls"), ("baseline", "lowlevel", "-")]
 
 
 def feats_for(model, layer, view, uids, labels_df):
-    if model == "baseline":
+    if model == "baseline" and layer == "category":
         return pd.get_dummies(labels_df.loc[uids, "category"]).to_numpy(float)
+    if model == "baseline" and layer == "lowlevel":
+        stats_df = pd.read_csv(MANIFESTS / "image_stats.csv").set_index("image_uid")
+        return stats_df.loc[uids].drop(columns=["aspect"]).to_numpy(float)
     return load_space(model, layer, view, uids=uids)[0]
 
 
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--n-shuffle", type=int, default=100)
+    ap.add_argument("--set", choices=["core", "depth"], default="core")
     args = ap.parse_args()
+    predictors = PREDICTORS_CORE if args.set == "core" else PREDICTORS_DEPTH
+    suffix = "" if args.set == "core" else "_depth"
     sel = pd.read_csv(MANIFESTS / "unit_selectivity.csv")
     cc = sel[(sel.task == "screening") & sel.concept_cell]
     labels_df = pd.read_csv(MANIFESTS / "image_labels.csv").set_index("image_uid")
@@ -51,7 +58,7 @@ def main() -> None:
         uids = np.unique(lab)
         M = np.stack([R[lab == u].mean(0) for u in uids])
         upos = {u: j for j, u in enumerate(units)}
-        Xs = {k: feats_for(*k, uids, labels_df) for k in PREDICTORS}
+        Xs = {k: feats_for(*k, uids, labels_df) for k in predictors}
         for r in g.itertuples():
             y = M[:, upos[r.unit]]
             for k, X in Xs.items():
@@ -60,9 +67,9 @@ def main() -> None:
                 rows.append({"subject": s, "unit": r.unit, "area": r.area, "region": r.region, "model": k[0], "layer": k[1], "r_obs": obs, "null_mean": float(np.nanmean(null)), "null_sd": float(np.nanstd(null)), "r_debiased": obs - float(np.nanmean(null)), "p_cell": float((np.sum(null >= obs) + 1) / (len(null) + 1))})
         log.info(f"sub-{s:02d} {len(g)} concept cells ({time.time()-t0:.0f}s)")
     per = pd.DataFrame(rows)
-    per.to_csv(TABLES / "A4_encoding_null.csv", index=False)
+    per.to_csv(TABLES / f"A4_encoding_null{suffix}.csv", index=False)
     summ = per.groupby(["region", "model", "layer"]).agg(n=("r_obs", "size"), r_obs=("r_obs", "mean"), null_mean=("null_mean", "mean"), r_debiased=("r_debiased", "mean"), r_debiased_sem=("r_debiased", lambda x: x.std() / np.sqrt(len(x))), frac_sig=("p_cell", lambda p: (p < 0.05).mean())).reset_index()
-    summ.to_csv(TABLES / "A4_encoding_null_summary.csv", index=False)
+    summ.to_csv(TABLES / f"A4_encoding_null_summary{suffix}.csv", index=False)
     print(summ.round(3).to_string(index=False))
 
 
