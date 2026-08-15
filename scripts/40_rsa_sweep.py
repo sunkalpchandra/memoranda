@@ -27,7 +27,7 @@ from memoranda.models.registry import DEFAULT_MODELS
 from memoranda.paths import MANIFESTS, TABLES
 
 log = get_logger("rsa")
-REGIONS = ["MTL", "MFC", "all", "MTL_concept", "amygdala", "hippocampus"]
+REGIONS = ["MTL", "MFC", "all", "MTL_concept", "MTL_concept_strict", "amygdala", "hippocampus"]
 VIEWS = ("gap", "cls")
 
 
@@ -40,8 +40,9 @@ def region_matrix(subject: int, region: str, sel: pd.DataFrame):
     if M is None:
         return None, None, None
     ut = neural.load_units_table(subject, 1).set_index("unit")
-    if region == "MTL_concept":
-        keep = sel[(sel.subject == subject) & (sel.session == 1) & sel.concept_cell & (sel.region == "MTL")].unit.to_numpy()
+    if region in ("MTL_concept", "MTL_concept_strict"):
+        crit = "concept_cell" if region == "MTL_concept" else "concept_cell_strict"
+        keep = sel[(sel.subject == subject) & (sel.session == 1) & sel[crit] & (sel.region == "MTL")].unit.to_numpy()
     else:
         keep = ut[ut.area == region].index.to_numpy()
     mask = np.isin(units, keep)
