@@ -18,24 +18,23 @@ def main() -> None:
     lab = pd.read_csv(MANIFESTS / "image_labels.csv")
     tab = unique_image_table().merge(lab, on="image_uid")
     cats = tab.category.value_counts().index.tolist()
-    ncol = 14
-    nrows = sum(-(-((tab.category == c).sum()) // ncol) for c in cats)
-    fig, axes = plt.subplots(nrows, ncol, figsize=(ncol * 1.0, nrows * 0.95))
-    for ax in axes.flat:
-        ax.axis("off")
-    r = 0
+    ncol = 12
     for c in cats:
         sub = tab[tab.category == c].sort_values("category_p", ascending=False)
+        nrow = -(-len(sub) // ncol)
+        fig, axes = plt.subplots(nrow, ncol, figsize=(ncol * 1.6, nrow * 1.55), squeeze=False)
+        for ax in axes.flat:
+            ax.axis("off")
         for k, (_, row) in enumerate(sub.iterrows()):
-            ax = axes[r + k // ncol, k % ncol]
+            ax = axes[k // ncol, k % ncol]
             im = Image.open(row.abs_path).convert("RGB")
-            im.thumbnail((96, 96))
+            im.thumbnail((160, 160))
             ax.imshow(im)
-            ax.set_title(f"{row.image_uid[-4:]} {row.category_p:.2f}\n{row.fine[:18]}", fontsize=4.5, pad=1)
-        axes[r, 0].text(-0.1, 1.35, f"{c} (n={len(sub)})", transform=axes[r, 0].transAxes, fontsize=8, fontweight="bold")
-        r += -(-len(sub) // ncol)
-    fig.tight_layout(pad=0.15)
-    fig.savefig(FIGURES / "labels_by_category.png", dpi=140)
+            ax.set_title(f"{row.image_uid[-4:]}  p={row.category_p:.2f}\n{row.fine[:22]}", fontsize=6, pad=1.5)
+        fig.suptitle(f"{c}  (n={len(sub)})", fontsize=11, fontweight="bold")
+        fig.subplots_adjust(left=0.01, right=0.99, top=0.9 if nrow > 2 else 0.8, bottom=0.01, hspace=0.45, wspace=0.05)
+        fig.savefig(FIGURES / f"labels_{c}.png", dpi=110)
+        plt.close(fig)
 
 
 if __name__ == "__main__":
