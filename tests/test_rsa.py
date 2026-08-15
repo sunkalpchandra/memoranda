@@ -15,7 +15,6 @@ def test_compare_identical_is_one():
 
 
 def test_partial_removes_shared_component():
-    rng = np.random.default_rng(1)
     C = _rdm(25, 6, 2)
     A = C + 0.3 * _rdm(25, 6, 3)
     B = C + 0.3 * _rdm(25, 6, 4)

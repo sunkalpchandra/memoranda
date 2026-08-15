@@ -49,7 +49,6 @@ def main() -> None:
             # expected distribution: mean over cells of that cell's session composition
             comp = shown.groupby("subject").category.value_counts(normalize=True).unstack(fill_value=0)
             exp = comp.reindex(c.subject).mean(0)
-            obs = c.category.value_counts(normalize=True)
             for cat in sorted(lab.category.unique()):
                 n_pref = int((c.category == cat).sum())
                 # Fisher on pooled counts (pref vs shown-not-pref)

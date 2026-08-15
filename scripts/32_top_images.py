@@ -38,7 +38,6 @@ def main() -> None:
     g["frac_subjects_with_concept"] = scr.assign(hit=scr.n_concept_pref > 0).groupby("image_uid").hit.mean()
     g = g.reset_index().sort_values("concept_per_subject", ascending=False)
     g.to_csv(TABLES / "A5_image_neural_score.csv", index=False)
-    paths = st.drop_duplicates("image_uid").set_index("image_uid")
     img = pd.read_csv(ROOT / "data/manifests/images.csv").drop_duplicates("image_uid").set_index("image_uid")
 
     elig = g[g.n_subjects >= 3]
