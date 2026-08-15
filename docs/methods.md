@@ -30,6 +30,10 @@ CLIP zero-shot (`models/zeroshot.py`, `configs/taxonomy.yaml`): 9 mutually exclu
 categories (prompt-ensembled), 10 binary attribute contrasts (probability of the first
 prompt), 56 fine labels.
 
+Faces (script 15): MTCNN detection (facenet-pytorch), face count / largest-face area / centre;
+VGGFace2 InceptionResnetV1 512-d embedding of the largest face. Category labels: CLIP
+zero-shot corrected by 40 hand-checked overrides (`configs/label_overrides.csv`, script 16).
+
 Low-level statistics (`memoranda/imstats.py`): luminance, RMS & Michelson contrast,
 colourfulness (Hasler–Süsstrunk), saturation, hue & grey entropy, edge density,
 spectral slope, high-frequency energy, edge centre of mass.
