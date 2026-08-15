@@ -66,7 +66,7 @@
       </div>
       <div class="stat" role="listitem">
         <div class="stat-value">77<span class="unit">%</span></div>
-        <div class="stat-label">of MTL concept cells respond to other pictures in proportion to their late-layer similarity to the preferred picture (mean ρ ≈ 0.17)</div>
+        <div class="stat-label">of MTL concept cells respond to other pictures in proportion to their late-layer similarity to the preferred picture (cell-pooled ρ ≈ 0.17, patient-mean 0.10)</div>
       </div>
     </div>
   </div>
@@ -87,7 +87,7 @@
         <a class="figlink" href="figures/A3_rsa_layer_curves.png" data-caption="RSA layer curves: MTL vs eight networks">
           <img src="figures/A3_rsa_layer_curves.png" width="2400" height="1050" alt="Eight panels, one per network (AlexNet, VGG-16, ResNet-18, ResNet-50, ConvNeXt-T, ViT-B/16, DINOv2-S, CLIP ViT-B/32). In each, Spearman correlation between the MTL population RDM and the model layer RDM rises with layer depth for MTL and MTL concept cells (red curves), from around 0.01–0.03 at the first layer to 0.05–0.09 at the last; MFC (blue) stays flat near 0.01. Dashed lines mark the category RDM (0.055) and low-level RDM (0.014) baselines.">
         </a>
-        <figcaption><strong>MTL–model similarity climbs monotonically with layer depth in every architecture; MFC stays flat.</strong> Per-session ρ reaches ≈ 0.06 at the last layers (CLIP ln_post 0.061, ResNet-50 avgpool 0.058, ViT ln 0.058; positive in 78–94 % of sessions), 0.13 when session RDMs are pooled across patients, and ≈ 0.25 after normalising by the split-half ceiling — with concept cells alone up to 0.086 and MFC ≈ 0.015.</figcaption>
+        <figcaption><strong>MTL–model similarity rises from early to late layers in every architecture — monotonic to the last layer for ResNet-50 and CLIP, plateauing from mid-depth for AlexNet, VGG and DINOv2 — while MFC is weak and without a depth gradient.</strong> Per-session ρ reaches ≈ 0.06 at the last layers (median 0.034; CLIP ln_post 0.061, ResNet-50 avgpool 0.058, ViT ln 0.058; positive in 78–94 % of sessions), 0.13 when session RDMs are pooled across patients, and ≈ 0.24 after normalising by the split-half ceiling — with concept cells alone up to 0.086 and MFC ≈ 0.015.</figcaption>
       </figure>
     </div>
   </section>
@@ -104,7 +104,7 @@
 
       <aside class="preface" aria-label="Replication">
         <span class="eyebrow">Before anything else — the replication holds</span>
-        <p>All 1809 units, behaviour (88.7 % correct; median RT 1.04 / 1.12 / 1.21 s for loads 1–3) and concept-cell fractions (screening MTL 31.8 % vs 32.8 % in the paper; MFC 6.0 % vs 5.4 %) reproduce Kyzar et al. MTL concept cells stay active during maintenance when their picture is held (p = 7 × 10<sup>−9</sup>), MFC cells do not; the preferred picture as a probe is suppressed when it was held in memory (4.08 vs 4.39 Hz, p = 4 × 10<sup>−4</sup>).</p>
+        <p>All 1809 units, behaviour (88.7 % correct; median RT 1.04 / 1.12 / 1.21 s for loads 1–3) and concept-cell fractions (screening MTL 31.8 % vs 32.8 % in the paper; MFC 6.0 % vs 5.4 %) reproduce Kyzar et al. The paper-style post-hoc test is permissive (the criterion is effectively ANOVA p &lt; 0.05, and MFC prevalence equals the false-positive rate); a selection-corrected strict criterion gives MTL 15.9 % / MFC 2.1 %, and the single-cell results below are reported for both. MTL concept cells stay active during maintenance when their picture is held (p = 7 × 10<sup>−9</sup>), MFC cells do not; the preferred picture as a probe is suppressed when it was held in memory (4.08 vs 4.39 Hz, p = 4 × 10<sup>−4</sup>).</p>
       </aside>
 
       <div class="findings">
@@ -113,8 +113,8 @@
           <div class="text">
             <div class="n" aria-hidden="true">1</div>
             <h3>Almost nothing about a picture predicts that a patient's neurons will pick it.</h3>
-            <p>Only a detected face is enriched among the five Sternberg memoranda: 62 % contain one vs 49 % of the rest of the same patient's screening set (AUC 0.57, q = 0.02). Category, CLIP attributes, low-level statistics and DNN-space typicality or isolation are all null (FDR q &gt; 0.2).</p>
-            <p>Our replicated neural selectivity does separate memoranda within a patient (AUC 0.67–0.71), but nothing generalises across patients: leave-one-subject-out prediction from any feature space sits at AUC 0.44–0.49, and a picture that "won" in other patients is not more likely to win in this one (AUC 0.54). Being a concept-cell picture is a patient × image property.</p>
+            <p>Across 52 picture-level contrasts nothing survives family-wide FDR (all q ≥ 0.29). A detected face is the only nominal hit: 62 % of the five Sternberg memoranda contain one vs 49 % of the rest of the same patient's screening set (within-subject AUC 0.57, p = 0.01, block q = 0.02) — and that is the expected downstream of the concept cells' face bias, since the memoranda were chosen from these very neurons. Category, CLIP attributes, low-level statistics and DNN-space typicality or isolation are null.</p>
+            <p>Our replicated neural selectivity separates memoranda within a patient (AUC 0.67–0.71 — a sanity check, since they were selected from these recordings), but nothing generalises across patients: leave-one-subject-out prediction from any feature space sits at AUC 0.44–0.49, and a picture that "won" in other patients is not more likely to win in this one (AUC 0.54). Being a concept-cell picture is a patient × image property.</p>
           </div>
           <div class="thumbs">
             <figure>
@@ -129,9 +129,9 @@
         <article class="finding" id="f2">
           <div class="text">
             <div class="n" aria-hidden="true">2</div>
-            <h3>Concept cells lean toward faces, famous people and animals — and the right amygdala toward animals.</h3>
-            <p>MTL concept cells' preferred pictures contain a detected face more often than the pictures shown to them (66 % vs 53 %, p = 0.003; amygdala-driven, hippocampus and MFC null), score higher on CLIP "famous" (AUC 0.565, q = 0.047) and lower on text/logos (q = 0.007) and colourfulness (q = 0.02). Per shown image, animals draw 0.19 concept cells per patient, faces 0.14, then vehicles, places, food, objects at 0.01.</p>
-            <p>Right-amygdala concept cells prefer animals four times as often as left ones (21 % vs 5 %, p = 0.04) — Mormann et al. 2011, rediscovered. Across patients, only category structure transfers: cells preferring different pictures of the same category agree on the rest (ρ 0.045) as well as cells preferring the same picture (0.038, n.s.), and far better than cells preferring different categories (0.008; p &lt; 10<sup>−10</sup>).</p>
+            <h3>Concept cells lean toward faces and animals — and the right amygdala toward animals.</h3>
+            <p>MTL concept cells' preferred pictures contain a detected face more often than the pictures shown to them (66 % vs 53 % cell-pooled). Because cells are nested in patients, the honest test is patient-level: it holds for selection-corrected (strict) amygdala concept cells (+28 points, p = 0.03 over 11 patients; cluster-robust p &lt; 10<sup>−4</sup>) but not for the permissive paper criterion (p = 0.67). "Famous" adds nothing beyond "person" — 89 % of the person pictures are celebrities. Text/logos (q = 0.007) and colourfulness (q = 0.02) are under-preferred. Per shown image, animals draw 0.19 concept cells per patient, faces 0.14, then vehicles, places, food, objects at 0.01.</p>
+            <p>Right-amygdala concept cells prefer animals four times as often as left ones (21 % vs 5 %, one pre-specified cell-level test, p = 0.04) — Mormann et al. 2011, rediscovered. Across patients, tuning does not transfer: cells preferring the same picture agree on the rest no better than chance (ρ 0.04, 95 % CI −0.03…0.10, n = 43 pairs), and the same-category vs different-category difference vanishes at the patient-pair level (57 pairs, p = 0.47).</p>
           </div>
           <div class="thumbs">
             <figure>
@@ -152,9 +152,9 @@
         <article class="finding" id="f3">
           <div class="text">
             <div class="n" aria-hidden="true">3</div>
-            <h3>MTL population geometry tracks late DNN layers, beyond category, from about 200 ms after onset.</h3>
-            <p>Per-session ρ ≈ 0.06 at the last layers of every model, 0.13 pooled, ≈ 0.25 ceiling-normalised; a within-session label permutation gives z ≈ 10–11 for late layers (AlexNet conv1 z = 2.7). MFC ≈ 0.015; amygdala (0.05–0.058) ≫ hippocampus (0.014–0.018). Late layers stay significant after partialling out category and low-level RDMs (CLIP 0.037, p = 0.03; ResNet-50 0.028, p = 0.05), while category is not significant after controlling a late layer.</p>
-            <p>The correspondence rises from ~200 ms, peaks at 350 ms (CLIP 0.071, ResNet-50 0.066, category 0.056, conv1 0.030) and decays by ~500 ms. CLIP's ViT alone keeps a within-category correspondence (0.052, p = 0.015; ResNet-50 −0.006). Neural RDMs are noisy (split-half reliability ≈ 0.06), which is why the raw ρ are small.</p>
+            <h3>MTL population geometry tracks late DNN layers, largely redundant with category, from about 200 ms after onset.</h3>
+            <p>Per-session ρ ≈ 0.06 at the last layers of every model, 0.13 pooled, ≈ 0.24 ceiling-normalised; a within-session label permutation gives z ≈ 10–11 for late layers (AlexNet conv1 z = 2.7). MFC ≈ 0.015 (above zero under the same fixed-effects null, but with no depth gradient); MTL &gt; MFC is decisive as a fixed effect and marginal across patients (paired p 0.01–0.19 by layer; mixed model p = 0.06). Amygdala (0.05–0.058) ≫ hippocampus (0.014–0.018). Late layers and the category RDM are largely redundant; late layers add a small unique component after partialling out category and low-level RDMs (CLIP 0.037, p = 0.03; ResNet-50 0.029, p = 0.04).</p>
+            <p>The correspondence rises from ~200 ms, peaks at 350 ms (CLIP 0.071, ResNet-50 0.066, category 0.056, conv1 0.030) and decays by ~500 ms. ViT-family late layers keep a within-category correspondence (CLIP ln_post 0.052, p = 0.015; ImageNet ViT-B/16 ln 0.030, p = 0.016; ResNet-50 −0.006) — a ViT property, not a language one, given finding 5. Neural RDMs are noisy (split-half reliability ≈ 0.06), which is why the raw ρ are small.</p>
           </div>
           <div class="thumbs">
             <figure>
@@ -170,8 +170,8 @@
           <div class="text">
             <div class="n" aria-hidden="true">4</div>
             <h3>Single concept cells generalise along DNN similarity to their preferred picture.</h3>
-            <p>A concept cell's response to the other 54–62 pictures correlates with their late-layer similarity to its preferred picture: mean ρ ≈ 0.17 (ResNet-50 layer4 / CLIP ln_post), 77 % of cells positive, random-anchor null ≈ 0. It increases with depth (mixed-model slope 0.056 per unit depth, z = 14), emerges at ~225 ms and peaks at 325 ms — slightly ahead of the raw preferred-vs-rest rate peak. Shuffle-debiased encoding r reaches 0.29 for CLIP ln_post (47 % of cells p &lt; 0.05).</p>
-            <p>The effect is carried by broadly tuned cells — face-preferring cells ρ = 0.22 vs 0.07 for the rest — and by the <strong>right</strong> amygdala (0.30 vs 0.04 left, p &lt; 10<sup>−4</sup>; hemispheres partly confounded with patients). Classic sparse concept cells (horses, an astronaut) sit at ρ ≈ 0. Face cells generalise across other faces along object-model similarity (ρ 0.15) more than along VGGFace2 identity similarity (0.09).</p>
+            <p>A concept cell's response to the other 54–62 pictures correlates with their late-layer similarity to its preferred picture: cell-pooled ρ ≈ 0.17 (ResNet-50 layer4: 77 % of cells positive; CLIP ln_post: 71 %), random-anchor null ≈ 0; two patients contribute 42 % of the cells, so the honest effect size is the patient mean, 0.10 (Wilcoxon over 16 patients p = 0.016; cluster-robust p = 2 × 10<sup>−4</sup>), and 0.12 for selection-corrected strict cells (n = 67). It increases with depth (mixed-model slope 0.056 per unit depth, z = 14), emerges at ~225 ms and peaks at 325 ms, survives within category (0.11; category-partialled 0.09; AlexNet conv1 ≈ 0) and beyond CLIP text-space similarity. In per-cell encoding models against a shuffle null, 47 % of cells are individually significant for CLIP's last layer vs 32 % for a category one-hot.</p>
+            <p>The effect is strongest in broadly tuned cells — face-preferring cells ρ = 0.22 vs 0.07 for the rest — and in the <strong>right</strong> amygdala (0.30 vs 0.04 left; patient-level p = 0.008 over 9 vs 8 patients; hemispheres partly confounded with patients), an asymmetry carried by category-level tuning while within-category tuning is equal across hemispheres. Classic sparse concept cells (horses, an astronaut) sit at ρ ≈ 0. Whether face cells follow object-model similarity more than VGGFace2 identity similarity is not established (cell-level yes, patient-level p = 0.34).</p>
           </div>
           <div class="thumbs">
             <figure>
@@ -193,7 +193,7 @@
           <div class="text">
             <div class="n" aria-hidden="true">5</div>
             <h3>Architecture and training objective barely matter; depth does.</h3>
-            <p>At their best layer, the eight networks are statistically close under RSA (only CLIP &gt; AlexNet, p = 0.03), similarity tuning (ResNet-50 ≈ CLIP lead) and encoding (VGG / AlexNet fc layers lead). No systematic premium for language alignment or self-supervision.</p>
+            <p>At their best layer, the eight networks are statistically close under RSA (1 of 28 pairwise contrasts nominal — chance level), similarity tuning (ResNet-50 ≈ CLIP lead) and per-cell encoding (CLIP 47 % of cells significant, DINOv2 40 %, AlexNet 39 %, ResNet-50 34 %). No systematic premium for language alignment or self-supervision, and no gain from scale (CLIP-L/14, DINOv2-B).</p>
             <p>The cleanest test fixes the architecture: layer-matched ImageNet ResNet-50 vs CLIP-RN50 differ by −0.007…+0.002 in RSA (all p ≥ 0.24, 19 sessions) and by less than ±0.007 in similarity tuning (p ≥ 0.16, 134 cells). The earlier CLIP-ViT edge is architecture and resolution, not language.</p>
           </div>
           <div class="thumbs">
@@ -215,8 +215,8 @@
         <article class="finding" id="f6">
           <div class="text">
             <div class="n" aria-hidden="true">6</div>
-            <h3>Behaviour: only a weak lure-similarity slowing, and low power.</h3>
-            <p>On correct OUT (non-match) probe trials, reaction time rises with the CLIP similarity between the probe and the encoded set (mean within-subject slope +0.055 z-units, p = 0.04 uncorrected; Wilcoxon 0.055). The same test with ResNet-50 (slope 0.003) and DINOv2 (0.009) similarity, and every accuracy outcome, is null.</p>
+            <h3>Behaviour: no reliable effect (best of 30 tests p = 0.04).</h3>
+            <p>No reliable behavioural effect. The best of 30 tests (5 spaces × 3 conditions × 2 outcomes) is a CLIP lure-similarity slowing on correct OUT trials (mean within-subject slope +0.055 z-units, p = 0.04 uncorrected; ≈ 0.8 such hits are expected under the global null); ResNet-50, DINOv2 and every accuracy outcome are null.</p>
             <p>With only five memoranda per patient there is little similarity variance to work with. The MTL RDMs over the five memoranda themselves are unrelated to any DNN layer or to category (all p &gt; 0.15): the visual similarity structure lives among the <em>non</em>-preferred pictures, not among the winners.</p>
           </div>
           <div class="thumbs">
@@ -409,6 +409,7 @@
         <p class="muted small">Carried forward from <a href="https://github.com/sunkalpchandra/memoranda/blob/main/docs/handoff.md">docs/handoff.md</a>.</p>
       </div>
       <ul class="caveats">
+        <li><strong>An adversarial review changed the wording of every headline.</strong> Cells are nested in patients (two patients hold 42 % of MTL concept cells), so patient-level and cluster-robust tests are reported next to cell-pooled ones (<a href="https://github.com/sunkalpchandra/memoranda/blob/master/results/tables/A8_cluster_robust.csv">A8_cluster_robust.csv</a>); the paper-style post-hoc concept-cell test is permissive, so a strict criterion is carried alongside; family-wide FDR is reported for the memoranda contrasts. Full review: <a href="https://github.com/sunkalpchandra/memoranda/blob/master/docs/review_2026-08-15.md">docs/review_2026-08-15.md</a>.</li>
         <li><strong>Neural RDM reliability is low (~0.06).</strong> Raw per-session ρ are small for that reason; ceiling-normalise or pool across patients before comparing to other datasets.</li>
         <li><strong>Cross-validated encoding r is negatively biased</strong> for signal-free targets with ~60 samples (non-selective cells sit at −0.05 to −0.16). Quote the shuffle-null-debiased values.</li>
         <li><strong>Category labels are CLIP zero-shot plus 40 hand overrides.</strong> The raw CLIP decision is kept alongside; re-running the category-dependent analyses with corrected labels changed no conclusion.</li>
