@@ -66,3 +66,12 @@ spectral slope, high-frequency energy, edge centre of mass.
 Two-sided unless stated; permutation tests report (k+1)/(n+1); FDR = Benjamini–Hochberg
 within each family; effect sizes as AUC (0.5 = null) or odds ratios; sessions/subjects are
 the unit of inference for group tests.
+
+## Additional stages (added later)
+* **22** probe-period match vs lure responses of Sternberg concept cells; **23** leave-one-
+  picture-out category decoding per region; **36** cross-patient tuning agreement;
+  **37** LOSO prediction of concept-cell preference from image features.
+* **51** label-shuffle null for encoding models; **52** commonality analysis; **53** within/
+  between-category RSA; **54** time-resolved similarity tuning; **55** face-space analyses;
+  **56** rp-view / distance-metric robustness; **57** RDM reliability and ceilings.
+* **15/16** MTCNN faces + VGGFace2 embeddings; hand-checked label overrides.

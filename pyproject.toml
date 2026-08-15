@@ -31,11 +31,11 @@ dependencies = [
   "rich",
   "umap-learn",
   "statsmodels",
-  "facenet-pytorch",
 ]
 
 [project.optional-dependencies]
 dev = ["pytest", "ruff"]
+faces = ["facenet-pytorch"]  # install with --no-deps to avoid torch re-pinning
 
 [tool.setuptools.packages.find]
 include = ["memoranda*"]
