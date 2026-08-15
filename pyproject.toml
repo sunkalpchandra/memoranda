@@ -31,6 +31,7 @@ dependencies = [
   "rich",
   "umap-learn",
   "statsmodels",
+  "facenet-pytorch",
 ]
 
 [project.optional-dependencies]
