@@ -39,6 +39,15 @@ FIGS = {
     "enc_best": ("A4_encoding_best.png", 1400),
     "behav": ("A6_behavior.png", 1400),
     "models": ("A7_model_comparison.png", 1400),
+    "probe": ("A0_probe_match.png", 1100),
+    "within": ("A3_within_category.png", 1400),
+    "varpart": ("A3_variance_partition.png", 1200),
+    "reliab": ("A3_reliability.png", 1200),
+    "tsim": ("A4_time_resolved_similarity.png", 1000),
+    "facespace": ("A3_face_space.png", 1300),
+    "xpat": ("A5_cross_patient_tuning.png", 800),
+    "catdec": ("A5_category_decoding.png", 800),
+    "gallery": ("A2_memoranda_gallery.png", 900),
 }
 
 
@@ -244,7 +253,10 @@ def build(embed: bool) -> str:
 <div class="prose">
 <p>All 41 NWB files were streamed over HTTP; only images, trial tables and spike times were pulled out. Unit counts per area reproduce Kyzar et al. exactly, behaviour matches ({n['acc']:.1f}% correct; RT rises with load), and re-running the concept-cell criteria (permuted one-way ANOVA + max-vs-rest permutation <i>t</i>, 200–1000 ms) yields <b>{n['cc_mtl']:.1f}%</b> concept cells in the MTL and {n['cc_mfc']:.1f}% in the MFC during screening (paper: 32.8% / 5.4%). MTL concept cells keep firing during the maintenance period when their preferred picture is held in memory (paired <i>p</i> = 7×10<sup>−9</sup>; 36% individually significant), and MFC cells do not — the persistent-activity result of Kamiński et al. 2017 falls out of the same pipeline.</p>
 </div>
+<div class="grid2">
 {F('maint', 'Maintenance-period firing of every MTL concept cell (Sternberg task, correct trials): preferred picture held in memory vs not. Red: individually significant.', wide=False)}
+{F('probe', 'Probe period: the preferred picture evokes a slightly weaker response when it was already in memory (match) than as a fresh lure (Wilcoxon p = 4e-4) — match suppression.', wide=False)}
+</div>
 </section>""")
 
     parts.append(f"""
@@ -269,6 +281,11 @@ def build(embed: bool) -> str:
 {F('animacy', 'Concept cells per shown picture, animate vs inanimate, by area; and per category × area.')}
 {table(anim[anim.area.isin(['amygdala','hippocampus','dACC','preSMA'])], ['area','n_concept_cells','cells_per_animate_image','cells_per_inanimate_image','frac_cells_animate','frac_images_animate_shown','wilcoxon_p'], ['area','concept cells','cells / animate pic','cells / inanimate pic','frac cells animate','frac shown animate','Wilcoxon p'], caption='Animate vs inanimate recruitment by area (screening).')}
 {F('topbot', 'The 24 pictures that recruited the most concept cells per patient shown, and the 24 fewest.')}
+<div class="prose"><p>Two further checks make the "patient × picture" point. Concept cells in different patients that prefer the <em>same</em> picture agree on the rest of their tuning no better (ρ = 0.04, n.s.) than cells preferring different pictures of the same category (0.045), both above different-category pairs (0.008): what transfers across people is category structure. And a leave-one-subject-out classifier trained on other patients cannot predict which pictures a held-out patient's concept cells will prefer from any feature set (AUC 0.44–0.49). Category itself is decodable from single-trial MTL population activity, but only weakly (+4.5% over chance; MFC and hippocampus at chance).</p></div>
+<div class="grid2">
+{F('xpat', 'Cross-patient agreement of concept-cell tuning curves.', wide=False)}
+{F('catdec', 'Leave-one-picture-out category decoding per region.', wide=False)}
+</div>
 </section>""")
 
     parts.append(f"""
@@ -282,7 +299,12 @@ def build(embed: bool) -> str:
 {F('time', 'Sliding 200-ms windows: MTL correspondence peaks ~350 ms; MFC small and sustained. Squares mark windows with p < 0.05.', wide=False)}
 {F('partial', 'Raw vs partial ρ (controlling category + low-level) for a curated set of layers, MTL and MTL concept cells.', wide=False)}
 </div>
-{table(bl_mtl, ['region','model','best_layer','rho_mean','rho_sem','p','rho_norm_mean','n_sessions'], ['region','model','best layer','mean ρ','sem','p','ρ / √reliability','sessions'], caption='Best layer per model, MTL vs MFC (screening sessions as random effects).')}
+{table(bl_mtl, ['region','model','best_layer','rho_mean','rho_sem','p','rho_norm_mean','n_sessions'], ['region','model','best layer','mean ρ','sem','p','ρ / √reliability','sessions'], caption='Best layer per model, MTL vs MFC (screening sessions as random effects). A session-wise picture-label permutation gives z ≈ 10–11 for MTL vs late layers and z ≈ 6 for MTL − MFC.')}
+<div class="grid2">
+{F('within', 'RSA restricted to between-category pairs, within-category pairs, and single categories.', wide=False)}
+{F('varpart', 'Commonality analysis of the MTL RDM: CLIP carries the largest unique share.', wide=False)}
+</div>
+{F('reliab', 'Split-half reliability of neural RDMs vs population size, and observed ρ against the √reliability ceiling per session.', wide=False)}
 </section>""")
 
     parts.append(f"""
@@ -295,6 +317,10 @@ def build(embed: bool) -> str:
 <div class="grid2">
 {F('depth', 'Layer-depth preference by area, pooling layers of all eight models into five relative-depth bins.', wide=False)}
 {F('enc_best', 'Encoding models: best-predicting model per MTL concept cell, relative depth of its best layer, and per-cell CV r against the split-half ceiling.', wide=False)}
+</div>
+<div class="grid2">
+{F('tsim', 'Time course of similarity tuning (100-ms windows): onset ~225 ms, peak 325 ms; late layers ≫ conv1.', wide=False)}
+{F('facespace', 'Face pictures only: RSA vs a VGGFace2 identity space and object models; face-preferring cells generalise across other faces along object-model similarity more than identity similarity.', wide=False)}
 </div>
 {F('enc_layers', 'Encoding-model layer curves: cross-validated r of ridge models from layer features to single-unit tuning curves.')}
 {enc_tbl}
