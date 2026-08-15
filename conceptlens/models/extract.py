@@ -71,7 +71,11 @@ def _spatial_cap(act: torch.Tensor) -> torch.Tensor:
     while g > 1 and c * g * g > MAX_FLAT:
         g //= 2
     if g < min(h, w):
-        act = torch.nn.functional.adaptive_avg_pool2d(act, g)
+        if act.device.type == "mps" and (h % g or w % g):
+            # MPS lacks non-divisible adaptive pooling → do it on CPU
+            act = torch.nn.functional.adaptive_avg_pool2d(act.cpu(), g).to(act.device)
+        else:
+            act = torch.nn.functional.adaptive_avg_pool2d(act, g)
     return act
 
 
