@@ -1,0 +1,26 @@
+level,metric,n,value,detail
+design,n_identities_with_ge2_pictures,8,10.0,identities / same-identity pairs (Tom Cruise gives 3)
+design,n_sessions_coshowing_a_pair,2,2.0,"sub-01: Jack Nicholson (img_0007,img_0047); sub-03: Pink Floyd (img_0088,img_0090)"
+concept_cell,n_MTL_concept_cells_pref_pair_picture_any_session,9,6.0,partner picture not shown in their sessions: sub-04 u41 img_0146; sub-10 u71 img_0004; sub-11 u28 img_0007; sub-11 u65 img_0048; sub-13 u78 img_0007; sub-13 u80 img_0007; sub-13 u88 img_0004; sub-15 u2 img_0048; sub-16 u30 img_0004
+concept_cell,n_MTL_concept_cells_testable,0,,pref picture in a pair AND partner shown in same session
+unit_exploratory,n_MTL_units_in_coshowing_sessions,16,2.0,concept cells among them: 4
+unit_exploratory,mean_pct_pair_distance_smaller_than_ref,16,0.5642930327868853,1 = pair closest of all; chance 0.5; Wilcoxon vs 0.5 p = 0.326; median 0.553
+unit_exploratory,mean_pct_partner_given_anchor,16,0.5176741803278688,"percentile of the partner's rate among the other pictures, both anchors; chance 0.5"
+unit_exploratory,n_units_partner_top3_either_anchor,16,1.0,unit x anchor count (2 anchors per unit); chance ≈ 2 * n * 3/61
+population_MTL,sub-01 Jack Nicholson,9,0.6342213114754098,"fraction of all 1952 pairs farther than the pair (1 = closest); given A: rank 24/62, given B: rank 23/62"
+population_MTL,sub-03 Pink Floyd,7,0.36270491803278687,"fraction of all 1952 pairs farther than the pair (1 = closest); given A: rank 37/62, given B: rank 45/62"
+population_all_units,sub-01 Jack Nicholson,40,0.6244877049180327,"fraction of all 1952 pairs farther than the pair (1 = closest); given A: rank 20/62, given B: rank 22/62"
+population_all_units,sub-03 Pink Floyd,40,0.09938524590163934,"fraction of all 1952 pairs farther than the pair (1 = closest); given A: rank 59/62, given B: rank 56/62"
+dnn_within_session,sub-01 Jack Nicholson,61,0.959016393442623,CLIP cos 0.309; rank 2 / 5 of 62
+dnn_within_session,sub-03 Pink Floyd,61,1.0,CLIP cos 0.699; rank 1 / 1 of 62
+dnn,mean_pct_partner_given_anchor_all_pairs,10,0.9838235294117647,"CLIP ln_post/cls, dataset-wide (340 references); median rank 1; pairs top-3 in both directions: 6/10"
+dnn,"Tom Cruise (img_0084,img_0119)",340,0.9352941176470588,CLIP cos 0.246; rank 6 / 40 of 341
+dnn,"Tom Cruise (img_0084,img_0166)",340,0.9338235294117647,CLIP cos 0.253; rank 5 / 42 of 341
+dnn,"Tom Cruise (img_0119,img_0166)",340,1.0,CLIP cos 0.911; rank 1 / 1 of 341
+dnn,"Buzz Aldrin (img_0048,img_0146)",340,0.9970588235294118,CLIP cos 0.398; rank 3 / 1 of 341
+dnn,"Jack Nicholson (img_0007,img_0047)",340,0.9911764705882353,CLIP cos 0.309; rank 2 / 6 of 341
+dnn,"Anne Hathaway (img_0116,img_0163)",340,1.0,CLIP cos 0.801; rank 1 / 1 of 341
+dnn,"Pink Floyd (img_0088,img_0090)",340,1.0,CLIP cos 0.699; rank 1 / 1 of 341
+dnn,"Beyonce (img_0057,img_0254)",340,1.0,CLIP cos 0.577; rank 1 / 1 of 341
+dnn,"Meryl Streep (img_0118,img_0165)",340,1.0,CLIP cos 0.893; rank 1 / 1 of 341
+dnn,"Johnny Depp (img_0004,img_0171)",340,0.9808823529411765,CLIP cos 0.363; rank 14 / 1 of 341

@@ -1,0 +1,16 @@
+metric,value,detail
+n_pictures,120.0,
+famous_pos_rater1,42.0,
+famous_pos_rater2,46.0,
+famous_raw_agreement,0.9666666666666667,
+famous_cohen_kappa,0.9283154121863799,bootstrap 95% CI 0.851-0.983
+famous_kappa_ci_lo,0.8507462686567164,
+famous_kappa_ci_hi,0.9829931972789117,
+famous_n_disagree,4.0,img_0068; img_0281; img_0317; img_0333
+famous_or_fictional_kappa,0.9644549763033174,rater1 famous|fictional_character vs rater2 famous
+famous_or_fictional_n_disagree,2.0,img_0068; img_0333
+identity_n_both_named,42.0,
+identity_agreement,0.9761904761904762,"normalised names, multi-person lists sorted"
+identity_n_disagree,1.0,img_0160: Ian McKellen vs Michael Fassbender (Magneto)
+identity_named_by_rater1_only,0.0,
+identity_named_by_rater2_only,4.0,img_0068; img_0281; img_0317; img_0333
