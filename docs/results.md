@@ -81,3 +81,10 @@ they showed at the time of writing and how to read them.
 ## Report
 - `results/report.html` (relative links) / `scripts/90_build_report.py --embed` for the
   self-contained page.
+
+## A3 (cont.) — commonality analysis (script 52)
+- Rank-R² of the MTL RDM on {CLIP ln_post, ResNet-50 avgpool, category}: total 1.6 % (2.4 %
+  for concept cells; small because RDMs are noisy). Decomposition (MTL): unique CLIP 0.44 %,
+  shared by all three 0.44 %, shared CLIP+ResNet 0.31 %, unique ResNet 0.24 %, unique
+  category 0.13 %. Unique components are non-negative by construction, so their sign tests
+  are uninformative; the ordering is the result.
