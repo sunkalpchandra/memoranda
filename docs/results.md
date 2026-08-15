@@ -349,3 +349,9 @@ Items refer to docs/review_2026-08-15.md.
 - Right vs left amygdala animal preference: 6/32 vs 0/18 (Fisher p = 0.075).
 - RSA on strict concept-cell populations (9 sessions with ≥ 2 strict MTL cells): CLIP ln_post
   0.069 ± 0.021 (p = 0.011), ResNet-50 avgpool 0.062 (p = 0.028), category 0.074 (p = 0.002).
+
+## Reweighted RSA (script 74)
+- Leave-one-session-out NNLS weights on model RDMs: last layer of each model 0.061 vs
+  best single layer chosen on training sessions 0.060 (p = 0.31); all 51 layers of all models
+  0.060; per-model banks ≤ 0.058. No combination beats one late layer — the shared late-layer
+  structure is what the MTL tracks.
