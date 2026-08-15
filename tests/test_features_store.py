@@ -23,3 +23,16 @@ def test_taxonomy_loads_and_is_well_formed():
     assert all(len(v) >= 2 for v in tax["category"].values())
     assert all(len(v) == 2 for v in tax["attributes"].values())
     assert len(tax["fine"]) > 30
+
+
+def test_load_space_orders_and_normalises(tmp_path, monkeypatch):
+    from memoranda import features as Fs
+
+    uids = ["img_0001", "img_0002", "img_0003"]
+    X = np.array([[1.0, 0.0], [0.0, 2.0], [3.0, 3.0]], np.float32)
+    Fs.save_features("toy2", uids, {("l", "gap"): X}, root=tmp_path)
+    monkeypatch.setattr(Fs, "FEATURES", tmp_path)
+    Y, order = Fs.load_space("toy2", "l", "gap", uids=["img_0003", "img_0001"], normalize=True)
+    assert list(order) == ["img_0003", "img_0001"]
+    assert np.allclose(np.linalg.norm(Y, axis=1), 1.0)
+    assert np.allclose(Y[1], [1.0, 0.0])
