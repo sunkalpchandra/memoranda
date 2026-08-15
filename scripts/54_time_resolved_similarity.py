@@ -19,30 +19,23 @@ import pandas as pd
 from scipy import stats as sps
 
 from memoranda import neural
-from memoranda.features import load_features
-from memoranda.paths import FEATURES, FIGURES, MANIFESTS, TABLES
+from memoranda.features import load_space
+from memoranda.paths import FIGURES, MANIFESTS, TABLES
 
 WIN = 0.1
 CENTERS = np.arange(-0.2 + WIN / 2, 1.2 - WIN / 2 + 1e-9, 0.025)
 SPACES = {"alexnet conv1": ("alexnet", "conv1", "gap"), "resnet50 avgpool": ("resnet50", "avgpool", "gap"), "clip ln_post": ("clip_vitb32", "ln_post", "cls")}
 
 
-def load_space(model, layer, view):
-    if model == "clip_vitb32" and layer == "embed":
-        z = np.load(FEATURES / "clip_vitb32_embed.npz", allow_pickle=True)
-        X, stored = z["embed"], z["image_uid"]
-    else:
-        X, stored = load_features(model, layer, view)
-    X = X.astype(np.float64)
-    X = X - X.mean(0)
-    X /= np.linalg.norm(X, axis=1, keepdims=True) + 1e-12
-    return X, {u: i for i, u in enumerate(stored)}
 
 
 def main() -> None:
     sel = pd.read_csv(MANIFESTS / "unit_selectivity.csv")
     cc = sel[(sel.task == "screening") & sel.concept_cell & (sel.region == "MTL")]
-    spaces = {k: load_space(*v) for k, v in SPACES.items()}
+    spaces = {}
+    for k, v in SPACES.items():
+        X, stored = load_space(*v, center=True, normalize=True)
+        spaces[k] = (X, {u: i for i, u in enumerate(stored)})
     rows = []
     for s, g in cc.groupby("subject"):
         spikes = neural.load_spikes(s, 1)
