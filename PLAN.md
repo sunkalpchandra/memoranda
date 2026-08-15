@@ -80,6 +80,9 @@ Status legend: `[ ]` todo · `[~]` in progress · `[x]` done
 - [x] Sternberg probe-period (22) and memoranda geometry (24)
 - [x] CI green (ruff + pytest on committed CSVs)
 - [x] group-level permutation (58), category decoding (23), cross-patient tuning (36), LOSO preference (37), rp robustness (56), reliability (57)
-- [ ] time-resolved encoding models
-- [ ] hierarchical (mixed-effects) versions of the group tests
-- [ ] noise-corrected encoding at each layer with the shuffle null (extend 51 to all layers)
+- [x] time-resolved encoding models (68)
+- [x] hierarchical (mixed-effects) versions of the group tests (59, 67)
+- [~] noise-corrected encoding across layers with the shuffle null (51 core/depth done; wide set running)
+- [x] hand "famous" labels for all 342 pictures (66)
+- [x] model scale contrast (69) and same-architecture objective contrast (63)
+- [x] project website (site/, GitHub Pages) + on-site full report

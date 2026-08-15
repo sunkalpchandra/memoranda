@@ -1,5 +1,7 @@
 # memoranda
 
+**Project page:** https://sunkalpchandra.github.io/memoranda/ · full report on the same site.
+
 *memoranda* (n., pl.) — the things to be remembered. Here: the pictures that
 epilepsy patients held in working memory while single neurons were recorded.
 
@@ -84,9 +86,9 @@ correspondence emerges ~200 ms after onset and peaks at 350 ms.
 54–62 images correlates with their late-layer similarity to its preferred image
 (mean ρ ≈ 0.17, 77 % of cells positive; null ≈ 0), increasing with layer depth, emerging at
 ~225 ms and peaking at 325 ms. Face-preferring cells generalise across other faces along
-object-model similarity more than along VGGFace2 identity similarity. Architecture and training
-objective barely matter — a CLIP-trained ResNet-50 and the ImageNet ResNet-50 are
-indistinguishable layer by layer; CLIP's ViT alone keeps a within-category correspondence
+object-model similarity more than along VGGFace2 identity similarity. Architecture, training objective and
+scale barely matter — a CLIP-trained ResNet-50 and the ImageNet ResNet-50 are
+indistinguishable layer by layer, and CLIP-L/14 / DINOv2-B are no better than their small versions; CLIP's ViT alone keeps a within-category correspondence
 with the MTL.
 
 | ![RSA layer curves](results/figures/A3_rsa_layer_curves.png) |
