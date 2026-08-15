@@ -201,3 +201,5 @@ they showed at the time of writing and how to read them.
 - RSA by hemisphere: right MTL ρ = 0.059 (p = 0.02 vs 0) vs left 0.019 (p = 0.05) for CLIP;
   category 0.060 vs 0.006; paired over 10 sessions with both: p = 0.16 (n.s.).
 - Caveat: hemispheres are partly confounded with patients (implant side).
+- Within-patient (3 patients with amygdala concept cells on both sides): R − L = +0.23 in
+  3/3 patients (Wilcoxon p = 0.25, n too small) — direction consistent, confound not excluded.
