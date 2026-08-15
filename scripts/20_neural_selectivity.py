@@ -14,10 +14,10 @@ import time
 
 import pandas as pd
 
-from conceptlens import neural
-from conceptlens.dandi import list_assets
-from conceptlens.log import get_logger
-from conceptlens.paths import MANIFESTS
+from memoranda import neural
+from memoranda.dandi import list_assets
+from memoranda.log import get_logger
+from memoranda.paths import MANIFESTS
 
 log = get_logger("selectivity")
 

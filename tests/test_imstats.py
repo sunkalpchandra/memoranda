@@ -1,6 +1,6 @@
 import numpy as np
 
-from conceptlens import imstats
+from memoranda import imstats
 
 
 def test_flat_image_stats():

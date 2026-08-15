@@ -1,6 +1,6 @@
 import pandas as pd
 
-from conceptlens.dedup import assign_uids, unique_images
+from memoranda.dedup import assign_uids, unique_images
 
 
 def _row(sub, ses, idx, sha, dh, null=False):

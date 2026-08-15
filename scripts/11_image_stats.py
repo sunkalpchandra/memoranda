@@ -11,9 +11,9 @@ import pandas as pd
 from PIL import Image
 from tqdm import tqdm
 
-from conceptlens import imstats
-from conceptlens.features import unique_image_table
-from conceptlens.paths import MANIFESTS
+from memoranda import imstats
+from memoranda.features import unique_image_table
+from memoranda.paths import MANIFESTS
 
 
 def main() -> None:

@@ -15,8 +15,8 @@ import matplotlib.pyplot as plt
 import pandas as pd
 from PIL import Image
 
-from conceptlens.dedup import unique_images
-from conceptlens.paths import FIGURES, MANIFESTS, ROOT
+from memoranda.dedup import unique_images
+from memoranda.paths import FIGURES, MANIFESTS, ROOT
 
 
 def montage_unique(df: pd.DataFrame, ncol: int = 18, thumb: int = 96) -> None:

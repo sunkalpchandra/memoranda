@@ -3,7 +3,7 @@
 import pandas as pd
 import pytest
 
-from conceptlens.paths import MANIFESTS
+from memoranda.paths import MANIFESTS
 
 units_csv = MANIFESTS / "units.csv"
 images_csv = MANIFESTS / "images.csv"

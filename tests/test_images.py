@@ -1,6 +1,6 @@
 import numpy as np
 
-from conceptlens import images as I
+from memoranda import images as I
 
 
 def test_fix_orientation_shape():

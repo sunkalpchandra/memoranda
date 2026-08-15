@@ -1,8 +1,11 @@
-# ConceptLens
+# memoranda
 
-**Characterizing the visual stimuli behind human concept cells with deep vision models.**
+*memoranda* (n., pl.) — the things to be remembered. Here: the pictures that
+epilepsy patients held in working memory while single neurons were recorded.
 
-ConceptLens takes the images that were shown to epilepsy patients in the
+**What is it about these pictures that makes human concept cells fire?**
+
+This project takes the images that were shown to epilepsy patients in the
 Sternberg working-memory dataset of Kyzar et al. (2024, *Scientific Data*;
 DANDI 000469) and asks a simple question: *what is it about these pictures
 that makes single neurons in the human medial temporal lobe fire?*
@@ -36,7 +39,7 @@ the original authors measured.
 ## Layout
 
 ```
-conceptlens/        python package (data access, models, analysis)
+memoranda/        python package (data access, models, analysis)
 scripts/            CLI entry points, one per pipeline stage
 configs/            YAML configs for models and analyses
 tests/              pytest

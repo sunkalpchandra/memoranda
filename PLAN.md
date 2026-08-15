@@ -1,4 +1,4 @@
-# ConceptLens — project plan
+# Memoranda — project plan
 
 Status legend: `[ ]` todo · `[~]` in progress · `[x]` done
 
@@ -10,8 +10,8 @@ Status legend: `[ ]` todo · `[~]` in progress · `[x]` done
 - [ ] GitHub remote
 
 ## Phase 1 — Data access (DANDI 000469, streamed)
-- [ ] `conceptlens/dandi.py`: list assets (41 files), map to subject/session/task, cache JSON manifest
-- [ ] `conceptlens/nwb.py`: open remote NWB via remfile+h5py; helpers for stimulus templates,
+- [ ] `memoranda/dandi.py`: list assets (41 files), map to subject/session/task, cache JSON manifest
+- [ ] `memoranda/nwb.py`: open remote NWB via remfile+h5py; helpers for stimulus templates,
       presentation order, trials table, units (spike times, electrode location), subject metadata
 - [ ] `scripts/01_extract_images.py`: dump every image (screening + Sternberg) to
       `data/images/sub-XX/ses-Y/<name>.png` + `data/manifests/images.csv`
@@ -31,7 +31,7 @@ Status legend: `[ ]` todo · `[~]` in progress · `[x]` done
 - [ ] which screening images became Sternberg images (rank of selectivity)
 
 ## Phase 3 — Deep vision model features
-- [ ] `conceptlens/models/registry.py`: uniform loader → (model, preprocess, layer hooks)
+- [ ] `memoranda/models/registry.py`: uniform loader → (model, preprocess, layer hooks)
 - [ ] CNNs: AlexNet, VGG16, ResNet-18/50, ConvNeXt-T (torchvision, ImageNet weights)
 - [ ] Transformers: ViT-B/16, DINOv2-S/B, CLIP ViT-B/32 (open_clip)
 - [ ] layer-wise activations (early/mid/late/penultimate) → pooled features cached as .npy

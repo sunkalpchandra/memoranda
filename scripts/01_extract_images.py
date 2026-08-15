@@ -14,11 +14,11 @@ import time
 
 import pandas as pd
 
-from conceptlens import images as I
-from conceptlens import nwb
-from conceptlens.dandi import list_assets
-from conceptlens.log import get_logger
-from conceptlens.paths import MANIFESTS, ensure_dirs
+from memoranda import images as I
+from memoranda import nwb
+from memoranda.dandi import list_assets
+from memoranda.log import get_logger
+from memoranda.paths import MANIFESTS, ensure_dirs
 
 log = get_logger("extract_images")
 

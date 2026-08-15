@@ -11,9 +11,9 @@ import numpy as np
 import pandas as pd
 from PIL import Image
 
-from conceptlens.features import unique_image_table
-from conceptlens.models.zeroshot import ClipZeroShot, label_images, load_taxonomy
-from conceptlens.paths import FEATURES, MANIFESTS
+from memoranda.features import unique_image_table
+from memoranda.models.zeroshot import ClipZeroShot, label_images, load_taxonomy
+from memoranda.paths import FEATURES, MANIFESTS
 
 
 def main() -> None:

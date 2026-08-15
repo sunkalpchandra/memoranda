@@ -10,7 +10,7 @@ test:
 	$(PY) -m pytest
 
 lint:
-	.venv/bin/ruff check conceptlens scripts tests
+	.venv/bin/ruff check memoranda scripts tests
 
 images:
 	$(PY) scripts/01_extract_images.py

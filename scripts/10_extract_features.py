@@ -14,11 +14,11 @@ import pandas as pd
 from PIL import Image
 from tqdm import tqdm
 
-from conceptlens.features import feature_path, list_layers, load_features, save_features, unique_image_table
-from conceptlens.log import get_logger
-from conceptlens.models.extract import FeatureExtractor
-from conceptlens.models.registry import DEFAULT_MODELS, get_spec
-from conceptlens.paths import MANIFESTS, ensure_dirs
+from memoranda.features import feature_path, list_layers, load_features, save_features, unique_image_table
+from memoranda.log import get_logger
+from memoranda.models.extract import FeatureExtractor
+from memoranda.models.registry import DEFAULT_MODELS, get_spec
+from memoranda.paths import MANIFESTS, ensure_dirs
 
 log = get_logger("features")
 

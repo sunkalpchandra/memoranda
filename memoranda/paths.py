@@ -11,7 +11,7 @@ from __future__ import annotations
 import os
 from pathlib import Path
 
-ROOT = Path(os.environ.get("CONCEPTLENS_ROOT", Path(__file__).resolve().parents[1]))
+ROOT = Path(os.environ.get("MEMORANDA_ROOT", Path(__file__).resolve().parents[1]))
 
 DATA = ROOT / "data"
 MANIFESTS = DATA / "manifests"

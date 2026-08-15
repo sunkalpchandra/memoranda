@@ -1,4 +1,4 @@
-from conceptlens import nwb
+from memoranda import nwb
 
 
 def test_area_mapping():

@@ -9,7 +9,7 @@ from rich.logging import RichHandler
 _CONFIGURED = False
 
 
-def get_logger(name: str = "conceptlens", level: int = logging.INFO) -> logging.Logger:
+def get_logger(name: str = "memoranda", level: int = logging.INFO) -> logging.Logger:
     global _CONFIGURED
     if not _CONFIGURED:
         logging.basicConfig(
