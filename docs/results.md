@@ -142,3 +142,9 @@ they showed at the time of writing and how to read them.
   prefers the picture" (8.2 % positives): CLIP 0.47, ResNet-50 0.49, DINOv2 0.49, AlexNet
   conv1 0.49, category 0.44, low-level 0.47, faces 0.45, other-subject concept-cell reuse 0.46
   (mean per-subject AUC ± ~0.04). Nothing generalises across patients.
+
+## A5 (cont.) — single-trial category decoding (script 23)
+- Leave-one-picture-out multinomial logistic regression on 200–1000 ms population responses:
+  MTL +4.5 % over chance (p = 0.015, n = 17 sessions), MTL concept cells +7.4 % (p = 0.08,
+  n = 11), amygdala +4.1 % (n.s.), hippocampus −0.7 %, MFC −1.6 % (below chance, p = 0.02).
+  Category is decodable from the MTL but weakly — populations are small and sparse.
