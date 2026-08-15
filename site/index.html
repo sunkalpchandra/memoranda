@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>memoranda — what makes human concept cells fire?</title>
+<meta name="description" content="Relating the pictures held in working memory by epilepsy patients (DANDI 000469) to single-neuron selectivity in the human medial temporal lobe through deep vision models.">
+<meta name="author" content="Sunkalp Chandra">
+<meta name="color-scheme" content="light dark">
+<link rel="stylesheet" href="style.css">
+<script>
+  // Apply a stored theme before first paint to avoid a flash.
+  (function () {
+    try {
+      var t = localStorage.getItem('memoranda-theme');
+      if (t === 'dark' || t === 'light') document.documentElement.setAttribute('data-theme', t);
+    } catch (e) {}
+  })();
+</script>
+</head>
+<body>
+<a class="skip-link" href="#findings">Skip to findings</a>
+
+<nav class="sitenav" aria-label="Section navigation">
+  <div class="wrap">
+    <a class="wordmark" href="#top">memoranda</a>
+    <ul>
+      <li><a href="#hero">Depth</a></li>
+      <li><a href="#findings">Six findings</a></li>
+      <li><a href="#pictures">The pictures</a></li>
+      <li><a href="#methods">How it was done</a></li>
+      <li><a href="#caveats">Caveats</a></li>
+      <li><a href="#cite">Cite</a></li>
+    </ul>
+    <button class="theme-toggle" type="button" aria-pressed="false"><span class="swatch" aria-hidden="true"></span><span class="label">Dark</span></button>
+  </div>
+</nav>
+
+<header class="masthead" id="top">
+  <div class="wrap">
+    <div class="topbar">
+      <div class="crumbs mono small"><a href="https://sunkalpchandra.github.io/">sunkalpchandra.github.io</a> / memoranda</div>
+      <button class="theme-toggle" type="button" aria-pressed="false"><span class="swatch" aria-hidden="true"></span><span class="label">Dark</span></button>
+    </div>
+    <div class="kicker" style="margin-top:2.5rem">
+      <span class="eyebrow">Project page · human single neurons × deep vision models</span>
+    </div>
+    <h1>memoranda</h1>
+    <p class="thesis">What is it about a picture that makes a human concept cell fire? Almost nothing about the picture predicts <em>which</em> one a patient's neurons pick — but once picked, the neurons generalise along late-layer DNN similarity, from about 200 ms after onset.</p>
+    <p class="byline"><strong>Sunkalp Chandra</strong> · analysis of DANDI 000469 (Kyzar et al. 2024; Kamiński et al. 2017) · 1809 neurons, 21 patients, 342 pictures · August 2026</p>
+    <ul class="links">
+      <li><a class="primary" href="https://github.com/sunkalpchandra/memoranda">Code on GitHub</a></li>
+      <li><a href="https://dandiarchive.org/dandiset/000469">Dataset · DANDI 000469</a></li>
+      <li><a href="https://github.com/sunkalpchandra/memoranda/blob/main/docs/results.md">Results log</a></li>
+      <li><a href="https://github.com/sunkalpchandra/memoranda/blob/main/results/report.html">Full report</a></li>
+    </ul>
+    <div class="stats" role="list" aria-label="Key numbers">
+      <div class="stat" role="listitem">
+        <div class="stat-value">1809</div>
+        <div class="stat-label">single neurons in amygdala, hippocampus, dACC, pre-SMA, vmPFC — all replicated against the source paper</div>
+      </div>
+      <div class="stat" role="listitem">
+        <div class="stat-value">0.13</div>
+        <div class="stat-label">pooled Spearman ρ between MTL population geometry and the last layers of every network (ceiling-normalised ≈ 0.25)</div>
+      </div>
+      <div class="stat" role="listitem">
+        <div class="stat-value">77<span class="unit">%</span></div>
+        <div class="stat-label">of MTL concept cells respond to other pictures in proportion to their late-layer similarity to the preferred picture (mean ρ ≈ 0.17)</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="block" id="hero" aria-labelledby="hero-h">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">The depth result</span>
+          <h2 id="hero-h">The medial temporal lobe looks like the last layers of every network</h2>
+        </div>
+        <p class="muted small">Representational similarity analysis over the screening images. Each panel is one model; each point is one layer. Sessions are the unit of inference (mean ± s.e.m. over 18–19 sessions).</p>
+      </div>
+      <figure class="fig hero">
+        <a class="figlink" href="figures/A3_rsa_layer_curves.png" data-caption="RSA layer curves: MTL vs eight networks">
+          <img src="figures/A3_rsa_layer_curves.png" width="2400" height="1050" alt="Eight panels, one per network (AlexNet, VGG-16, ResNet-18, ResNet-50, ConvNeXt-T, ViT-B/16, DINOv2-S, CLIP ViT-B/32). In each, Spearman correlation between the MTL population RDM and the model layer RDM rises with layer depth for MTL and MTL concept cells (red curves), from around 0.01–0.03 at the first layer to 0.05–0.09 at the last; MFC (blue) stays flat near 0.01. Dashed lines mark the category RDM (0.055) and low-level RDM (0.014) baselines.">
+        </a>
+        <figcaption><strong>MTL–model similarity climbs monotonically with layer depth in every architecture; MFC stays flat.</strong> Per-session ρ reaches ≈ 0.06 at the last layers (CLIP ln_post 0.061, ResNet-50 avgpool 0.058, ViT ln 0.058; positive in 78–94 % of sessions), 0.13 when session RDMs are pooled across patients, and ≈ 0.25 after normalising by the split-half ceiling — with concept cells alone up to 0.086 and MFC ≈ 0.015.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="block" id="findings" aria-labelledby="findings-h">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Six findings</span>
+          <h2 id="findings-h">The argument, in order</h2>
+        </div>
+        <p class="muted small">Numbers are the ones in <a href="https://github.com/sunkalpchandra/memoranda/blob/main/docs/results.md">docs/results.md</a>; every figure opens full-size. Concept cell = image-selective unit by permuted ANOVA and Welch-t on the best image, 200–1000 ms after onset.</p>
+      </div>
+
+      <aside class="preface" aria-label="Replication">
+        <span class="eyebrow">Before anything else — the replication holds</span>
+        <p>All 1809 units, behaviour (88.7 % correct; median RT 1.04 / 1.12 / 1.21 s for loads 1–3) and concept-cell fractions (screening MTL 31.8 % vs 32.8 % in the paper; MFC 6.0 % vs 5.4 %) reproduce Kyzar et al. MTL concept cells stay active during maintenance when their picture is held (p = 7 × 10<sup>−9</sup>), MFC cells do not; the preferred picture as a probe is suppressed when it was held in memory (4.08 vs 4.39 Hz, p = 4 × 10<sup>−4</sup>).</p>
+      </aside>
+
+      <div class="findings">
+
+        <article class="finding" id="f1">
+          <div class="text">
+            <div class="n" aria-hidden="true">1</div>
+            <h3>Almost nothing about a picture predicts that a patient's neurons will pick it.</h3>
+            <p>Only a detected face is enriched among the five Sternberg memoranda: 62 % contain one vs 49 % of the rest of the same patient's screening set (AUC 0.57, q = 0.02). Category, CLIP attributes, low-level statistics and DNN-space typicality or isolation are all null (FDR q &gt; 0.2).</p>
+            <p>Our replicated neural selectivity does separate memoranda within a patient (AUC 0.67–0.71), but nothing generalises across patients: leave-one-subject-out prediction from any feature space sits at AUC 0.44–0.49, and a picture that "won" in other patients is not more likely to win in this one (AUC 0.54). Being a concept-cell picture is a patient × image property.</p>
+          </div>
+          <div class="thumbs">
+            <figure>
+              <a class="figlink" href="figures/A2_enrichment_contrasts.png" data-caption="A2 — memoranda vs the rest of the screening set">
+                <img src="figures/A2_enrichment_contrasts.png" width="1800" height="750" alt="Left: log2 odds ratio of each category among Sternberg memoranda vs the rest — no bar significant. Right: AUC minus 0.5 for the top feature contrasts; only largest face area, face found and number of faces are significant (red bars, AUC about 0.55–0.57).">
+              </a>
+              <figcaption>A2 · category enrichment (none) and feature contrasts (faces only)</figcaption>
+            </figure>
+          </div>
+        </article>
+
+        <article class="finding" id="f2">
+          <div class="text">
+            <div class="n" aria-hidden="true">2</div>
+            <h3>Concept cells lean toward faces, famous people and animals — and the right amygdala toward animals.</h3>
+            <p>MTL concept cells' preferred pictures contain a detected face more often than the pictures shown to them (66 % vs 53 %, p = 0.003; amygdala-driven, hippocampus and MFC null), score higher on CLIP "famous" (AUC 0.565, q = 0.047) and lower on text/logos (q = 0.007) and colourfulness (q = 0.02). Per shown image, animals draw 0.19 concept cells per patient, faces 0.14, then vehicles, places, food, objects at 0.01.</p>
+            <p>Right-amygdala concept cells prefer animals four times as often as left ones (21 % vs 5 %, p = 0.04) — Mormann et al. 2011, rediscovered. Across patients, only category structure transfers: cells preferring different pictures of the same category agree on the rest (ρ 0.045) as well as cells preferring the same picture (0.038, n.s.), and far better than cells preferring different categories (0.008; p &lt; 10<sup>−10</sup>).</p>
+          </div>
+          <div class="thumbs">
+            <figure>
+              <a class="figlink" href="figures/A5_concept_cell_preferences.png" data-caption="A5 — preferred-image category and CLIP attributes of MTL concept cells">
+                <img src="figures/A5_concept_cell_preferences.png" width="1800" height="675" alt="Left: fraction of MTL concept cells (n = 134) preferring each category (blue) vs the fraction shown (grey); faces/people 56 % preferred vs 46 % shown, landmarks under-preferred. Right: AUC minus 0.5 for CLIP attributes of preferred vs shown images; famous positive and significant, colorful and text_present negative and significant.">
+              </a>
+              <figcaption>A5 · what MTL concept cells prefer vs what they were shown</figcaption>
+            </figure>
+            <figure>
+              <a class="figlink" href="figures/A5_animacy.png" data-caption="A5 — animate vs inanimate preference by area, and concept cells per shown image by category × area">
+                <img src="figures/A5_animacy.png" width="1800" height="630" alt="Left: concept cells per shown image for animate vs inanimate pictures by area — amygdala 0.16 vs 0.07, hippocampus 0.07 vs 0.05, small in pre-SMA, vmPFC dominated by inanimate landmarks. Right: heatmap of concept cells per shown image by category and area.">
+              </a>
+              <figcaption>A5 · animacy × area</figcaption>
+            </figure>
+          </div>
+        </article>
+
+        <article class="finding" id="f3">
+          <div class="text">
+            <div class="n" aria-hidden="true">3</div>
+            <h3>MTL population geometry tracks late DNN layers, beyond category, from about 200 ms after onset.</h3>
+            <p>Per-session ρ ≈ 0.06 at the last layers of every model, 0.13 pooled, ≈ 0.25 ceiling-normalised; a within-session label permutation gives z ≈ 10–11 for late layers (AlexNet conv1 z = 2.7). MFC ≈ 0.015; amygdala (0.05–0.058) ≫ hippocampus (0.014–0.018). Late layers stay significant after partialling out category and low-level RDMs (CLIP 0.037, p = 0.03; ResNet-50 0.028, p = 0.05), while category is not significant after controlling a late layer.</p>
+            <p>The correspondence rises from ~200 ms, peaks at 350 ms (CLIP 0.071, ResNet-50 0.066, category 0.056, conv1 0.030) and decays by ~500 ms. CLIP's ViT alone keeps a within-category correspondence (0.052, p = 0.015; ResNet-50 −0.006). Neural RDMs are noisy (split-half reliability ≈ 0.06), which is why the raw ρ are small.</p>
+          </div>
+          <div class="thumbs">
+            <figure>
+              <a class="figlink" href="figures/A3_time_resolved.png" data-caption="A3 — sliding-window RSA (200-ms windows), MTL and MFC">
+                <img src="figures/A3_time_resolved.png" width="1950" height="675" alt="Two panels of sliding-window RSA. MTL: Spearman correlation with CLIP ln_post, ResNet-50 avgpool, category, AlexNet conv4 rises from ~200 ms after image onset to a 0.06–0.07 peak at 350 ms and decays by 500 ms; conv1 and low-level RDMs peak near 0.02–0.03. MFC: small sustained correspondence around 0.015 between 400 and 800 ms.">
+              </a>
+              <figcaption>A3 · time-resolved RSA</figcaption>
+            </figure>
+          </div>
+        </article>
+
+        <article class="finding" id="f4">
+          <div class="text">
+            <div class="n" aria-hidden="true">4</div>
+            <h3>Single concept cells generalise along DNN similarity to their preferred picture.</h3>
+            <p>A concept cell's response to the other 54–62 pictures correlates with their late-layer similarity to its preferred picture: mean ρ ≈ 0.17 (ResNet-50 layer4 / CLIP ln_post), 77 % of cells positive, random-anchor null ≈ 0. It increases with depth (mixed-model slope 0.056 per unit depth, z = 14), emerges at ~225 ms and peaks at 325 ms — slightly ahead of the raw preferred-vs-rest rate peak. Shuffle-debiased encoding r reaches 0.29 for CLIP ln_post (47 % of cells p &lt; 0.05).</p>
+            <p>The effect is carried by broadly tuned cells — face-preferring cells ρ = 0.22 vs 0.07 for the rest — and by the <strong>right</strong> amygdala (0.30 vs 0.04 left, p &lt; 10<sup>−4</sup>; hemispheres partly confounded with patients). Classic sparse concept cells (horses, an astronaut) sit at ρ ≈ 0. Face cells generalise across other faces along object-model similarity (ρ 0.15) more than along VGGFace2 identity similarity (0.09).</p>
+          </div>
+          <div class="thumbs">
+            <figure>
+              <a class="figlink" href="figures/A4_similarity_tuning.png" data-caption="A4 — similarity tuning by layer for MTL concept, MTL non-concept and MFC concept cells">
+                <img src="figures/A4_similarity_tuning.png" width="2400" height="1050" alt="Eight panels, one per network, of the mean Spearman correlation between a cell's firing rate to non-preferred pictures and their DNN similarity to the preferred picture. MTL concept cells (red) rise from about 0.08 at early layers to 0.15–0.17 at late layers; MFC concept cells (blue) rise to about 0.10; MTL non-concept cells stay near 0.02; the random-anchor null hovers around zero.">
+              </a>
+              <figcaption>A4 · similarity tuning across layers</figcaption>
+            </figure>
+            <figure class="tall">
+              <a class="figlink" href="figures/A4_example_cells.png" data-caption="A4 — exemplar amygdala concept cells: preferred picture, rate vs CLIP similarity, most and least similar pictures">
+                <img src="figures/A4_example_cells.png" width="1512" height="2236" alt="Eight rows of exemplar amygdala concept cells. Each row shows the preferred picture, a scatter of firing rate against CLIP similarity to that picture over the other 62 pictures, and the four most and three least similar pictures with their rates. Celebrity-face cells (Kim and Kanye, Jennifer Lawrence, Elvis, Angelina Jolie, Tiger Woods) have correlations 0.66–0.79 and fire to other celebrity faces; a horses cell and an astronaut cell have correlations near 0.01.">
+              </a>
+              <figcaption>A4 · exemplar cells (celebrity-face cells generalise; horses and astronaut do not)</figcaption>
+            </figure>
+          </div>
+        </article>
+
+        <article class="finding" id="f5">
+          <div class="text">
+            <div class="n" aria-hidden="true">5</div>
+            <h3>Architecture and training objective barely matter; depth does.</h3>
+            <p>At their best layer, the eight networks are statistically close under RSA (only CLIP &gt; AlexNet, p = 0.03), similarity tuning (ResNet-50 ≈ CLIP lead) and encoding (VGG / AlexNet fc layers lead). No systematic premium for language alignment or self-supervision.</p>
+            <p>The cleanest test fixes the architecture: layer-matched ImageNet ResNet-50 vs CLIP-RN50 differ by −0.007…+0.002 in RSA (all p ≥ 0.24, 19 sessions) and by less than ±0.007 in similarity tuning (p ≥ 0.16, 134 cells). The earlier CLIP-ViT edge is architecture and resolution, not language.</p>
+          </div>
+          <div class="thumbs">
+            <figure>
+              <a class="figlink" href="figures/A7_model_comparison.png" data-caption="A7 — best-layer score per network under RSA, similarity tuning and encoding">
+                <img src="figures/A7_model_comparison.png" width="2250" height="630" alt="Three horizontal bar charts ranking eight networks at their best layer: RSA (CLIP 0.060 to ConvNeXt 0.049), similarity tuning (ResNet-50 and CLIP about 0.17 to ViT 0.14), encoding r (VGG-16 fc7 0.10 to ConvNeXt 0.05). Error bars overlap throughout; bars coloured by supervised, self-supervised or language objective.">
+              </a>
+              <figcaption>A7 · model ranking, three metrics</figcaption>
+            </figure>
+            <figure>
+              <a class="figlink" href="figures/A7_objective_contrast.png" data-caption="A7 — layer-matched ResNet-50 (ImageNet) vs CLIP-RN50">
+                <img src="figures/A7_objective_contrast.png" width="1650" height="630" alt="Two line charts over layer1–layer4 and avgpool comparing ImageNet-supervised ResNet-50 (blue) with CLIP-trained ResNet-50 (red). RSA and similarity tuning curves overlap at every layer, both rising with depth; per-layer p-values range 0.16 to 0.83.">
+              </a>
+              <figcaption>A7 · same architecture, different objective</figcaption>
+            </figure>
+          </div>
+        </article>
+
+        <article class="finding" id="f6">
+          <div class="text">
+            <div class="n" aria-hidden="true">6</div>
+            <h3>Behaviour: only a weak lure-similarity slowing, and low power.</h3>
+            <p>On correct OUT (non-match) probe trials, reaction time rises with the CLIP similarity between the probe and the encoded set (mean within-subject slope +0.055 z-units, p = 0.04 uncorrected; Wilcoxon 0.055). The same test with ResNet-50 (slope 0.003) and DINOv2 (0.009) similarity, and every accuracy outcome, is null.</p>
+            <p>With only five memoranda per patient there is little similarity variance to work with. The MTL RDMs over the five memoranda themselves are unrelated to any DNN layer or to category (all p &gt; 0.15): the visual similarity structure lives among the <em>non</em>-preferred pictures, not among the winners.</p>
+          </div>
+          <div class="thumbs">
+            <figure>
+              <a class="figlink" href="figures/A6_behavior.png" data-caption="A6 — OUT-trial RT vs probe–set similarity in three feature spaces">
+                <img src="figures/A6_behavior.png" width="1950" height="600" alt="Three panels of within-subject z-scored reaction time on correct OUT trials against maximum cosine similarity between probe and encoded set, binned. CLIP: RT rises from about −0.05 to +0.12 with similarity (mean slope 0.055, p = 0.044). ResNet-50 (slope 0.003, p = 0.92) and DINOv2 (slope 0.009, p = 0.78) show no trend.">
+              </a>
+              <figcaption>A6 · lure similarity vs reaction time</figcaption>
+            </figure>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="pictures" aria-labelledby="pictures-h">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">The pictures</span>
+          <h2 id="pictures-h">342 unique pictures underlie the whole dataset</h2>
+        </div>
+        <p class="muted small">Every stimulus is stored inside the NWB files. 1341 stored templates collapse to 342 unique pictures (sha1 exact match, then dhash ≤ 6/64 bits); the pool is heavily reused — one picture was shown to 16 patients. 105 of them (5 × 21) became Sternberg memoranda.</p>
+      </div>
+      <div class="pictures-grid">
+        <figure class="fig">
+          <a class="figlink" href="figures/montage_all_unique.png" data-caption="All 342 unique stimulus pictures with their dataset-wide uids">
+            <img src="figures/montage_all_unique.png" width="1600" height="1458" alt="Contact-sheet montage of all 342 unique stimulus pictures, 18 per row, each labelled with its uid: celebrities and politicians, animals, landmarks, vehicles, food, everyday objects, landscapes and a few cartoon characters.">
+          </a>
+          <figcaption><strong>Every unique picture, with its dataset-wide uid.</strong> Mostly celebrities and politicians, then animals, landmarks, vehicles, food, objects, landscapes and a handful of cartoon characters. Downscaled here; the full-resolution montage is in the repository.</figcaption>
+        </figure>
+        <figure class="fig tallfig">
+          <a class="figlink" href="figures/montage_sternberg_by_subject.png" data-caption="The five Sternberg memoranda of each patient">
+            <img src="figures/montage_sternberg_by_subject.png" width="1050" height="3465" alt="Tall montage with one row per patient showing the five pictures each patient held in working memory during the Sternberg task.">
+          </a>
+          <figcaption><strong>The five memoranda per patient</strong> — the pictures that drove that patient's most selective neurons in screening and were then held in working memory.</figcaption>
+        </figure>
+      </div>
+      <figure class="fig">
+        <a class="figlink" href="figures/A1_composition.png" data-caption="A1 — category composition of the pool and of each patient's screening set">
+          <img src="figures/A1_composition.png" width="1650" height="600" alt="Left: bar chart of unique images per category — faces/people about 120, animals about 55, landmarks about 37, vehicles about 34, then landscapes, objects, scenes with people, cartoon art and food at 15–23 each. Right: stacked bars of category fraction per patient's screening set, showing faces dominating most sets with patient-specific mixes.">
+        </a>
+        <figcaption><strong>Category composition.</strong> CLIP zero-shot labels, corrected by 40 hand-checked overrides: 37 % face / person, 14 % animal, 11 % landmark, 10 % vehicle, 8 % object, 7 % scene with people, 6 % nature, 6 % food, 2 % cartoon. Each patient saw a different 54–63-picture screening set; the per-patient mix varies a lot, which is why sessions are the unit of inference throughout.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="block" id="methods" aria-labelledby="methods-h">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">How it was done</span>
+          <h2 id="methods-h">Streamed data, replicated selectivity, a zoo of vision models</h2>
+        </div>
+        <p class="muted small">Condensed from <a href="https://github.com/sunkalpchandra/memoranda/blob/main/docs/methods.md">docs/methods.md</a>. Every stage is a numbered script under <code>scripts/</code>; tables land in <code>results/tables/</code>.</p>
+      </div>
+      <div class="methods">
+        <div class="method">
+          <h3><span class="eyebrow">Data</span>Streaming, not downloading</h3>
+          <ul>
+            <li>DANDI 000469: 41 NWB files, 21 patients, streamed over HTTP with <code>remfile</code> + <code>h5py</code>; only images, trials and spike times are cached locally (nothing of the 9.8 GB is downloaded up front).</li>
+            <li>Templates are stored rotated; restored to 300 × 400 landscape. Screening presentation indices are <code>image_number − 1</code>; Sternberg indices are positional — detected automatically.</li>
+            <li>Every template gets a dataset-wide <code>image_uid</code> (sha1 exact match, then dhash ≤ 6/64 bits union–find) → 342 unique pictures.</li>
+          </ul>
+        </div>
+        <div class="method">
+          <h3><span class="eyebrow">Neurons</span>Concept-cell criteria (paper's window)</h3>
+          <ul>
+            <li>Firing rate 200–1000 ms after onset. Concept cell = permuted one-way ANOVA over image identity (1000 permutations, p &lt; 0.05) <em>and</em> permutation Welch-t of the best image vs all others (p &lt; 0.05); units with &lt; 50 spikes excluded.</li>
+            <li>Screening: 54–63 images × 6 repetitions. Sternberg: 5 images, all encoding presentations (enc1–3), probes excluded; enc-1-only gives 22.7 % MTL, matching the paper's 20.9 %.</li>
+            <li>Extras per unit: depth of selectivity, Treves–Rolls sparseness, preferred / non-preferred / baseline rate.</li>
+          </ul>
+        </div>
+        <div class="method">
+          <h3><span class="eyebrow">Models</span>Eight networks, 5–8 layers each</h3>
+          <ul>
+            <li>AlexNet, VGG-16, ResNet-18/50, ConvNeXt-T, ViT-B/16 (torchvision ImageNet-1k), DINOv2-S/14 (self-supervised), CLIP ViT-B/32 and CLIP RN50 (language-contrastive). Per layer: <code>gap</code> (spatial / token mean), <code>cls</code>, and <code>rp</code> (fixed sparse random projection preserving layout).</li>
+            <li>CLIP zero-shot: 9 exclusive categories, 10 binary attributes, 56 fine labels; 40 hand-checked label overrides.</li>
+            <li>Faces: MTCNN detection (count, largest-face area); VGGFace2 InceptionResnetV1 embedding. Low-level statistics: luminance, contrast, colourfulness, saturation, entropies, edge density, spectral slope.</li>
+          </ul>
+        </div>
+        <div class="method">
+          <h3><span class="eyebrow">Analyses</span>RSA, encoding, similarity tuning, behaviour</h3>
+          <ul>
+            <li><strong>RSA</strong>: neural RDM = correlation distance over z-scored unit responses; model RDM = correlation distance over features; Spearman ρ on upper triangles; sessions as random effects; split-half ceiling; partial Spearman controlling category and low-level RDMs; pooled consensus RDM with image-identity permutation; 200-ms sliding windows.</li>
+            <li><strong>Encoding</strong>: 6-fold CV ridge with in-fold z-scoring + PCA(20), Pearson r on held-out predictions; per-cell label-shuffle null to debias (raw CV r is negatively biased).</li>
+            <li><strong>Similarity tuning</strong>: per concept cell, ρ between rate to non-preferred pictures and their DNN similarity to the preferred one; random-anchor null.</li>
+            <li><strong>Behaviour</strong>: per-trial cosine similarity between probe and encoded set; per-subject OLS slopes with load as covariate → group t-test / Wilcoxon. Two-sided tests; BH-FDR within families; AUC or odds ratio as effect size.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="caveats" aria-labelledby="caveats-h">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Caveats</span>
+          <h2 id="caveats-h">What to keep in mind</h2>
+        </div>
+        <p class="muted small">Carried forward from <a href="https://github.com/sunkalpchandra/memoranda/blob/main/docs/handoff.md">docs/handoff.md</a>.</p>
+      </div>
+      <ul class="caveats">
+        <li><strong>Neural RDM reliability is low (~0.06).</strong> Raw per-session ρ are small for that reason; ceiling-normalise or pool across patients before comparing to other datasets.</li>
+        <li><strong>Cross-validated encoding r is negatively biased</strong> for signal-free targets with ~60 samples (non-selective cells sit at −0.05 to −0.16). Quote the shuffle-null-debiased values.</li>
+        <li><strong>Category labels are CLIP zero-shot plus 40 hand overrides.</strong> The raw CLIP decision is kept alongside; re-running the category-dependent analyses with corrected labels changed no conclusion.</li>
+        <li><strong>Hemisphere effects are partly confounded with patient</strong> (implant side). The right-amygdala advantage is consistent in the 3 patients with concept cells on both sides, but n is too small to exclude the confound.</li>
+        <li><strong>Sternberg concept-cell selection uses enc1–3 in most scripts</strong>; the paper's enc-1-only rule gives 22.7 % vs 20.9 % (script 25).</li>
+        <li><strong>Behavioural analyses are under-powered</strong>: five memoranda per patient leave little similarity variance; the CLIP RT slope is uncorrected.</li>
+      </ul>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer" id="cite">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <span class="eyebrow">Data and citation</span>
+        <p class="prose">All neural data and stimuli come from DANDI 000469, released under CC-BY-4.0. If you use these results, cite the dataset paper and the original study:</p>
+        <div class="cite">
+          <p>Kyzar M, Kamiński J, Brzezicka A, Reed CM, Chung JM, Mamelak AN, Rutishauser U. <em>Dataset of human single-neuron activity during a Sternberg working memory task.</em> Sci Data 11:89 (2024). <span class="doi"><a href="https://doi.org/10.1038/s41597-024-02943-8">doi:10.1038/s41597-024-02943-8</a></span></p>
+        </div>
+        <div class="cite">
+          <p>Kamiński J, Sullivan S, Chung JM, Ross IB, Mamelak AN, Rutishauser U. <em>Persistently active neurons in human medial frontal and medial temporal lobe support working memory.</em> Nat Neurosci 20:590–601 (2017). <span class="doi"><a href="https://doi.org/10.1038/nn.4509">doi:10.1038/nn.4509</a></span></p>
+        </div>
+        <p class="colophon">Analysis, code and this page: Sunkalp Chandra, 2026. Code under the repository licence; the pictures shown in the montages are the dataset's stimuli (CC-BY-4.0 via DANDI) and are reproduced here for documentation of the analysis.</p>
+      </div>
+      <div>
+        <span class="eyebrow">Links</span>
+        <ul>
+          <li><a href="https://github.com/sunkalpchandra/memoranda">github.com/sunkalpchandra/memoranda</a></li>
+          <li><a href="https://github.com/sunkalpchandra/memoranda/tree/main/results/tables">Results tables (CSV)</a></li>
+          <li><a href="https://github.com/sunkalpchandra/memoranda/tree/main/results/figures">All figures</a></li>
+          <li><a href="https://github.com/sunkalpchandra/memoranda/blob/main/docs/results.md">Running results log</a></li>
+          <li><a href="https://github.com/sunkalpchandra/memoranda/blob/main/docs/methods.md">Methods</a> · <a href="https://github.com/sunkalpchandra/memoranda/blob/main/docs/decisions.md">Decisions &amp; data quirks</a></li>
+          <li><a href="https://dandiarchive.org/dandiset/000469">DANDI 000469</a></li>
+        </ul>
+        <p class="colophon">No build step, no trackers, no external assets. System fonts only.</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Figure viewer" aria-hidden="true">
+  <button type="button" class="lb-close">Close (Esc)</button>
+  <button type="button" class="lb-prev" aria-label="Previous figure">&larr; Prev</button>
+  <img alt="">
+  <button type="button" class="lb-next" aria-label="Next figure">Next &rarr;</button>
+  <div class="lb-cap" aria-live="polite"></div>
+</div>
+
+<script src="main.js"></script>
+</body>
+</html>
