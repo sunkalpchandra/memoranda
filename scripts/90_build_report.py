@@ -225,7 +225,7 @@ def build(embed: bool) -> str:
         eb = pd.read_csv(TABLES / "A4_encoding_best_layer.csv")
         e = eb[eb.group == "MTL concept"]
         enc_tbl = table(e, ["model", "best_layer", "n_units", "r_mean", "r_sem", "frac_r_pos", "r_over_ceiling"], ["model", "best layer", "cells", "mean CV r", "sem", "frac r>0", "r / ceiling"], caption="MTL concept cells: encoding performance at each model's best layer (6-fold CV ridge, in-fold PCA-20). Baseline rows: category one-hot, low-level statistics.")
-        enc_txt = f"""<p>Ridge regression from layer features to each cell's 54–63-image tuning curve reaches a mean cross-validated <i>r</i> of <b>{n['enc_r']:.2f}</b> for MTL concept cells at the best layer ({n['enc_best']}; {n['enc_frac']:.0f}% of cells above zero; ≈{n['enc_ceiling']:.2f} of the split-half ceiling), versus {n['enc_cat']:.2f} for a category one-hot baseline. Note that CV <i>r</i> for cells with no signal is <em>negatively</em> biased (non-selective cells sit at −0.05 to −0.15 for every predictor), so the concept-cell values should be read against that floor rather than zero. With ~60 pictures per cell and near one-hot tuning curves, encoding models are a blunter instrument here than the similarity-tuning test above; the fully connected layers of AlexNet/VGG and CLIP's last layers do best.</p>"""
+        enc_txt = f"""<p>Ridge regression from layer features to each cell's 54–63-image tuning curve reaches a mean cross-validated <i>r</i> of <b>{n['enc_r']:.2f}</b> for MTL concept cells at the best layer ({n['enc_best']}; {n['enc_frac']:.0f}% of cells above zero; ≈{n['enc_ceiling']:.2f} of the split-half ceiling), versus {n['enc_cat']:.2f} for a category one-hot baseline. Raw CV <i>r</i> is <em>negatively</em> biased for signal-free targets with ~60 samples, so we also computed a per-cell picture-label-shuffle null (100 shuffles). Against that null the picture changes: debiased <i>r</i> for MTL concept cells is <b>0.29</b> for CLIP's last layer (47% of cells individually significant), 0.26 for DINOv2, ≈0.20 for AlexNet fc6 / ResNet-50 avgpool / VGG fc7 and 0.21 for a category one-hot — CLIP is the best single-cell predictor once the bias is removed, and MFC concept cells are predicted about half as well (0.21).</p>"""
 
     parts = [f"<title>Memoranda</title><style>{CSS}</style>", '<div class="wrap">']
     parts.append(f"""
@@ -352,7 +352,7 @@ def build(embed: bool) -> str:
 <li>Concept-cell selection reuses the same responses that enter the similarity-tuning and encoding analyses (the preferred picture is excluded, and the random-anchor null is ≈ 0, but selection bias could still inflate the non-preferred slope slightly).</li>
 <li>Sternberg concept cells were selected on all encoding presentations (paper: encoding 1 only), giving 29% rather than 21% MTL concept cells in that task.</li>
 <li>CLIP zero-shot labels are accurate for animals/vehicles/food but blur "face" vs "scene with people"; a hand-checked label pass would tighten A5.</li>
-<li>Cross-validated encoding r is negatively biased under the null (in-fold demeaning with ~60 samples); a label-shuffle null per cell would be the cleaner reference.</li>
+<li>Cross-validated encoding r is negatively biased under the null; the shuffle-null-debiased values are the ones to quote (script 51 covers six predictors — extending it to every layer is on the list).</li>
 <li>Next: variance partitioning between models, a face-trained network, per-cell noise-corrected encoding at each layer, and time-resolved encoding models.</li>
 </ul>
 </div>
