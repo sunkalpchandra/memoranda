@@ -164,3 +164,12 @@ they showed at the time of writing and how to read them.
   (all permutation p > 0.15); the maintenance RDM correlates with the encoding RDM (ρ = 0.19,
   p = 0.02). With five sparse "winner" pictures the pairwise structure is flat — the visual
   similarity structure lives among the *non*-preferred pictures, not among the winners.
+
+## A4 (cont.) — encoding models with a label-shuffle null (script 51)
+- Per-cell null means are strongly negative (−0.09 to −0.21; more negative for
+  higher-dimensional predictors), confirming the CV bias. Debiased r (obs − null mean),
+  MTL concept cells (n = 134): CLIP ln_post 0.285 ± 0.027 (47 % of cells p < 0.05),
+  DINOv2 block8 0.257 (40 %), AlexNet fc6 0.205, category one-hot 0.206, ResNet-50 avgpool
+  0.203, VGG-16 fc7 0.192. MFC concept cells (n = 29): CLIP 0.21 (38 %), others 0.11–0.16.
+  After debiasing, CLIP is the best single-cell predictor and the category one-hot is on par
+  with the CNN fc layers.
