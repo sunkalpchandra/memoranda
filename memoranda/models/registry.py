@@ -226,4 +226,21 @@ register(
     )
 )
 
+register(
+    ModelSpec(
+        name="clip_rn50",
+        family="clip",
+        source="open_clip",
+        layers={
+            "layer1": "visual.layer1",
+            "layer2": "visual.layer2",
+            "layer3": "visual.layer3",
+            "layer4": "visual.layer4",
+            "attnpool": "visual.attnpool",
+        },
+        build=_clip("RN50", "openai"),
+        notes="same architecture as torchvision resnet50, contrastive language objective",
+    )
+)
+
 DEFAULT_MODELS = ["alexnet", "vgg16", "resnet18", "resnet50", "convnext_tiny", "vit_b_16", "dinov2_small", "clip_vitb32"]
