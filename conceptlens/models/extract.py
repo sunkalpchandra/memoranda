@@ -55,8 +55,33 @@ class _Projector:
             w[r > 5 / 6] = 1.0
             w *= np.sqrt(3.0 / self.out_dim)
             self._cache[d] = w
+        if len(self._cache) > 6:  # bound memory: drop the oldest projection
+            self._cache.pop(next(iter(self._cache)))
         w = self._cache[d].to(x.device, x.dtype)
         return x @ w
+
+
+MAX_FLAT = 32768  # cap on flattened dims before random projection (memory)
+
+
+def _spatial_cap(act: torch.Tensor) -> torch.Tensor:
+    """Adaptive-avg-pool a (B, C, H, W) map so that C*h*w <= MAX_FLAT."""
+    b, c, h, w = act.shape
+    g = min(h, w)
+    while g > 1 and c * g * g > MAX_FLAT:
+        g //= 2
+    if g < min(h, w):
+        act = torch.nn.functional.adaptive_avg_pool2d(act, g)
+    return act
+
+
+def _token_grid(tokens: torch.Tensor) -> torch.Tensor | None:
+    """(B, N, D) patch tokens → (B, D, s, s) if N is a perfect square."""
+    b, n, d = tokens.shape
+    s = int(round(n**0.5))
+    if s * s != n:
+        return None
+    return tokens.transpose(1, 2).reshape(b, d, s, s)
 
 
 def _pool(act: torch.Tensor, is_token_model: bool) -> dict[str, torch.Tensor]:
@@ -64,19 +89,23 @@ def _pool(act: torch.Tensor, is_token_model: bool) -> dict[str, torch.Tensor]:
     out: dict[str, torch.Tensor] = {}
     if act.ndim == 4:  # B, C, H, W
         out["gap"] = act.mean(dim=(2, 3))
-        out["flat"] = act.flatten(1)
-    elif act.ndim == 3:  # B, N, D  (tokens) — or CLIP resblocks give N, B, D
-        if is_token_model and act.shape[0] != act.shape[1] and act.shape[1] < act.shape[0]:
-            # heuristic for (N, B, D) layouts: batch is the smaller middle dim
+        out["flat"] = _spatial_cap(act).flatten(1)
+    elif act.ndim == 3:  # B, N, D  (tokens) — CLIP resblocks give N, B, D
+        if is_token_model and act.shape[0] > act.shape[1]:
             act = act.transpose(0, 1)
         out["cls"] = act[:, 0]
-        out["gap"] = act[:, 1:].mean(dim=1) if act.shape[1] > 1 else act[:, 0]
-        out["flat"] = act.flatten(1)
+        patches = act[:, 1:] if act.shape[1] > 1 else act
+        out["gap"] = patches.mean(dim=1)
+        grid = _token_grid(patches)
+        if grid is not None:
+            out["flat"] = _spatial_cap(grid).flatten(1)
+        else:
+            out["flat"] = act.flatten(1)[:, :MAX_FLAT]
     elif act.ndim == 2:  # B, D
         out["gap"] = act
         out["flat"] = act
     else:
-        out["flat"] = act.flatten(1)
+        out["flat"] = act.flatten(1)[:, :MAX_FLAT]
         out["gap"] = out["flat"]
     return out
 
