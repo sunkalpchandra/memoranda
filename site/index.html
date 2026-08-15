@@ -193,7 +193,7 @@
           <div class="text">
             <div class="n" aria-hidden="true">5</div>
             <h3>Architecture and training objective barely matter; depth does.</h3>
-            <p>At their best layer, the eight networks are statistically close under RSA (1 of 28 pairwise contrasts nominal — chance level), similarity tuning (ResNet-50 ≈ CLIP lead) and per-cell encoding (CLIP 47 % of cells significant, DINOv2 40 %, AlexNet 39 %, ResNet-50 34 %). No systematic premium for language alignment or self-supervision, and no gain from scale (CLIP-L/14, DINOv2-B).</p>
+            <p>At their best layer, the eight networks are statistically close under RSA (1 of 28 pairwise contrasts nominal — chance level), similarity tuning (ResNet-50 ≈ CLIP lead) and per-cell encoding (CLIP 47 % of cells significant, DINOv2 40 %, AlexNet 39 %, ResNet-50 34 %). No systematic premium for language alignment or self-supervision, no gain from scale (CLIP-L/14, DINOv2-B), and no gain from combining layers or models: cross-validated non-negative reweighting of all 51 layers of all eight networks scores 0.060 against 0.060 for the best single late layer.</p>
             <p>The cleanest test fixes the architecture: layer-matched ImageNet ResNet-50 vs CLIP-RN50 differ by −0.007…+0.002 in RSA (all p ≥ 0.24, 19 sessions) and by less than ±0.007 in similarity tuning (p ≥ 0.16, 134 cells). The earlier CLIP-ViT edge is architecture and resolution, not language.</p>
           </div>
           <div class="thumbs">
