@@ -136,3 +136,9 @@ they showed at the time of writing and how to read them.
   49 %; AUC 0.565 pooled / 0.569 within-subject; q = 0.02) and larger faces (AUC 0.57,
   q = 0.02). This is the one picture-level property that separates memoranda; it matches the
   amygdala concept cells' face preference (A5).
+
+## A5 (cont.) — predicting preference across patients (script 37)
+- Leave-one-subject-out logistic regression, label = "≥1 MTL concept cell of this subject
+  prefers the picture" (8.2 % positives): CLIP 0.47, ResNet-50 0.49, DINOv2 0.49, AlexNet
+  conv1 0.49, category 0.44, low-level 0.47, faces 0.45, other-subject concept-cell reuse 0.46
+  (mean per-subject AUC ± ~0.04). Nothing generalises across patients.
