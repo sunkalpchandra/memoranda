@@ -60,9 +60,9 @@ def main() -> None:
     per.to_csv(TABLES / "A7_objective_contrast_per_unit.csv", index=False)
     out = []
     for (crit, layer), g in per.groupby(["criterion", "layer"]):
-        d = (g.clip - g.supervised).dropna()
+        d = (g["clip"] - g["supervised"]).dropna()
         p = sps.wilcoxon(d).pvalue if len(d) > 5 else np.nan
-        out.append({"criterion": crit, "layer": layer, "n": len(d), "supervised_mean": g.supervised.mean(), "clip_mean": g.clip.mean(), "clip_minus_sup": d.mean(), "sem": d.std() / np.sqrt(len(d)), "wilcoxon_p": p})
+        out.append({"criterion": crit, "layer": layer, "n": len(d), "supervised_mean": g.supervised.mean(), "clip_mean": g["clip"].mean(), "clip_minus_sup": d.mean(), "sem": d.std() / np.sqrt(len(d)), "wilcoxon_p": p})
     res = pd.DataFrame(out)
     order = [p[0] for p in PAIRS]
     res["layer"] = pd.Categorical(res.layer, order)
