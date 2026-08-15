@@ -64,10 +64,13 @@ memoranda — but our replicated neural selectivity does (AUC ≈ 0.7), and an i
 "won" in other patients is not more likely to win in this one (LOSO AUC 0.54). Being a
 concept-cell image is a *patient × image* property.
 
-**What concept cells like.** Mild bias toward famous faces (58 % vs 47 % shown), against
-text/logos; per shown image, animals (0.19 cells/patient) > faces (0.14) > vehicles > places
-> food > objects (0.01). Right amygdala concept cells prefer animals 4× more often than left
-(21 % vs 5 %, p = 0.04) — Mormann et al. 2011 rediscovered.
+**What concept cells like.** Bias toward pictures with a detected face (66 % vs 53 % shown,
+p = 0.003; amygdala-driven) and famous people, against text/logos; per shown image, animals
+(0.19 cells/patient) > faces (0.14) > vehicles > places > food > objects (0.01). Right amygdala
+concept cells prefer animals 4× more often than left (21 % vs 5 %, p = 0.04) — Mormann et al.
+2011 rediscovered. Across patients, cells preferring the *same* picture agree on the rest no
+better than cells preferring different pictures of the same category: what transfers between
+people is category structure, not picture-specific tuning.
 
 **Neural ↔ DNN geometry (RSA).** MTL population RDMs correlate with every model's late
 layers (ρ ≈ 0.06 per session, 0.13 pooled across patients; ceiling-normalised ≈ 0.25),
@@ -77,7 +80,11 @@ correspondence emerges ~200 ms after onset and peaks at 350 ms.
 
 **Single neurons generalise along DNN similarity.** A concept cell's response to the other
 54–62 images correlates with their late-layer similarity to its preferred image
-(mean ρ ≈ 0.17, 77 % of cells positive; null ≈ 0), increasing with layer depth.
+(mean ρ ≈ 0.17, 77 % of cells positive; null ≈ 0), increasing with layer depth, emerging at
+~225 ms and peaking at 325 ms. Face-preferring cells generalise across other faces along
+object-model similarity more than along VGGFace2 identity similarity. Architecture and training
+objective (supervised / self-supervised / language-aligned) barely matter; CLIP alone keeps a
+within-category correspondence with the MTL.
 
 | ![RSA layer curves](results/figures/A3_rsa_layer_curves.png) |
 |:--:|
