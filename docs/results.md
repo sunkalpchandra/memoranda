@@ -229,3 +229,9 @@ they showed at the time of writing and how to read them.
   similarity tuning differences −0.006…+0.007 (p ≥ 0.16, n = 134 cells). Training objective
   makes no measurable difference once architecture is fixed; the earlier CLIP-ViT edge is
   therefore architecture/resolution, not language.
+
+## A4 (cont.) — debiased encoding vs depth (scripts 51 --set depth, 64)
+- MTL concept cells, shuffle-debiased CV r: CLIP block2 0.15 → block5 0.16 → block8 0.22 →
+  block11 0.27 → ln_post 0.29; ResNet-50 layer1 0.16 → layer3 0.23 → avgpool 0.20; AlexNet
+  conv1 0.15 → fc6 0.21; low-level 0.09; category one-hot 0.21. Same depth gradient as RSA and
+  similarity tuning, now with a bias-free encoding metric.

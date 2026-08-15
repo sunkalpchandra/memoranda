@@ -51,6 +51,7 @@ FIGS = {
     "examples": ("A4_example_cells.png", 1300),
     "sparsity": ("A4_sparsity_vs_generalisation.png", 1300),
     "objective": ("A7_objective_contrast.png", 1200),
+    "debiased": ("A4_debiased_depth.png", 1200),
 }
 
 
@@ -328,7 +329,8 @@ def build(embed: bool) -> str:
 {F('tsim', 'Time course of similarity tuning (100-ms windows): onset ~225 ms, peak 325 ms; late layers ≫ conv1.', wide=False)}
 {F('facespace', 'Face pictures only: RSA vs a VGGFace2 identity space and object models; face-preferring cells generalise across other faces along object-model similarity more than identity similarity.', wide=False)}
 </div>
-{F('enc_layers', 'Encoding-model layer curves: cross-validated r of ridge models from layer features to single-unit tuning curves.')}
+{F('debiased', 'Shuffle-debiased encoding r vs layer depth: the same early→late gradient as RSA and similarity tuning.', wide=False)}
+{F('enc_layers', 'Raw encoding-model layer curves (negatively biased under the null; see the debiased panel above).')}
 {enc_tbl}
 </section>""")
 
