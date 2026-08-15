@@ -1,0 +1,130 @@
+# Zero-shot taxonomies used to label every stimulus with CLIP.
+# Each block is a mutually-exclusive set of classes; every class lists prompts
+# whose text embeddings are averaged.
+
+category:
+  face_person:
+    - "a photo of a person"
+    - "a portrait photo of a famous person"
+    - "a close-up photo of a human face"
+    - "a photo of a celebrity"
+  animal:
+    - "a photo of an animal"
+    - "a photo of a wild animal"
+    - "a photo of a pet"
+  landmark_place:
+    - "a photo of a famous landmark"
+    - "a photo of a building or monument"
+    - "a photo of a city skyline"
+  landscape_nature:
+    - "a photo of a natural landscape"
+    - "a scenic photo of nature"
+    - "a photo of mountains, sea or desert"
+  object:
+    - "a photo of an object"
+    - "a product photo of an object on a plain background"
+    - "a photo of a tool, gadget or piece of clothing"
+  vehicle:
+    - "a photo of a vehicle"
+    - "a photo of a car, truck, plane or motorcycle"
+  food:
+    - "a photo of food"
+    - "a photo of a dish or meal"
+  scene_with_people:
+    - "a photo of a group of people doing something"
+    - "a movie scene with several actors"
+    - "a photo of people at an event"
+  cartoon_art:
+    - "a cartoon or animated character"
+    - "an illustration or drawing"
+    - "a movie poster or artwork"
+
+# binary / graded attributes (each row is a 2-way contrast)
+attributes:
+  famous:
+    - "a photo of a famous celebrity or public figure"
+    - "a photo of an anonymous ordinary person"
+  face_visible:
+    - "a photo showing a human face"
+    - "a photo with no human face visible"
+  single_object:
+    - "a photo of a single object or subject"
+    - "a cluttered photo of many things"
+  indoor:
+    - "an indoor photo"
+    - "an outdoor photo"
+  natural:
+    - "a photo of something natural"
+    - "a photo of something man-made"
+  text_present:
+    - "a photo containing written text or a logo"
+    - "a photo with no text"
+  colorful:
+    - "a colorful photo"
+    - "a black and white or grayscale photo"
+  emotional:
+    - "an emotionally evocative or dramatic photo"
+    - "a neutral, plain photo"
+  child:
+    - "a photo of a child or baby"
+    - "a photo of an adult"
+  smiling:
+    - "a photo of a smiling, happy face"
+    - "a photo of a serious or neutral face"
+
+# finer semantic labels used for eyeballing / clustering only
+fine:
+  - actor
+  - musician
+  - politician
+  - athlete
+  - scientist
+  - tv host
+  - fictional movie character
+  - superhero
+  - baby
+  - child
+  - elderly person
+  - couple
+  - dog
+  - cat
+  - horse
+  - bird
+  - big cat
+  - primate
+  - marine animal
+  - reptile or amphibian
+  - insect or spider
+  - farm animal
+  - wild mammal
+  - car
+  - truck or off-road vehicle
+  - airplane or spacecraft
+  - boat or ship
+  - bicycle or motorcycle
+  - phone or computer
+  - watch or jewelry
+  - musical instrument
+  - kitchen or household item
+  - toy or ball
+  - clothing or bag
+  - fruit or vegetable
+  - dessert or baked goods
+  - fast food
+  - cooked meal
+  - beach or island
+  - mountain or canyon
+  - desert
+  - forest or field
+  - waterfall or lake
+  - space or planet
+  - famous monument
+  - bridge
+  - skyline or city at night
+  - temple or church
+  - stadium or arena
+  - casino or theme park
+  - painting or artwork
+  - cartoon character
+  - logo or sign
+  - flowers
