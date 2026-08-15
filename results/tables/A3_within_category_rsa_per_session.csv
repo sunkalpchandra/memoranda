@@ -1,0 +1,1877 @@
+subject,region,scope,model,layer,n_images,rho
+1,MTL,all,alexnet,conv1,63,0.020407154137466122
+1,MTL,between-category pairs,alexnet,conv1,63,-0.025049078536901578
+1,MTL,within-category pairs (all cats),alexnet,conv1,63,0.071044228328634
+1,MTL,within face_person,alexnet,conv1,41,0.07431682821599937
+1,MTL,all,alexnet,conv4,63,0.039844679562654924
+1,MTL,between-category pairs,alexnet,conv4,63,0.05953945926341184
+1,MTL,within-category pairs (all cats),alexnet,conv4,63,0.014163523118488265
+1,MTL,within face_person,alexnet,conv4,41,0.02188450172170204
+1,MTL,all,resnet50,layer2,63,0.03438853843378698
+1,MTL,between-category pairs,resnet50,layer2,63,0.02681779736063012
+1,MTL,within-category pairs (all cats),resnet50,layer2,63,0.03606596498279283
+1,MTL,within face_person,resnet50,layer2,41,0.03838537505986482
+1,MTL,all,resnet50,avgpool,63,0.07010701576825007
+1,MTL,between-category pairs,resnet50,avgpool,63,0.10996363650232857
+1,MTL,within-category pairs (all cats),resnet50,avgpool,63,0.04964894478050932
+1,MTL,within face_person,resnet50,avgpool,41,0.05198102650941248
+1,MTL,all,vit_b_16,ln,63,0.061313716718439146
+1,MTL,between-category pairs,vit_b_16,ln,63,0.08160683609896331
+1,MTL,within-category pairs (all cats),vit_b_16,ln,63,0.042660839944698194
+1,MTL,within face_person,vit_b_16,ln,41,0.035624731961739174
+1,MTL,all,dinov2_small,norm,63,0.06067800645229851
+1,MTL,between-category pairs,dinov2_small,norm,63,0.09301422455446029
+1,MTL,within-category pairs (all cats),dinov2_small,norm,63,0.05002588223547312
+1,MTL,within face_person,dinov2_small,norm,41,0.05239343408144096
+1,MTL,all,clip_vitb32,ln_post,63,0.03682918257903631
+1,MTL,between-category pairs,clip_vitb32,ln_post,63,0.030809699454706088
+1,MTL,within-category pairs (all cats),clip_vitb32,ln_post,63,0.04960763115574983
+1,MTL,within face_person,clip_vitb32,ln_post,41,0.03837138075574247
+1,MFC,all,alexnet,conv1,63,-0.018581600451182
+1,MFC,between-category pairs,alexnet,conv1,63,-0.00704983127662604
+1,MFC,within-category pairs (all cats),alexnet,conv1,63,-0.02885418992039188
+1,MFC,within face_person,alexnet,conv1,41,-0.025018289989621797
+1,MFC,all,alexnet,conv4,63,-0.018540307676390793
+1,MFC,between-category pairs,alexnet,conv4,63,-0.01366674740446602
+1,MFC,within-category pairs (all cats),alexnet,conv4,63,-0.02189709005153697
+1,MFC,within face_person,alexnet,conv4,41,-0.02179685776726863
+1,MFC,all,resnet50,layer2,63,-0.027288813416957994
+1,MFC,between-category pairs,resnet50,layer2,63,0.00816109029246708
+1,MFC,within-category pairs (all cats),resnet50,layer2,63,-0.04522269939590475
+1,MFC,within face_person,resnet50,layer2,41,-0.043504156340970455
+1,MFC,all,resnet50,avgpool,63,-0.013613779851133758
+1,MFC,between-category pairs,resnet50,avgpool,63,0.005936354798567174
+1,MFC,within-category pairs (all cats),resnet50,avgpool,63,-0.015285567199730916
+1,MFC,within face_person,resnet50,avgpool,41,-0.015327571728154002
+1,MFC,all,vit_b_16,ln,63,-0.012991644828357763
+1,MFC,between-category pairs,vit_b_16,ln,63,0.002298909605086167
+1,MFC,within-category pairs (all cats),vit_b_16,ln,63,-0.022302504679972655
+1,MFC,within face_person,vit_b_16,ln,41,-0.02168453334491182
+1,MFC,all,dinov2_small,norm,63,-0.020410280937913586
+1,MFC,between-category pairs,dinov2_small,norm,63,-0.024008929099461764
+1,MFC,within-category pairs (all cats),dinov2_small,norm,63,-0.006147850482911246
+1,MFC,within face_person,dinov2_small,norm,41,-0.007881274326121478
+1,MFC,all,clip_vitb32,ln_post,63,-0.01951036650495841
+1,MFC,between-category pairs,clip_vitb32,ln_post,63,-0.013953154824520352
+1,MFC,within-category pairs (all cats),clip_vitb32,ln_post,63,-0.019544721485344092
+1,MFC,within face_person,clip_vitb32,ln_post,41,-0.028862610211946235
+1,MTL_concept,all,alexnet,conv1,63,-0.004068579532671144
+1,MTL_concept,between-category pairs,alexnet,conv1,63,-0.026585504888539595
+1,MTL_concept,within-category pairs (all cats),alexnet,conv1,63,0.019091041800067016
+1,MTL_concept,within face_person,alexnet,conv1,41,0.023139549220176654
+1,MTL_concept,all,alexnet,conv4,63,0.020957039289006368
+1,MTL_concept,between-category pairs,alexnet,conv4,63,0.03201787930916384
+1,MTL_concept,within-category pairs (all cats),alexnet,conv4,63,0.010549133906858077
+1,MTL_concept,within face_person,alexnet,conv4,41,0.012225667838988893
+1,MTL_concept,all,resnet50,layer2,63,0.013676393184359868
+1,MTL_concept,between-category pairs,resnet50,layer2,63,0.013060049741668979
+1,MTL_concept,within-category pairs (all cats),resnet50,layer2,63,0.01913375756027484
+1,MTL_concept,within face_person,resnet50,layer2,41,0.01928915681923614
+1,MTL_concept,all,resnet50,avgpool,63,0.03218700511657318
+1,MTL_concept,between-category pairs,resnet50,avgpool,63,0.027904291758422486
+1,MTL_concept,within-category pairs (all cats),resnet50,avgpool,63,0.044061119044696284
+1,MTL_concept,within face_person,resnet50,avgpool,41,0.043706127013218306
+1,MTL_concept,all,vit_b_16,ln,63,0.06331031975985554
+1,MTL_concept,between-category pairs,vit_b_16,ln,63,0.09382036076912856
+1,MTL_concept,within-category pairs (all cats),vit_b_16,ln,63,0.027751973219291928
+1,MTL_concept,within face_person,vit_b_16,ln,41,0.024629518209625747
+1,MTL_concept,all,dinov2_small,norm,63,0.03801958821110982
+1,MTL_concept,between-category pairs,dinov2_small,norm,63,0.048394724772691834
+1,MTL_concept,within-category pairs (all cats),dinov2_small,norm,63,0.04618014067486714
+1,MTL_concept,within face_person,dinov2_small,norm,41,0.048304224419016016
+1,MTL_concept,all,clip_vitb32,ln_post,63,0.06155312878897011
+1,MTL_concept,between-category pairs,clip_vitb32,ln_post,63,0.10216251572152997
+1,MTL_concept,within-category pairs (all cats),clip_vitb32,ln_post,63,0.04489783843639542
+1,MTL_concept,within face_person,clip_vitb32,ln_post,41,0.04324629550855747
+2,MTL,all,alexnet,conv1,63,0.014580033680908537
+2,MTL,between-category pairs,alexnet,conv1,63,0.0080279525874766
+2,MTL,within-category pairs (all cats),alexnet,conv1,63,0.031263446808943884
+2,MTL,within face_person,alexnet,conv1,38,0.03914279572174309
+2,MTL,all,alexnet,conv4,63,-0.0016334205783149688
+2,MTL,between-category pairs,alexnet,conv4,63,-0.006094585156507759
+2,MTL,within-category pairs (all cats),alexnet,conv4,63,-0.004070042244556416
+2,MTL,within face_person,alexnet,conv4,38,-0.008373861992283045
+2,MTL,all,resnet50,layer2,63,0.002325857867102095
+2,MTL,between-category pairs,resnet50,layer2,63,-0.0038274643838015765
+2,MTL,within-category pairs (all cats),resnet50,layer2,63,0.012620150181802904
+2,MTL,within face_person,resnet50,layer2,38,0.01606960981960982
+2,MTL,all,resnet50,avgpool,63,0.027346619757636338
+2,MTL,between-category pairs,resnet50,avgpool,63,0.04086992626988898
+2,MTL,within-category pairs (all cats),resnet50,avgpool,63,0.01631474962151457
+2,MTL,within face_person,resnet50,avgpool,38,0.01885667181719813
+2,MTL,all,vit_b_16,ln,63,0.014465558310791379
+2,MTL,between-category pairs,vit_b_16,ln,63,0.01710348709145177
+2,MTL,within-category pairs (all cats),vit_b_16,ln,63,-0.0011400787549283268
+2,MTL,within face_person,vit_b_16,ln,38,0.0027423333344385975
+2,MTL,all,dinov2_small,norm,63,0.014227214281835186
+2,MTL,between-category pairs,dinov2_small,norm,63,0.010241615384598453
+2,MTL,within-category pairs (all cats),dinov2_small,norm,63,0.02149587788199821
+2,MTL,within face_person,dinov2_small,norm,38,0.024308629571787466
+2,MTL,all,clip_vitb32,ln_post,63,0.021462048974258675
+2,MTL,between-category pairs,clip_vitb32,ln_post,63,0.031421500033030215
+2,MTL,within-category pairs (all cats),clip_vitb32,ln_post,63,0.005826867650223639
+2,MTL,within face_person,clip_vitb32,ln_post,38,0.01014373547268284
+2,MFC,all,alexnet,conv1,63,-0.020034244924698658
+2,MFC,between-category pairs,alexnet,conv1,63,-0.019247685679296214
+2,MFC,within-category pairs (all cats),alexnet,conv1,63,-0.06285602410604357
+2,MFC,within face_person,alexnet,conv1,38,-0.05638160243423401
+2,MFC,all,alexnet,conv4,63,0.010471342179591461
+2,MFC,between-category pairs,alexnet,conv4,63,-0.03029634241133911
+2,MFC,within-category pairs (all cats),alexnet,conv4,63,-0.03874167182840793
+2,MFC,within face_person,alexnet,conv4,38,-0.03433651953388796
+2,MFC,all,resnet50,layer2,63,0.012552199686233551
+2,MFC,between-category pairs,resnet50,layer2,63,0.0214908885463019
+2,MFC,within-category pairs (all cats),resnet50,layer2,63,-0.07796317202448194
+2,MFC,within face_person,resnet50,layer2,38,-0.07043369049947996
+2,MFC,all,resnet50,avgpool,63,0.04071277344474009
+2,MFC,between-category pairs,resnet50,avgpool,63,0.03340207332206383
+2,MFC,within-category pairs (all cats),resnet50,avgpool,63,-0.031736546286629884
+2,MFC,within face_person,resnet50,avgpool,38,-0.03285746871273187
+2,MFC,all,vit_b_16,ln,63,0.009484080310334285
+2,MFC,between-category pairs,vit_b_16,ln,63,0.016543743070619142
+2,MFC,within-category pairs (all cats),vit_b_16,ln,63,-0.05829325157868536
+2,MFC,within face_person,vit_b_16,ln,38,-0.054864419995998934
+2,MFC,all,dinov2_small,norm,63,0.028907598764945724
+2,MFC,between-category pairs,dinov2_small,norm,63,0.026086987445114684
+2,MFC,within-category pairs (all cats),dinov2_small,norm,63,-0.0560774573642903
+2,MFC,within face_person,dinov2_small,norm,38,-0.055036426746953054
+2,MFC,all,clip_vitb32,ln_post,63,0.03338285727740139
+2,MFC,between-category pairs,clip_vitb32,ln_post,63,0.03516000890943681
+2,MFC,within-category pairs (all cats),clip_vitb32,ln_post,63,-0.024418351824518042
+2,MFC,within face_person,clip_vitb32,ln_post,38,-0.036142245023823974
+3,MTL,all,alexnet,conv1,63,0.011901029397478667
+3,MTL,between-category pairs,alexnet,conv1,63,-0.008768977056162705
+3,MTL,within-category pairs (all cats),alexnet,conv1,63,0.0046835705609460316
+3,MTL,within face_person,alexnet,conv1,37,0.017078374041997496
+3,MTL,within animal,alexnet,conv1,9,-0.01904761904761905
+3,MTL,all,alexnet,conv4,63,0.02580948884606327
+3,MTL,between-category pairs,alexnet,conv4,63,0.014844154446610512
+3,MTL,within-category pairs (all cats),alexnet,conv4,63,0.005306159210930021
+3,MTL,within face_person,alexnet,conv4,37,0.024484384509635044
+3,MTL,within animal,alexnet,conv4,9,-0.24092664092664096
+3,MTL,all,resnet50,layer2,63,0.018396371756771748
+3,MTL,between-category pairs,resnet50,layer2,63,0.010882473646370202
+3,MTL,within-category pairs (all cats),resnet50,layer2,63,0.013193360950542878
+3,MTL,within face_person,resnet50,layer2,37,0.03298117249036527
+3,MTL,within animal,resnet50,layer2,9,-0.027541827541827543
+3,MTL,all,resnet50,avgpool,63,0.038556492549664166
+3,MTL,between-category pairs,resnet50,avgpool,63,0.015656327698048252
+3,MTL,within-category pairs (all cats),resnet50,avgpool,63,0.06245890805391518
+3,MTL,within face_person,resnet50,avgpool,37,0.08164194675675779
+3,MTL,within animal,resnet50,avgpool,9,-0.049678249678249686
+3,MTL,all,vit_b_16,ln,63,0.03929241991144463
+3,MTL,between-category pairs,vit_b_16,ln,63,0.018780488908923077
+3,MTL,within-category pairs (all cats),vit_b_16,ln,63,0.04382904442744092
+3,MTL,within face_person,vit_b_16,ln,37,0.05483287618535785
+3,MTL,within animal,vit_b_16,ln,9,-0.033204633204633204
+3,MTL,all,dinov2_small,norm,63,0.024338858423553367
+3,MTL,between-category pairs,dinov2_small,norm,63,-0.007963302052943062
+3,MTL,within-category pairs (all cats),dinov2_small,norm,63,0.051829426271351425
+3,MTL,within face_person,dinov2_small,norm,37,0.07142592085383848
+3,MTL,within animal,dinov2_small,norm,9,-0.15160875160875162
+3,MTL,all,clip_vitb32,ln_post,63,0.04743140576282887
+3,MTL,between-category pairs,clip_vitb32,ln_post,63,0.04342849655426109
+3,MTL,within-category pairs (all cats),clip_vitb32,ln_post,63,0.02626196878785645
+3,MTL,within face_person,clip_vitb32,ln_post,37,0.0321836440040496
+3,MTL,within animal,clip_vitb32,ln_post,9,-0.07104247104247104
+3,MFC,all,alexnet,conv1,63,-0.017572133627072797
+3,MFC,between-category pairs,alexnet,conv1,63,-0.021132081313841564
+3,MFC,within-category pairs (all cats),alexnet,conv1,63,-0.02638060847546367
+3,MFC,within face_person,alexnet,conv1,37,-0.027045428718276508
+3,MFC,within animal,alexnet,conv1,9,0.0676962676962677
+3,MFC,all,alexnet,conv4,63,-0.015601540539301266
+3,MFC,between-category pairs,alexnet,conv4,63,-0.03687391961868559
+3,MFC,within-category pairs (all cats),alexnet,conv4,63,-0.0032949729497262275
+3,MFC,within face_person,alexnet,conv4,37,0.00369372314452406
+3,MFC,within animal,alexnet,conv4,9,0.04066924066924067
+3,MFC,all,resnet50,layer2,63,-0.023750897509325762
+3,MFC,between-category pairs,resnet50,layer2,63,-0.04353187258884086
+3,MFC,within-category pairs (all cats),resnet50,layer2,63,-0.00816531356724433
+3,MFC,within face_person,resnet50,layer2,37,-0.003755224602695605
+3,MFC,within animal,resnet50,layer2,9,0.16936936936936942
+3,MFC,all,resnet50,avgpool,63,3.5776976371788735e-05
+3,MFC,between-category pairs,resnet50,avgpool,63,-0.015287709020591766
+3,MFC,within-category pairs (all cats),resnet50,avgpool,63,0.006452900550747727
+3,MFC,within face_person,resnet50,avgpool,37,0.012663268040842413
+3,MFC,within animal,resnet50,avgpool,9,0.0761904761904762
+3,MFC,all,vit_b_16,ln,63,0.008091088294607146
+3,MFC,between-category pairs,vit_b_16,ln,63,0.0008008504501523564
+3,MFC,within-category pairs (all cats),vit_b_16,ln,63,0.004294370924416973
+3,MFC,within face_person,vit_b_16,ln,37,0.010530215485632514
+3,MFC,within animal,vit_b_16,ln,9,0.009266409266409266
+3,MFC,all,dinov2_small,norm,63,-0.004847231779288059
+3,MFC,between-category pairs,dinov2_small,norm,63,-0.018502680872906574
+3,MFC,within-category pairs (all cats),dinov2_small,norm,63,0.007272328428916635
+3,MFC,within face_person,dinov2_small,norm,37,0.010786864239085498
+3,MFC,within animal,dinov2_small,norm,9,0.11557271557271558
+3,MFC,all,clip_vitb32,ln_post,63,0.018261906450151476
+3,MFC,between-category pairs,clip_vitb32,ln_post,63,-0.0015644168049187468
+3,MFC,within-category pairs (all cats),clip_vitb32,ln_post,63,0.04728891640838533
+3,MFC,within face_person,clip_vitb32,ln_post,37,0.05096709925874292
+3,MFC,within animal,clip_vitb32,ln_post,9,0.10785070785070787
+4,MTL,all,alexnet,conv1,63,0.012747578802910395
+4,MTL,between-category pairs,alexnet,conv1,63,-0.019615682655942476
+4,MTL,within-category pairs (all cats),alexnet,conv1,63,-0.02434494876697149
+4,MTL,within face_person,alexnet,conv1,28,0.07497143017113903
+4,MTL,within animal,alexnet,conv1,19,-0.005210358317133464
+4,MTL,within landmark_place,alexnet,conv1,12,0.0627700657551404
+4,MTL,all,alexnet,conv4,63,0.053214403053875925
+4,MTL,between-category pairs,alexnet,conv4,63,0.018509231663815844
+4,MTL,within-category pairs (all cats),alexnet,conv4,63,-0.0997093476159179
+4,MTL,within face_person,alexnet,conv4,28,-0.008770523646331125
+4,MTL,within animal,alexnet,conv4,19,0.011409508723930211
+4,MTL,within landmark_place,alexnet,conv4,12,0.0108756914727064
+4,MTL,all,resnet50,layer2,63,0.016700331401540924
+4,MTL,between-category pairs,resnet50,layer2,63,0.008205417132176828
+4,MTL,within-category pairs (all cats),resnet50,layer2,63,-0.07819132087424771
+4,MTL,within face_person,resnet50,layer2,28,0.06044872544736069
+4,MTL,within animal,resnet50,layer2,19,-0.05209158326733387
+4,MTL,within landmark_place,resnet50,layer2,12,-0.1360818286191421
+4,MTL,all,resnet50,avgpool,63,0.07035785411161662
+4,MTL,between-category pairs,resnet50,avgpool,63,0.035540233760735375
+4,MTL,within-category pairs (all cats),resnet50,avgpool,63,-0.10552280800950063
+4,MTL,within face_person,resnet50,avgpool,28,0.0090920210108637
+4,MTL,within animal,resnet50,avgpool,19,-0.020342237262101905
+4,MTL,within landmark_place,resnet50,avgpool,12,-0.13637407368750654
+4,MTL,all,vit_b_16,ln,63,0.0840481608330526
+4,MTL,between-category pairs,vit_b_16,ln,63,0.022141481512283817
+4,MTL,within-category pairs (all cats),vit_b_16,ln,63,-0.010134193287446644
+4,MTL,within face_person,vit_b_16,ln,28,-0.015874571147066825
+4,MTL,within animal,vit_b_16,ln,19,-0.030851753185974513
+4,MTL,within landmark_place,vit_b_16,ln,12,0.07041018682809728
+4,MTL,all,dinov2_small,norm,63,0.039243354435901746
+4,MTL,between-category pairs,dinov2_small,norm,63,-0.041471507629513904
+4,MTL,within-category pairs (all cats),dinov2_small,norm,63,-0.09344004688407645
+4,MTL,within face_person,dinov2_small,norm,28,0.05776276716136601
+4,MTL,within animal,dinov2_small,norm,19,-0.10627114983080135
+4,MTL,within landmark_place,dinov2_small,norm,12,-0.04782381797307171
+4,MTL,all,clip_vitb32,ln_post,63,0.08800310911896281
+4,MTL,between-category pairs,clip_vitb32,ln_post,63,0.0018006799683172507
+4,MTL,within-category pairs (all cats),clip_vitb32,ln_post,63,0.10825248478382665
+4,MTL,within face_person,clip_vitb32,ln_post,28,0.006087453726431071
+4,MTL,within animal,clip_vitb32,ln_post,19,0.11435428516571867
+4,MTL,within landmark_place,clip_vitb32,ln_post,12,0.10372612462164703
+4,MFC,all,alexnet,conv1,63,0.044696378429856846
+4,MFC,between-category pairs,alexnet,conv1,63,0.062374965460822815
+4,MFC,within-category pairs (all cats),alexnet,conv1,63,-0.020101908895902704
+4,MFC,within face_person,alexnet,conv1,28,-0.05516657040631201
+4,MFC,within animal,alexnet,conv1,19,0.16585787313701492
+4,MFC,within landmark_place,alexnet,conv1,12,-0.01843231395470202
+4,MFC,all,alexnet,conv4,63,0.0784303491394723
+4,MFC,between-category pairs,alexnet,conv4,63,0.0909594909340526
+4,MFC,within-category pairs (all cats),alexnet,conv4,63,0.004049942271917326
+4,MFC,within face_person,alexnet,conv4,28,0.04359622019525577
+4,MFC,within animal,alexnet,conv4,19,0.17365541075671395
+4,MFC,within landmark_place,alexnet,conv4,12,-0.11783738649410294
+4,MFC,all,resnet50,layer2,63,0.025301035008643696
+4,MFC,between-category pairs,resnet50,layer2,63,0.03163241944740979
+4,MFC,within-category pairs (all cats),resnet50,layer2,63,-0.027400719563268228
+4,MFC,within face_person,resnet50,layer2,28,-0.006302303727469772
+4,MFC,within animal,resnet50,layer2,19,0.1177310581515348
+4,MFC,within landmark_place,resnet50,layer2,12,-0.08706815572487217
+4,MFC,all,resnet50,avgpool,63,0.04098406728119363
+4,MFC,between-category pairs,resnet50,avgpool,63,0.029565986543966655
+4,MFC,within-category pairs (all cats),resnet50,avgpool,63,0.0129086493073146
+4,MFC,within face_person,resnet50,avgpool,28,0.10316588253081749
+4,MFC,within animal,resnet50,avgpool,19,0.12529099767201862
+4,MFC,within landmark_place,resnet50,avgpool,12,-0.09003235570399751
+4,MFC,all,vit_b_16,ln,63,0.04498537308203253
+4,MFC,between-category pairs,vit_b_16,ln,63,0.021541713245236252
+4,MFC,within-category pairs (all cats),vit_b_16,ln,63,0.04072708494333981
+4,MFC,within face_person,vit_b_16,ln,28,0.006599138889194388
+4,MFC,within animal,vit_b_16,ln,19,0.15800753593971248
+4,MFC,within landmark_place,vit_b_16,ln,12,-0.1308214173885816
+4,MFC,all,dinov2_small,norm,63,0.06066966670684952
+4,MFC,between-category pairs,dinov2_small,norm,63,0.06588564451940061
+4,MFC,within-category pairs (all cats),dinov2_small,norm,63,0.02249512226075347
+4,MFC,within face_person,dinov2_small,norm,28,0.09823677469933496
+4,MFC,within animal,dinov2_small,norm,19,0.08363693090455278
+4,MFC,within landmark_place,dinov2_small,norm,12,-0.0889468740215009
+4,MFC,all,clip_vitb32,ln_post,63,0.04863834590278117
+4,MFC,between-category pairs,clip_vitb32,ln_post,63,0.018261385960258038
+4,MFC,within-category pairs (all cats),clip_vitb32,ln_post,63,0.10431237547706922
+4,MFC,within face_person,clip_vitb32,ln_post,28,0.12992015111931407
+4,MFC,within animal,clip_vitb32,ln_post,19,0.06695706434348525
+4,MFC,within landmark_place,clip_vitb32,ln_post,12,-0.08147375013046657
+4,MTL_concept,all,alexnet,conv1,63,0.08549592582251188
+4,MTL_concept,between-category pairs,alexnet,conv1,63,-0.027127992988420852
+4,MTL_concept,within-category pairs (all cats),alexnet,conv1,63,0.06529995387944067
+4,MTL_concept,within face_person,alexnet,conv1,28,0.08425997116744091
+4,MTL_concept,within animal,alexnet,conv1,19,0.13890608875129
+4,MTL_concept,within landmark_place,alexnet,conv1,12,0.147187141216992
+4,MTL_concept,all,alexnet,conv4,63,0.12955285664617758
+4,MTL_concept,between-category pairs,alexnet,conv4,63,0.006470943072039155
+4,MTL_concept,within-category pairs (all cats),alexnet,conv4,63,-0.06535695971621928
+4,MTL_concept,within face_person,alexnet,conv4,28,-0.07519805581856351
+4,MTL_concept,within animal,alexnet,conv4,19,0.10122399020807835
+4,MTL_concept,within landmark_place,alexnet,conv4,12,0.08698465713391089
+4,MTL_concept,all,resnet50,layer2,63,0.0696086624145016
+4,MTL_concept,between-category pairs,resnet50,layer2,63,-0.04916760943059992
+4,MTL_concept,within-category pairs (all cats),resnet50,layer2,63,0.010186504525902319
+4,MTL_concept,within face_person,resnet50,layer2,28,0.06142654846139515
+4,MTL_concept,within animal,resnet50,layer2,19,0.15753233974128208
+4,MTL_concept,within landmark_place,resnet50,layer2,12,-0.0489927982465296
+4,MTL_concept,all,resnet50,avgpool,63,0.17978927787811463
+4,MTL_concept,between-category pairs,resnet50,avgpool,63,0.07971860893428982
+4,MTL_concept,within-category pairs (all cats),resnet50,avgpool,63,-0.06706718640857039
+4,MTL_concept,within face_person,resnet50,avgpool,28,-0.01643558071544606
+4,MTL_concept,within animal,resnet50,avgpool,19,0.1088919288645691
+4,MTL_concept,within landmark_place,resnet50,avgpool,12,-0.29735935706084965
+4,MTL_concept,all,vit_b_16,ln,63,0.18584730956751064
+4,MTL_concept,between-category pairs,vit_b_16,ln,63,0.05995516719554286
+4,MTL_concept,within-category pairs (all cats),vit_b_16,ln,63,0.00894119783450045
+4,MTL_concept,within face_person,vit_b_16,ln,28,-0.04639704657901364
+4,MTL_concept,within animal,vit_b_16,ln,19,0.09043367653058776
+4,MTL_concept,within landmark_place,vit_b_16,ln,12,0.05078801795219707
+4,MTL_concept,all,dinov2_small,norm,63,0.12517413104975156
+4,MTL_concept,between-category pairs,dinov2_small,norm,63,-0.05669110645998457
+4,MTL_concept,within-category pairs (all cats),dinov2_small,norm,63,-0.039339186276502555
+4,MTL_concept,within face_person,dinov2_small,norm,28,0.0315806172416126
+4,MTL_concept,within animal,dinov2_small,norm,19,0.04287085703314374
+4,MTL_concept,within landmark_place,dinov2_small,norm,12,-0.1501095919006367
+4,MTL_concept,all,clip_vitb32,ln_post,63,0.19108880172552734
+4,MTL_concept,between-category pairs,clip_vitb32,ln_post,63,0.05733788590650754
+4,MTL_concept,within-category pairs (all cats),clip_vitb32,ln_post,63,0.06077142052354574
+4,MTL_concept,within face_person,clip_vitb32,ln_post,28,-0.025517270262971292
+4,MTL_concept,within animal,clip_vitb32,ln_post,19,0.18453932368541054
+4,MTL_concept,within landmark_place,clip_vitb32,ln_post,12,0.08940611627178793
+5,MTL,all,alexnet,conv1,63,0.0018981740696800507
+5,MTL,between-category pairs,alexnet,conv1,63,0.0057168289133617736
+5,MTL,within-category pairs (all cats),alexnet,conv1,63,-0.02603845687146122
+5,MTL,within face_person,alexnet,conv1,29,-0.05289525979181152
+5,MTL,within animal,alexnet,conv1,19,0.039302085583315334
+5,MTL,all,alexnet,conv4,63,0.0037807866286324017
+5,MTL,between-category pairs,alexnet,conv4,63,-0.004436939876497344
+5,MTL,within-category pairs (all cats),alexnet,conv4,63,0.0064875248452034885
+5,MTL,within face_person,alexnet,conv4,29,0.03681774026601613
+5,MTL,within animal,alexnet,conv4,19,-0.03900688794489645
+5,MTL,all,resnet50,layer2,63,0.00019263732669148726
+5,MTL,between-category pairs,resnet50,layer2,63,0.006736542685639835
+5,MTL,within-category pairs (all cats),resnet50,layer2,63,-0.0447801573344408
+5,MTL,within face_person,resnet50,layer2,29,-0.054377799205385415
+5,MTL,within animal,resnet50,layer2,19,-0.021777425780593756
+5,MTL,all,resnet50,avgpool,63,-0.027947194194534536
+5,MTL,between-category pairs,resnet50,avgpool,63,-0.06401669692896757
+5,MTL,within-category pairs (all cats),resnet50,avgpool,63,0.007759622050976178
+5,MTL,within face_person,resnet50,avgpool,29,0.07983845914880398
+5,MTL,within animal,resnet50,avgpool,19,-0.12081503347973219
+5,MTL,all,vit_b_16,ln,63,0.00973027275339662
+5,MTL,between-category pairs,vit_b_16,ln,63,-0.033606636912013724
+5,MTL,within-category pairs (all cats),vit_b_16,ln,63,0.0772860293191916
+5,MTL,within face_person,vit_b_16,ln,29,0.10828983932432208
+5,MTL,within animal,vit_b_16,ln,19,-0.17362421100631198
+5,MTL,all,dinov2_small,norm,63,0.010013308603483094
+5,MTL,between-category pairs,dinov2_small,norm,63,0.00039922082640079067
+5,MTL,within-category pairs (all cats),dinov2_small,norm,63,-0.01376627934069703
+5,MTL,within face_person,dinov2_small,norm,29,0.028139648829304
+5,MTL,within animal,dinov2_small,norm,19,-0.13975088199294405
+5,MTL,all,clip_vitb32,ln_post,63,0.03121828013178222
+5,MTL,between-category pairs,clip_vitb32,ln_post,63,0.015604638955921428
+5,MTL,within-category pairs (all cats),clip_vitb32,ln_post,63,0.04461984915992023
+5,MTL,within face_person,clip_vitb32,ln_post,29,0.0007752490511111201
+5,MTL,within animal,clip_vitb32,ln_post,19,-0.10595435236518108
+5,MFC,all,alexnet,conv1,63,0.019228091010261527
+5,MFC,between-category pairs,alexnet,conv1,63,0.002655272621144491
+5,MFC,within-category pairs (all cats),alexnet,conv1,63,0.07486289207568325
+5,MFC,within face_person,alexnet,conv1,29,0.11611244025037129
+5,MFC,within animal,alexnet,conv1,19,0.041402068783449736
+5,MFC,all,alexnet,conv4,63,0.011616559826424526
+5,MFC,between-category pairs,alexnet,conv4,63,-0.023581446394833346
+5,MFC,within-category pairs (all cats),alexnet,conv4,63,0.10599389644000778
+5,MFC,within face_person,alexnet,conv4,29,0.1267100508479819
+5,MFC,within animal,alexnet,conv4,19,0.1951904384764922
+5,MFC,all,resnet50,layer2,63,0.0038881642744983996
+5,MFC,between-category pairs,resnet50,layer2,63,-0.02888347693224978
+5,MFC,within-category pairs (all cats),resnet50,layer2,63,0.10633866725457726
+5,MFC,within face_person,resnet50,layer2,29,0.15104607518400623
+5,MFC,within animal,resnet50,layer2,19,0.0793889648882809
+5,MFC,all,resnet50,avgpool,63,-0.002645532537063395
+5,MFC,between-category pairs,resnet50,avgpool,63,-0.03324725120038951
+5,MFC,within-category pairs (all cats),resnet50,avgpool,63,0.08687364309156652
+5,MFC,within face_person,resnet50,avgpool,29,0.16390263976470876
+5,MFC,within animal,resnet50,avgpool,19,0.021424628602971178
+5,MFC,all,vit_b_16,ln,63,0.04304629285894581
+5,MFC,between-category pairs,vit_b_16,ln,63,0.03297613667231184
+5,MFC,within-category pairs (all cats),vit_b_16,ln,63,0.08446907744183703
+5,MFC,within face_person,vit_b_16,ln,29,0.12280287452701247
+5,MFC,within animal,vit_b_16,ln,19,-0.06140110879112968
+5,MFC,all,dinov2_small,norm,63,0.023571237773775303
+5,MFC,between-category pairs,dinov2_small,norm,63,0.022976442353570894
+5,MFC,within-category pairs (all cats),dinov2_small,norm,63,0.09072075443966483
+5,MFC,within face_person,dinov2_small,norm,29,0.17320724217275943
+5,MFC,within animal,dinov2_small,norm,19,0.029901360789113686
+5,MFC,all,clip_vitb32,ln_post,63,0.01661488485371291
+5,MFC,between-category pairs,clip_vitb32,ln_post,63,-0.008398903448802626
+5,MFC,within-category pairs (all cats),clip_vitb32,ln_post,63,0.1010348821244992
+5,MFC,within face_person,clip_vitb32,ln_post,29,0.09610784093542714
+5,MFC,within animal,clip_vitb32,ln_post,19,0.12861737106103152
+5,MTL_concept,all,alexnet,conv1,63,-0.0014226177561357555
+5,MTL_concept,between-category pairs,alexnet,conv1,63,-0.002763421080085951
+5,MTL_concept,within-category pairs (all cats),alexnet,conv1,63,-0.005417750497442607
+5,MTL_concept,within face_person,alexnet,conv1,29,-0.032136548025178936
+5,MTL_concept,within animal,alexnet,conv1,19,0.013923528408629328
+5,MTL_concept,all,alexnet,conv4,63,-0.013190306136133572
+5,MTL_concept,between-category pairs,alexnet,conv4,63,-0.017296930260403555
+5,MTL_concept,within-category pairs (all cats),alexnet,conv4,63,-0.009668729503064006
+5,MTL_concept,within face_person,alexnet,conv4,29,-0.02854586222772886
+5,MTL_concept,within animal,alexnet,conv4,19,0.0032576644645237046
+5,MTL_concept,all,resnet50,layer2,63,-0.004893701905762361
+5,MTL_concept,between-category pairs,resnet50,layer2,63,0.006572492895936692
+5,MTL_concept,within-category pairs (all cats),resnet50,layer2,63,-0.02981505753853624
+5,MTL_concept,within face_person,resnet50,layer2,29,-0.07956880648590019
+5,MTL_concept,within animal,resnet50,layer2,19,0.0402684618291064
+5,MTL_concept,all,resnet50,avgpool,63,-0.009940836390914204
+5,MTL_concept,between-category pairs,resnet50,avgpool,63,-0.01692532989994853
+5,MTL_concept,within-category pairs (all cats),resnet50,avgpool,63,0.013723390569153074
+5,MTL_concept,within face_person,resnet50,avgpool,29,-0.01787435042789384
+5,MTL_concept,within animal,resnet50,avgpool,19,-0.0191743950727286
+5,MTL_concept,all,vit_b_16,ln,63,-0.024273890074637653
+5,MTL_concept,between-category pairs,vit_b_16,ln,63,-0.025701405578081628
+5,MTL_concept,within-category pairs (all cats),vit_b_16,ln,63,-0.035261515946146675
+5,MTL_concept,within face_person,vit_b_16,ln,29,-0.04724254979559819
+5,MTL_concept,within animal,vit_b_16,ln,19,0.08171866409274375
+5,MTL_concept,all,dinov2_small,norm,63,-0.009348710182694283
+5,MTL_concept,between-category pairs,dinov2_small,norm,63,-0.006163903247516391
+5,MTL_concept,within-category pairs (all cats),dinov2_small,norm,63,-0.010684137749846464
+5,MTL_concept,within face_person,dinov2_small,norm,29,-0.060720651525929974
+5,MTL_concept,within animal,dinov2_small,norm,19,0.03995070495671029
+5,MTL_concept,all,clip_vitb32,ln_post,63,-0.01246929578174243
+5,MTL_concept,between-category pairs,clip_vitb32,ln_post,63,0.01031168146288891
+5,MTL_concept,within-category pairs (all cats),clip_vitb32,ln_post,63,-0.05932404458866773
+5,MTL_concept,within face_person,clip_vitb32,ln_post,29,-0.04466650581655887
+5,MTL_concept,within animal,clip_vitb32,ln_post,19,-0.0010254880881874298
+6,MFC,all,alexnet,conv1,54,0.0285234143250376
+6,MFC,between-category pairs,alexnet,conv1,54,-0.0035982653195141185
+6,MFC,within-category pairs (all cats),alexnet,conv1,54,0.14575200702753233
+6,MFC,within face_person,alexnet,conv1,9,-0.04066924066924067
+6,MFC,within animal,alexnet,conv1,9,-0.1305019305019305
+6,MFC,within vehicle,alexnet,conv1,9,-0.0453024453024453
+6,MFC,all,alexnet,conv4,54,0.018686180713165006
+6,MFC,between-category pairs,alexnet,conv4,54,-0.008198841671748443
+6,MFC,within-category pairs (all cats),alexnet,conv4,54,0.10960907002635324
+6,MFC,within face_person,alexnet,conv4,9,-0.09266409266409266
+6,MFC,within animal,alexnet,conv4,9,-0.12561132561132562
+6,MFC,within vehicle,alexnet,conv4,9,0.0036036036036036037
+6,MFC,all,resnet50,layer2,54,0.016596239453834056
+6,MFC,between-category pairs,resnet50,layer2,54,0.004624798525126882
+6,MFC,within-category pairs (all cats),resnet50,layer2,54,0.03214297458156589
+6,MFC,within face_person,resnet50,layer2,9,-0.050965250965250966
+6,MFC,within animal,resnet50,layer2,9,-0.18790218790218793
+6,MFC,within vehicle,resnet50,layer2,9,-0.06666666666666667
+6,MFC,all,resnet50,avgpool,54,0.021014062592011364
+6,MFC,between-category pairs,resnet50,avgpool,54,-0.00035169602410453285
+6,MFC,within-category pairs (all cats),resnet50,avgpool,54,0.11551976023713224
+6,MFC,within face_person,resnet50,avgpool,9,0.03655083655083655
+6,MFC,within animal,resnet50,avgpool,9,0.08108108108108109
+6,MFC,within vehicle,resnet50,avgpool,9,0.13590733590733592
+6,MFC,all,vit_b_16,ln,54,0.040421940005580775
+6,MFC,between-category pairs,vit_b_16,ln,54,0.026333391968899306
+6,MFC,within-category pairs (all cats),vit_b_16,ln,54,0.11336475993179161
+6,MFC,within face_person,vit_b_16,ln,9,0.06512226512226513
+6,MFC,within animal,vit_b_16,ln,9,0.043243243243243246
+6,MFC,within vehicle,vit_b_16,ln,9,0.1462033462033462
+6,MFC,all,dinov2_small,norm,54,0.009182544731190246
+6,MFC,between-category pairs,dinov2_small,norm,54,-0.014615467304417732
+6,MFC,within-category pairs (all cats),dinov2_small,norm,54,0.06349793542750039
+6,MFC,within face_person,dinov2_small,norm,9,0.12072072072072072
+6,MFC,within animal,dinov2_small,norm,9,0.025482625482625483
+6,MFC,within vehicle,dinov2_small,norm,9,0.20875160875160878
+6,MFC,all,clip_vitb32,ln_post,54,0.013759519119485388
+6,MFC,between-category pairs,clip_vitb32,ln_post,54,0.010322069553451347
+6,MFC,within-category pairs (all cats),clip_vitb32,ln_post,54,-0.07341093683206736
+6,MFC,within face_person,clip_vitb32,ln_post,9,0.049163449163449176
+6,MFC,within animal,clip_vitb32,ln_post,9,0.06846846846846848
+6,MFC,within vehicle,clip_vitb32,ln_post,9,0.028056628056628057
+7,MTL,all,alexnet,conv1,54,0.030717444367702615
+7,MTL,between-category pairs,alexnet,conv1,54,-0.007852608463598774
+7,MTL,within-category pairs (all cats),alexnet,conv1,54,-0.010779699075052732
+7,MTL,within face_person,alexnet,conv1,9,-0.20025740025740027
+7,MTL,within animal,alexnet,conv1,9,-0.014671814671814673
+7,MTL,within vehicle,alexnet,conv1,9,0.22496782496782497
+7,MTL,all,alexnet,conv4,54,0.04557640279680966
+7,MTL,between-category pairs,alexnet,conv4,54,-0.012424968650428421
+7,MTL,within-category pairs (all cats),alexnet,conv4,54,-0.04586099014924112
+7,MTL,within face_person,alexnet,conv4,9,-0.08391248391248392
+7,MTL,within animal,alexnet,conv4,9,-0.05740025740025741
+7,MTL,within vehicle,alexnet,conv4,9,0.15160875160875162
+7,MTL,all,resnet50,layer2,54,0.011216190904185
+7,MTL,between-category pairs,resnet50,layer2,54,-0.025953550202431872
+7,MTL,within-category pairs (all cats),resnet50,layer2,54,-0.04285925675390014
+7,MTL,within face_person,resnet50,layer2,9,-0.023166023166023165
+7,MTL,within animal,resnet50,layer2,9,0.046846846846846854
+7,MTL,within vehicle,resnet50,layer2,9,0.08828828828828829
+7,MTL,all,resnet50,avgpool,54,0.05616111164756679
+7,MTL,between-category pairs,resnet50,avgpool,54,-0.004431041262855495
+7,MTL,within-category pairs (all cats),resnet50,avgpool,54,-0.0938758062167355
+7,MTL,within face_person,resnet50,avgpool,9,0.05225225225225225
+7,MTL,within animal,resnet50,avgpool,9,0.1142857142857143
+7,MTL,within vehicle,resnet50,avgpool,9,0.1366795366795367
+7,MTL,all,vit_b_16,ln,54,0.03434783655612157
+7,MTL,between-category pairs,vit_b_16,ln,54,-0.03521818424884378
+7,MTL,within-category pairs (all cats),vit_b_16,ln,54,0.06107282609206255
+7,MTL,within face_person,vit_b_16,ln,9,-0.04375804375804376
+7,MTL,within animal,vit_b_16,ln,9,0.3338481338481339
+7,MTL,within vehicle,vit_b_16,ln,9,0.17606177606177606
+7,MTL,all,dinov2_small,norm,54,0.052805192301344936
+7,MTL,between-category pairs,dinov2_small,norm,54,-0.01672794393507626
+7,MTL,within-category pairs (all cats),dinov2_small,norm,54,-0.04613344795351307
+7,MTL,within face_person,dinov2_small,norm,9,0.12483912483912483
+7,MTL,within animal,dinov2_small,norm,9,0.01673101673101673
+7,MTL,within vehicle,dinov2_small,norm,9,0.08983268983268984
+7,MTL,all,clip_vitb32,ln_post,54,0.06432396059253864
+7,MTL,between-category pairs,clip_vitb32,ln_post,54,-0.022732393564668666
+7,MTL,within-category pairs (all cats),clip_vitb32,ln_post,54,0.15836844750724596
+7,MTL,within face_person,clip_vitb32,ln_post,9,-0.0069498069498069494
+7,MTL,within animal,clip_vitb32,ln_post,9,0.28906048906048903
+7,MTL,within vehicle,clip_vitb32,ln_post,9,-0.003346203346203347
+7,MFC,all,alexnet,conv1,54,-0.05117517784324994
+7,MFC,between-category pairs,alexnet,conv1,54,-0.030050360355543135
+7,MFC,within-category pairs (all cats),alexnet,conv1,54,-0.13671157522888805
+7,MFC,within face_person,alexnet,conv1,9,-0.2097812097812098
+7,MFC,within animal,alexnet,conv1,9,-0.14491634491634495
+7,MFC,within vehicle,alexnet,conv1,9,0.02882882882882883
+7,MFC,all,alexnet,conv4,54,-0.02257821175814219
+7,MFC,between-category pairs,alexnet,conv4,54,-0.0017982322508657883
+7,MFC,within-category pairs (all cats),alexnet,conv4,54,-0.04619099292079464
+7,MFC,within face_person,alexnet,conv4,9,0.09781209781209782
+7,MFC,within animal,alexnet,conv4,9,-0.1431145431145431
+7,MFC,within vehicle,alexnet,conv4,9,0.01776061776061776
+7,MFC,all,resnet50,layer2,54,-0.019930065834988357
+7,MFC,between-category pairs,resnet50,layer2,54,-0.0027840944731141676
+7,MFC,within-category pairs (all cats),resnet50,layer2,54,-0.05328781408982652
+7,MFC,within face_person,resnet50,layer2,9,0.13590733590733592
+7,MFC,within animal,resnet50,layer2,9,-0.14491634491634495
+7,MFC,within vehicle,resnet50,layer2,9,0.04041184041184042
+7,MFC,all,resnet50,avgpool,54,-0.03548422169166345
+7,MFC,between-category pairs,resnet50,avgpool,54,-0.016511336072487847
+7,MFC,within-category pairs (all cats),resnet50,avgpool,54,-0.10081643390314594
+7,MFC,within face_person,resnet50,avgpool,9,-0.08571428571428573
+7,MFC,within animal,resnet50,avgpool,9,-0.2607464607464608
+7,MFC,within vehicle,resnet50,avgpool,9,-0.04066924066924067
+7,MFC,all,vit_b_16,ln,54,-0.02915800045029517
+7,MFC,between-category pairs,vit_b_16,ln,54,-0.007878302813412254
+7,MFC,within-category pairs (all cats),vit_b_16,ln,54,-0.10628907773033254
+7,MFC,within face_person,vit_b_16,ln,9,-0.1827541827541828
+7,MFC,within animal,vit_b_16,ln,9,-0.22393822393822396
+7,MFC,within vehicle,vit_b_16,ln,9,-0.024453024453024455
+7,MFC,all,dinov2_small,norm,54,-0.031074580526462045
+7,MFC,between-category pairs,dinov2_small,norm,54,-0.0015327373833725262
+7,MFC,within-category pairs (all cats),dinov2_small,norm,54,-0.11668005467946278
+7,MFC,within face_person,dinov2_small,norm,9,-0.02908622908622909
+7,MFC,within animal,dinov2_small,norm,9,-0.4949806949806951
+7,MFC,within vehicle,dinov2_small,norm,9,-0.11634491634491637
+7,MFC,all,clip_vitb32,ln_post,54,-0.01564697907061141
+7,MFC,between-category pairs,clip_vitb32,ln_post,54,0.005546005688069084
+7,MFC,within-category pairs (all cats),clip_vitb32,ln_post,54,-0.08126171451119661
+7,MFC,within face_person,clip_vitb32,ln_post,9,-0.03783783783783784
+7,MFC,within animal,clip_vitb32,ln_post,9,-0.40180180180180186
+7,MFC,within vehicle,clip_vitb32,ln_post,9,-0.0906048906048906
+7,MTL_concept,all,alexnet,conv1,54,0.02368107865103754
+7,MTL_concept,between-category pairs,alexnet,conv1,54,-0.01203681025807513
+7,MTL_concept,within-category pairs (all cats),alexnet,conv1,54,0.008091527032041978
+7,MTL_concept,within face_person,alexnet,conv1,9,-0.07001287001287002
+7,MTL_concept,within animal,alexnet,conv1,9,0.06229086229086229
+7,MTL_concept,within vehicle,alexnet,conv1,9,0.3557271557271558
+7,MTL_concept,all,alexnet,conv4,54,0.03305399962931321
+7,MTL_concept,between-category pairs,alexnet,conv4,54,-0.024604694088091277
+7,MTL_concept,within-category pairs (all cats),alexnet,conv4,54,-0.022154812403406665
+7,MTL_concept,within face_person,alexnet,conv4,9,-0.18223938223938224
+7,MTL_concept,within animal,alexnet,conv4,9,-0.03655083655083655
+7,MTL_concept,within vehicle,alexnet,conv4,9,0.24118404118404121
+7,MTL_concept,all,resnet50,layer2,54,0.00319565423391712
+7,MTL_concept,between-category pairs,resnet50,layer2,54,-0.04769907214792003
+7,MTL_concept,within-category pairs (all cats),resnet50,layer2,54,0.03778003260098555
+7,MTL_concept,within face_person,resnet50,layer2,9,-0.0015444015444015446
+7,MTL_concept,within animal,resnet50,layer2,9,-0.028056628056628057
+7,MTL_concept,within vehicle,resnet50,layer2,9,0.14723294723294725
+7,MTL_concept,all,resnet50,avgpool,54,0.05926885676543103
+7,MTL_concept,between-category pairs,resnet50,avgpool,54,-0.011317757466766484
+7,MTL_concept,within-category pairs (all cats),resnet50,avgpool,54,0.025046153412533998
+7,MTL_concept,within face_person,resnet50,avgpool,9,0.06048906048906049
+7,MTL_concept,within animal,resnet50,avgpool,9,0.2731016731016731
+7,MTL_concept,within vehicle,resnet50,avgpool,9,0.007207207207207207
+7,MTL_concept,all,vit_b_16,ln,54,0.026915124274668915
+7,MTL_concept,between-category pairs,vit_b_16,ln,54,-0.04581382049176712
+7,MTL_concept,within-category pairs (all cats),vit_b_16,ln,54,0.11283511135538364
+7,MTL_concept,within face_person,vit_b_16,ln,9,0.06126126126126127
+7,MTL_concept,within animal,vit_b_16,ln,9,0.25920205920205924
+7,MTL_concept,within vehicle,vit_b_16,ln,9,0.17683397683397684
+7,MTL_concept,all,dinov2_small,norm,54,0.06176881397182862
+7,MTL_concept,between-category pairs,dinov2_small,norm,54,0.0028377434170343044
+7,MTL_concept,within-category pairs (all cats),dinov2_small,norm,54,-0.07454656914556294
+7,MTL_concept,within face_person,dinov2_small,norm,9,-0.20334620334620335
+7,MTL_concept,within animal,dinov2_small,norm,9,0.16164736164736168
+7,MTL_concept,within vehicle,dinov2_small,norm,9,-0.02908622908622909
+7,MTL_concept,all,clip_vitb32,ln_post,54,0.05790894979258002
+7,MTL_concept,between-category pairs,clip_vitb32,ln_post,54,-0.018066625596619396
+7,MTL_concept,within-category pairs (all cats),clip_vitb32,ln_post,54,0.11193905400771338
+7,MTL_concept,within face_person,clip_vitb32,ln_post,9,-0.32432432432432434
+7,MTL_concept,within animal,clip_vitb32,ln_post,9,0.5129987129987131
+7,MTL_concept,within vehicle,clip_vitb32,ln_post,9,0.27490347490347494
+8,MTL,all,alexnet,conv1,54,0.0028884248342454307
+8,MTL,between-category pairs,alexnet,conv1,54,-0.0021231574586611296
+8,MTL,within-category pairs (all cats),alexnet,conv1,54,0.006873687622429854
+8,MTL,within face_person,alexnet,conv1,9,0.11994851994851995
+8,MTL,within animal,alexnet,conv1,9,0.029858429858429857
+8,MTL,within vehicle,alexnet,conv1,9,-0.08391248391248392
+8,MTL,all,alexnet,conv4,54,-0.008840863410274184
+8,MTL,between-category pairs,alexnet,conv4,54,-0.01592861558310002
+8,MTL,within-category pairs (all cats),alexnet,conv4,54,-0.022387341046707723
+8,MTL,within face_person,alexnet,conv4,9,0.01312741312741313
+8,MTL,within animal,alexnet,conv4,9,-0.1837837837837838
+8,MTL,within vehicle,alexnet,conv4,9,0.04761904761904762
+8,MTL,all,resnet50,layer2,54,0.02222771782168852
+8,MTL,between-category pairs,resnet50,layer2,54,0.022472566075299235
+8,MTL,within-category pairs (all cats),resnet50,layer2,54,0.019141335137191903
+8,MTL,within face_person,resnet50,layer2,9,0.0501930501930502
+8,MTL,within animal,resnet50,layer2,9,-0.02110682110682111
+8,MTL,within vehicle,resnet50,layer2,9,0.1917631917631918
+8,MTL,all,resnet50,avgpool,54,0.049583018319183596
+8,MTL,between-category pairs,resnet50,avgpool,54,0.045720701109670955
+8,MTL,within-category pairs (all cats),resnet50,avgpool,54,-0.0338669748258384
+8,MTL,within face_person,resnet50,avgpool,9,0.14414414414414414
+8,MTL,within animal,resnet50,avgpool,9,0.10553410553410554
+8,MTL,within vehicle,resnet50,avgpool,9,0.010296010296010296
+8,MTL,all,vit_b_16,ln,54,0.01832872923312472
+8,MTL,between-category pairs,vit_b_16,ln,54,0.007352343295695402
+8,MTL,within-category pairs (all cats),vit_b_16,ln,54,0.048775818900116036
+8,MTL,within face_person,vit_b_16,ln,9,-0.21621621621621626
+8,MTL,within animal,vit_b_16,ln,9,0.03783783783783784
+8,MTL,within vehicle,vit_b_16,ln,9,0.2195624195624196
+8,MTL,all,dinov2_small,norm,54,-0.000677220019477846
+8,MTL,between-category pairs,dinov2_small,norm,54,-0.018502933228677985
+8,MTL,within-category pairs (all cats),dinov2_small,norm,54,0.03040840485350696
+8,MTL,within face_person,dinov2_small,norm,9,0.3580437580437581
+8,MTL,within animal,dinov2_small,norm,9,-0.015444015444015444
+8,MTL,within vehicle,dinov2_small,norm,9,0.18146718146718147
+8,MTL,all,clip_vitb32,ln_post,54,0.003059435440588597
+8,MTL,between-category pairs,clip_vitb32,ln_post,54,-0.03205773227309096
+8,MTL,within-category pairs (all cats),clip_vitb32,ln_post,54,0.0783797685987683
+8,MTL,within face_person,clip_vitb32,ln_post,9,0.3603603603603604
+8,MTL,within animal,clip_vitb32,ln_post,9,0.058687258687258693
+8,MTL,within vehicle,clip_vitb32,ln_post,9,0.04195624195624196
+8,MFC,all,alexnet,conv1,54,0.03346308189778201
+8,MFC,between-category pairs,alexnet,conv1,54,0.03821886311019909
+8,MFC,within-category pairs (all cats),alexnet,conv1,54,-0.02410194619428121
+8,MFC,within face_person,alexnet,conv1,9,-0.2380952380952381
+8,MFC,within animal,alexnet,conv1,9,-0.054568854568854575
+8,MFC,within vehicle,alexnet,conv1,9,-0.20437580437580435
+8,MFC,all,alexnet,conv4,54,0.026363746111822427
+8,MFC,between-category pairs,alexnet,conv4,54,0.035639086002144445
+8,MFC,within-category pairs (all cats),alexnet,conv4,54,-0.02467152393166007
+8,MFC,within face_person,alexnet,conv4,9,-0.054826254826254826
+8,MFC,within animal,alexnet,conv4,9,-0.13230373230373232
+8,MFC,within vehicle,alexnet,conv4,9,-0.02110682110682111
+8,MFC,all,resnet50,layer2,54,0.010217728115904568
+8,MFC,between-category pairs,resnet50,layer2,54,0.02830412378385485
+8,MFC,within-category pairs (all cats),resnet50,layer2,54,-0.08736030665595626
+8,MFC,within face_person,resnet50,layer2,9,-0.2836550836550837
+8,MFC,within animal,resnet50,layer2,9,-0.010810810810810811
+8,MFC,within vehicle,resnet50,layer2,9,-0.1312741312741313
+8,MFC,all,resnet50,avgpool,54,0.021295988482664983
+8,MFC,between-category pairs,resnet50,avgpool,54,0.02000643834275736
+8,MFC,within-category pairs (all cats),resnet50,avgpool,54,0.04568248331195949
+8,MFC,within face_person,resnet50,avgpool,9,-0.03577863577863578
+8,MFC,within animal,resnet50,avgpool,9,0.010296010296010296
+8,MFC,within vehicle,resnet50,avgpool,9,0.27541827541827546
+8,MFC,all,vit_b_16,ln,54,-0.0004410566653636117
+8,MFC,between-category pairs,vit_b_16,ln,54,-0.000431917929121254
+8,MFC,within-category pairs (all cats),vit_b_16,ln,54,-0.033468857603216884
+8,MFC,within face_person,vit_b_16,ln,9,-0.04864864864864865
+8,MFC,within animal,vit_b_16,ln,9,-0.1425997425997426
+8,MFC,within vehicle,vit_b_16,ln,9,0.04555984555984556
+8,MFC,all,dinov2_small,norm,54,-0.016013161264557912
+8,MFC,between-category pairs,dinov2_small,norm,54,-0.029770747344912987
+8,MFC,within-category pairs (all cats),dinov2_small,norm,54,0.037731882730403
+8,MFC,within face_person,dinov2_small,norm,9,0.06718146718146718
+8,MFC,within animal,dinov2_small,norm,9,-0.18584298584298584
+8,MFC,within vehicle,dinov2_small,norm,9,0.04298584298584299
+8,MFC,all,clip_vitb32,ln_post,54,-0.007390524751123465
+8,MFC,between-category pairs,clip_vitb32,ln_post,54,-0.004024432033557048
+8,MFC,within-category pairs (all cats),clip_vitb32,ln_post,54,-0.0981165179892614
+8,MFC,within face_person,clip_vitb32,ln_post,9,-0.12123552123552124
+8,MFC,within animal,clip_vitb32,ln_post,9,-0.16525096525096525
+8,MFC,within vehicle,clip_vitb32,ln_post,9,-0.15546975546975547
+8,MTL_concept,all,alexnet,conv1,54,-0.014616247039563155
+8,MTL_concept,between-category pairs,alexnet,conv1,54,-0.03871891365549896
+8,MTL_concept,within-category pairs (all cats),alexnet,conv1,54,0.06686490320701625
+8,MTL_concept,within face_person,alexnet,conv1,9,0.11608751608751611
+8,MTL_concept,within animal,alexnet,conv1,9,-0.09446589446589447
+8,MTL_concept,within vehicle,alexnet,conv1,9,-0.00025740025740025744
+8,MTL_concept,all,alexnet,conv4,54,0.007830238229732273
+8,MTL_concept,between-category pairs,alexnet,conv4,54,-0.01666927148084281
+8,MTL_concept,within-category pairs (all cats),alexnet,conv4,54,0.047913818777979775
+8,MTL_concept,within face_person,alexnet,conv4,9,0.061003861003861015
+8,MTL_concept,within animal,alexnet,conv4,9,-0.17940797940797942
+8,MTL_concept,within vehicle,alexnet,conv4,9,-0.023938223938223938
+8,MTL_concept,all,resnet50,layer2,54,-0.010790883922537764
+8,MTL_concept,between-category pairs,resnet50,layer2,54,-0.039425444559284296
+8,MTL_concept,within-category pairs (all cats),resnet50,layer2,54,0.047889156649144816
+8,MTL_concept,within face_person,resnet50,layer2,9,0.05611325611325611
+8,MTL_concept,within animal,resnet50,layer2,9,0.03191763191763192
+8,MTL_concept,within vehicle,resnet50,layer2,9,0.04607464607464608
+8,MTL_concept,all,resnet50,avgpool,54,0.012899429137439047
+8,MTL_concept,between-category pairs,resnet50,avgpool,54,-0.0061231795245475515
+8,MTL_concept,within-category pairs (all cats),resnet50,avgpool,54,0.00593065479126444
+8,MTL_concept,within face_person,resnet50,avgpool,9,-0.08622908622908623
+8,MTL_concept,within animal,resnet50,avgpool,9,0.015701415701415703
+8,MTL_concept,within vehicle,resnet50,avgpool,9,-0.16576576576576577
+8,MTL_concept,all,vit_b_16,ln,54,0.010361772610112443
+8,MTL_concept,between-category pairs,vit_b_16,ln,54,-0.013503319800875161
+8,MTL_concept,within-category pairs (all cats),vit_b_16,ln,54,0.04484514531865819
+8,MTL_concept,within face_person,vit_b_16,ln,9,-0.09652509652509651
+8,MTL_concept,within animal,vit_b_16,ln,9,-0.021364221364221368
+8,MTL_concept,within vehicle,vit_b_16,ln,9,0.0797940797940798
+8,MTL_concept,all,dinov2_small,norm,54,0.018853575362482285
+8,MTL_concept,between-category pairs,dinov2_small,norm,54,-0.01153515004324897
+8,MTL_concept,within-category pairs (all cats),dinov2_small,norm,54,0.08413309093983849
+8,MTL_concept,within face_person,dinov2_small,norm,9,0.005148005148005148
+8,MTL_concept,within animal,dinov2_small,norm,9,0.09909909909909911
+8,MTL_concept,within vehicle,dinov2_small,norm,9,0.04221364221364222
+8,MTL_concept,all,clip_vitb32,ln_post,54,-0.005164348318137713
+8,MTL_concept,between-category pairs,clip_vitb32,ln_post,54,-0.04520867194031291
+8,MTL_concept,within-category pairs (all cats),clip_vitb32,ln_post,54,0.11108527459518877
+8,MTL_concept,within face_person,clip_vitb32,ln_post,9,0.007207207207207207
+8,MTL_concept,within animal,clip_vitb32,ln_post,9,-0.05637065637065637
+8,MTL_concept,within vehicle,clip_vitb32,ln_post,9,-0.03577863577863578
+9,MTL,all,alexnet,conv1,54,-0.031014505679837188
+9,MTL,between-category pairs,alexnet,conv1,54,-0.020185705593571898
+9,MTL,within-category pairs (all cats),alexnet,conv1,54,-0.05930064838240413
+9,MTL,within face_person,alexnet,conv1,24,-0.02452305189709051
+9,MTL,within landmark_place,alexnet,conv1,17,-0.11326272601498019
+9,MTL,all,alexnet,conv4,54,-0.014603085447398717
+9,MTL,between-category pairs,alexnet,conv4,54,-0.02295728026718441
+9,MTL,within-category pairs (all cats),alexnet,conv4,54,-0.012684040507793197
+9,MTL,within face_person,alexnet,conv4,24,-0.007467359198641573
+9,MTL,within landmark_place,alexnet,conv4,17,-0.07126091312437383
+9,MTL,all,resnet50,layer2,54,-0.03231428047492135
+9,MTL,between-category pairs,resnet50,layer2,54,-0.035029714922545196
+9,MTL,within-category pairs (all cats),resnet50,layer2,54,-0.03230875986730865
+9,MTL,within face_person,resnet50,layer2,24,-0.005727087227636592
+9,MTL,within landmark_place,resnet50,layer2,17,-0.0872143504603788
+9,MTL,all,resnet50,avgpool,54,0.006197623394840639
+9,MTL,between-category pairs,resnet50,avgpool,54,0.016946294967745863
+9,MTL,within-category pairs (all cats),resnet50,avgpool,54,-0.01594414040547868
+9,MTL,within face_person,resnet50,avgpool,24,0.006931978710349453
+9,MTL,within landmark_place,resnet50,avgpool,17,-0.048685654310385955
+9,MTL,all,vit_b_16,ln,54,0.00425901996999288
+9,MTL,between-category pairs,vit_b_16,ln,54,-0.011475735130340675
+9,MTL,within-category pairs (all cats),vit_b_16,ln,54,0.05997390810313081
+9,MTL,within face_person,vit_b_16,ln,24,0.034083417759449786
+9,MTL,within landmark_place,vit_b_16,ln,17,0.11327226754448737
+9,MTL,all,dinov2_small,norm,54,0.003042293429138586
+9,MTL,between-category pairs,dinov2_small,norm,54,-0.004452433269259237
+9,MTL,within-category pairs (all cats),dinov2_small,norm,54,0.026710130555047767
+9,MTL,within face_person,dinov2_small,norm,24,0.03389335197842497
+9,MTL,within landmark_place,dinov2_small,norm,17,0.0485663851915462
+9,MTL,all,clip_vitb32,ln_post,54,-0.019103354862815176
+9,MTL,between-category pairs,clip_vitb32,ln_post,54,-0.034017991218708736
+9,MTL,within-category pairs (all cats),clip_vitb32,ln_post,54,0.011364186343740396
+9,MTL,within face_person,clip_vitb32,ln_post,24,0.03509995576547139
+9,MTL,within landmark_place,clip_vitb32,ln_post,17,-0.09752874385764036
+9,MFC,all,alexnet,conv1,54,0.005950710451606413
+9,MFC,between-category pairs,alexnet,conv1,54,0.007631396113141219
+9,MFC,within-category pairs (all cats),alexnet,conv1,54,-0.031439132728036674
+9,MFC,within face_person,alexnet,conv1,24,-0.021039083346413436
+9,MFC,within landmark_place,alexnet,conv1,17,-0.07942369161776631
+9,MFC,all,alexnet,conv4,54,0.025395603307482723
+9,MFC,between-category pairs,alexnet,conv4,54,0.014211845049972277
+9,MFC,within-category pairs (all cats),alexnet,conv4,54,-0.022391126288911656
+9,MFC,within face_person,alexnet,conv4,24,-0.00279904681725432
+9,MFC,within landmark_place,alexnet,conv4,17,-0.10507132293306615
+9,MFC,all,resnet50,layer2,54,0.004443220834071471
+9,MFC,between-category pairs,resnet50,layer2,54,0.0014405377552304728
+9,MFC,within-category pairs (all cats),resnet50,layer2,54,-0.03404662693488956
+9,MFC,within face_person,resnet50,layer2,24,-0.004545026469371156
+9,MFC,within landmark_place,resnet50,layer2,17,-0.08098373169219025
+9,MFC,all,resnet50,avgpool,54,0.017367785582184235
+9,MFC,between-category pairs,resnet50,avgpool,54,-0.006804786330785842
+9,MFC,within-category pairs (all cats),resnet50,avgpool,54,0.02984137396772238
+9,MFC,within face_person,resnet50,avgpool,24,0.0664499650404532
+9,MFC,within landmark_place,resnet50,avgpool,17,0.00264300367348886
+9,MFC,all,vit_b_16,ln,54,0.02242728752689752
+9,MFC,between-category pairs,vit_b_16,ln,54,-0.01132671439211532
+9,MFC,within-category pairs (all cats),vit_b_16,ln,54,0.03703976578946638
+9,MFC,within face_person,vit_b_16,ln,24,0.07529344615516331
+9,MFC,within landmark_place,vit_b_16,ln,17,-0.03593817088879347
+9,MFC,all,dinov2_small,norm,54,0.035457403002464666
+9,MFC,between-category pairs,dinov2_small,norm,54,0.028782712930365106
+9,MFC,within-category pairs (all cats),dinov2_small,norm,54,0.01328593593119927
+9,MFC,within face_person,dinov2_small,norm,24,0.040795650746992776
+9,MFC,within landmark_place,dinov2_small,norm,17,-0.02605314631935499
+9,MFC,all,clip_vitb32,ln_post,54,0.006056875441296227
+9,MFC,between-category pairs,clip_vitb32,ln_post,54,-0.018916598601650004
+9,MFC,within-category pairs (all cats),clip_vitb32,ln_post,54,0.029134975318434272
+9,MFC,within face_person,clip_vitb32,ln_post,24,0.025983076725503346
+9,MFC,within landmark_place,clip_vitb32,ln_post,17,0.046910929822050466
+10,MTL,all,alexnet,conv1,63,-0.008118013252195425
+10,MTL,between-category pairs,alexnet,conv1,63,-0.0025772145827332085
+10,MTL,within-category pairs (all cats),alexnet,conv1,63,-0.0026964585670049422
+10,MTL,within face_person,alexnet,conv1,33,-7.027296890739067e-05
+10,MTL,within landmark_place,alexnet,conv1,17,-0.04562282333858116
+10,MTL,all,alexnet,conv4,63,0.0034873361649999032
+10,MTL,between-category pairs,alexnet,conv4,63,0.0040518328305399155
+10,MTL,within-category pairs (all cats),alexnet,conv4,63,0.019137944384943102
+10,MTL,within face_person,alexnet,conv4,33,0.02625526924982057
+10,MTL,within landmark_place,alexnet,conv4,17,-0.017265397643242208
+10,MTL,all,resnet50,layer2,63,-0.010392490748214706
+10,MTL,between-category pairs,resnet50,layer2,63,-0.009659242511434449
+10,MTL,within-category pairs (all cats),resnet50,layer2,63,-0.014377560165567915
+10,MTL,within face_person,resnet50,layer2,33,-0.007087787079752157
+10,MTL,within landmark_place,resnet50,layer2,17,-0.01239921759458041
+10,MTL,all,resnet50,avgpool,63,0.021269141012598008
+10,MTL,between-category pairs,resnet50,avgpool,63,0.046360640092643506
+10,MTL,within-category pairs (all cats),resnet50,avgpool,63,0.037641132540964566
+10,MTL,within face_person,resnet50,avgpool,33,0.04870014573081117
+10,MTL,within landmark_place,resnet50,avgpool,17,0.09233338104098086
+10,MTL,all,vit_b_16,ln,63,0.011742680554828494
+10,MTL,between-category pairs,vit_b_16,ln,63,0.024085345298914783
+10,MTL,within-category pairs (all cats),vit_b_16,ln,63,0.026377669031301967
+10,MTL,within face_person,vit_b_16,ln,33,0.03640310988050987
+10,MTL,within landmark_place,vit_b_16,ln,17,-0.056108964266972
+10,MTL,all,dinov2_small,norm,63,0.01008941502302962
+10,MTL,between-category pairs,dinov2_small,norm,63,0.03049563241817363
+10,MTL,within-category pairs (all cats),dinov2_small,norm,63,0.027161003987399172
+10,MTL,within face_person,dinov2_small,norm,33,0.05423141100621436
+10,MTL,within landmark_place,dinov2_small,norm,17,-0.03603835694861886
+10,MTL,all,clip_vitb32,ln_post,63,-0.010924480162418098
+10,MTL,between-category pairs,clip_vitb32,ln_post,63,-0.006266995528648344
+10,MTL,within-category pairs (all cats),clip_vitb32,ln_post,63,0.00451838795914315
+10,MTL,within face_person,clip_vitb32,ln_post,33,0.010603962743261051
+10,MTL,within landmark_place,clip_vitb32,ln_post,17,-0.08674681551452697
+10,MFC,all,alexnet,conv1,63,-0.02152546937962501
+10,MFC,between-category pairs,alexnet,conv1,63,-0.052404647640674505
+10,MFC,within-category pairs (all cats),alexnet,conv1,63,0.01121075562786012
+10,MFC,within face_person,alexnet,conv1,33,0.051209347250533416
+10,MFC,within landmark_place,alexnet,conv1,17,-0.08675158627928056
+10,MFC,all,alexnet,conv4,63,0.030615176546660166
+10,MFC,between-category pairs,alexnet,conv4,63,0.030708409534579442
+10,MFC,within-category pairs (all cats),alexnet,conv4,63,0.01942659191219595
+10,MFC,within face_person,alexnet,conv4,33,0.03017033776351956
+10,MFC,within landmark_place,alexnet,conv4,17,-0.07283049472830494
+10,MFC,all,resnet50,layer2,63,-0.00238074360540473
+10,MFC,between-category pairs,resnet50,layer2,63,-0.024759755615340585
+10,MFC,within-category pairs (all cats),resnet50,layer2,63,0.012988027069234773
+10,MFC,within face_person,resnet50,layer2,33,0.037335734897099834
+10,MFC,within landmark_place,resnet50,layer2,17,-0.00846333667286866
+10,MFC,all,resnet50,avgpool,63,0.029634142503538942
+10,MFC,between-category pairs,resnet50,avgpool,63,0.03177781403213289
+10,MFC,within-category pairs (all cats),resnet50,avgpool,63,0.02624384851103109
+10,MFC,within face_person,resnet50,avgpool,33,0.034428781851508494
+10,MFC,within landmark_place,resnet50,avgpool,17,-0.02148752445016936
+10,MFC,all,vit_b_16,ln,63,0.04055760778482263
+10,MFC,between-category pairs,vit_b_16,ln,63,0.051986074748952095
+10,MFC,within-category pairs (all cats),vit_b_16,ln,63,0.019006538843983904
+10,MFC,within face_person,vit_b_16,ln,33,0.04552995438289736
+10,MFC,within landmark_place,vit_b_16,ln,17,-0.06839368350746625
+10,MFC,all,dinov2_small,norm,63,0.03786753807518276
+10,MFC,between-category pairs,dinov2_small,norm,63,0.04572227392376978
+10,MFC,within-category pairs (all cats),dinov2_small,norm,63,0.03608534920217517
+10,MFC,within face_person,dinov2_small,norm,33,0.0435521208577672
+10,MFC,within landmark_place,dinov2_small,norm,17,-0.02500834883831878
+10,MFC,all,clip_vitb32,ln_post,63,0.055338963275272865
+10,MFC,between-category pairs,clip_vitb32,ln_post,63,0.055622540997787726
+10,MFC,within-category pairs (all cats),clip_vitb32,ln_post,63,0.04116359069857301
+10,MFC,within face_person,clip_vitb32,ln_post,33,0.08609319141345846
+10,MFC,within landmark_place,clip_vitb32,ln_post,17,-0.13851915462048564
+10,MTL_concept,all,alexnet,conv1,63,-0.022538104888165
+10,MTL_concept,between-category pairs,alexnet,conv1,63,-0.0021445397302071473
+10,MTL_concept,within-category pairs (all cats),alexnet,conv1,63,-0.037427656036413286
+10,MTL_concept,within face_person,alexnet,conv1,33,-0.0275910263212215
+10,MTL_concept,within landmark_place,alexnet,conv1,17,-0.05289823958780593
+10,MTL_concept,all,alexnet,conv4,63,-0.019998008835432728
+10,MTL_concept,between-category pairs,alexnet,conv4,63,-0.0076995516316382155
+10,MTL_concept,within-category pairs (all cats),alexnet,conv4,63,-0.001048752682352021
+10,MTL_concept,within face_person,alexnet,conv4,33,0.009851096307228857
+10,MTL_concept,within landmark_place,alexnet,conv4,17,-0.06838891274271265
+10,MTL_concept,all,resnet50,layer2,63,-0.023927536765309506
+10,MTL_concept,between-category pairs,resnet50,layer2,63,-0.0063901062267918834
+10,MTL_concept,within-category pairs (all cats),resnet50,layer2,63,-0.023956096442773807
+10,MTL_concept,within face_person,resnet50,layer2,33,-0.019169357202881487
+10,MTL_concept,within landmark_place,resnet50,layer2,17,-0.046009255283621965
+10,MTL_concept,all,resnet50,avgpool,63,-0.016363342537242018
+10,MTL_concept,between-category pairs,resnet50,avgpool,63,-0.008758759773170251
+10,MTL_concept,within-category pairs (all cats),resnet50,avgpool,63,0.031116318436872056
+10,MTL_concept,within face_person,resnet50,avgpool,33,0.03421331612433653
+10,MTL_concept,within landmark_place,resnet50,avgpool,17,-0.012799961833881969
+10,MTL_concept,all,vit_b_16,ln,63,-0.009814333907930036
+10,MTL_concept,between-category pairs,vit_b_16,ln,63,0.00025077986962505113
+10,MTL_concept,within-category pairs (all cats),vit_b_16,ln,63,0.02746433305554682
+10,MTL_concept,within face_person,vit_b_16,ln,33,0.041737904326369195
+10,MTL_concept,within landmark_place,vit_b_16,ln,17,0.01986069366919517
+10,MTL_concept,all,dinov2_small,norm,63,-0.00206593069935401
+10,MTL_concept,between-category pairs,dinov2_small,norm,63,0.012499934531792052
+10,MTL_concept,within-category pairs (all cats),dinov2_small,norm,63,0.04855020741988977
+10,MTL_concept,within face_person,dinov2_small,norm,33,0.05092067372048577
+10,MTL_concept,within landmark_place,dinov2_small,norm,17,0.07277801631601545
+10,MTL_concept,all,clip_vitb32,ln_post,63,-0.02526925150898971
+10,MTL_concept,between-category pairs,clip_vitb32,ln_post,63,-0.00875011289185443
+10,MTL_concept,within-category pairs (all cats),clip_vitb32,ln_post,63,-0.03056773480307185
+10,MTL_concept,within face_person,clip_vitb32,ln_post,33,-0.021987776090429414
+10,MTL_concept,within landmark_place,clip_vitb32,ln_post,17,-0.034516482992223645
+11,MTL,all,alexnet,conv1,63,0.020490619250698377
+11,MTL,between-category pairs,alexnet,conv1,63,-0.012852524174815857
+11,MTL,within-category pairs (all cats),alexnet,conv1,63,0.006793068472713417
+11,MTL,within face_person,alexnet,conv1,33,-0.01578288489613786
+11,MTL,within landmark_place,alexnet,conv1,17,0.05939125041744191
+11,MTL,all,alexnet,conv4,63,0.05055573183342795
+11,MTL,between-category pairs,alexnet,conv4,63,0.02439049316022258
+11,MTL,within-category pairs (all cats),alexnet,conv4,63,0.009105506996156733
+11,MTL,within face_person,alexnet,conv4,33,0.028820640230769263
+11,MTL,within landmark_place,alexnet,conv4,17,-0.023806116120414098
+11,MTL,all,resnet50,layer2,63,0.046532348340609424
+11,MTL,between-category pairs,resnet50,layer2,63,0.03435787512176906
+11,MTL,within-category pairs (all cats),resnet50,layer2,63,0.010433937282603944
+11,MTL,within face_person,resnet50,layer2,33,0.03231716881132377
+11,MTL,within landmark_place,resnet50,layer2,17,-0.03608129383140117
+11,MTL,all,resnet50,avgpool,63,0.05958437215277515
+11,MTL,between-category pairs,resnet50,avgpool,63,0.04364466627789554
+11,MTL,within-category pairs (all cats),resnet50,avgpool,63,0.01181657043804658
+11,MTL,within face_person,resnet50,avgpool,33,0.040161246300071125
+11,MTL,within landmark_place,resnet50,avgpool,17,-0.00402652545202996
+11,MTL,all,vit_b_16,ln,63,0.050944914584639636
+11,MTL,between-category pairs,vit_b_16,ln,63,0.02339740754601436
+11,MTL,within-category pairs (all cats),vit_b_16,ln,63,0.023904691883139532
+11,MTL,within face_person,vit_b_16,ln,33,0.026769028240602913
+11,MTL,within landmark_place,vit_b_16,ln,17,-0.014565144792710271
+11,MTL,all,dinov2_small,norm,63,0.04724007811607751
+11,MTL,between-category pairs,dinov2_small,norm,63,0.015169783908487564
+11,MTL,within-category pairs (all cats),dinov2_small,norm,63,0.0009238254192289086
+11,MTL,within face_person,dinov2_small,norm,33,0.027701082595032376
+11,MTL,within landmark_place,dinov2_small,norm,17,-0.02221745145746863
+11,MTL,all,clip_vitb32,ln_post,63,0.03782923678335442
+11,MTL,between-category pairs,clip_vitb32,ln_post,63,0.008405259015806455
+11,MTL,within-category pairs (all cats),clip_vitb32,ln_post,63,0.021377741864011365
+11,MTL,within face_person,clip_vitb32,ln_post,33,-0.017199431424832545
+11,MTL,within landmark_place,clip_vitb32,ln_post,17,0.17528743857640378
+11,MFC,all,alexnet,conv1,63,-0.021593592067580804
+11,MFC,between-category pairs,alexnet,conv1,63,-0.048110072477840014
+11,MFC,within-category pairs (all cats),alexnet,conv1,63,-0.03627513590966904
+11,MFC,within face_person,alexnet,conv1,33,0.001321082901559473
+11,MFC,within landmark_place,alexnet,conv1,17,-0.12203139163207861
+11,MFC,all,alexnet,conv4,63,0.0650922689976534
+11,MFC,between-category pairs,alexnet,conv4,63,0.049655217939493165
+11,MFC,within-category pairs (all cats),alexnet,conv4,63,0.03154825473661776
+11,MFC,within face_person,alexnet,conv4,33,0.051697752536756354
+11,MFC,within landmark_place,alexnet,conv4,17,-0.04347597919946567
+11,MFC,all,resnet50,layer2,63,0.01945098468213807
+11,MFC,between-category pairs,resnet50,layer2,63,-0.006621424810180282
+11,MFC,within-category pairs (all cats),resnet50,layer2,63,0.014151855432438463
+11,MFC,within face_person,resnet50,layer2,33,0.044884453956205106
+11,MFC,within landmark_place,resnet50,layer2,17,-0.07970516673822813
+11,MFC,all,resnet50,avgpool,63,0.07955707017490005
+11,MFC,between-category pairs,resnet50,avgpool,63,0.07677376443356364
+11,MFC,within-category pairs (all cats),resnet50,avgpool,63,0.0541074964791135
+11,MFC,within face_person,resnet50,avgpool,33,0.09370892251483967
+11,MFC,within landmark_place,resnet50,avgpool,17,-0.06380897857926625
+11,MFC,all,vit_b_16,ln,63,0.06582034150163797
+11,MFC,between-category pairs,vit_b_16,ln,63,0.04790368476836623
+11,MFC,within-category pairs (all cats),vit_b_16,ln,63,0.04193082579259238
+11,MFC,within face_person,vit_b_16,ln,33,0.06681981065103423
+11,MFC,within landmark_place,vit_b_16,ln,17,-0.025237345546491097
+11,MFC,all,dinov2_small,norm,63,0.06362063497046613
+11,MFC,between-category pairs,dinov2_small,norm,63,0.04169520077050096
+11,MFC,within-category pairs (all cats),dinov2_small,norm,63,0.03583541800991905
+11,MFC,within face_person,dinov2_small,norm,33,0.0727731213557107
+11,MFC,within landmark_place,dinov2_small,norm,17,-0.08871714135775963
+11,MFC,all,clip_vitb32,ln_post,63,0.07665501112735007
+11,MFC,between-category pairs,clip_vitb32,ln_post,63,0.05466783244810403
+11,MFC,within-category pairs (all cats),clip_vitb32,ln_post,63,0.04063248691502876
+11,MFC,within face_person,clip_vitb32,ln_post,33,0.07078371154103894
+11,MFC,within landmark_place,clip_vitb32,ln_post,17,-0.0577310242831926
+11,MTL_concept,all,alexnet,conv1,63,0.05306236097256105
+11,MTL_concept,between-category pairs,alexnet,conv1,63,0.016755952728544438
+11,MTL_concept,within-category pairs (all cats),alexnet,conv1,63,0.06801007238037994
+11,MTL_concept,within face_person,alexnet,conv1,33,0.06288248631307572
+11,MTL_concept,within landmark_place,alexnet,conv1,17,0.14018415151948854
+11,MTL_concept,all,alexnet,conv4,63,0.04988407383313736
+11,MTL_concept,between-category pairs,alexnet,conv4,63,0.03110952036866472
+11,MTL_concept,within-category pairs (all cats),alexnet,conv4,63,0.02482196235852246
+11,MTL_concept,within face_person,alexnet,conv4,33,0.039539061498793625
+11,MTL_concept,within landmark_place,alexnet,conv4,17,0.00608272506082725
+11,MTL_concept,all,resnet50,layer2,63,0.050760449467463845
+11,MTL_concept,between-category pairs,resnet50,layer2,63,0.03672646483211087
+11,MTL_concept,within-category pairs (all cats),resnet50,layer2,63,0.047690934780992046
+11,MTL_concept,within face_person,resnet50,layer2,33,0.0687648718635185
+11,MTL_concept,within landmark_place,resnet50,layer2,17,0.02461237536377081
+11,MTL_concept,all,resnet50,avgpool,63,0.04774379745245891
+11,MTL_concept,between-category pairs,resnet50,avgpool,63,0.03290539637209649
+11,MTL_concept,within-category pairs (all cats),resnet50,avgpool,63,0.011810590489274807
+11,MTL_concept,within face_person,resnet50,avgpool,33,0.04226006020322748
+11,MTL_concept,within landmark_place,resnet50,avgpool,17,-0.0507132293306617
+11,MTL_concept,all,vit_b_16,ln,63,0.053259165755593384
+11,MTL_concept,between-category pairs,vit_b_16,ln,63,0.03881204037600297
+11,MTL_concept,within-category pairs (all cats),vit_b_16,ln,63,0.029302630640797505
+11,MTL_concept,within face_person,vit_b_16,ln,33,0.028268809921564934
+11,MTL_concept,within landmark_place,vit_b_16,ln,17,-0.03642955965841324
+11,MTL_concept,all,dinov2_small,norm,63,0.05402284447817158
+11,MTL_concept,between-category pairs,dinov2_small,norm,63,0.0424723987123401
+11,MTL_concept,within-category pairs (all cats),dinov2_small,norm,63,0.01630827862574644
+11,MTL_concept,within face_person,dinov2_small,norm,33,0.04736952461885475
+11,MTL_concept,within landmark_place,dinov2_small,norm,17,-0.08230046276418108
+11,MTL_concept,all,clip_vitb32,ln_post,63,0.04970349587179863
+11,MTL_concept,between-category pairs,clip_vitb32,ln_post,63,0.03593322663526708
+11,MTL_concept,within-category pairs (all cats),clip_vitb32,ln_post,63,0.04401686958881719
+11,MTL_concept,within face_person,clip_vitb32,ln_post,33,0.022093185543790497
+11,MTL_concept,within landmark_place,clip_vitb32,ln_post,17,0.012871523305185822
+12,MTL,all,alexnet,conv1,63,0.00634441503630362
+12,MTL,between-category pairs,alexnet,conv1,63,-0.0012021167159231815
+12,MTL,within-category pairs (all cats),alexnet,conv1,63,-0.02007349970368587
+12,MTL,within face_person,alexnet,conv1,33,-0.04842533113894712
+12,MTL,within landmark_place,alexnet,conv1,17,-0.046667620819617374
+12,MTL,all,alexnet,conv4,63,0.018534514799312445
+12,MTL,between-category pairs,alexnet,conv4,63,0.009754369812460606
+12,MTL,within-category pairs (all cats),alexnet,conv4,63,-0.019285334788965307
+12,MTL,within face_person,alexnet,conv4,33,-0.027878069387953425
+12,MTL,within landmark_place,alexnet,conv4,17,-0.01322933066170507
+12,MTL,all,resnet50,layer2,63,0.016136173477221443
+12,MTL,between-category pairs,resnet50,layer2,63,-0.015754086757671225
+12,MTL,within-category pairs (all cats),resnet50,layer2,63,0.034976912031120265
+12,MTL,within face_person,resnet50,layer2,33,-0.00868221715619154
+12,MTL,within landmark_place,resnet50,layer2,17,0.11337722436906635
+12,MTL,all,resnet50,avgpool,63,0.02024509534044681
+12,MTL,between-category pairs,resnet50,avgpool,63,0.009273841145618923
+12,MTL,within-category pairs (all cats),resnet50,avgpool,63,-0.04652101147000174
+12,MTL,within face_person,resnet50,avgpool,33,-0.041855705300929726
+12,MTL,within landmark_place,resnet50,avgpool,17,-0.03202137302609608
+12,MTL,all,vit_b_16,ln,63,0.021168095902826273
+12,MTL,between-category pairs,vit_b_16,ln,63,0.0033567976710292555
+12,MTL,within-category pairs (all cats),vit_b_16,ln,63,0.029010149813049935
+12,MTL,within face_person,vit_b_16,ln,33,-0.0069467520029426605
+12,MTL,within landmark_place,vit_b_16,ln,17,0.06375172940222318
+12,MTL,all,dinov2_small,norm,63,0.018887976956437593
+12,MTL,between-category pairs,dinov2_small,norm,63,0.004927500760410515
+12,MTL,within-category pairs (all cats),dinov2_small,norm,63,-0.030571031441497313
+12,MTL,within face_person,dinov2_small,norm,33,-0.021196675289643658
+12,MTL,within landmark_place,dinov2_small,norm,17,-0.027713372453604314
+12,MTL,all,clip_vitb32,ln_post,63,0.02274070738104298
+12,MTL,between-category pairs,clip_vitb32,ln_post,63,0.02765136557976868
+12,MTL,within-category pairs (all cats),clip_vitb32,ln_post,63,0.015455867594734272
+12,MTL,within face_person,clip_vitb32,ln_post,33,-0.01811134955731291
+12,MTL,within landmark_place,clip_vitb32,ln_post,17,0.019865464433948758
+12,MFC,all,alexnet,conv1,63,-0.009143120522231672
+12,MFC,between-category pairs,alexnet,conv1,63,-0.03341346738707569
+12,MFC,within-category pairs (all cats),alexnet,conv1,63,0.010844713763618759
+12,MFC,within face_person,alexnet,conv1,33,0.012661525924529767
+12,MFC,within landmark_place,alexnet,conv1,17,0.00372596727255379
+12,MFC,all,alexnet,conv4,63,0.030126268031151482
+12,MFC,between-category pairs,alexnet,conv4,63,0.018262065355479314
+12,MFC,within-category pairs (all cats),alexnet,conv4,63,0.03121797756599218
+12,MFC,within face_person,alexnet,conv4,33,0.028185411722966024
+12,MFC,within landmark_place,alexnet,conv4,17,0.09262439769094984
+12,MFC,all,resnet50,layer2,63,0.010973044641083517
+12,MFC,between-category pairs,resnet50,layer2,63,0.0019301783194394446
+12,MFC,within-category pairs (all cats),resnet50,layer2,63,-0.00023747296564826094
+12,MFC,within face_person,resnet50,layer2,33,-0.009519460068812076
+12,MFC,within landmark_place,resnet50,layer2,17,0.06756357044034157
+12,MFC,all,resnet50,avgpool,63,0.033804849685858535
+12,MFC,between-category pairs,resnet50,avgpool,63,0.02580481536986056
+12,MFC,within-category pairs (all cats),resnet50,avgpool,63,0.02568134999643503
+12,MFC,within face_person,resnet50,avgpool,33,0.018728887538140615
+12,MFC,within landmark_place,resnet50,avgpool,17,0.028743857640379754
+12,MFC,all,vit_b_16,ln,63,0.02846624790158022
+12,MFC,between-category pairs,vit_b_16,ln,63,0.05087563528644282
+12,MFC,within-category pairs (all cats),vit_b_16,ln,63,-0.03932023315666929
+12,MFC,within face_person,vit_b_16,ln,33,-0.028277125284475096
+12,MFC,within landmark_place,vit_b_16,ln,17,-0.02052860073469777
+12,MFC,all,dinov2_small,norm,63,0.04104737653291191
+12,MFC,between-category pairs,dinov2_small,norm,63,0.04358996459783987
+12,MFC,within-category pairs (all cats),dinov2_small,norm,63,0.020453686446752772
+12,MFC,within face_person,dinov2_small,norm,33,0.01820094351651154
+12,MFC,within landmark_place,dinov2_small,norm,17,0.05294594723534182
+12,MFC,all,clip_vitb32,ln_post,63,0.014704780292474955
+12,MFC,between-category pairs,clip_vitb32,ln_post,63,0.0424733446463364
+12,MFC,within-category pairs (all cats),clip_vitb32,ln_post,63,-0.06973804757739242
+12,MFC,within face_person,clip_vitb32,ln_post,33,-0.07868624113965474
+12,MFC,within landmark_place,clip_vitb32,ln_post,17,-0.02112971709365011
+12,MTL_concept,all,alexnet,conv1,63,0.004353585597419947
+12,MTL_concept,between-category pairs,alexnet,conv1,63,0.002431188297930464
+12,MTL_concept,within-category pairs (all cats),alexnet,conv1,63,-0.02815083905336369
+12,MTL_concept,within face_person,alexnet,conv1,33,-0.03906882093588651
+12,MTL_concept,within landmark_place,alexnet,conv1,17,-0.046788970051926414
+12,MTL_concept,all,alexnet,conv4,63,0.0330011476807861
+12,MTL_concept,between-category pairs,alexnet,conv4,63,0.022683005876279586
+12,MTL_concept,within-category pairs (all cats),alexnet,conv4,63,-0.01109288734467013
+12,MTL_concept,within face_person,alexnet,conv4,33,-0.029830594322376457
+12,MTL_concept,within landmark_place,alexnet,conv4,17,-0.020262670278522632
+12,MTL_concept,all,resnet50,layer2,63,0.020106956858115744
+12,MTL_concept,between-category pairs,resnet50,layer2,63,0.005231741320031646
+12,MTL_concept,within-category pairs (all cats),resnet50,layer2,63,0.004741068338154071
+12,MTL_concept,within face_person,resnet50,layer2,33,-0.007903065620601736
+12,MTL_concept,within landmark_place,resnet50,layer2,17,-0.005115692353322437
+12,MTL_concept,all,resnet50,avgpool,63,0.03601203086163943
+12,MTL_concept,between-category pairs,resnet50,avgpool,63,0.01205796500319561
+12,MTL_concept,within-category pairs (all cats),resnet50,avgpool,63,0.02773671672794876
+12,MTL_concept,within face_person,resnet50,avgpool,33,0.0036766650449897367
+12,MTL_concept,within landmark_place,resnet50,avgpool,17,0.09347789053646928
+12,MTL_concept,all,vit_b_16,ln,63,0.039609886110761376
+12,MTL_concept,between-category pairs,vit_b_16,ln,63,0.029092886341488815
+12,MTL_concept,within-category pairs (all cats),vit_b_16,ln,63,0.014545367730977334
+12,MTL_concept,within face_person,vit_b_16,ln,33,0.0176633518845198
+12,MTL_concept,within landmark_place,vit_b_16,ln,17,0.012150756670397861
+12,MTL_concept,all,dinov2_small,norm,63,0.04094750740038285
+12,MTL_concept,between-category pairs,dinov2_small,norm,63,0.033231423250230145
+12,MTL_concept,within-category pairs (all cats),dinov2_small,norm,63,0.016386824820663552
+12,MTL_concept,within face_person,dinov2_small,norm,33,-0.0025629555887796804
+12,MTL_concept,within landmark_place,dinov2_small,norm,17,0.03012808419921186
+12,MTL_concept,all,clip_vitb32,ln_post,63,0.05345901244712855
+12,MTL_concept,between-category pairs,clip_vitb32,ln_post,63,0.07910486871308871
+12,MTL_concept,within-category pairs (all cats),clip_vitb32,ln_post,63,-0.00440856671920164
+12,MTL_concept,within face_person,clip_vitb32,ln_post,33,0.009819464592993548
+12,MTL_concept,within landmark_place,clip_vitb32,ln_post,17,0.006129352443919008
+13,MTL,all,alexnet,conv1,63,0.1368106034884023
+13,MTL,between-category pairs,alexnet,conv1,63,0.032729907137827544
+13,MTL,within-category pairs (all cats),alexnet,conv1,63,0.1803053599669464
+13,MTL,within face_person,alexnet,conv1,31,0.25439735137277003
+13,MTL,within landmark_place,alexnet,conv1,9,-0.1861003861003861
+13,MTL,within vehicle,alexnet,conv1,10,0.10843214756258235
+13,MTL,all,alexnet,conv4,63,0.33300595845413
+13,MTL,between-category pairs,alexnet,conv4,63,0.23767448794938084
+13,MTL,within-category pairs (all cats),alexnet,conv4,63,0.24836877658410142
+13,MTL,within face_person,alexnet,conv4,31,0.3351018298825114
+13,MTL,within landmark_place,alexnet,conv4,9,-0.3052767052767053
+13,MTL,within vehicle,alexnet,conv4,10,0.1909090909090909
+13,MTL,all,resnet50,layer2,63,0.2090492691476883
+13,MTL,between-category pairs,resnet50,layer2,63,0.052640356671418295
+13,MTL,within-category pairs (all cats),resnet50,layer2,63,0.25277825274964355
+13,MTL,within face_person,resnet50,layer2,31,0.3083920140165277
+13,MTL,within landmark_place,resnet50,layer2,9,-0.23191763191763193
+13,MTL,within vehicle,resnet50,layer2,10,0.13069828722002635
+13,MTL,all,resnet50,avgpool,63,0.3354581045855694
+13,MTL,between-category pairs,resnet50,avgpool,63,0.25151274492997017
+13,MTL,within-category pairs (all cats),resnet50,avgpool,63,0.21631689147066593
+13,MTL,within face_person,resnet50,avgpool,31,0.29731413540080304
+13,MTL,within landmark_place,resnet50,avgpool,9,-0.06846846846846848
+13,MTL,within vehicle,resnet50,avgpool,10,0.17180500658761524
+13,MTL,all,vit_b_16,ln,63,0.3554262533627362
+13,MTL,between-category pairs,vit_b_16,ln,63,0.2985640698037824
+13,MTL,within-category pairs (all cats),vit_b_16,ln,63,0.22430404793571312
+13,MTL,within face_person,vit_b_16,ln,31,0.19718929473377672
+13,MTL,within landmark_place,vit_b_16,ln,9,0.1685971685971686
+13,MTL,within vehicle,vit_b_16,ln,10,0.3565217391304347
+13,MTL,all,dinov2_small,norm,63,0.29474828073980885
+13,MTL,between-category pairs,dinov2_small,norm,63,0.17092192942793333
+13,MTL,within-category pairs (all cats),dinov2_small,norm,63,0.26314609387942756
+13,MTL,within face_person,dinov2_small,norm,31,0.33704975007996496
+13,MTL,within landmark_place,dinov2_small,norm,9,-0.0913770913770914
+13,MTL,within vehicle,dinov2_small,norm,10,0.27206851119894593
+13,MTL,all,clip_vitb32,ln_post,63,0.36902858760996515
+13,MTL,between-category pairs,clip_vitb32,ln_post,63,0.2506756570066991
+13,MTL,within-category pairs (all cats),clip_vitb32,ln_post,63,0.36774286050752725
+13,MTL,within face_person,clip_vitb32,ln_post,31,0.3544353048451547
+13,MTL,within landmark_place,clip_vitb32,ln_post,9,-0.006692406692406694
+13,MTL,within vehicle,clip_vitb32,ln_post,10,0.08735177865612648
+13,MFC,all,alexnet,conv1,63,0.00475607934419322
+13,MFC,between-category pairs,alexnet,conv1,63,0.027175223346293957
+13,MFC,within-category pairs (all cats),alexnet,conv1,63,-0.020357774683252904
+13,MFC,within face_person,alexnet,conv1,31,-0.02611628562016929
+13,MFC,within landmark_place,alexnet,conv1,9,0.048133848133848134
+13,MFC,within vehicle,alexnet,conv1,10,0.03267457180500659
+13,MFC,all,alexnet,conv4,63,-0.017511471120916177
+13,MFC,between-category pairs,alexnet,conv4,63,5.463639586255605e-05
+13,MFC,within-category pairs (all cats),alexnet,conv4,63,-0.010492124818614343
+13,MFC,within face_person,alexnet,conv4,31,-0.01972005136847332
+13,MFC,within landmark_place,alexnet,conv4,9,-0.09034749034749036
+13,MFC,within vehicle,alexnet,conv4,10,0.19341238471673253
+13,MFC,all,resnet50,layer2,63,-0.0167195094331365
+13,MFC,between-category pairs,resnet50,layer2,63,0.006526067302696542
+13,MFC,within-category pairs (all cats),resnet50,layer2,63,-0.031009312627369157
+13,MFC,within face_person,resnet50,layer2,31,-0.023172265798431256
+13,MFC,within landmark_place,resnet50,layer2,9,-0.13848133848133848
+13,MFC,within vehicle,resnet50,layer2,10,-0.07154150197628459
+13,MFC,all,resnet50,avgpool,63,-0.01191448382166063
+13,MFC,between-category pairs,resnet50,avgpool,63,0.01626425655973432
+13,MFC,within-category pairs (all cats),resnet50,avgpool,63,-0.031822811911806484
+13,MFC,within face_person,resnet50,avgpool,31,-0.029898026896838167
+13,MFC,within landmark_place,resnet50,avgpool,9,-0.11608751608751611
+13,MFC,within vehicle,resnet50,avgpool,10,0.08445322793148878
+13,MFC,all,vit_b_16,ln,63,-0.026796370537625645
+13,MFC,between-category pairs,vit_b_16,ln,63,-0.026543711874313473
+13,MFC,within-category pairs (all cats),vit_b_16,ln,63,2.0625237439729397e-06
+13,MFC,within face_person,vit_b_16,ln,31,-0.007170103166608583
+13,MFC,within landmark_place,vit_b_16,ln,9,-0.1500643500643501
+13,MFC,within vehicle,vit_b_16,ln,10,0.09525691699604742
+13,MFC,all,dinov2_small,norm,63,-0.028767203652840082
+13,MFC,between-category pairs,dinov2_small,norm,63,-0.01775810313060176
+13,MFC,within-category pairs (all cats),dinov2_small,norm,63,-0.04427167296623516
+13,MFC,within face_person,dinov2_small,norm,31,-0.05822313299947009
+13,MFC,within landmark_place,dinov2_small,norm,9,-0.20669240669240674
+13,MFC,within vehicle,dinov2_small,norm,10,0.24440052700922266
+13,MFC,all,clip_vitb32,ln_post,63,-0.01951850810694783
+13,MFC,between-category pairs,clip_vitb32,ln_post,63,-0.007597909980822872
+13,MFC,within-category pairs (all cats),clip_vitb32,ln_post,63,-0.008947959864618603
+13,MFC,within face_person,clip_vitb32,ln_post,31,-0.01888256861462665
+13,MFC,within landmark_place,clip_vitb32,ln_post,9,-0.1698841698841699
+13,MFC,within vehicle,clip_vitb32,ln_post,10,0.26271409749670616
+13,MTL_concept,all,alexnet,conv1,63,0.15450291998378152
+13,MTL_concept,between-category pairs,alexnet,conv1,63,0.048877145327252874
+13,MTL_concept,within-category pairs (all cats),alexnet,conv1,63,0.2029908590278328
+13,MTL_concept,within face_person,alexnet,conv1,31,0.29686155814519716
+13,MTL_concept,within landmark_place,alexnet,conv1,9,-0.34311454311454315
+13,MTL_concept,within vehicle,alexnet,conv1,10,0.07997364953886693
+13,MTL_concept,all,alexnet,conv4,63,0.33650133795485077
+13,MTL_concept,between-category pairs,alexnet,conv4,63,0.2292446642353837
+13,MTL_concept,within-category pairs (all cats),alexnet,conv4,63,0.25903255660463353
+13,MTL_concept,within face_person,alexnet,conv4,31,0.3436098526259507
+13,MTL_concept,within landmark_place,alexnet,conv4,9,-0.2563706563706564
+13,MTL_concept,within vehicle,alexnet,conv4,10,0.20237154150197625
+13,MTL_concept,all,resnet50,layer2,63,0.21678566937319682
+13,MTL_concept,between-category pairs,resnet50,layer2,63,0.04867643791000829
+13,MTL_concept,within-category pairs (all cats),resnet50,layer2,63,0.2970501918479747
+13,MTL_concept,within face_person,resnet50,layer2,31,0.3569876161877528
+13,MTL_concept,within landmark_place,resnet50,layer2,9,-0.34131274131274136
+13,MTL_concept,within vehicle,resnet50,layer2,10,-0.05638998682476943
+13,MTL_concept,all,resnet50,avgpool,63,0.35183288145025915
+13,MTL_concept,between-category pairs,resnet50,avgpool,63,0.2637856007333654
+13,MTL_concept,within-category pairs (all cats),resnet50,avgpool,63,0.2357253064344753
+13,MTL_concept,within face_person,resnet50,avgpool,31,0.3366700960055761
+13,MTL_concept,within landmark_place,resnet50,avgpool,9,-0.06975546975546977
+13,MTL_concept,within vehicle,resnet50,avgpool,10,0.29986824769433457
+13,MTL_concept,all,vit_b_16,ln,63,0.3387592471136201
+13,MTL_concept,between-category pairs,vit_b_16,ln,63,0.25125511244648197
+13,MTL_concept,within-category pairs (all cats),vit_b_16,ln,63,0.262726802762185
+13,MTL_concept,within face_person,vit_b_16,ln,31,0.22081628609757148
+13,MTL_concept,within landmark_place,vit_b_16,ln,9,0.20823680823680826
+13,MTL_concept,within vehicle,vit_b_16,ln,10,0.2624505928853755
+13,MTL_concept,all,dinov2_small,norm,63,0.29953566513969265
+13,MTL_concept,between-category pairs,dinov2_small,norm,63,0.16388881393368734
+13,MTL_concept,within-category pairs (all cats),dinov2_small,norm,63,0.29339746229739866
+13,MTL_concept,within face_person,dinov2_small,norm,31,0.37576933359431325
+13,MTL_concept,within landmark_place,dinov2_small,norm,9,-0.007464607464607464
+13,MTL_concept,within vehicle,dinov2_small,norm,10,0.3454545454545454
+13,MTL_concept,all,clip_vitb32,ln_post,63,0.3797669176303399
+13,MTL_concept,between-category pairs,clip_vitb32,ln_post,63,0.2463085777386857
+13,MTL_concept,within-category pairs (all cats),clip_vitb32,ln_post,63,0.4303049275022904
+13,MTL_concept,within face_person,clip_vitb32,ln_post,31,0.38777432722099425
+13,MTL_concept,within landmark_place,clip_vitb32,ln_post,9,0.09240669240669241
+13,MTL_concept,within vehicle,clip_vitb32,ln_post,10,0.24321475625823447
+14,MTL,all,alexnet,conv1,63,0.03774186357229345
+14,MTL,between-category pairs,alexnet,conv1,63,-0.010870545453365838
+14,MTL,within-category pairs (all cats),alexnet,conv1,63,0.010395762925273886
+14,MTL,within face_person,alexnet,conv1,32,0.02085445222655581
+14,MTL,within vehicle,alexnet,conv1,11,0.0036075036075036084
+14,MTL,all,alexnet,conv4,63,0.22482468137822897
+14,MTL,between-category pairs,alexnet,conv4,63,0.18078607213525424
+14,MTL,within-category pairs (all cats),alexnet,conv4,63,0.1189832328112261
+14,MTL,within face_person,alexnet,conv4,32,0.14295636969421613
+14,MTL,within vehicle,alexnet,conv4,11,0.14898989898989903
+14,MTL,all,resnet50,layer2,63,0.1134475661629686
+14,MTL,between-category pairs,resnet50,layer2,63,0.036239079230623694
+14,MTL,within-category pairs (all cats),resnet50,layer2,63,0.07226272340100334
+14,MTL,within face_person,resnet50,layer2,32,0.10742372121290795
+14,MTL,within vehicle,resnet50,layer2,11,-0.0751803751803752
+14,MTL,all,resnet50,avgpool,63,0.20724191566308137
+14,MTL,between-category pairs,resnet50,avgpool,63,0.14418445327243112
+14,MTL,within-category pairs (all cats),resnet50,avgpool,63,0.13890943296508224
+14,MTL,within face_person,resnet50,avgpool,32,0.1849851798965838
+14,MTL,within vehicle,resnet50,avgpool,11,0.12669552669552675
+14,MTL,all,vit_b_16,ln,63,0.20230853819562825
+14,MTL,between-category pairs,vit_b_16,ln,63,0.1324808146808801
+14,MTL,within-category pairs (all cats),vit_b_16,ln,63,0.18199231732115378
+14,MTL,within face_person,vit_b_16,ln,32,0.18581764290533032
+14,MTL,within vehicle,vit_b_16,ln,11,0.13239538239538243
+14,MTL,all,dinov2_small,norm,63,0.2017541215192767
+14,MTL,between-category pairs,dinov2_small,norm,63,0.1408630051862116
+14,MTL,within-category pairs (all cats),dinov2_small,norm,63,0.13889821141085898
+14,MTL,within face_person,dinov2_small,norm,32,0.1709382394071172
+14,MTL,within vehicle,dinov2_small,norm,11,0.22712842712842718
+14,MTL,all,clip_vitb32,ln_post,63,0.23922974471879702
+14,MTL,between-category pairs,clip_vitb32,ln_post,63,0.20035200634744899
+14,MTL,within-category pairs (all cats),clip_vitb32,ln_post,63,0.15961089864968453
+14,MTL,within face_person,clip_vitb32,ln_post,32,0.12375396071443322
+14,MTL,within vehicle,clip_vitb32,ln_post,11,0.1913419913419914
+14,MFC,all,alexnet,conv1,63,0.053104884492093045
+14,MFC,between-category pairs,alexnet,conv1,63,0.03159701579830516
+14,MFC,within-category pairs (all cats),alexnet,conv1,63,0.09714942598585097
+14,MFC,within face_person,alexnet,conv1,32,0.12375504247380667
+14,MFC,within vehicle,alexnet,conv1,11,0.2055555555555556
+14,MFC,all,alexnet,conv4,63,0.04491532856361109
+14,MFC,between-category pairs,alexnet,conv4,63,0.031616651214986725
+14,MFC,within-category pairs (all cats),alexnet,conv4,63,0.13034186263528594
+14,MFC,within face_person,alexnet,conv4,32,0.13750833446426358
+14,MFC,within vehicle,alexnet,conv4,11,0.28636363636363643
+14,MFC,all,resnet50,layer2,63,0.0430940277125569
+14,MFC,between-category pairs,resnet50,layer2,63,0.011533159667709215
+14,MFC,within-category pairs (all cats),resnet50,layer2,63,0.137757928862482
+14,MFC,within face_person,resnet50,layer2,32,0.13468484415781098
+14,MFC,within vehicle,resnet50,layer2,11,0.40577200577200584
+14,MFC,all,resnet50,avgpool,63,0.018335190533590864
+14,MFC,between-category pairs,resnet50,avgpool,63,0.002510752489657297
+14,MFC,within-category pairs (all cats),resnet50,avgpool,63,0.10605341275661682
+14,MFC,within face_person,resnet50,avgpool,32,0.11381505061650452
+14,MFC,within vehicle,resnet50,avgpool,11,0.26919191919191926
+14,MFC,all,vit_b_16,ln,63,0.043133667680929216
+14,MFC,between-category pairs,vit_b_16,ln,63,0.025727700659313023
+14,MFC,within-category pairs (all cats),vit_b_16,ln,63,0.10504163139070391
+14,MFC,within face_person,vit_b_16,ln,32,0.1010788091206083
+14,MFC,within vehicle,vit_b_16,ln,11,0.2503607503607504
+14,MFC,all,dinov2_small,norm,63,0.038812762923483485
+14,MFC,between-category pairs,dinov2_small,norm,63,0.042799827231231644
+14,MFC,within-category pairs (all cats),dinov2_small,norm,63,0.10047710595771307
+14,MFC,within face_person,dinov2_small,norm,32,0.10605146027681239
+14,MFC,within vehicle,dinov2_small,norm,11,0.17388167388167391
+14,MFC,all,clip_vitb32,ln_post,63,0.027132262363745926
+14,MFC,between-category pairs,clip_vitb32,ln_post,63,-0.01578063518569351
+14,MFC,within-category pairs (all cats),clip_vitb32,ln_post,63,0.11663125259246677
+14,MFC,within face_person,clip_vitb32,ln_post,32,0.1280779496136152
+14,MFC,within vehicle,clip_vitb32,ln_post,11,-0.0178932178932179
+14,MTL_concept,all,alexnet,conv1,63,0.029640149633301225
+14,MTL_concept,between-category pairs,alexnet,conv1,63,-0.016938275619233587
+14,MTL_concept,within-category pairs (all cats),alexnet,conv1,63,0.025809747352749043
+14,MTL_concept,within face_person,alexnet,conv1,32,0.023958904944820433
+14,MTL_concept,within vehicle,alexnet,conv1,11,-0.01565656565656566
+14,MTL_concept,all,alexnet,conv4,63,0.20020001309615504
+14,MTL_concept,between-category pairs,alexnet,conv4,63,0.16639914127014432
+14,MTL_concept,within-category pairs (all cats),alexnet,conv4,63,0.11692197716649659
+14,MTL_concept,within face_person,alexnet,conv4,32,0.13077044869411975
+14,MTL_concept,within vehicle,alexnet,conv4,11,-0.021572871572871577
+14,MTL_concept,all,resnet50,layer2,63,0.0907260319807539
+14,MTL_concept,between-category pairs,resnet50,layer2,63,0.02230608618726673
+14,MTL_concept,within-category pairs (all cats),resnet50,layer2,63,0.043728727961442976
+14,MTL_concept,within face_person,resnet50,layer2,32,0.05741624723905505
+14,MTL_concept,within vehicle,resnet50,layer2,11,-0.14632034632034632
+14,MTL_concept,all,resnet50,avgpool,63,0.18066089001479912
+14,MTL_concept,between-category pairs,resnet50,avgpool,63,0.12969569588422394
+14,MTL_concept,within-category pairs (all cats),resnet50,avgpool,63,0.14081755755448844
+14,MTL_concept,within face_person,resnet50,avgpool,32,0.1521276240040438
+14,MTL_concept,within vehicle,resnet50,avgpool,11,0.026767676767676774
+14,MTL_concept,all,vit_b_16,ln,63,0.19557630324849343
+14,MTL_concept,between-category pairs,vit_b_16,ln,63,0.15647861891081447
+14,MTL_concept,within-category pairs (all cats),vit_b_16,ln,63,0.14225034861628458
+14,MTL_concept,within face_person,vit_b_16,ln,32,0.14996882566169253
+14,MTL_concept,within vehicle,vit_b_16,ln,11,-0.08564213564213566
+14,MTL_concept,all,dinov2_small,norm,63,0.16743656516076866
+14,MTL_concept,between-category pairs,dinov2_small,norm,63,0.11160176436335978
+14,MTL_concept,within-category pairs (all cats),dinov2_small,norm,63,0.14640635192911755
+14,MTL_concept,within face_person,dinov2_small,norm,32,0.1635422505708739
+14,MTL_concept,within vehicle,dinov2_small,norm,11,-0.0033910533910533917
+14,MTL_concept,all,clip_vitb32,ln_post,63,0.22872600366718115
+14,MTL_concept,between-category pairs,clip_vitb32,ln_post,63,0.19316944152886814
+14,MTL_concept,within-category pairs (all cats),clip_vitb32,ln_post,63,0.19424470077927083
+14,MTL_concept,within face_person,clip_vitb32,ln_post,32,0.15251459883445342
+14,MTL_concept,within vehicle,clip_vitb32,ln_post,11,0.16782106782106787
+15,MTL,all,alexnet,conv1,63,-0.007176582126230491
+15,MTL,between-category pairs,alexnet,conv1,63,0.0006493039259526426
+15,MTL,within-category pairs (all cats),alexnet,conv1,63,-0.011056719307391412
+15,MTL,within face_person,alexnet,conv1,37,-0.044807935394221204
+15,MTL,within animal,alexnet,conv1,9,0.09832689832689835
+15,MTL,all,alexnet,conv4,63,0.011654915889615678
+15,MTL,between-category pairs,alexnet,conv4,63,0.029696191005948273
+15,MTL,within-category pairs (all cats),alexnet,conv4,63,0.008683311682291936
+15,MTL,within face_person,alexnet,conv4,37,-0.008597672307922447
+15,MTL,within animal,alexnet,conv4,9,0.35341055341055344
+15,MTL,all,resnet50,layer2,63,0.0028634017418633665
+15,MTL,between-category pairs,resnet50,layer2,63,0.014093323794852503
+15,MTL,within-category pairs (all cats),resnet50,layer2,63,-0.00018971248460448423
+15,MTL,within face_person,resnet50,layer2,37,-0.018290651463538705
+15,MTL,within animal,resnet50,layer2,9,0.19021879021879023
+15,MTL,all,resnet50,avgpool,63,-0.005488108273679588
+15,MTL,between-category pairs,resnet50,avgpool,63,0.022144186508261988
+15,MTL,within-category pairs (all cats),resnet50,avgpool,63,-0.005280556562191863
+15,MTL,within face_person,resnet50,avgpool,37,-0.02865612509737816
+15,MTL,within animal,resnet50,avgpool,9,-0.018790218790218794
+15,MTL,all,vit_b_16,ln,63,8.824794194348953e-05
+15,MTL,between-category pairs,vit_b_16,ln,63,0.012154665912791499
+15,MTL,within-category pairs (all cats),vit_b_16,ln,63,0.012468742437686536
+15,MTL,within face_person,vit_b_16,ln,37,-0.0003181299007070332
+15,MTL,within animal,vit_b_16,ln,9,0.16138996138996142
+15,MTL,all,dinov2_small,norm,63,-0.004202708156502378
+15,MTL,between-category pairs,dinov2_small,norm,63,-0.0005270925841223068
+15,MTL,within-category pairs (all cats),dinov2_small,norm,63,0.028529079616036134
+15,MTL,within face_person,dinov2_small,norm,37,0.015246816746067123
+15,MTL,within animal,dinov2_small,norm,9,0.1335907335907336
+15,MTL,all,clip_vitb32,ln_post,63,-0.011520883921130579
+15,MTL,between-category pairs,clip_vitb32,ln_post,63,0.012937245910656847
+15,MTL,within-category pairs (all cats),clip_vitb32,ln_post,63,-0.015377065226420931
+15,MTL,within face_person,clip_vitb32,ln_post,37,-0.03608366513755925
+15,MTL,within animal,clip_vitb32,ln_post,9,0.1268983268983269
+15,MFC,all,alexnet,conv1,63,0.00878835190701127
+15,MFC,between-category pairs,alexnet,conv1,63,0.015014279493537345
+15,MFC,within-category pairs (all cats),alexnet,conv1,63,0.009775956869680795
+15,MFC,within face_person,alexnet,conv1,37,0.00701398944908769
+15,MFC,within animal,alexnet,conv1,9,0.06821106821106822
+15,MFC,all,alexnet,conv4,63,-0.022624284405701207
+15,MFC,between-category pairs,alexnet,conv4,63,-8.812504939849411e-05
+15,MFC,within-category pairs (all cats),alexnet,conv4,63,-0.023251051349688596
+15,MFC,within face_person,alexnet,conv4,37,-0.04137904630290017
+15,MFC,within animal,alexnet,conv4,9,0.055083655083655085
+15,MFC,all,resnet50,layer2,63,-0.010887192140801737
+15,MFC,between-category pairs,resnet50,layer2,63,-0.005661193917130684
+15,MFC,within-category pairs (all cats),resnet50,layer2,63,0.017058893641817528
+15,MFC,within face_person,resnet50,layer2,37,0.010384667450871191
+15,MFC,within animal,resnet50,layer2,9,0.022136422136422137
+15,MFC,all,resnet50,avgpool,63,-0.006020832268513605
+15,MFC,between-category pairs,resnet50,avgpool,63,0.02528809441434317
+15,MFC,within-category pairs (all cats),resnet50,avgpool,63,0.020518354825854592
+15,MFC,within face_person,resnet50,avgpool,37,0.010741245918394187
+15,MFC,within animal,resnet50,avgpool,9,-0.014414414414414415
+15,MFC,all,vit_b_16,ln,63,-0.01845374314839248
+15,MFC,between-category pairs,vit_b_16,ln,63,-0.014519069576300994
+15,MFC,within-category pairs (all cats),vit_b_16,ln,63,0.022860640333060837
+15,MFC,within face_person,vit_b_16,ln,37,0.01749454474144761
+15,MFC,within animal,vit_b_16,ln,9,-0.014929214929214929
+15,MFC,all,dinov2_small,norm,63,-0.012828178085129751
+15,MFC,between-category pairs,dinov2_small,norm,63,-0.017304552128486576
+15,MFC,within-category pairs (all cats),dinov2_small,norm,63,0.05105056712083688
+15,MFC,within face_person,dinov2_small,norm,37,0.03555968408805149
+15,MFC,within animal,dinov2_small,norm,9,-0.04118404118404118
+15,MFC,all,clip_vitb32,ln_post,63,0.0006831986486190774
+15,MFC,between-category pairs,clip_vitb32,ln_post,63,0.02102353306977528
+15,MFC,within-category pairs (all cats),clip_vitb32,ln_post,63,0.00037307413083810596
+15,MFC,within face_person,clip_vitb32,ln_post,37,0.013105436714684724
+15,MFC,within animal,clip_vitb32,ln_post,9,-0.050450450450450456
+15,MTL_concept,all,alexnet,conv1,63,0.03872134100609398
+15,MTL_concept,between-category pairs,alexnet,conv1,63,0.03899279945695976
+15,MTL_concept,within-category pairs (all cats),alexnet,conv1,63,0.0478613008566809
+15,MTL_concept,within face_person,alexnet,conv1,37,0.032992046314299986
+15,MTL_concept,within animal,alexnet,conv1,9,-0.10957664054320847
+15,MTL_concept,all,alexnet,conv4,63,0.006114381503975538
+15,MTL_concept,between-category pairs,alexnet,conv4,63,0.007078788012003005
+15,MTL_concept,within-category pairs (all cats),alexnet,conv4,63,0.012365896880356482
+15,MTL_concept,within face_person,alexnet,conv4,37,-0.0011474420141662795
+15,MTL_concept,within animal,alexnet,conv4,9,0.10263451797463252
+15,MTL_concept,all,resnet50,layer2,63,0.012261451962629163
+15,MTL_concept,between-category pairs,resnet50,layer2,63,0.008265896952754625
+15,MTL_concept,within-category pairs (all cats),resnet50,layer2,63,0.023728415544056112
+15,MTL_concept,within face_person,resnet50,layer2,37,0.025358836637640898
+15,MTL_concept,within animal,resnet50,layer2,9,-0.01783172659771467
+15,MTL_concept,all,resnet50,avgpool,63,0.007702704971475089
+15,MTL_concept,between-category pairs,resnet50,avgpool,63,0.009887874660050134
+15,MTL_concept,within-category pairs (all cats),resnet50,avgpool,63,0.05416764755924269
+15,MTL_concept,within face_person,resnet50,avgpool,37,0.05322496291983326
+15,MTL_concept,within animal,resnet50,avgpool,9,-0.006533762417483238
+15,MTL_concept,all,vit_b_16,ln,63,-0.0003865775998608454
+15,MTL_concept,between-category pairs,vit_b_16,ln,63,-0.010330961237079269
+15,MTL_concept,within-category pairs (all cats),vit_b_16,ln,63,0.034783000778102036
+15,MTL_concept,within face_person,vit_b_16,ln,37,0.04590079720408215
+15,MTL_concept,within animal,vit_b_16,ln,9,-0.02286816846119133
+15,MTL_concept,all,dinov2_small,norm,63,-0.007072815178591724
+15,MTL_concept,between-category pairs,dinov2_small,norm,63,-0.03293499496372845
+15,MTL_concept,within-category pairs (all cats),dinov2_small,norm,63,0.061841911685446026
+15,MTL_concept,within face_person,dinov2_small,norm,37,0.06015223163404998
+15,MTL_concept,within animal,dinov2_small,norm,9,0.011025724079502964
+15,MTL_concept,all,clip_vitb32,ln_post,63,-0.008071265279771549
+15,MTL_concept,between-category pairs,clip_vitb32,ln_post,63,-0.010538395960360486
+15,MTL_concept,within-category pairs (all cats),clip_vitb32,ln_post,63,-0.013178584592861541
+15,MTL_concept,within face_person,clip_vitb32,ln_post,37,0.0001316214706351699
+15,MTL_concept,within animal,clip_vitb32,ln_post,9,0.016606646144436563
+16,MTL,all,alexnet,conv1,54,0.03452651725024446
+16,MTL,between-category pairs,alexnet,conv1,54,0.03131559119395099
+16,MTL,within-category pairs (all cats),alexnet,conv1,54,-0.024079516165477623
+16,MTL,within face_person,alexnet,conv1,24,-0.0024617228635436137
+16,MTL,within landmark_place,alexnet,conv1,17,-0.0687419493344783
+16,MTL,all,alexnet,conv4,54,0.08585335643942157
+16,MTL,between-category pairs,alexnet,conv4,54,0.055369255259730694
+16,MTL,within-category pairs (all cats),alexnet,conv4,54,0.054310696413813045
+16,MTL,within face_person,alexnet,conv4,24,0.05032976127623749
+16,MTL,within landmark_place,alexnet,conv4,17,0.01458899861647822
+16,MTL,all,resnet50,layer2,54,0.06046784341292616
+16,MTL,between-category pairs,resnet50,layer2,54,0.02829185038094967
+16,MTL,within-category pairs (all cats),resnet50,layer2,54,0.015555721335828668
+16,MTL,within face_person,resnet50,layer2,24,0.010655099099613307
+16,MTL,within landmark_place,resnet50,layer2,17,0.005228758169934639
+16,MTL,all,resnet50,avgpool,54,0.08792446851369587
+16,MTL,between-category pairs,resnet50,avgpool,54,0.053518127902075996
+16,MTL,within-category pairs (all cats),resnet50,avgpool,54,0.07061766955340129
+16,MTL,within face_person,resnet50,avgpool,24,0.06481813901057347
+16,MTL,within landmark_place,resnet50,avgpool,17,0.00843471208434712
+16,MTL,all,vit_b_16,ln,54,0.07714405980981294
+16,MTL,between-category pairs,vit_b_16,ln,54,0.06292799072011532
+16,MTL,within-category pairs (all cats),vit_b_16,ln,54,0.02612919743063868
+16,MTL,within face_person,vit_b_16,ln,24,0.028743311311197048
+16,MTL,within landmark_place,vit_b_16,ln,17,0.0036257812127284
+16,MTL,all,dinov2_small,norm,54,0.09211915475223158
+16,MTL,between-category pairs,dinov2_small,norm,54,0.0610344503149883
+16,MTL,within-category pairs (all cats),dinov2_small,norm,54,0.07171094592682492
+16,MTL,within face_person,dinov2_small,norm,24,0.03173584851814329
+16,MTL,within landmark_place,dinov2_small,norm,17,0.10594914364772673
+16,MTL,all,clip_vitb32,ln_post,54,0.0897957242270513
+16,MTL,between-category pairs,clip_vitb32,ln_post,54,0.07162810788660359
+16,MTL,within-category pairs (all cats),clip_vitb32,ln_post,54,0.06641210831713121
+16,MTL,within face_person,clip_vitb32,ln_post,24,-0.004906893451862845
+16,MTL,within landmark_place,clip_vitb32,ln_post,17,0.12432135871380179
+16,MTL_concept,all,alexnet,conv1,54,0.047349012090236925
+16,MTL_concept,between-category pairs,alexnet,conv1,54,0.01424985909252085
+16,MTL_concept,within-category pairs (all cats),alexnet,conv1,54,-0.007440383067518023
+16,MTL_concept,within face_person,alexnet,conv1,24,-0.001393815727515304
+16,MTL_concept,within landmark_place,alexnet,conv1,17,-0.021086780210867802
+16,MTL_concept,all,alexnet,conv4,54,0.10929378352694469
+16,MTL_concept,between-category pairs,alexnet,conv4,54,0.06535959701320607
+16,MTL_concept,within-category pairs (all cats),alexnet,conv4,54,0.03145300483766703
+16,MTL_concept,within face_person,alexnet,conv4,24,0.02580670937914699
+16,MTL_concept,within landmark_place,alexnet,conv4,17,-0.01467487238204284
+16,MTL_concept,all,resnet50,layer2,54,0.07349434293146741
+16,MTL_concept,between-category pairs,resnet50,layer2,54,0.014562473013853718
+16,MTL_concept,within-category pairs (all cats),resnet50,layer2,54,0.030684181695042324
+16,MTL_concept,within face_person,resnet50,layer2,24,0.03081291648235613
+16,MTL_concept,within landmark_place,resnet50,layer2,17,0.026907113210247597
+16,MTL_concept,all,resnet50,avgpool,54,0.13347559646705845
+16,MTL_concept,between-category pairs,resnet50,avgpool,54,0.07614799651707893
+16,MTL_concept,within-category pairs (all cats),resnet50,avgpool,54,0.12441232348896505
+16,MTL_concept,within face_person,resnet50,avgpool,24,0.12504045318988027
+16,MTL_concept,within landmark_place,resnet50,avgpool,17,0.02799961833881971
+16,MTL_concept,all,vit_b_16,ln,54,0.10612640992634667
+16,MTL_concept,between-category pairs,vit_b_16,ln,54,0.07606981042956637
+16,MTL_concept,within-category pairs (all cats),vit_b_16,ln,54,0.04275784937909979
+16,MTL_concept,within face_person,vit_b_16,ln,24,0.07609937072815742
+16,MTL_concept,within landmark_place,vit_b_16,ln,17,-0.03846667620819617
+16,MTL_concept,all,dinov2_small,norm,54,0.13857219575571003
+16,MTL_concept,between-category pairs,dinov2_small,norm,54,0.08331383325198334
+16,MTL_concept,within-category pairs (all cats),dinov2_small,norm,54,0.1015472334543495
+16,MTL_concept,within face_person,dinov2_small,norm,24,0.10677359055949545
+16,MTL_concept,within landmark_place,dinov2_small,norm,17,-0.06482515147178092
+16,MTL_concept,all,clip_vitb32,ln_post,54,0.1137408537376915
+16,MTL_concept,between-category pairs,clip_vitb32,ln_post,54,0.08866082966537148
+16,MTL_concept,within-category pairs (all cats),clip_vitb32,ln_post,54,-0.007726456795006288
+16,MTL_concept,within face_person,clip_vitb32,ln_post,24,0.026932834862516235
+16,MTL_concept,within landmark_place,clip_vitb32,ln_post,17,-0.12383951147368921
+17,MTL,all,alexnet,conv1,63,-0.004272788571214867
+17,MTL,between-category pairs,alexnet,conv1,63,0.013859368561495878
+17,MTL,within-category pairs (all cats),alexnet,conv1,63,-0.02070916179517365
+17,MTL,within face_person,alexnet,conv1,34,-0.025016485995658644
+17,MTL,within landmark_place,alexnet,conv1,14,-0.07110251686504962
+17,MTL,all,alexnet,conv4,63,-0.0023122633882972908
+17,MTL,between-category pairs,alexnet,conv4,63,0.0168669338038454
+17,MTL,within-category pairs (all cats),alexnet,conv4,63,-0.024164779673063908
+17,MTL,within face_person,alexnet,conv4,34,-0.018088203338880688
+17,MTL,within landmark_place,alexnet,conv4,14,-0.09388713942292383
+17,MTL,all,resnet50,layer2,63,-0.005703904435232184
+17,MTL,between-category pairs,resnet50,layer2,63,0.007928231673643777
+17,MTL,within-category pairs (all cats),resnet50,layer2,63,-0.024147710198580953
+17,MTL,within face_person,resnet50,layer2,34,-0.013059705261678328
+17,MTL,within landmark_place,resnet50,layer2,14,-0.08739113570685031
+17,MTL,all,resnet50,avgpool,63,-0.01461183331383003
+17,MTL,between-category pairs,resnet50,avgpool,63,0.005909620719892677
+17,MTL,within-category pairs (all cats),resnet50,avgpool,63,-0.06533550945568947
+17,MTL,within face_person,resnet50,avgpool,34,-0.057600392612556194
+17,MTL,within landmark_place,resnet50,avgpool,14,-0.1406937185798291
+17,MTL,all,vit_b_16,ln,63,0.011046511511849297
+17,MTL,between-category pairs,vit_b_16,ln,63,0.04079248110076779
+17,MTL,within-category pairs (all cats),vit_b_16,ln,63,-0.04667814170722633
+17,MTL,within face_person,vit_b_16,ln,34,-0.04888337498539878
+17,MTL,within landmark_place,vit_b_16,ln,14,-0.030411903111576852
+17,MTL,all,dinov2_small,norm,63,-0.0023714605619581624
+17,MTL,between-category pairs,dinov2_small,norm,63,0.024816825470100737
+17,MTL,within-category pairs (all cats),dinov2_small,norm,63,-0.05283624632050325
+17,MTL,within face_person,dinov2_small,norm,34,-0.050055008633576356
+17,MTL,within landmark_place,dinov2_small,norm,14,-0.15673487061339839
+17,MTL,all,clip_vitb32,ln_post,63,-0.00117224247584337
+17,MTL,between-category pairs,clip_vitb32,ln_post,63,0.020772230152099072
+17,MTL,within-category pairs (all cats),clip_vitb32,ln_post,63,-0.029487214672286745
+17,MTL,within face_person,clip_vitb32,ln_post,34,-0.025524195165518057
+17,MTL,within landmark_place,clip_vitb32,ln_post,14,-0.10986642475443528
+17,MFC,all,alexnet,conv1,63,0.04638695292526375
+17,MFC,between-category pairs,alexnet,conv1,63,0.04705376678193063
+17,MFC,within-category pairs (all cats),alexnet,conv1,63,0.04362259719027581
+17,MFC,within face_person,alexnet,conv1,34,0.008854997838669597
+17,MFC,within landmark_place,alexnet,conv1,14,0.13468705207835643
+17,MFC,all,alexnet,conv4,63,0.008633134697575862
+17,MFC,between-category pairs,alexnet,conv4,63,0.012781322301110636
+17,MFC,within-category pairs (all cats),alexnet,conv4,63,-0.025918720504431527
+17,MFC,within face_person,alexnet,conv4,34,-0.04873487408551256
+17,MFC,within landmark_place,alexnet,conv4,14,0.06997929606625258
+17,MFC,all,resnet50,layer2,63,0.005626568667940096
+17,MFC,between-category pairs,resnet50,layer2,63,0.01344728706054779
+17,MFC,within-category pairs (all cats),resnet50,layer2,63,-0.039818017585650546
+17,MFC,within face_person,resnet50,layer2,34,-0.04897574688238285
+17,MFC,within landmark_place,resnet50,layer2,14,-0.07642936773371556
+17,MFC,all,resnet50,avgpool,63,-0.017243049559165276
+17,MFC,between-category pairs,resnet50,avgpool,63,-0.0402869529072208
+17,MFC,within-category pairs (all cats),resnet50,avgpool,63,-0.015213480121035473
+17,MFC,within face_person,resnet50,avgpool,34,-0.05131786781357641
+17,MFC,within landmark_place,resnet50,avgpool,14,0.14201305940436376
+17,MFC,all,vit_b_16,ln,63,-0.027741519672571897
+17,MFC,between-category pairs,vit_b_16,ln,63,-0.035854289720724616
+17,MFC,within-category pairs (all cats),vit_b_16,ln,63,-0.04812338438907715
+17,MFC,within face_person,vit_b_16,ln,34,-0.06053098042840559
+17,MFC,within landmark_place,vit_b_16,ln,14,-0.07996496257365823
+17,MFC,all,dinov2_small,norm,63,-0.00857871773770198
+17,MFC,between-category pairs,dinov2_small,norm,63,-0.020685055373609255
+17,MFC,within-category pairs (all cats),dinov2_small,norm,63,-0.021036449157882622
+17,MFC,within face_person,dinov2_small,norm,34,-0.03878847236079808
+17,MFC,within landmark_place,dinov2_small,norm,14,0.0012422360248447205
+17,MFC,all,clip_vitb32,ln_post,63,-0.01526452428932095
+17,MFC,between-category pairs,clip_vitb32,ln_post,63,-0.03170656201796894
+17,MFC,within-category pairs (all cats),clip_vitb32,ln_post,63,-0.017953478209127606
+17,MFC,within face_person,clip_vitb32,ln_post,34,-0.01726311682874379
+17,MFC,within landmark_place,clip_vitb32,ln_post,14,-0.09318362796623668
+18,MTL,all,alexnet,conv1,63,0.0027194158836488205
+18,MTL,between-category pairs,alexnet,conv1,63,-0.0034013263979805154
+18,MTL,within-category pairs (all cats),alexnet,conv1,63,0.002402020594394528
+18,MTL,within face_person,alexnet,conv1,35,0.018819632795155895
+18,MTL,within vehicle,alexnet,conv1,11,-0.14040404040404045
+18,MTL,all,alexnet,conv4,63,0.05207550988852495
+18,MTL,between-category pairs,alexnet,conv4,63,0.04355384754340576
+18,MTL,within-category pairs (all cats),alexnet,conv4,63,0.009624736604154348
+18,MTL,within face_person,alexnet,conv4,35,0.0012764267797824847
+18,MTL,within vehicle,alexnet,conv4,11,0.054545454545454564
+18,MTL,all,resnet50,layer2,63,0.00637393035716831
+18,MTL,between-category pairs,resnet50,layer2,63,0.004922776556202598
+18,MTL,within-category pairs (all cats),resnet50,layer2,63,-0.015389504610037954
+18,MTL,within face_person,resnet50,layer2,35,-0.012365263371974784
+18,MTL,within vehicle,resnet50,layer2,11,-0.2045454545454546
+18,MTL,all,resnet50,avgpool,63,0.040677916305079026
+18,MTL,between-category pairs,resnet50,avgpool,63,0.03712010337176977
+18,MTL,within-category pairs (all cats),resnet50,avgpool,63,-0.027705120116203574
+18,MTL,within face_person,resnet50,avgpool,35,-0.06178336292825042
+18,MTL,within vehicle,resnet50,avgpool,11,0.18174603174603177
+18,MTL,all,vit_b_16,ln,63,0.040341536369460765
+18,MTL,between-category pairs,vit_b_16,ln,63,0.059208970762000004
+18,MTL,within-category pairs (all cats),vit_b_16,ln,63,-0.028998080248797867
+18,MTL,within face_person,vit_b_16,ln,35,-0.04533337435035028
+18,MTL,within vehicle,vit_b_16,ln,11,-0.019913419913419918
+18,MTL,all,dinov2_small,norm,63,0.05237759811825703
+18,MTL,between-category pairs,dinov2_small,norm,63,0.052383809329732176
+18,MTL,within-category pairs (all cats),dinov2_small,norm,63,-0.006475348339803068
+18,MTL,within face_person,dinov2_small,norm,35,-0.023020857722792193
+18,MTL,within vehicle,dinov2_small,norm,11,0.04538239538239539
+18,MTL,all,clip_vitb32,ln_post,63,0.06791571503034707
+18,MTL,between-category pairs,clip_vitb32,ln_post,63,0.0724051348728458
+18,MTL,within-category pairs (all cats),clip_vitb32,ln_post,63,0.009627623336760897
+18,MTL,within face_person,clip_vitb32,ln_post,35,-0.02990607672802699
+18,MTL,within vehicle,clip_vitb32,ln_post,11,0.07857142857142858
+18,MFC,all,alexnet,conv1,63,0.02766428399639803
+18,MFC,between-category pairs,alexnet,conv1,63,0.01713339831129932
+18,MFC,within-category pairs (all cats),alexnet,conv1,63,0.0033532730070368177
+18,MFC,within face_person,alexnet,conv1,35,0.00938304140041211
+18,MFC,within vehicle,alexnet,conv1,11,0.13059163059163062
+18,MFC,all,alexnet,conv4,63,0.09577187599804701
+18,MFC,between-category pairs,alexnet,conv4,63,0.09845245880756183
+18,MFC,within-category pairs (all cats),alexnet,conv4,63,0.03910042306176631
+18,MFC,within face_person,alexnet,conv4,35,0.06892858424638923
+18,MFC,within vehicle,alexnet,conv4,11,0.042568542568542575
+18,MFC,all,resnet50,layer2,63,0.04365622514427229
+18,MFC,between-category pairs,resnet50,layer2,63,0.017307801801758383
+18,MFC,within-category pairs (all cats),resnet50,layer2,63,0.02941969124692341
+18,MFC,within face_person,resnet50,layer2,35,0.05997348705599792
+18,MFC,within vehicle,resnet50,layer2,11,0.016522366522366525
+18,MFC,all,resnet50,avgpool,63,0.0748478058476072
+18,MFC,between-category pairs,resnet50,avgpool,63,0.06165232877080536
+18,MFC,within-category pairs (all cats),resnet50,avgpool,63,0.014219193603829556
+18,MFC,within face_person,resnet50,avgpool,35,0.05783416478244747
+18,MFC,within vehicle,resnet50,avgpool,11,-0.03203463203463204
+18,MFC,all,vit_b_16,ln,63,0.1015775309131505
+18,MFC,between-category pairs,vit_b_16,ln,63,0.11863259857016638
+18,MFC,within-category pairs (all cats),vit_b_16,ln,63,0.016754077916910064
+18,MFC,within face_person,vit_b_16,ln,35,0.01699824937092999
+18,MFC,within vehicle,vit_b_16,ln,11,-0.019769119769119773
+18,MFC,all,dinov2_small,norm,63,0.07399533630222473
+18,MFC,between-category pairs,dinov2_small,norm,63,0.05287934825374218
+18,MFC,within-category pairs (all cats),dinov2_small,norm,63,0.02939282242804708
+18,MFC,within face_person,dinov2_small,norm,35,0.06371258692616767
+18,MFC,within vehicle,dinov2_small,norm,11,0.02431457431457432
+18,MFC,all,clip_vitb32,ln_post,63,0.10628913752166468
+18,MFC,between-category pairs,clip_vitb32,ln_post,63,0.10293543281465546
+18,MFC,within-category pairs (all cats),clip_vitb32,ln_post,63,0.055569232582121625
+18,MFC,within face_person,clip_vitb32,ln_post,35,0.0683287673417954
+18,MFC,within vehicle,clip_vitb32,ln_post,11,-0.03001443001443002
+18,MTL_concept,all,alexnet,conv1,63,0.0022706435006226025
+18,MTL_concept,between-category pairs,alexnet,conv1,63,-0.002954702064326117
+18,MTL_concept,within-category pairs (all cats),alexnet,conv1,63,0.0003678733603728889
+18,MTL_concept,within face_person,alexnet,conv1,35,0.015523972452515685
+18,MTL_concept,within vehicle,alexnet,conv1,11,-0.08513708513708515
+18,MTL_concept,all,alexnet,conv4,63,0.06808485705331564
+18,MTL_concept,between-category pairs,alexnet,conv4,63,0.07658110787643924
+18,MTL_concept,within-category pairs (all cats),alexnet,conv4,63,0.03576583979788727
+18,MTL_concept,within face_person,alexnet,conv4,35,0.028058943732058625
+18,MTL_concept,within vehicle,alexnet,conv4,11,0.11291486291486294
+18,MTL_concept,all,resnet50,layer2,63,0.013997580510488177
+18,MTL_concept,between-category pairs,resnet50,layer2,63,0.014205530965113523
+18,MTL_concept,within-category pairs (all cats),resnet50,layer2,63,-0.006561728261645153
+18,MTL_concept,within face_person,resnet50,layer2,35,0.005460162507142373
+18,MTL_concept,within vehicle,resnet50,layer2,11,-0.06414141414141415
+18,MTL_concept,all,resnet50,avgpool,63,0.055727690135435284
+18,MTL_concept,between-category pairs,resnet50,avgpool,63,0.06227860230180376
+18,MTL_concept,within-category pairs (all cats),resnet50,avgpool,63,0.01530812095616874
+18,MTL_concept,within face_person,resnet50,avgpool,35,-0.02983104976788357
+18,MTL_concept,within vehicle,resnet50,avgpool,11,0.3003607503607505
+18,MTL_concept,all,vit_b_16,ln,63,0.0422214586879457
+18,MTL_concept,between-category pairs,vit_b_16,ln,63,0.06340388035346899
+18,MTL_concept,within-category pairs (all cats),vit_b_16,ln,63,-0.015819812815375537
+18,MTL_concept,within face_person,vit_b_16,ln,35,-0.030014202142113717
+18,MTL_concept,within vehicle,vit_b_16,ln,11,0.11378066378066382
+18,MTL_concept,all,dinov2_small,norm,63,0.07003014254962421
+18,MTL_concept,between-category pairs,dinov2_small,norm,63,0.09142630459717459
+18,MTL_concept,within-category pairs (all cats),dinov2_small,norm,63,0.03549822488150333
+18,MTL_concept,within face_person,dinov2_small,norm,35,0.010883295762885183
+18,MTL_concept,within vehicle,dinov2_small,norm,11,0.16904761904761906
+18,MTL_concept,all,clip_vitb32,ln_post,63,0.0797276829700523
+18,MTL_concept,between-category pairs,clip_vitb32,ln_post,63,0.09477750699436209
+18,MTL_concept,within-category pairs (all cats),clip_vitb32,ln_post,63,0.04397552228394731
+18,MTL_concept,within face_person,clip_vitb32,ln_post,35,0.012516285749605926
+18,MTL_concept,within vehicle,clip_vitb32,ln_post,11,0.23196248196248198
+20,MTL,all,alexnet,conv1,63,-0.007041566234924554
+20,MTL,between-category pairs,alexnet,conv1,63,-0.004816559523263049
+20,MTL,within-category pairs (all cats),alexnet,conv1,63,-0.021121373999916242
+20,MTL,within face_person,alexnet,conv1,24,-0.09427629562588467
+20,MTL,within animal,alexnet,conv1,20,0.09969457990335182
+20,MTL,all,alexnet,conv4,63,-0.027985844472535045
+20,MTL,between-category pairs,alexnet,conv4,63,-0.001965621835090628
+20,MTL,within-category pairs (all cats),alexnet,conv4,63,-0.10296875766089758
+20,MTL,within face_person,alexnet,conv4,24,-0.14091967988628734
+20,MTL,within animal,alexnet,conv4,20,-0.004164699782963098
+20,MTL,all,resnet50,layer2,63,-0.04803676587493745
+20,MTL,between-category pairs,resnet50,layer2,63,-0.044599419479932484
+20,MTL,within-category pairs (all cats),resnet50,layer2,63,-0.08119307189084073
+20,MTL,within face_person,resnet50,layer2,24,-0.17031714267048376
+20,MTL,within animal,resnet50,layer2,20,0.0689214924149883
+20,MTL,all,resnet50,avgpool,63,-0.01367136071799775
+20,MTL,between-category pairs,resnet50,avgpool,63,-0.012401164501473825
+20,MTL,within-category pairs (all cats),resnet50,avgpool,63,-0.014174172685787608
+20,MTL,within face_person,resnet50,avgpool,24,-0.10701424451432298
+20,MTL,within animal,resnet50,avgpool,20,0.1971203700132105
+20,MTL,all,vit_b_16,ln,63,0.03487809582818685
+20,MTL,between-category pairs,vit_b_16,ln,63,0.05788772292146544
+20,MTL,within-category pairs (all cats),vit_b_16,ln,63,0.027521482048506987
+20,MTL,within face_person,vit_b_16,ln,24,-0.07466361716724682
+20,MTL,within animal,vit_b_16,ln,20,0.17688857707848815
+20,MTL,all,dinov2_small,norm,63,0.0057503584156926605
+20,MTL,between-category pairs,dinov2_small,norm,63,0.028657010656047484
+20,MTL,within-category pairs (all cats),dinov2_small,norm,63,-0.050197214485091644
+20,MTL,within face_person,dinov2_small,norm,24,-0.15755064424064097
+20,MTL,within animal,dinov2_small,norm,20,0.10963103890633565
+20,MTL,all,clip_vitb32,ln_post,63,0.052854694711643495
+20,MTL,between-category pairs,clip_vitb32,ln_post,63,0.07553677405310559
+20,MTL,within-category pairs (all cats),clip_vitb32,ln_post,63,0.052755635998822485
+20,MTL,within face_person,clip_vitb32,ln_post,24,-0.01147120573632138
+20,MTL,within animal,clip_vitb32,ln_post,20,0.1771704251932662
+20,MFC,all,alexnet,conv1,63,0.00521309803916717
+20,MFC,between-category pairs,alexnet,conv1,63,0.026885111559816193
+20,MFC,within-category pairs (all cats),alexnet,conv1,63,-0.047155232463646495
+20,MFC,within face_person,alexnet,conv1,24,-0.041465161741413514
+20,MFC,within animal,alexnet,conv1,20,-0.07297913194854502
+20,MFC,all,alexnet,conv4,63,-0.007382586887292418
+20,MFC,between-category pairs,alexnet,conv4,63,0.005320882696002239
+20,MFC,within-category pairs (all cats),alexnet,conv4,63,-0.02819366074509716
+20,MFC,within face_person,alexnet,conv4,24,-0.028718768282416065
+20,MFC,within animal,alexnet,conv4,20,-0.024494919672654585
+20,MFC,all,resnet50,layer2,63,0.006121307111743144
+20,MFC,between-category pairs,resnet50,layer2,63,0.017627406617357618
+20,MFC,within-category pairs (all cats),resnet50,layer2,63,-0.011819217589541704
+20,MFC,within face_person,resnet50,layer2,24,-0.008187668554957835
+20,MFC,within animal,resnet50,layer2,20,0.0011520948969281845
+20,MFC,all,resnet50,avgpool,63,-0.016043685587427508
+20,MFC,between-category pairs,resnet50,avgpool,63,-0.0007203240630096735
+20,MFC,within-category pairs (all cats),resnet50,avgpool,63,-0.035695352627017125
+20,MFC,within face_person,resnet50,avgpool,24,-0.0460404389206775
+20,MFC,within animal,resnet50,avgpool,20,-0.0627861101269754
+20,MFC,all,vit_b_16,ln,63,-0.03482831703685536
+20,MFC,between-category pairs,vit_b_16,ln,63,-0.024517588817691963
+20,MFC,within-category pairs (all cats),vit_b_16,ln,63,-0.05848924082878156
+20,MFC,within face_person,vit_b_16,ln,24,-0.06937115623350124
+20,MFC,within animal,vit_b_16,ln,20,-0.022895808456568998
+20,MFC,all,dinov2_small,norm,63,-0.022240607787374325
+20,MFC,between-category pairs,dinov2_small,norm,63,-0.006564178103977365
+20,MFC,within-category pairs (all cats),dinov2_small,norm,63,-0.041592931867703416
+20,MFC,within face_person,dinov2_small,norm,24,-0.04842282501676631
+20,MFC,within animal,dinov2_small,norm,20,-0.02886710668468729
+20,MFC,all,clip_vitb32,ln_post,63,-0.012353840363050884
+20,MFC,between-category pairs,clip_vitb32,ln_post,63,0.01451941235528008
+20,MFC,within-category pairs (all cats),clip_vitb32,ln_post,63,-0.0416815272102318
+20,MFC,within face_person,clip_vitb32,ln_post,24,-0.0869856309128009
+20,MFC,within animal,clip_vitb32,ln_post,20,0.005361571467936858
+21,MTL,all,alexnet,conv1,63,-0.008888907296362587
+21,MTL,between-category pairs,alexnet,conv1,63,-0.021083964520845204
+21,MTL,within-category pairs (all cats),alexnet,conv1,63,0.03372929781386557
+21,MTL,within face_person,alexnet,conv1,26,0.0009623686924300422
+21,MTL,within animal,alexnet,conv1,17,-0.01303850007156147
+21,MTL,all,alexnet,conv4,63,-0.010282161892446726
+21,MTL,between-category pairs,alexnet,conv4,63,-0.01466062729597553
+21,MTL,within-category pairs (all cats),alexnet,conv4,63,-0.0038565743103034238
+21,MTL,within face_person,alexnet,conv4,26,-0.012857217765193227
+21,MTL,within animal,alexnet,conv4,17,-0.08680406469157004
+21,MTL,all,resnet50,layer2,63,-0.007608149857644718
+21,MTL,between-category pairs,resnet50,layer2,63,-0.011201517167587719
+21,MTL,within-category pairs (all cats),resnet50,layer2,63,0.008428963459063604
+21,MTL,within face_person,resnet50,layer2,26,0.011375037141908307
+21,MTL,within animal,resnet50,layer2,17,-0.06605600877820715
+21,MTL,all,resnet50,avgpool,63,-0.00849319547651949
+21,MTL,between-category pairs,resnet50,avgpool,63,-0.007107556432471698
+21,MTL,within-category pairs (all cats),resnet50,avgpool,63,-0.013989023146219167
+21,MTL,within face_person,resnet50,avgpool,26,-0.0667809763515285
+21,MTL,within animal,resnet50,avgpool,17,-0.076809312532799
+21,MTL,all,vit_b_16,ln,63,-0.011301505282008469
+21,MTL,between-category pairs,vit_b_16,ln,63,0.0032401849167508633
+21,MTL,within-category pairs (all cats),vit_b_16,ln,63,-0.06258007376741304
+21,MTL,within face_person,vit_b_16,ln,26,-0.09320294338699249
+21,MTL,within animal,vit_b_16,ln,17,0.02028529173226468
+21,MTL,all,dinov2_small,norm,63,0.011141733994847677
+21,MTL,between-category pairs,dinov2_small,norm,63,0.029227385794333295
+21,MTL,within-category pairs (all cats),dinov2_small,norm,63,-0.007408247418448423
+21,MTL,within face_person,dinov2_small,norm,26,-0.037175816685019146
+21,MTL,within animal,dinov2_small,norm,17,-0.10407900386431944
+21,MTL,all,clip_vitb32,ln_post,63,0.006672160427667173
+21,MTL,between-category pairs,clip_vitb32,ln_post,63,0.01585210132445451
+21,MTL,within-category pairs (all cats),clip_vitb32,ln_post,63,-0.007623966814926717
+21,MTL,within face_person,clip_vitb32,ln_post,26,-0.03351476063132505
+21,MTL,within animal,clip_vitb32,ln_post,17,-0.06065550307714326
+21,MFC,all,alexnet,conv1,63,-0.0021978153082324813
+21,MFC,between-category pairs,alexnet,conv1,63,0.002166799327173547
+21,MFC,within-category pairs (all cats),alexnet,conv1,63,0.005818984538399491
+21,MFC,within face_person,alexnet,conv1,26,0.012435635257721147
+21,MFC,within animal,alexnet,conv1,17,-0.03113878154668193
+21,MFC,all,alexnet,conv4,63,-0.028193225545353306
+21,MFC,between-category pairs,alexnet,conv4,63,-0.016924320485705347
+21,MFC,within-category pairs (all cats),alexnet,conv4,63,-0.006081809169408486
+21,MFC,within face_person,alexnet,conv4,26,0.02317655078391275
+21,MFC,within animal,alexnet,conv4,17,-0.12674967797337913
+21,MFC,all,resnet50,layer2,63,-0.010114817658916276
+21,MFC,between-category pairs,resnet50,layer2,63,-0.004025367100808741
+21,MFC,within-category pairs (all cats),resnet50,layer2,63,0.018070861050846973
+21,MFC,within face_person,resnet50,layer2,26,0.03717371925960883
+21,MFC,within animal,resnet50,layer2,17,-0.02338151805734459
+21,MFC,all,resnet50,avgpool,63,-0.02786540605155772
+21,MFC,between-category pairs,resnet50,avgpool,63,-0.019055251185750886
+21,MFC,within-category pairs (all cats),resnet50,avgpool,63,0.0015205036052437675
+21,MFC,within face_person,resnet50,avgpool,26,0.0176914337650534
+21,MFC,within animal,resnet50,avgpool,17,-0.1341109679881685
+21,MFC,all,vit_b_16,ln,63,-0.008413826939040917
+21,MFC,between-category pairs,vit_b_16,ln,63,-0.010309956720154992
+21,MFC,within-category pairs (all cats),vit_b_16,ln,63,0.014197558737867069
+21,MFC,within face_person,vit_b_16,ln,26,0.05525876985999686
+21,MFC,within animal,vit_b_16,ln,17,-0.06791660703210725
+21,MFC,all,dinov2_small,norm,63,-0.003384345060925989
+21,MFC,between-category pairs,dinov2_small,norm,63,0.014806813272302237
+21,MFC,within-category pairs (all cats),dinov2_small,norm,63,0.010920101722676401
+21,MFC,within face_person,dinov2_small,norm,26,0.02194745949347177
+21,MFC,within animal,dinov2_small,norm,17,-0.08642240351128286
+21,MFC,all,clip_vitb32,ln_post,63,-0.021186710111569397
+21,MFC,between-category pairs,clip_vitb32,ln_post,63,-0.022038477678711258
+21,MFC,within-category pairs (all cats),clip_vitb32,ln_post,63,0.01739722540932294
+21,MFC,within face_person,clip_vitb32,ln_post,26,0.016925523919388948
+21,MFC,within animal,clip_vitb32,ln_post,17,-0.03095272172129192
+21,MTL_concept,all,alexnet,conv1,63,0.03463305390659387
+21,MTL_concept,between-category pairs,alexnet,conv1,63,0.035447099052596326
+21,MTL_concept,within-category pairs (all cats),alexnet,conv1,63,0.02979955132007546
+21,MTL_concept,within face_person,alexnet,conv1,26,0.014418401412266446
+21,MTL_concept,within animal,alexnet,conv1,17,-0.04014121463670626
+21,MTL_concept,all,alexnet,conv4,63,-0.012644465268731376
+21,MTL_concept,between-category pairs,alexnet,conv4,63,-0.025964292990121426
+21,MTL_concept,within-category pairs (all cats),alexnet,conv4,63,0.0059679971757384456
+21,MTL_concept,within face_person,alexnet,conv4,26,-0.017274395679303656
+21,MTL_concept,within animal,alexnet,conv4,17,-0.03236963885310815
+21,MTL_concept,all,resnet50,layer2,63,-0.0020007125045495675
+21,MTL_concept,between-category pairs,resnet50,layer2,63,-0.0025208848991856
+21,MTL_concept,within-category pairs (all cats),resnet50,layer2,63,0.0009330736216844178
+21,MTL_concept,within face_person,resnet50,layer2,26,-0.003120269868736127
+21,MTL_concept,within animal,resnet50,layer2,17,-0.07300701302418777
+21,MTL_concept,all,resnet50,avgpool,63,0.0010327494860706374
+21,MTL_concept,between-category pairs,resnet50,avgpool,63,0.00825291256197033
+21,MTL_concept,within-category pairs (all cats),resnet50,avgpool,63,-0.0120018801043499
+21,MTL_concept,within face_person,resnet50,avgpool,26,-0.03751455088878402
+21,MTL_concept,within animal,resnet50,avgpool,17,-0.13366728686608462
+21,MTL_concept,all,vit_b_16,ln,63,-0.016478906890925626
+21,MTL_concept,between-category pairs,vit_b_16,ln,63,-0.0008772726565221567
+21,MTL_concept,within-category pairs (all cats),vit_b_16,ln,63,-0.05650934818260001
+21,MTL_concept,within face_person,vit_b_16,ln,26,-0.09745966825721428
+21,MTL_concept,within animal,vit_b_16,ln,17,0.03742664949191355
+21,MTL_concept,all,dinov2_small,norm,63,0.0006942560202168963
+21,MTL_concept,between-category pairs,dinov2_small,norm,63,0.006616876366896245
+21,MTL_concept,within-category pairs (all cats),dinov2_small,norm,63,0.010806802857922815
+21,MTL_concept,within face_person,dinov2_small,norm,26,-0.014898012689423736
+21,MTL_concept,within animal,dinov2_small,norm,17,-0.01652115834168217
+21,MTL_concept,all,clip_vitb32,ln_post,63,0.008845857005194156
+21,MTL_concept,between-category pairs,clip_vitb32,ln_post,63,0.016834184258732315
+21,MTL_concept,within-category pairs (all cats),clip_vitb32,ln_post,63,-0.001595112549696536
+21,MTL_concept,within face_person,clip_vitb32,ln_post,26,-0.021459458514673242
+21,MTL_concept,within animal,clip_vitb32,ln_post,17,0.03357187157101283
