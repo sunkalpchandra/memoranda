@@ -21,23 +21,13 @@ import numpy as np
 import pandas as pd
 from scipy import stats as sps
 
-from memoranda.features import list_layers, load_features
+from memoranda.features import list_layers, load_space
 from memoranda.models.registry import DEFAULT_MODELS, get_spec
-from memoranda.paths import FEATURES, FIGURES, MANIFESTS, TABLES
+from memoranda.paths import FIGURES, MANIFESTS, TABLES
 
 VIEW_PREF = {"vit": "cls", "dino": "cls", "clip": "cls", "cnn": "gap"}
 
 
-def load_space(model, layer, view):
-    if model == "clip_vitb32" and layer == "embed":
-        z = np.load(FEATURES / "clip_vitb32_embed.npz", allow_pickle=True)
-        X, stored = z["embed"], z["image_uid"]
-    else:
-        X, stored = load_features(model, layer, view)
-    X = X.astype(np.float64)
-    X = X - X.mean(0)  # centre so cosine sim is not dominated by the mean activation
-    X /= np.linalg.norm(X, axis=1, keepdims=True) + 1e-12
-    return X, {u: i for i, u in enumerate(stored)}
 
 
 def main() -> None:
@@ -55,7 +45,8 @@ def main() -> None:
     rng = np.random.default_rng(0)
     rows = []
     for (m, l, v) in layers:
-        X, pos = load_space(m, l, v)
+        X, stored = load_space(m, l, v, center=True, normalize=True)
+        pos = {u: i for i, u in enumerate(stored)}
         for gname, g in groups.items():
             for r in g.itertuples():
                 t = tun[(tun.subject == r.subject) & (tun.unit == r.unit)]
