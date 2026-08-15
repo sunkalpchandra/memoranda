@@ -92,6 +92,6 @@ Status legend: `[ ]` todo · `[~]` in progress · `[x]` done
 - [x] selection-corrected post-hoc test; strict criterion columns; strict variants of A5, RSA
 - [x] patient-level / cluster-robust tests (73); family-wide FDR; wording revised everywhere
 - [x] second-rater famous labels (κ 0.93); identity invariance (untestable); semantic vs visual (71); within-category tuning (72); reweighted RSA (74)
-- [~] shuffle null over 24 more layers (51 --set wide) — running
+- [x] shuffle null over 24 more layers (51 --set wide): 42 layers, 12 models
 - [x] mixed model with subject + cell + model variance components (59): depth slope z = 14.3
 - [ ] more bilateral patients would be needed to de-confound laterality (dataset limit)
