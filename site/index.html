@@ -308,10 +308,10 @@
               <figcaption>A7 · scale contrast, depth-matched</figcaption>
             </figure>
             <figure>
-              <a class="figlink" href="figures/A4_debiased_depth.png" data-caption="A4 — shuffle-debiased encoding r vs layer depth">
-                <img src="figures/A4_debiased_depth.png" width="1800" height="650" alt="Debiased encoding r rising with layer depth for AlexNet, ResNet-50 and CLIP in MTL concept cells; category and low-level baselines as horizontal lines.">
+              <a class="figlink" href="figures/A4_fracsig_depth.png" data-caption="A4 — % of concept cells individually significant vs their own shuffle null, by layer, 12 models">
+                <img src="figures/A4_fracsig_depth.png" width="1800" height="650" alt="Percent of MTL concept cells with p below 0.05 against their own label-shuffle null, per layer of twelve models; most curves rise with depth, CLIP ViT-B/32 reaches 47 percent at its last layer, category baseline 32 percent, low-level 15 percent, chance 5 percent.">
               </a>
-              <figcaption>A4 · shuffle-debiased encoding by depth</figcaption>
+              <figcaption>A4 · per-cell encoding significance by depth (42 layers, 12 models)</figcaption>
             </figure>
           </div>
         </article>
