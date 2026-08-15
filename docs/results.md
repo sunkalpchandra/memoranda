@@ -355,3 +355,10 @@ Items refer to docs/review_2026-08-15.md.
   best single layer chosen on training sessions 0.060 (p = 0.31); all 51 layers of all models
   0.060; per-model banks ≤ 0.058. No combination beats one late layer — the shared late-layer
   structure is what the MTL tracks.
+
+## A4 (cont.) — shuffle null across 42 layers of 12 models (script 51 --set wide; figure A4_fracsig_depth)
+- Primary metric = % of MTL concept cells individually significant vs their own shuffle null:
+  rises with depth in most models (CLIP ViT-B/32 25 → 47 %; ResNet-50 29 → 36 %; DINOv2-S 22 → 40 %
+  at block8; CLIP-RN50 25 → 38 %; VGG 25 → 34 %; ViT-B/16 22 → 31 %; ConvNeXt 22 → 34 % at stage4),
+  category one-hot 32 %, low-level 15 %, VGGFace2 embedding 22 %, chance 5 %. AlexNet fc7 is an
+  outlier (11 %; fc6 39 %). MFC concept cells (permissive set, n = 29): 14–38 %.
