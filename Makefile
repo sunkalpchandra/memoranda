@@ -24,4 +24,5 @@ units:
 features:
 	$(PY) scripts/10_extract_features.py
 
-all: images trials units features
+all:
+	bash scripts/run_all.sh
