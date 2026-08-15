@@ -60,9 +60,9 @@ def main() -> None:
         log.info(f"{name}: {len(feats)} arrays in {time.time()-t0:.0f}s -> {out}")
 
     rows = []
-    for name in args.models:
-        if not feature_path(name).exists():
-            continue
+    # index every model that has a feature file, not only the ones extracted in this call
+    all_models = sorted(p.stem for p in feature_path("x").parent.glob("*.npz") if not p.stem.endswith("_embed"))
+    for name in all_models:
         for layer, view in list_layers(name):
             X, _ = load_features(name, layer, view)
             rows.append({"model": name, "layer": layer, "view": view, "n_images": X.shape[0], "dim": X.shape[1]})
