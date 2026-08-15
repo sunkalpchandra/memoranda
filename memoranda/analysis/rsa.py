@@ -156,3 +156,40 @@ class RSAResult:
     @property
     def rho_ceiling_normalised(self) -> float:
         return self.rho / np.sqrt(self.reliability) if self.reliability and self.reliability > 0 else np.nan
+
+
+# ------------------------------------------------------------- partial / regression
+def _rank(x: np.ndarray) -> np.ndarray:
+    return sps.rankdata(x)
+
+
+def partial_compare(a: np.ndarray, b: np.ndarray, controls: list[np.ndarray]) -> float:
+    """Partial Spearman ρ between RDMs a and b controlling for control RDMs.
+
+    Ranks of the upper triangles are residualised on the ranked controls
+    (with intercept), then Pearson-correlated.
+    """
+    x, y = _rank(upper(a)), _rank(upper(b))
+    C = np.column_stack([np.ones(len(x))] + [_rank(upper(c)) for c in controls])
+    bx, *_ = np.linalg.lstsq(C, x, rcond=None)
+    by, *_ = np.linalg.lstsq(C, y, rcond=None)
+    rx, ry = x - C @ bx, y - C @ by
+    if rx.std() == 0 or ry.std() == 0:
+        return np.nan
+    return float(np.corrcoef(rx, ry)[0, 1])
+
+
+def rdm_regression(target: np.ndarray, predictors: dict[str, np.ndarray]) -> dict[str, float]:
+    """Rank-based OLS of the neural RDM on several model RDMs; returns standardised betas + R²."""
+    y = _rank(upper(target))
+    y = (y - y.mean()) / y.std()
+    names = list(predictors)
+    X = np.column_stack([_rank(upper(predictors[n])) for n in names]).astype(float)
+    X = (X - X.mean(0)) / (X.std(0) + 1e-12)
+    A = np.column_stack([np.ones(len(y)), X])
+    beta, *_ = np.linalg.lstsq(A, y, rcond=None)
+    resid = y - A @ beta
+    r2 = 1 - resid.var() / y.var()
+    out = {f"beta_{n}": float(b) for n, b in zip(names, beta[1:])}
+    out["r2"] = float(r2)
+    return out
