@@ -235,3 +235,8 @@ they showed at the time of writing and how to read them.
   block11 0.27 → ln_post 0.29; ResNet-50 layer1 0.16 → layer3 0.23 → avgpool 0.20; AlexNet
   conv1 0.15 → fc6 0.21; low-level 0.09; category one-hot 0.21. Same depth gradient as RSA and
   similarity tuning, now with a bias-free encoding metric.
+
+## Window robustness (script 65)
+- RSA (MTL vs CLIP ln_post): 100–600 ms 0.059, 200–1000 0.060, 300–800 0.057, 200–500 0.069,
+  500–1000 0.028. Similarity tuning (CLIP): 0.185 / 0.170 / 0.170 / 0.186 / 0.108. Conclusions
+  hold for any window that includes the 200–500 ms transient; late-only windows halve them.
