@@ -31,6 +31,16 @@ Everything else runs in seconds to a couple of minutes.
 `results/report.html` (`scripts/90_build_report.py --embed` for a self-contained page),
 `docs/figure_index.md` (what produces what).
 
+## Post-review conventions (2026-08-15)
+- Two concept-cell criteria live side by side: `concept_cell` (paper-faithful, permissive) and
+  `concept_cell_strict` (selection-corrected). Report single-cell claims for both.
+- Cells are nested in patients: pair every cell-pooled p with the patient-level / cluster-robust
+  version (script 73 pattern). Two patients hold 42 % of MTL concept cells.
+- Encoding comparisons: quote the fraction of individually significant cells vs the per-cell
+  shuffle null (frac_sig), not "debiased r".
+- Family-wide FDR for the memoranda contrasts (`A2_feature_contrasts.csv` has q_familywide).
+- Script 58's MTL−MFC row is not a region contrast; use paired/mixed tests.
+
 ## Known caveats to carry forward
 - Neural RDM reliability is low (~0.06); ceiling-normalise or pool across patients.
 - CV encoding r is negatively biased; quote the shuffle-null-debiased values (A4_encoding_null*).

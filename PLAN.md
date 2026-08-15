@@ -86,3 +86,12 @@ Status legend: `[ ]` todo · `[~]` in progress · `[x]` done
 - [x] hand "famous" labels for all 342 pictures (66)
 - [x] model scale contrast (69) and same-architecture objective contrast (63)
 - [x] project website (site/, GitHub Pages) + on-site full report
+
+## Phase 8 — review and second experiment round (2026-08-15)
+- [x] adversarial statistical review (docs/review_2026-08-15.md) and response
+- [x] selection-corrected post-hoc test; strict criterion columns; strict variants of A5, RSA
+- [x] patient-level / cluster-robust tests (73); family-wide FDR; wording revised everywhere
+- [x] second-rater famous labels (κ 0.93); identity invariance (untestable); semantic vs visual (71); within-category tuning (72); reweighted RSA (74)
+- [~] shuffle null over 24 more layers (51 --set wide) — running
+- [ ] a mixed model with crossed cell/model random effects for the layer sweeps
+- [ ] more bilateral patients would be needed to de-confound laterality (dataset limit)
