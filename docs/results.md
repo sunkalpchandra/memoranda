@@ -203,3 +203,10 @@ they showed at the time of writing and how to read them.
 - Caveat: hemispheres are partly confounded with patients (implant side).
 - Within-patient (3 patients with amygdala concept cells on both sides): R − L = +0.23 in
   3/3 patients (Wilcoxon p = 0.25, n too small) — direction consistent, confound not excluded.
+
+## A7 (cont.) — same architecture, different objective (script 63)
+- ResNet-50 (ImageNet supervised) vs CLIP RN50 (language-contrastive), layer-matched
+  layer1–4 + pooled: RSA differences −0.007…+0.002 (all Wilcoxon p ≥ 0.24, n = 19 sessions);
+  similarity tuning differences −0.006…+0.007 (p ≥ 0.16, n = 134 cells). Training objective
+  makes no measurable difference once architecture is fixed; the earlier CLIP-ViT edge is
+  therefore architecture/resolution, not language.
