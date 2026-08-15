@@ -52,3 +52,35 @@ def unique_image_table() -> pd.DataFrame:
     u = unique_images(df).copy()
     u["abs_path"] = [str(ROOT / "data" / p) for p in u["path"]]
     return u
+
+
+def load_space(
+    model: str,
+    layer: str,
+    view: str = "gap",
+    uids: list[str] | np.ndarray | None = None,
+    center: bool = False,
+    normalize: bool = False,
+) -> tuple[np.ndarray, np.ndarray]:
+    """Unified loader used by the analysis scripts.
+
+    Handles the special-cased CLIP image embedding (``clip_vitb32``/``embed``) stored by
+    script 12 as well as regular layer arrays. Optionally centres (subtract the mean over
+    all stored images) and L2-normalises rows so that ``X @ X.T`` is a cosine similarity.
+    Returns ``(X, uids)`` in the requested order (or stored order when ``uids`` is None).
+    """
+    if model == "clip_vitb32" and layer == "embed":
+        with np.load(FEATURES / "clip_vitb32_embed.npz", allow_pickle=True) as z:
+            X, stored = z["embed"].astype(np.float32), z["image_uid"].astype(str)
+    else:
+        X, stored = load_features(model, layer, view)
+    X = X.astype(np.float64)
+    if center:
+        X = X - X.mean(0)
+    if normalize:
+        X = X / (np.linalg.norm(X, axis=1, keepdims=True) + 1e-12)
+    if uids is None:
+        return X, stored
+    pos = {u: i for i, u in enumerate(stored)}
+    idx = np.array([pos[u] for u in uids])
+    return X[idx], np.asarray(uids)
