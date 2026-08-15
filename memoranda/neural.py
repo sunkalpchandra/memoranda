@@ -132,7 +132,13 @@ def _welch_t(a: np.ndarray, b: np.ndarray) -> np.ndarray:
 
 
 def permuted_max_vs_rest(R: np.ndarray, labels: np.ndarray, n_perm: int = 1000, seed: int = 1) -> tuple[np.ndarray, np.ndarray, np.ndarray]:
-    """For each unit: preferred image (max mean), t(pref vs rest), one-sided permutation p."""
+    """For each unit: preferred image (max mean), t(pref vs rest), one-sided permutation p.
+
+    This is the paper-style post-hoc test: the observed t of the *selected* maximum image vs
+    the rest is compared with t-values of a random image-sized subset vs the rest. Because the
+    maximum is selected before testing, this null is permissive (see ``permuted_max_vs_rest_strict``
+    for a selection-corrected version).
+    """
     rng = np.random.default_rng(seed + 7)
     G, cats = _group_onehot(labels)
     counts = G.sum(0)
@@ -153,6 +159,50 @@ def permuted_max_vs_rest(R: np.ndarray, labels: np.ndarray, n_perm: int = 1000, 
             aa, bb = pooled[perm[:na]][:, None], pooled[perm[na:]][:, None]
             cnt += _welch_t(aa, bb)[0] >= t_obs[u]
         p[u] = (cnt + 1) / (n_perm + 1)
+    return cats[best], t_obs, p
+
+
+def _max_t_per_perm(Rp: np.ndarray, G: np.ndarray, counts: np.ndarray) -> np.ndarray:
+    """Given permuted rate matrices Rp (n_perm, n_events) and one-hot groups G (n_events, k),
+    return the Welch t of the *maximum-mean* group vs the rest, per permutation."""
+    n = Rp.shape[1]
+    S1 = Rp @ G  # (n_perm, k) group sums
+    S2 = (Rp**2) @ G
+    means = S1 / counts
+    best = means.argmax(1)
+    idx = np.arange(Rp.shape[0])
+    na = counts[best]
+    nb = n - na
+    sa1, sa2 = S1[idx, best], S2[idx, best]
+    tot1, tot2 = Rp.sum(1), (Rp**2).sum(1)
+    sb1, sb2 = tot1 - sa1, tot2 - sa2
+    ma, mb = sa1 / na, sb1 / nb
+    va = np.clip((sa2 - na * ma**2) / np.maximum(na - 1, 1), 0, None)
+    vb = np.clip((sb2 - nb * mb**2) / np.maximum(nb - 1, 1), 0, None)
+    with np.errstate(divide="ignore", invalid="ignore"):
+        t = (ma - mb) / np.sqrt(va / na + vb / nb)
+    return np.nan_to_num(t, nan=0.0)
+
+
+def permuted_max_vs_rest_strict(R: np.ndarray, labels: np.ndarray, n_perm: int = 1000, seed: int = 1) -> tuple[np.ndarray, np.ndarray, np.ndarray]:
+    """Selection-corrected post-hoc test: t of the observed best image vs rest is compared with the
+    distribution of the *maximum* over images of the same statistic under label permutation."""
+    rng = np.random.default_rng(seed + 11)
+    G, cats = _group_onehot(labels)
+    counts = G.sum(0)
+    means = (G.T @ R) / counts[:, None]
+    best = means.argmax(0)
+    n_units = R.shape[1]
+    t_obs = np.zeros(n_units)
+    p = np.zeros(n_units)
+    n_events = R.shape[0]
+    perms = np.stack([rng.permutation(n_events) for _ in range(n_perm)])  # shared across units
+    for u in range(n_units):
+        m = G[:, best[u]] == 1
+        t_obs[u] = _welch_t(R[m, u][:, None], R[~m, u][:, None])[0]
+        Rp = R[perms, u]  # (n_perm, n_events)
+        t_null = _max_t_per_perm(Rp, G, counts)
+        p[u] = (np.sum(t_null >= t_obs[u]) + 1) / (n_perm + 1)
     return cats[best], t_obs, p
 
 
@@ -189,6 +239,8 @@ class UnitSelectivity:
     t_post: float
     p_post: float
     concept_cell: bool
+    p_post_strict: float
+    concept_cell_strict: bool
     dos: float
     sparseness: float
     pref_rate: float
@@ -222,6 +274,7 @@ def analyse_session(
 
     F, p_anova = permuted_anova(R, labels, n_perm=n_perm)
     pref, t_post, p_post = permuted_max_vs_rest(R, labels, n_perm=n_perm)
+    _, _, p_post_strict = permuted_max_vs_rest_strict(R, labels, n_perm=n_perm)
 
     G, cats = _group_onehot(labels)
     counts = G.sum(0)
@@ -249,6 +302,8 @@ def analyse_session(
                 t_post=float(t_post[j]),
                 p_post=float(p_post[j]),
                 concept_cell=bool(keep[j] and p_anova[j] < 0.05 and p_post[j] < 0.05),
+                p_post_strict=float(p_post_strict[j]),
+                concept_cell_strict=bool(keep[j] and p_anova[j] < 0.05 and p_post_strict[j] < 0.05),
                 dos=depth_of_selectivity(means[:, j]),
                 sparseness=sparseness(means[:, j]),
                 pref_rate=float(means[best, j]),
