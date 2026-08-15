@@ -88,3 +88,13 @@ they showed at the time of writing and how to read them.
   shared by all three 0.44 %, shared CLIP+ResNet 0.31 %, unique ResNet 0.24 %, unique
   category 0.13 %. Unique components are non-negative by construction, so their sign tests
   are uninformative; the ordering is the result.
+
+## A0 (cont.) — probe period (script 22)
+- MTL Sternberg concept cells (n = 132, correct trials): response to the preferred picture
+  as probe is lower when it was held in memory (match 4.08 Hz) than when it is a fresh lure
+  (4.39 Hz; Wilcoxon p = 4e-4; non-preferred probes 2.43 Hz) — match suppression. MFC: null.
+- Similarity tuning across the 4 non-preferred probes: n.s. (too few pictures).
+
+## A4 (cont.) — time-resolved similarity tuning (script 54)
+- ρ(rate, late-layer similarity to preferred) rises from ~225 ms, peaks at 325 ms (0.17),
+  slightly ahead of the raw preferred − non-preferred rate peak (350–400 ms); conv1 peaks ≈ 0.07.
