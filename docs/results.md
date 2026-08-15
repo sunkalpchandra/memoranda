@@ -362,3 +362,9 @@ Items refer to docs/review_2026-08-15.md.
   at block8; CLIP-RN50 25 → 38 %; VGG 25 → 34 %; ViT-B/16 22 → 31 %; ConvNeXt 22 → 34 % at stage4),
   category one-hot 32 %, low-level 15 %, VGGFace2 embedding 22 %, chance 5 %. AlexNet fc7 is an
   outlier (11 %; fc6 39 %). MFC concept cells (permissive set, n = 29): 14–38 %.
+
+## Influence (script 75)
+- Without patients 13 and 14 (42 % of MTL concept cells): MTL last-layer mean ρ halves (CLIP
+  0.060 → 0.030, median 0.034 → 0.027, still p = 0.004 vs 0) and the last − first layer depth
+  contrast remains significant (CLIP +0.021, p = 0.006; ResNet-50 +0.020, p = 0.03; AlexNet
+  +0.021, p = 3e-4).
